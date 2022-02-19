@@ -4,8 +4,12 @@
   type: github
   icon: 'fab fa-github'
 -
-  type: twitter
-  icon: 'fab fa-twitter'
+  type: facebook
+  icon: 'fab fa-instagram'
+  url: 'https://www.instagram.com/seongwon__97/?hl=ko'
+# -
+#   type: twitter
+#   icon: 'fab fa-twitter'
 -
   type: email
   icon: 'fas fa-envelope'
