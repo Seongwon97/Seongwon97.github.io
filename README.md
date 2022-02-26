@@ -104,3 +104,4 @@ This work is published under [MIT](https://github.com/cotes2020/jekyll-theme-chi
 [jb]: https://www.jetbrains.com/?from=jekyll-theme-chirpy
 [cn-donation]: https://cotes.gitee.io/alipay-wechat-donation/
 [설정 참조 블로그](https://www.irgroup.org/)
+<!-- (https://teddylee777.github.io/thoughts/구글애드센스와-블로그수입-방문자수와의-관계) -->
