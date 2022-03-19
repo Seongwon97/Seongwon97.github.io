@@ -6,7 +6,6 @@ description: 'Google Java Style Guide'
 categories: [Java, etc]
 img:
 tags: [Java,Google Java Style Guide]
-
 ---
 
 # 들어가기 전
