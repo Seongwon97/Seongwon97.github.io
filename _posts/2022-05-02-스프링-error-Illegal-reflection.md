@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring 예외상황 - Illegal reflective access by org.springframework.cglib.core.ReflectUtils
+title: Illegal reflective access by org.springframework.cglib.core.ReflectUtils
 date: '2022-05-02 13:27:10 +0900'
 categories: [SpringFramework, 오류 경고 정리]
 tags: [SpringFramework, warning]
