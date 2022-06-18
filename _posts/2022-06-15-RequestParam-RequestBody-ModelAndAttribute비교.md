@@ -187,8 +187,7 @@ public class MemberController {
 Request method:	POST
 Request URI:	http://localhost:59413/api/members
 ...
-Headers: Accept=*/*
-				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Headers: Accept=*/* Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
 ...
 Body:
 {"email":"rex@wooteco.com","name":"렉스","password":"Rex1!"}
@@ -208,8 +207,7 @@ ModelAttribute는 request body와 Query Parameter의 값들을 1:1로 바인딩 
 Request method:	POST
 Request URI:	http://localhost:59413/api/members?email=rex@wooteco.com
 ...
-Headers: Accept=*/*
-				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Headers: Accept=*/* Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
 ...
 Body:
 {"name":"렉스","password":"Rex1!"}
