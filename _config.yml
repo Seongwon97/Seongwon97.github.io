@@ -50,7 +50,7 @@ social:
     - https://www.facebook.com/profile.php?id=100004105792447
     # - https://www.linkedin.com/in/username
 
-google_site_verification:               # fill in to your verification string
+google_site_verification: RO040dvWbR48qjI8CypxC9i788JfkVWuCd8K8JXDowg
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -194,5 +194,3 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
-
-content: RO040dvWbR48qjI8CypxC9i788JfkVWuCd8K8JXDowg
