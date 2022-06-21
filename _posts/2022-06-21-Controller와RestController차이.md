@@ -1,6 +1,6 @@
 ---
 layout: post
-title: @RestController와 @Controller 비교하기
+title: 스프링 - @RestController와 @Controller 비교하기
 date: '2022-06-21 17:37:10 +0900'
 description: '@RestController와 @Controller의 차이점을 알아보'
 categories: [SpringFramework, 개념 정리]
