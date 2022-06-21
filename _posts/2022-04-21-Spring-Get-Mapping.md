@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Spring - GetMapping
+title: 스프링 - GetMapping
 date: '2022-04-21 23:27:10 +0900'
 description: 'GetMapping annotation에 대해 정리한 자료입니다.'
-categories: [SpringFramework, GetMapping]
-tags: [SpringFramework, SpringMVC]
+categories: [SpringFramework, 스프링 개념 정리]
+tags: [SpringFramework, GetMapping]
 ---
 
 REST API디자인을 하기 위해서 자원에 대한 행위들은 HTTP Method로 표현을 해야한다. HTTP Method에는 GET, POST, PUT, DELETE 등이 존재한다.

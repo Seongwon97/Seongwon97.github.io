@@ -3,7 +3,7 @@ layout: post
 title: 스프링 - @RequestParam, @RequestBody, @ModelAndAttribute 차이 비교
 date: '2022-06-15 22:59:10 +0900'
 description: '@RequestParam, @RequestBody, @ModelAndAttribute 차이가 무엇일까?'
-categories: [SpringFramework, 개념 정리]
+categories: [SpringFramework, 스프링 개념 정리]
 tags: [SpringFramework]
 ---
 `@RequestParam`, `@RequestBody`, `@ModelAndAttribute` 세가지 annotation은 모두 request의 데이터를 받아오기 위해 사용됩니다.

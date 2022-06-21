@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Spring - PostMapping
+title: 스프링 - PostMapping
 date: '2022-04-22 19:27:10 +0900'
 description: 'PostMapping annotation에 대해 정리한 자료입니다.'
-categories: [SpringFramework, PostMapping]
-tags: [SpringFramework, SpringMVC]
+categories: [SpringFramework, 스프링 개념 정리]
+tags: [SpringFramework, PostMapping]
 ---
 
 지난 GET API에 대해 공부한 것에 이어 오늘은 POST API에 대해 공부해보고자 한다.

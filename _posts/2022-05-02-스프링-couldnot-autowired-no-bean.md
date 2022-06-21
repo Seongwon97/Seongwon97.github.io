@@ -2,7 +2,7 @@
 layout: post
 title: Could not autowired. No bean of~
 date: '2022-05-02 17:00:10 +0900'
-categories: [SpringFramework, 오류 경고 정리]
+categories: [SpringFramework, 스프링 오류 경고 정리]
 tags: [SpringFramework, warning]
 ---
 
