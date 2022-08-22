@@ -2,7 +2,7 @@ module.exports = {
   title: `Seongwon.dev`,
   description: `Develop, Security, It, Etc...`,
   author: `Seongwon`,
-  introduction: `배움에 즐거움을 느끼는 우테코 4기 BE 렉스입니다.`,
+  introduction: `열심히 성장중인 우테코 4기 BE 렉스입니다.`,
   siteUrl: `https://seongwon97.github.io/`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
