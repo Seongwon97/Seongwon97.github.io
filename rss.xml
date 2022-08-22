@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 22 Aug 2022 08:12:54 GMT</lastBuildDate><item><title><![CDATA[[Git] Submodule이란?]]></title><description><![CDATA[학습 계기 프로젝트를 진행하다보면 보안상의 문제로 Git에 올리지 못하는 데이터들이 존재한다. 필자의 경우 배포된 DB 인스턴스의 정보, Google OAuth 인증키, JWT 토큰의 Secret key…]]></description><link>https://seongwon97.github.io/Git/2022-08-11-Git Submodule이란/</link><guid isPermaLink="false">https://seongwon97.github.io/Git/2022-08-11-Git Submodule이란/</guid><pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;학습-계기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%99%EC%8A%B5-%EA%B3%84%EA%B8%B0&quot; aria-label=&quot;학습 계기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;학습 계기&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 22 Aug 2022 09:45:56 GMT</lastBuildDate><item><title><![CDATA[[Git] Submodule이란?]]></title><description><![CDATA[학습 계기 프로젝트를 진행하다보면 보안상의 문제로 Git에 올리지 못하는 데이터들이 존재한다. 필자의 경우 배포된 DB 인스턴스의 정보, Google OAuth 인증키, JWT 토큰의 Secret key…]]></description><link>https://seongwon97.github.io/Git/2022-08-11-Git Submodule이란/</link><guid isPermaLink="false">https://seongwon97.github.io/Git/2022-08-11-Git Submodule이란/</guid><pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;학습-계기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%99%EC%8A%B5-%EA%B3%84%EA%B8%B0&quot; aria-label=&quot;학습 계기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;학습 계기&lt;/h1&gt;
 &lt;p&gt;프로젝트를 진행하다보면 보안상의 문제로 Git에 올리지 못하는 데이터들이 존재한다. 필자의 경우 배포된 DB 인스턴스의 정보, Google OAuth 인증키, JWT 토큰의 Secret key등이 존재하였다. 서비스 배포를 할 때, 이러한 데이터들은 배포 서버의 환경변수로 설정하는 방법 또는 스크립트를 통해 직접 값을 변경하는 방법 등으로 해당 값들을 세팅해줄 수 있다. 하지만 이러한 방법들은 설정 값들에 변경이 있을 때마다 AWS에 접근을 하여 직접 변경을 해줘야하는 번거로움이 있다. 또한 여러개의 동일한 서버를 두는 경우 동일환 환경변수 세팅을 여러개의 EC2에 해줘야 한다는 불편함도 있다. 필자는 보안상 외부에 노출되면 안되는 정보들을 서브 모듈을 통해 관리를 함으로써 보다 편하게 관리를 하고있다. 오늘은 이러한 서브 모듈에 대해 정리해보려 한다.&lt;/p&gt;
 &lt;h1 id=&quot;서브모듈이란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;서브모듈이란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;서브모듈이란?&lt;/h1&gt;
 &lt;p&gt;프로젝트를 수행할 때 외부에서 개발한 라이브러리라던가 내부 여러 프로잭트에서 공통으로 사용하는 라이브러리와 같은 다른 프로젝트를 사용해야하는 경우가 있다. Git Submodule은 Git 저장소 안에 다른 Git 저장소를 디렉토리로 분리해 넣으며 이러한 문제를 해결해준다. 즉, 메인(부모) 레포지토리 하위에 공통으로 사용하는 프로젝트를 자식 레포지토리를 두고 관리하며 문제를 해결하는 방법이다.&lt;/p&gt;
@@ -8663,201 +8663,6 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk&quot;
-        title=&quot;tecotalk&quot;
-        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
-        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
-/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
-/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
-        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
-&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
-&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk2&quot;
-        title=&quot;tecotalk2&quot;
-        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
-        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
-/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
-/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
-        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
-&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
-&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
-&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
-&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
-&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
-난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
-&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
-그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
-네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
-&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
-올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;state pattern&quot;
-        title=&quot;state pattern&quot;
-        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
-        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
-/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
-/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
-        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
-그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
-&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
-두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
-저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
-코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
-&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 피드백 정리]]></title><description><![CDATA[피드백을 주고받은 PR & 작성 코드 [1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257 작성한 1단계 미션 코드 [2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311 작성한 2단계 미션 코드 피드백 정리…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-피드백정리/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-피드백정리/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;h1 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h1&gt;
 &lt;ul&gt;
@@ -9133,6 +8938,201 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk&quot;
+        title=&quot;tecotalk&quot;
+        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
+        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
+/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
+/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
+        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
+&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
+&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk2&quot;
+        title=&quot;tecotalk2&quot;
+        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
+        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
+/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
+/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
+        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
+&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
+&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
+&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
+&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
+&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
+난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
+&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
+그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
+네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
+&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
+올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;state pattern&quot;
+        title=&quot;state pattern&quot;
+        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
+        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
+/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
+/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
+        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
+그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
+&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
+두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
+저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
+코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
+&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 로또 미션 피드백 정리]]></title><description><![CDATA[피드백을 주고받은 PR [1단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #390 [2단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #471 피드백 정리 1. for-loop를 Stream.forEach…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-07-우테코-레벨1-로또-피드백정리/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-07-우테코-레벨1-로또-피드백정리/</guid><pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;h1 id=&quot;피드백을-주고받은-pr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr&quot; aria-label=&quot;피드백을 주고받은 pr permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR&lt;/h1&gt;
 &lt;ul&gt;
