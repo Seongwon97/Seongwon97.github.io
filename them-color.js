@@ -1,8 +1,8 @@
 module.exports = {
   whiteModeColor: {
     textColor1: "#3737B9",
-    mainColor1: "#7f7fd5",
-    mainColor2: "#86a8e7",
+    mainColor1: "#434cf5",
+    mainColor2: "#c6cefc",
     mainColor3: "#91eac9",
   },
   darkModeColor: {
