@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Aug 2022 08:35:21 GMT</lastBuildDate><item><title><![CDATA[[JPA] 엔티티간 연관관계]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. 이전까지의 데이터 중심의 연관관계 JPA를 사용하기 이전 JDBC를 이용한 개발을 할 때는 아래의 코드와 같이 Member…]]></description><link>https://seongwon97.github.io/Spring/2022-08-24-JPA-엔티티간_연관관계/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-24-JPA-엔티티간_연관관계/</guid><pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Aug 2022 08:35:32 GMT</lastBuildDate><item><title><![CDATA[[JPA] 엔티티간 연관관계]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. 이전까지의 데이터 중심의 연관관계 JPA를 사용하기 이전 JDBC를 이용한 개발을 할 때는 아래의 코드와 같이 Member…]]></description><link>https://seongwon97.github.io/Spring/2022-08-24-JPA-엔티티간_연관관계/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-24-JPA-엔티티간_연관관계/</guid><pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;해당 포스트는 인프런 김영한님의 &lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;자바 ORM 표준 JPA 프로그래밍 - 기본편&lt;/a&gt; 강의를 기반으로 작성하였습니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;1-이전까지의-데이터-중심의-연관관계&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4%EC%A0%84%EA%B9%8C%EC%A7%80%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A4%91%EC%8B%AC%EC%9D%98-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84&quot; aria-label=&quot;1 이전까지의 데이터 중심의 연관관계 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 이전까지의 데이터 중심의 연관관계&lt;/h1&gt;
@@ -575,7 +575,7 @@
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring JPA] Entity Mapping]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. JPA의 Entity란? Entity란 DB…]]></description><link>https://seongwon97.github.io/Spring/2022-08-23-JPA-엔티티매핑/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-23-JPA-엔티티매핑/</guid><pubDate>Tue, 23 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[JPA] Entity Mapping]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. JPA의 Entity란? Entity란 DB…]]></description><link>https://seongwon97.github.io/Spring/2022-08-23-JPA-엔티티매핑/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-23-JPA-엔티티매핑/</guid><pubDate>Tue, 23 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;해당 포스트는 인프런 김영한님의 &lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;자바 ORM 표준 JPA 프로그래밍 - 기본편&lt;/a&gt; 강의를 기반으로 작성하였습니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;1-jpa의-entity란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-jpa%EC%9D%98-entity%EB%9E%80&quot; aria-label=&quot;1 jpa의 entity란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. JPA의 Entity란?&lt;/h1&gt;
@@ -878,7 +878,7 @@ column 설정 변경을 할 때 테이블의 기본 세팅값에 변경이 있�
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring JPA] JPA Specification을 통한 조회 필터링 기능 구현]]></title><description><![CDATA[…]]></description><link>https://seongwon97.github.io/Spring/2022-08-17-JPA-Specification/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-17-JPA-Specification/</guid><pubDate>Wed, 17 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;학습-동기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%99%EC%8A%B5-%EB%8F%99%EA%B8%B0&quot; aria-label=&quot;학습 동기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;학습 동기&lt;/h1&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[JPA] JPA Specification을 통한 조회 필터링 기능 구현]]></title><description><![CDATA[…]]></description><link>https://seongwon97.github.io/Spring/2022-08-17-JPA-Specification/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-17-JPA-Specification/</guid><pubDate>Wed, 17 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;학습-동기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%99%EC%8A%B5-%EB%8F%99%EA%B8%B0&quot; aria-label=&quot;학습 동기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;학습 동기&lt;/h1&gt;
 &lt;p&gt;모모팀 프로젝트를 진행하며 모임 검색 및 모임 조회에 필터링을 하는 기능을 개발하게 되었다. 필터링 기능을 쉽게 생각하여 가벼운 마음으로 개발을 시작하였으나 막상 개발을 해보니 생각할 내용이 너무나도 많이 있었다.&lt;/p&gt;
 &lt;p&gt;먼저 우리의 조회 기능 조건은 다음과 같았다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;큰 조회 분류&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -3750,7 +3750,7 @@ column 설정 변경을 할 때 테이블의 기본 세팅값에 변경이 있�
     opacity: 0.7;
   }
   
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring JPA] - JPA란?]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. ORM JPA의 개념을 알고자 한다면 먼저 ORM의 개넘을 알고 넘어가야 한다.
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[JPA] - JPA란?]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. ORM JPA의 개념을 알고자 한다면 먼저 ORM의 개넘을 알고 넘어가야 한다.
 ORM은 Object Relational Mapping…]]></description><link>https://seongwon97.github.io/Spring/2022-07-05-JPA란/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-07-05-JPA란/</guid><pubDate>Tue, 05 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;해당 포스트는 인프런 김영한님의 &lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;자바 ORM 표준 JPA 프로그래밍 - 기본편&lt;/a&gt; 강의를 기반으로 작성하였습니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -9602,32 +9602,73 @@ IOC를 적용한다면 우리가 라이브러리를 호출하여 사용하는 �
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring 에러처리] Could not autowired. No bean of~]]></title><description><![CDATA[스프링에 해당 Bean들을 주입하였는데, Bean이 없어 Autowired를 할 수 없는 메시지가 나올 때가 있다. 이럴 경우 실제로 Bean 주입이 없을 수도 있으나, IntelliJ의 오류로 프로그램 실행 전에 Bean…]]></description><link>https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring 에러처리] Illegal reflective access by org.springframework.cglib.core.ReflectUtils]]></title><description><![CDATA[초보 웹 개발자를 위한 스프링 5 책의 내용을 학습하던 중, 아래와 같은 warning메시지가 뜨는 것을 확인했습니다.  위의 warning 메시지는 스프링 구버전에 있는 에러 중의 하니이다. 해당 경고문의 해결은 간단하게도 Spring…]]></description><link>https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;초보 웹 개발자를 위한 스프링 5 책의 내용을 학습하던 중, 아래와 같은 warning메시지가 뜨는 것을 확인했습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 764px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1092px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 23.333333333333332%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQY032Q7W6CQBBFeZuCHyy7GJGyIEgsLrCA1TSp1fd/jNMN9k/TpD9O7mQyuTNzvXq/RGuFVBtUpIhDSbhasVgEjsW/rNzcer3+hWdrn+NbRpoVpEnK2E4Mw5lT29F2jr7HOO2sdfQ/vY7GGPKi+GPqbUSAUhIhIsIooulqpmuLPVtO/Yixo9OBk33WZphoHcZO5GWF778QBL4jmPGyxCeS7t14g4gk42R43Cwf9y/ePx+cLzculzv9dKVxCw5NR9W01Maiq5rIxaREjBQuqjDEU+ESGcezoZSKpDigyyO6qOYL9P6peXkgK0p2WU6SaVJdsN29zoZSqNlQiJBvDcupNRhxYTUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 13.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmUlEQVQI102OSwvCMBCEg4+KVi1eVfCgBzU+Dlrapk0aFfT//6JxNqngYfhmJ2R21X1sUaUWQlExsSg5m9QxdzglNfSwDjyQ+0Gk5nxOYi48Mtv1DZSft3hmLVpSfDN1wb+ymPvOfxYeD/JNynzj8suoCct0V7hRFVTOh5olhrIzF64TSZb/rqW/yufuGina9gxWqsTyT2vqC7gQV9jcufy+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/03b3256916f81df6acc499f78e7c5f7b/2cffa/1.png&quot;
+        srcset=&quot;/static/03b3256916f81df6acc499f78e7c5f7b/5a46d/1.png 300w,
+/static/03b3256916f81df6acc499f78e7c5f7b/0a47e/1.png 600w,
+/static/03b3256916f81df6acc499f78e7c5f7b/2cffa/1.png 1092w&quot;
+        sizes=&quot;(max-width: 1092px) 100vw, 1092px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위의 warning 메시지는 &lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues/20414&quot;&gt;스프링 구버전에 있는 에러&lt;/a&gt; 중의 하니이다.&lt;/p&gt;
+&lt;p&gt;해당 경고문의 해결은 간단하게도 Spring Framework 5.1이상, Spring Boot 2.1이상의 버전으로 업그레이드 하면 사라진다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 577px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 10.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAX0lEQVQI11WMUQqAIBQEPU+Spj4tTSut+19pUxKhj4GBZYeRdQjxQDoLfExQmuCDQrkNrmKQG90H+e/5ofrX4JyDCSExCwFNFtpQDRqQXWp0wdbxuxr+w3+03a2yBie82i9BumFjTq4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;img&quot;
         title=&quot;img&quot;
-        src=&quot;/static/97d6963d0a344a50fe670a23e4c0fd77/f3c12/img.png&quot;
-        srcset=&quot;/static/97d6963d0a344a50fe670a23e4c0fd77/5a46d/img.png 300w,
-/static/97d6963d0a344a50fe670a23e4c0fd77/0a47e/img.png 600w,
-/static/97d6963d0a344a50fe670a23e4c0fd77/f3c12/img.png 764w&quot;
-        sizes=&quot;(max-width: 764px) 100vw, 764px&quot;
+        src=&quot;/static/a8234b89fd5783312e22fc559482c6ef/065e2/img.png&quot;
+        srcset=&quot;/static/a8234b89fd5783312e22fc559482c6ef/5a46d/img.png 300w,
+/static/a8234b89fd5783312e22fc559482c6ef/065e2/img.png 577w&quot;
+        sizes=&quot;(max-width: 577px) 100vw, 577px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;스프링에 해당 Bean들을 주입하였는데, Bean이 없어 Autowired를 할 수 없는 메시지가 나올 때가 있다.&lt;/p&gt;
-&lt;p&gt;이럴 경우 실제로 Bean 주입이 없을 수도 있으나, IntelliJ의 오류로 프로그램 실행 전에 Bean이 없다고 판단할 수도 있다.&lt;/p&gt;
-&lt;p&gt;그래서 이러한 에러가 발견될 경우, 먼저 프로그램 실행을 해보고, 그 후에 Bean이 실제로 생성되지 않았는지 확인을 해야한다.&lt;/p&gt;
+&lt;p&gt;5.0.2버전이었던 Spring Framework를 아래와 같이 최신버전인 5.3.19버전으로 업그레이드하니 문제가 해결되었다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 534px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 12.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfElEQVQI122P4QqDMAyE+zw2YYJNa20nUqVs7/9At1gVHNuPj+QuCUfMcymIKSPEhEffw9pOsd+Q/fX+oXtmrW+s9YWyVSxlQ5wyZBzgo4OfHEIW+CQYZ9+07L5quebauzDojWsYIgYzg4hAZ92Tmm71SCa+/BO+zW9ffADKKl5BrP8mGgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img 1&quot;
+        title=&quot;img 1&quot;
+        src=&quot;/static/81265bde050b29338d7471c97db0a835/a07a7/img_1.png&quot;
+        srcset=&quot;/static/81265bde050b29338d7471c97db0a835/5a46d/img_1.png 300w,
+/static/81265bde050b29338d7471c97db0a835/a07a7/img_1.png 534w&quot;
+        sizes=&quot;(max-width: 534px) 100vw, 534px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.inflearn.com/questions/170577&quot;&gt;참고링크&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/46671472/illegal-reflective-access-by-org-springframework-cglib-core-reflectutils1&quot;&gt;참고자료&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
@@ -9718,73 +9759,32 @@ IOC를 적용한다면 우리가 라이브러리를 호출하여 사용하는 �
     opacity: 0.7;
   }
   
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring 에러처리] Illegal reflective access by org.springframework.cglib.core.ReflectUtils]]></title><description><![CDATA[초보 웹 개발자를 위한 스프링 5 책의 내용을 학습하던 중, 아래와 같은 warning메시지가 뜨는 것을 확인했습니다.  위의 warning 메시지는 스프링 구버전에 있는 에러 중의 하니이다. 해당 경고문의 해결은 간단하게도 Spring…]]></description><link>https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;초보 웹 개발자를 위한 스프링 5 책의 내용을 학습하던 중, 아래와 같은 warning메시지가 뜨는 것을 확인했습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring 에러처리] Could not autowired. No bean of~]]></title><description><![CDATA[스프링에 해당 Bean들을 주입하였는데, Bean이 없어 Autowired를 할 수 없는 메시지가 나올 때가 있다. 이럴 경우 실제로 Bean 주입이 없을 수도 있으나, IntelliJ의 오류로 프로그램 실행 전에 Bean…]]></description><link>https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1092px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 764px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 13.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmUlEQVQI102OSwvCMBCEg4+KVi1eVfCgBzU+Dlrapk0aFfT//6JxNqngYfhmJ2R21X1sUaUWQlExsSg5m9QxdzglNfSwDjyQ+0Gk5nxOYi48Mtv1DZSft3hmLVpSfDN1wb+ymPvOfxYeD/JNynzj8suoCct0V7hRFVTOh5olhrIzF64TSZb/rqW/yufuGina9gxWqsTyT2vqC7gQV9jcufy+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1&quot;
-        title=&quot;1&quot;
-        src=&quot;/static/03b3256916f81df6acc499f78e7c5f7b/2cffa/1.png&quot;
-        srcset=&quot;/static/03b3256916f81df6acc499f78e7c5f7b/5a46d/1.png 300w,
-/static/03b3256916f81df6acc499f78e7c5f7b/0a47e/1.png 600w,
-/static/03b3256916f81df6acc499f78e7c5f7b/2cffa/1.png 1092w&quot;
-        sizes=&quot;(max-width: 1092px) 100vw, 1092px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;위의 warning 메시지는 &lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues/20414&quot;&gt;스프링 구버전에 있는 에러&lt;/a&gt; 중의 하니이다.&lt;/p&gt;
-&lt;p&gt;해당 경고문의 해결은 간단하게도 Spring Framework 5.1이상, Spring Boot 2.1이상의 버전으로 업그레이드 하면 사라진다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 577px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 10.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAX0lEQVQI11WMUQqAIBQEPU+Spj4tTSut+19pUxKhj4GBZYeRdQjxQDoLfExQmuCDQrkNrmKQG90H+e/5ofrX4JyDCSExCwFNFtpQDRqQXWp0wdbxuxr+w3+03a2yBie82i9BumFjTq4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 23.333333333333332%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQY032Q7W6CQBBFeZuCHyy7GJGyIEgsLrCA1TSp1fd/jNMN9k/TpD9O7mQyuTNzvXq/RGuFVBtUpIhDSbhasVgEjsW/rNzcer3+hWdrn+NbRpoVpEnK2E4Mw5lT29F2jr7HOO2sdfQ/vY7GGPKi+GPqbUSAUhIhIsIooulqpmuLPVtO/Yixo9OBk33WZphoHcZO5GWF778QBL4jmPGyxCeS7t14g4gk42R43Cwf9y/ePx+cLzculzv9dKVxCw5NR9W01Maiq5rIxaREjBQuqjDEU+ESGcezoZSKpDigyyO6qOYL9P6peXkgK0p2WU6SaVJdsN29zoZSqNlQiJBvDcupNRhxYTUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;img&quot;
         title=&quot;img&quot;
-        src=&quot;/static/a8234b89fd5783312e22fc559482c6ef/065e2/img.png&quot;
-        srcset=&quot;/static/a8234b89fd5783312e22fc559482c6ef/5a46d/img.png 300w,
-/static/a8234b89fd5783312e22fc559482c6ef/065e2/img.png 577w&quot;
-        sizes=&quot;(max-width: 577px) 100vw, 577px&quot;
+        src=&quot;/static/97d6963d0a344a50fe670a23e4c0fd77/f3c12/img.png&quot;
+        srcset=&quot;/static/97d6963d0a344a50fe670a23e4c0fd77/5a46d/img.png 300w,
+/static/97d6963d0a344a50fe670a23e4c0fd77/0a47e/img.png 600w,
+/static/97d6963d0a344a50fe670a23e4c0fd77/f3c12/img.png 764w&quot;
+        sizes=&quot;(max-width: 764px) 100vw, 764px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;5.0.2버전이었던 Spring Framework를 아래와 같이 최신버전인 5.3.19버전으로 업그레이드하니 문제가 해결되었다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 534px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 12.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfElEQVQI122P4QqDMAyE+zw2YYJNa20nUqVs7/9At1gVHNuPj+QuCUfMcymIKSPEhEffw9pOsd+Q/fX+oXtmrW+s9YWyVSxlQ5wyZBzgo4OfHEIW+CQYZ9+07L5quebauzDojWsYIgYzg4hAZ92Tmm71SCa+/BO+zW9ffADKKl5BrP8mGgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;img 1&quot;
-        title=&quot;img 1&quot;
-        src=&quot;/static/81265bde050b29338d7471c97db0a835/a07a7/img_1.png&quot;
-        srcset=&quot;/static/81265bde050b29338d7471c97db0a835/5a46d/img_1.png 300w,
-/static/81265bde050b29338d7471c97db0a835/a07a7/img_1.png 534w&quot;
-        sizes=&quot;(max-width: 534px) 100vw, 534px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;스프링에 해당 Bean들을 주입하였는데, Bean이 없어 Autowired를 할 수 없는 메시지가 나올 때가 있다.&lt;/p&gt;
+&lt;p&gt;이럴 경우 실제로 Bean 주입이 없을 수도 있으나, IntelliJ의 오류로 프로그램 실행 전에 Bean이 없다고 판단할 수도 있다.&lt;/p&gt;
+&lt;p&gt;그래서 이러한 에러가 발견될 경우, 먼저 프로그램 실행을 해보고, 그 후에 Bean이 실제로 생성되지 않았는지 확인을 해야한다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/46671472/illegal-reflective-access-by-org-springframework-cglib-core-reflectutils1&quot;&gt;참고자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.inflearn.com/questions/170577&quot;&gt;참고링크&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
@@ -10713,201 +10713,6 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk&quot;
-        title=&quot;tecotalk&quot;
-        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
-        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
-/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
-/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
-        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
-&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
-&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk2&quot;
-        title=&quot;tecotalk2&quot;
-        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
-        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
-/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
-/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
-        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
-&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
-&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
-&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
-&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
-&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
-난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
-&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
-그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
-네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
-&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
-올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;state pattern&quot;
-        title=&quot;state pattern&quot;
-        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
-        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
-/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
-/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
-        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
-그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
-&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
-두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
-저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
-코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
-&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 피드백 정리]]></title><description><![CDATA[피드백을 주고받은 PR & 작성 코드 [1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257 작성한 1단계 미션 코드 [2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311 작성한 2단계 미션 코드 피드백 정리…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-피드백정리/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-피드백정리/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;h1 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h1&gt;
 &lt;ul&gt;
@@ -11183,6 +10988,201 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk&quot;
+        title=&quot;tecotalk&quot;
+        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
+        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
+/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
+/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
+        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
+&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
+&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk2&quot;
+        title=&quot;tecotalk2&quot;
+        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
+        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
+/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
+/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
+        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
+&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
+&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
+&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
+&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
+&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
+난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
+&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
+그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
+네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
+&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
+올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;state pattern&quot;
+        title=&quot;state pattern&quot;
+        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
+        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
+/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
+/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
+        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
+그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
+&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
+두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
+저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
+코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
+&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item16. public 클래스에서는 public 필드가 아닌 접근자 메서드를 사용하라]]></title><description><![CDATA[이 글은 Effective Java 3/E…]]></description><link>https://seongwon97.github.io/Java/2022-03-17-이펙티브자바-16/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/2022-03-17-이펙티브자바-16/</guid><pubDate>Thu, 17 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -12359,200 +12359,6 @@ Cloneable…]]></description><link>https://seongwon97.github.io/Java/2022-03-15-
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item12. toString을 항상 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. toString 메서드 Object의 기본 toString메서드는 기본적으로 클래스 이름@1…]]></description><link>https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-12-toString재정의/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-12-toString재정의/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
-&lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;tostring-메서드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tostring-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;tostring 메서드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toString 메서드&lt;/h1&gt;
-&lt;p&gt;Object의 기본 toString메서드는 기본적으로 &lt;code&gt;클래스 이름@16진수로 표현한 해시코드&lt;/code&gt;를 반환합니다.&lt;/p&gt;
-&lt;p&gt;실제로 Object.java파일의 toString메서드를 보면 다음과 같습니다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getClass&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toHexString&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;hashCode&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;위의 메서드를 보면 처음 말한바와 같이 &lt;code&gt;클래스 이름@16진수로 표현한 해시코드&lt;/code&gt;을 return 하는 것을 확인할 수 있습니다.&lt;/p&gt;
-&lt;p&gt;테스트를 해보면 다음과 같습니다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; position&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; main&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;[] &lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(car);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 출력 결과 : Car@6b71769e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;테스트 결과를 보면 Car를 출력하였을 때 &lt;code&gt;Car@6b71769e&lt;/code&gt;라는 결과가 나온 것을 확인할 수 있습니다. 하지만 이러한 형태의 문자열은 일반적으로 우리가 원하는 결과가 아니고 정보를 얻을 수 있는 좋은 정보도 아닙니다.&lt;/p&gt;
-&lt;p&gt;toString의 일반 규약을 보면 &quot;간결하면서 사람이 읽기 쉬운 형태의 유익한 정보를 반환해야한다.&quot;와 &quot;모든 하위 클래스에서 이 메서드를 재정의하라&quot;라고 합니다.
-따라서 우리는 toString이 유익한 정보를 반환하도록 재정의해줘야 합니다.&lt;/p&gt;
-&lt;p&gt;여기서 모든 클래스에서 toString을 재정의하라는 것은 도대체 왜 그런 걸까요?
-그것은 바로 디버깅을 위해서 입니다. toString메서드는 우리가 따로 호출하지 않더라도 오류가 발생하여 로깅할 때와 같이 자동으로 호출되기도 합니다.
-만약 toString을 재정의 하지 않고 &lt;code&gt;Car@6b71769e&lt;/code&gt;와 같은 결과만을 본다면 해당 메시지는 쓸모 없는 메시지가 될 것이라 꼭 toString을 재정의하여야 한다는 것입니다.&lt;/p&gt;
-&lt;h1 id=&quot;tostring-재정의하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tostring-%EC%9E%AC%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;tostring 재정의하기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toString 재정의하기&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;좋은 toString 재정의를 하려면 객체가 가진 모든 정보를 반환하는 것이 좋다.&lt;/li&gt;
-&lt;li&gt;만약 객체가 가진 정보(필드)가 너무 거대하거나 객체의 상태가 문자열로 표현하기에 적합하지 않다면 요약 정보를 담아 출력을 하도록 한다.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;구현을 할 때는 &lt;strong&gt;포맷을 문서화할지 정해야한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;포맷을 문서화하면 해당 객체는 표준적이고, 명확하고, 사람이 읽기 쉽게 된다.&lt;/li&gt;
-&lt;li&gt;전화번호 같이 &lt;code&gt;000-0000-0000&lt;/code&gt;와 같은 것은 포맷을 문서화하는 것이 좋다.&lt;/li&gt;
-&lt;li&gt;&lt;font color =&quot;red&quot;&gt;하지만 포맷을 명시하면 해당 클래스는 앞서 정의한 포맷에 얽매이게 된다.&lt;/font&gt;&lt;/li&gt;
-&lt;li&gt;프로그래머들이 해당 문자열을 파싱해서 데이터를 사용한다면, 포맷 값이 변화하면 관련 내용들이 모두 변경되게 된다.&lt;/li&gt;
-&lt;li&gt;포맷을 명시하지 않는다면 향후 정보를 더 넣거나 포맷을 개선할 수 있는 유연성을 얻게 된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;포맷을 명시하든 아니든 의도는 명확히 밝혀야한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;포맷을 명시한다면 포맷에 대한 정보까지 주석으로 남겨두는 것이 좋고, 포맷을 명시하지 않는다면 형식이 변경될 수 있다고 명시해야한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;하지만 toString으로 반환되는 값을 통해 로직을 작성하는 것은 좋지 않아 사용하지 않는 것이 좋다!!
-그 대신 해당 정보를 얻어올 수 있는 API를 제공해야한다. 즉, getter를 통해 개발자들이 필요한 정보를 얻어 올 수 있도록 하는 것이 좋다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;핵심-정리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B5%EC%8B%AC-%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;핵심 정리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;핵심 정리&lt;/h1&gt;
-&lt;p&gt;모든 구체 클래스에서 Object의 toString을 재정의하자. 상위 클래스에서 이미 알맞게 재정의한 경우는 예외다.
-toString을 재정의한 클래스는 사용하기에도 즐겁고 그 클래스를 사용한 시스템을 디버깅하기 쉽게 해준다.
-toString은 해당 객체에 관한 명확하고 유용한 정보를 읽기 좋은 형태로 반환해야 한다.&lt;/p&gt;
-&lt;h1 id=&quot;add&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#add&quot; aria-label=&quot;add permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Add&lt;/h1&gt;
-&lt;p&gt;우아한 테크코스 Level1의 1단계 미션을 진행하며 다음과 같은 피드백을 받았습니다.
-&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 781px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 59.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB0UlEQVQoz6VT25KiUAzk/z9uH2ZqdRwFBLnfDxdFQHvSEWZrt2qelqpUwuHY6e5EK89SRHGCIAyR5QXqukHdNDCmxbIsmOcZs+Tn84mfnqYx6Poek9y1pmlCnCQaaZohy3Ikaap1UZTajPX9fsfyeOCxBn88TbM2HMcRo3wnlkUWYRQhimJcLgEuQYiz58NxXHj+Bb6c8f37TDLvV1WNxhhVYtpW67btYLFDFMcKRNnMBGcErIVhGEbwBTyQzLv8VpTlCtKqRax7kW3RGWXneSI7VclxnGi9WcEmBN0sYWaj6/WqVvwlue9adEJ/aQ3+5+HMODjr4+3Xy6tVXlFWGIZB6A9ou06mXoskg0FkLRJU9BrMUwG26ZMpw5JzNdx2HBxPNk62g8PhqJnvHAIb9QImnX5g92eldMr0JBHPUvEnl10sxfBSmPKMRt9uI27i0231i95RQS8NuKMbqEomoOuecSI7ic/jSZkxOzwXplwd9+zJQDKdqIJJI1qy/AtIP8iKbLI810hlsZNYViQM0NQVJvVn0iXmfZ3sOlWdsMQmW/ZwURa/dx84fB6FrYuDG2HnG7zZGd6dHDs7xH6/x27/ukP2ZVXJX67RoRnZwQ3wCx34kZ0BV9uuAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;toString 피드백&quot;
-        title=&quot;toString 피드백&quot;
-        src=&quot;/static/bdbc6517ea04d106a727ec5e2aa3690a/7fee5/toString_Override.png&quot;
-        srcset=&quot;/static/bdbc6517ea04d106a727ec5e2aa3690a/5a46d/toString_Override.png 300w,
-/static/bdbc6517ea04d106a727ec5e2aa3690a/0a47e/toString_Override.png 600w,
-/static/bdbc6517ea04d106a727ec5e2aa3690a/7fee5/toString_Override.png 781w&quot;
-        sizes=&quot;(max-width: 781px) 100vw, 781px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Domain에 toString을 재정의하여 OutputView에서 &lt;code&gt;System.out.println(car)&lt;/code&gt;와 같이 사용을 하다보니 domain과 view의 관계가 엮이게 되었습니다.
-즉, view의 출력 결과를 변경하려면 domain을 변경해야하는 문제점이 생긴 것입니다.&lt;/p&gt;
-&lt;p&gt;여기서 다시 알 수 있는 것은 MVC패턴에서 toString재정의한 내용을 view에서 사용하면 model과 view의 관계가 엮이게 된다는 문제가 생긴다는 것을 알 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;toString으로 반환되는 값을 통해 로직을 작성하는 것은 좋지 않아 사용하지 않는 것이 좋다(remind)❗️❗️
-하지만 디버깅을 위해 toString의 재정의는 꼭 하자❗️❗️&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
-  .one-dark-pro {
-    background-color: #282c34;
-    color: #abb2bf;
-  }
-  .one-dark-pro .mtki { font-style: italic; }
-  .one-dark-pro .mtk9 { color: #C678DD; }
-  .one-dark-pro .mtk4 { color: #E06C75; }
-  .one-dark-pro .mtk11 { color: #E5C07B; }
-  .one-dark-pro .mtk3 { color: #61AFEF; }
-  .one-dark-pro .mtk1 { color: #ABB2BF; }
-  .one-dark-pro .mtk8 { color: #56B6C2; }
-  .one-dark-pro .mtk6 { color: #98C379; }
-  .one-dark-pro .mtk5 { color: #7F848E; }
-  .one-dark-pro .grvsc-line-highlighted::before {
-    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
-    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
-  }
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item11. equals를 재정의하려거든 hashCode도 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. 서론 Ojbect 명세서에는 다음과 같은 규약이 있다. eauals…]]></description><link>https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-11/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-11/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -12749,6 +12555,200 @@ toString은 해당 객체에 관한 명확하고 유용한 정보를 읽기 좋�
   .one-dark-pro .mtk7 { color: #D19A66; }
   .one-dark-pro .mtk5 { color: #7F848E; }
   .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item12. toString을 항상 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. toString 메서드 Object의 기본 toString메서드는 기본적으로 클래스 이름@1…]]></description><link>https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-12-toString재정의/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-12-toString재정의/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;tostring-메서드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tostring-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;tostring 메서드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toString 메서드&lt;/h1&gt;
+&lt;p&gt;Object의 기본 toString메서드는 기본적으로 &lt;code&gt;클래스 이름@16진수로 표현한 해시코드&lt;/code&gt;를 반환합니다.&lt;/p&gt;
+&lt;p&gt;실제로 Object.java파일의 toString메서드를 보면 다음과 같습니다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getClass&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toHexString&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;hashCode&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위의 메서드를 보면 처음 말한바와 같이 &lt;code&gt;클래스 이름@16진수로 표현한 해시코드&lt;/code&gt;을 return 하는 것을 확인할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;테스트를 해보면 다음과 같습니다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; position&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; main&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;[] &lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(car);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 출력 결과 : Car@6b71769e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;테스트 결과를 보면 Car를 출력하였을 때 &lt;code&gt;Car@6b71769e&lt;/code&gt;라는 결과가 나온 것을 확인할 수 있습니다. 하지만 이러한 형태의 문자열은 일반적으로 우리가 원하는 결과가 아니고 정보를 얻을 수 있는 좋은 정보도 아닙니다.&lt;/p&gt;
+&lt;p&gt;toString의 일반 규약을 보면 &quot;간결하면서 사람이 읽기 쉬운 형태의 유익한 정보를 반환해야한다.&quot;와 &quot;모든 하위 클래스에서 이 메서드를 재정의하라&quot;라고 합니다.
+따라서 우리는 toString이 유익한 정보를 반환하도록 재정의해줘야 합니다.&lt;/p&gt;
+&lt;p&gt;여기서 모든 클래스에서 toString을 재정의하라는 것은 도대체 왜 그런 걸까요?
+그것은 바로 디버깅을 위해서 입니다. toString메서드는 우리가 따로 호출하지 않더라도 오류가 발생하여 로깅할 때와 같이 자동으로 호출되기도 합니다.
+만약 toString을 재정의 하지 않고 &lt;code&gt;Car@6b71769e&lt;/code&gt;와 같은 결과만을 본다면 해당 메시지는 쓸모 없는 메시지가 될 것이라 꼭 toString을 재정의하여야 한다는 것입니다.&lt;/p&gt;
+&lt;h1 id=&quot;tostring-재정의하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tostring-%EC%9E%AC%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;tostring 재정의하기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toString 재정의하기&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;좋은 toString 재정의를 하려면 객체가 가진 모든 정보를 반환하는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;만약 객체가 가진 정보(필드)가 너무 거대하거나 객체의 상태가 문자열로 표현하기에 적합하지 않다면 요약 정보를 담아 출력을 하도록 한다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;구현을 할 때는 &lt;strong&gt;포맷을 문서화할지 정해야한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;포맷을 문서화하면 해당 객체는 표준적이고, 명확하고, 사람이 읽기 쉽게 된다.&lt;/li&gt;
+&lt;li&gt;전화번호 같이 &lt;code&gt;000-0000-0000&lt;/code&gt;와 같은 것은 포맷을 문서화하는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;&lt;font color =&quot;red&quot;&gt;하지만 포맷을 명시하면 해당 클래스는 앞서 정의한 포맷에 얽매이게 된다.&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;프로그래머들이 해당 문자열을 파싱해서 데이터를 사용한다면, 포맷 값이 변화하면 관련 내용들이 모두 변경되게 된다.&lt;/li&gt;
+&lt;li&gt;포맷을 명시하지 않는다면 향후 정보를 더 넣거나 포맷을 개선할 수 있는 유연성을 얻게 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;포맷을 명시하든 아니든 의도는 명확히 밝혀야한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;포맷을 명시한다면 포맷에 대한 정보까지 주석으로 남겨두는 것이 좋고, 포맷을 명시하지 않는다면 형식이 변경될 수 있다고 명시해야한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;하지만 toString으로 반환되는 값을 통해 로직을 작성하는 것은 좋지 않아 사용하지 않는 것이 좋다!!
+그 대신 해당 정보를 얻어올 수 있는 API를 제공해야한다. 즉, getter를 통해 개발자들이 필요한 정보를 얻어 올 수 있도록 하는 것이 좋다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;핵심-정리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B5%EC%8B%AC-%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;핵심 정리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;핵심 정리&lt;/h1&gt;
+&lt;p&gt;모든 구체 클래스에서 Object의 toString을 재정의하자. 상위 클래스에서 이미 알맞게 재정의한 경우는 예외다.
+toString을 재정의한 클래스는 사용하기에도 즐겁고 그 클래스를 사용한 시스템을 디버깅하기 쉽게 해준다.
+toString은 해당 객체에 관한 명확하고 유용한 정보를 읽기 좋은 형태로 반환해야 한다.&lt;/p&gt;
+&lt;h1 id=&quot;add&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#add&quot; aria-label=&quot;add permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Add&lt;/h1&gt;
+&lt;p&gt;우아한 테크코스 Level1의 1단계 미션을 진행하며 다음과 같은 피드백을 받았습니다.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 781px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB0UlEQVQoz6VT25KiUAzk/z9uH2ZqdRwFBLnfDxdFQHvSEWZrt2qelqpUwuHY6e5EK89SRHGCIAyR5QXqukHdNDCmxbIsmOcZs+Tn84mfnqYx6Poek9y1pmlCnCQaaZohy3Ikaap1UZTajPX9fsfyeOCxBn88TbM2HMcRo3wnlkUWYRQhimJcLgEuQYiz58NxXHj+Bb6c8f37TDLvV1WNxhhVYtpW67btYLFDFMcKRNnMBGcErIVhGEbwBTyQzLv8VpTlCtKqRax7kW3RGWXneSI7VclxnGi9WcEmBN0sYWaj6/WqVvwlue9adEJ/aQ3+5+HMODjr4+3Xy6tVXlFWGIZB6A9ou06mXoskg0FkLRJU9BrMUwG26ZMpw5JzNdx2HBxPNk62g8PhqJnvHAIb9QImnX5g92eldMr0JBHPUvEnl10sxfBSmPKMRt9uI27i0231i95RQS8NuKMbqEomoOuecSI7ic/jSZkxOzwXplwd9+zJQDKdqIJJI1qy/AtIP8iKbLI810hlsZNYViQM0NQVJvVn0iXmfZ3sOlWdsMQmW/ZwURa/dx84fB6FrYuDG2HnG7zZGd6dHDs7xH6/x27/ukP2ZVXJX67RoRnZwQ3wCx34kZ0BV9uuAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;toString 피드백&quot;
+        title=&quot;toString 피드백&quot;
+        src=&quot;/static/bdbc6517ea04d106a727ec5e2aa3690a/7fee5/toString_Override.png&quot;
+        srcset=&quot;/static/bdbc6517ea04d106a727ec5e2aa3690a/5a46d/toString_Override.png 300w,
+/static/bdbc6517ea04d106a727ec5e2aa3690a/0a47e/toString_Override.png 600w,
+/static/bdbc6517ea04d106a727ec5e2aa3690a/7fee5/toString_Override.png 781w&quot;
+        sizes=&quot;(max-width: 781px) 100vw, 781px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Domain에 toString을 재정의하여 OutputView에서 &lt;code&gt;System.out.println(car)&lt;/code&gt;와 같이 사용을 하다보니 domain과 view의 관계가 엮이게 되었습니다.
+즉, view의 출력 결과를 변경하려면 domain을 변경해야하는 문제점이 생긴 것입니다.&lt;/p&gt;
+&lt;p&gt;여기서 다시 알 수 있는 것은 MVC패턴에서 toString재정의한 내용을 view에서 사용하면 model과 view의 관계가 엮이게 된다는 문제가 생긴다는 것을 알 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;toString으로 반환되는 값을 통해 로직을 작성하는 것은 좋지 않아 사용하지 않는 것이 좋다(remind)❗️❗️
+하지만 디버깅을 위해 toString의 재정의는 꼭 하자❗️❗️&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk6 { color: #98C379; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
   .one-dark-pro .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
@@ -13436,215 +13436,6 @@ ex) &lt;code&gt;int add(int x, int y);&lt;/code&gt;&lt;/li&gt;
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 로또 미션 회고  (2월 22일 ~ 3월 7일)]]></title><description><![CDATA[…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-07-우테코-레벨1-로또-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-07-우테코-레벨1-로또-회고/</guid><pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;미션진행&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AF%B8%EC%85%98%EC%A7%84%ED%96%89&quot; aria-label=&quot;미션진행 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;미션진행&lt;/h1&gt;
-&lt;p&gt;이번에 진행한 로또 미션은 새로운 페어인 &lt;code&gt;써머&lt;/code&gt;와 함께했습니다.
-그리고 이전 &lt;code&gt;스컬&lt;/code&gt;과 미션을 진행했던 것처럼 이번 미션 또한 &lt;code&gt;써머&lt;/code&gt;와 직접 만나서 진행을 해봤습니다😁&lt;/p&gt;
-&lt;p&gt;미션을 진행해보니 확실히 지난 자동차 미션보다는 난의도가 올라갔더군요😭
-이번 미션에는 지난번 미션에서 아래의 새로운 추가 요구사항이 생겼어요.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Java Enum을 적용한다.&lt;/li&gt;
-&lt;li&gt;모든 원시 값과 문자열을 포장한다&lt;/li&gt;
-&lt;li&gt;일급 컬렉션을 쓴다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;지난번 자동차 경주 미션과 프리코스때도 Enum과 일급 컬렉션은 사용을 하였어서 크게 문제가 없었으나,
-&lt;code&gt;모든 원시 값과 문자열을 포장한다.&lt;/code&gt;의 추가사항은 처음 접해본 요구사항이어서 어려움을 느꼈습니다.
-원시 값을 포장하는 것에 대해 &lt;code&gt;써머&lt;/code&gt;와 함께 이론에 대해 학습하고 미션을 진행하였음에도 불구하고 둘 다 처음 사용해봐서..
-역시나 원시 값 포장에 대한 이점을 살리지 못하였습니다.&lt;/p&gt;
-&lt;p&gt;또한 지난 미션의 주된 목적이 TDD의 학습이었다면 이번 목적의 주된 목적은 OOP였는데..해당 내용들도 처음에는 살리지 못하였습니다.&lt;/p&gt;
-&lt;p&gt;하지만 리뷰어 &lt;code&gt;코니&lt;/code&gt;의 리뷰를 하나씩 받으며 코드를 수정하다보니 원시 값 포장의 이점도 살리고, 객체들을 나누고 객체들의 작업 분리를 하며
-미션이 끝날 때에는 처음보다 훨씬 OOP에 가까운 코드가 되어있었습니다.&lt;/p&gt;
-&lt;p&gt;앗..그리고 저는 이번 미션에서 OOP보다 더 어려움을 느꼈던 것은 클래스와 변수들의 네이밍이었습니다..
-&lt;code&gt;LottoNumber&lt;/code&gt;, &lt;code&gt;Lotto&lt;/code&gt;, &lt;code&gt;Lottos&lt;/code&gt;, &lt;code&gt;WinningNumbers&lt;/code&gt; 등 개발을 진행할 떄 비슷한 이름의 클래스들이 너무 많아 개발을 하며 너무 헷갈렸어요..
-제가 작성한 코드인데 개발 도중에도 헷갈리다니...정말 좋지 않은 네이밍이었던 것 같습니다..
-그래서 그런지 &lt;code&gt;코니&lt;/code&gt;에게도 네이밍에 관한 지적을 많이 받았던거 같아요😭&lt;/p&gt;
-&lt;p&gt;자세한 코드리뷰와 작성 코드는 아래의 링크에서 확인해보실 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-lotto/pull/390&quot;&gt;[1단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #390&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-lotto/pull/471&quot;&gt;[[2단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #471]&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://seongwon97.github.io/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%A1%9C%EB%98%90-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;우아한테크코스 - 레벨1 로또 미션 피드백 정리&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;데일리-준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%A4%80%EB%B9%84&quot; aria-label=&quot;데일리 준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데일리 준비&lt;/h1&gt;
-&lt;p&gt;아침마다 진행하는 &lt;code&gt;구구&lt;/code&gt;와 함께하는 데일리 미팅에서는 우테코 시작 셋째주부터
-그 날의 데일리 미팅을 진행하는 사회자(&lt;code&gt;마스터&lt;/code&gt;)를 뽑아 진행을 하였습니다.&lt;/p&gt;
-&lt;p&gt;주제는 다양하게 맛집 소개, 게임으로부터 시작하여, 앞으로 만들어보고싶은 프로젝트 소개 등 다양한 주제로 이야기를 하였습니다.
-그렇게 마스터의 순서가 돌고 돌아 저의 차례가 왔습니다.&lt;/p&gt;
-&lt;p&gt;저는 롯데시네마 드리미 출신인 만큼, 영화와 관련된 주제를 진행하였습니다👍🏻
-선정한 주제는 바로~~~&lt;code&gt;소리를 듣고 영화 제목 맞추기&lt;/code&gt;였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1079px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmUlEQVQoz4VTy26CUBDl591058ol66oLEx9I0WqD2goR35qY+IqKoBtro1ULnM4lQtBgO8nkDszM4cyZC4c7cxwH/737uZxg21Zojgs22bbtxoIgIBqNIhaLIRKJIJvNIplMgud5pNMZJPgnLMYdt5b1BEE5D8xzZqPRCM1mE91OBxqd5naLyXiM4WCA1WoFfTHB92EPJ9Dr4XDBh7BxXTudsD8cwnOsJ9DL3euwJTamaWJJTBaGgeVsho9iEcl4HJfpFDa9w3IJU9ex3mzAlLQDsvkM5/M5NE1DQZIgFgpolEow8nno1SomYh6f7zWgXAIoj2tuIss4qiqs4YCJ6UrgA+52Oxew025DFEWItIg38kwigVz8GYVMBi+0LIk8R7GUSmHc70N9LeJIU/kMw1Zv0FhypYIyMRAIvFavI03g1VoNSqMBiSToDoe3Ul719BlaloXz+ew6ix+a93E6z7QsVu9cr9uNhmwZbRq31WpBJmYNYsLiXq8HlXRiV0aj/JpiKAq+SFuFTlZzIuA/Rw5e9tA/50Ets18xSTYdnZQR7QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;          &quot;
-        title=&quot;          &quot;
-        src=&quot;/static/70632db6f4f0b71dc82993edd22865bc/cf4cc/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png&quot;
-        srcset=&quot;/static/70632db6f4f0b71dc82993edd22865bc/5a46d/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 300w,
-/static/70632db6f4f0b71dc82993edd22865bc/0a47e/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 600w,
-/static/70632db6f4f0b71dc82993edd22865bc/cf4cc/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 1079w&quot;
-        sizes=&quot;(max-width: 1079px) 100vw, 1079px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;하지만 데일리 마스터를 위해 주제 선정과 준비를 열심히 하였으나..
-넷플릭스의 보안 문제떄문에 줌으로 화면 공유를 하게되면 화면이 검게 나오는 점이 아쉬웠어요..&lt;/p&gt;
-&lt;p&gt;원래 이런 문제들은 소리를 듣고 참가자가 제목을 맞추면 해당 장면을 보여줘야하는데 말이죠😭&lt;/p&gt;
-&lt;p&gt;그래서 결국에는 게임하는 중간에 넷플이 아닌 유튜브로 플랫폼을 바꿔..제가 하나씩 검색하며 문제를 출제하고 화면 공유를 했습니다.😭&lt;/p&gt;
-&lt;p&gt;다음번에는 이런 게임을 준비한다면 더욱 확실하게 준비해봐야겠어요..&lt;/p&gt;
-&lt;h1 id=&quot;랜선회식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D&quot; aria-label=&quot;랜선회식 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;랜선회식&lt;/h1&gt;
-&lt;p&gt;글을 올리는 3월 7일인 오늘은 데일리 미팅 조의 랜선회식을 해봤어요!
-다른 조들이 랜선 회식을 하는건 자주 봤었는데, 제가 직접 해보려니까 뭔가 어색하기도 하면서 재밋기도 하네요😁&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 54.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACp0lEQVQoz22RZ0/TURyFS8uqcURApkCpjFJGy24ZBgEtlFFbitB/FWjUCCEsFQRpFepgOTAFWTWAEHmBg2hMjBBCwkfwAz3+aUkkkRcn5+be+3vuyT2S8oYx9KUC2XlW0jMbqK5pxFBRybCrB++nFd44H+EadfNj/4DOkTEWVzdYmF/iw8cNHg4M8Xtnj91fuyTGJyCRSJCos2soq3CQX9CMOstEZXkNtjwlo487ePV1E2eHjYH73Wzv7jEy+ZZlETTlcrL9eR33+ASdXV3MvfOgSEzyA5WpFej0N9DmNaHKrMdgMOOwtVFr0GGxVNHTb2FqwsmSd52FuVkWXz/C63nG+HMXD4b6mHj1mqXp+yTGnvcD08WEFdfuos2xosqoo7q6EfudQaw2C9trb1lfmWRwoJ95zxxjw0Oszj/n25dVNj+t0d17D6vg4LbdQkLMBT9QW2BCV3oTTe4hsJ6rlQ3YHX20CE1MvnThnZukv+06DnFo1jPDM/eU6Avs7eyjLzFyLjydmPhC5KfO+oEZ2lqK9C1kaRtJU9dRa7Ryy95Oe1sz72desLWxzG3BhHu4g+H+Vp6MjPJ96ysr3g2ycqtIVOpRJBcjlYUcATW1lBQLItCCOvs6cRdTiI66QFRkJFERYcRGRxMeFo5CocDeZOKpewyz2ewbDgwKEl2KJEDqh/la1hgpK28nN78JjVhMqDzs3+ExBYeEUlZcxOb2TwadTt+eNCDg/7u5RY1cuXbHV0qa2khSchmXTbMUG6c5fcb/0QHHBg/XMpn0xEd9KhHT5RcK5OnaUGvMJKsM1N89wNr7h7CIS36IVEZgYAiywGARFnzkQScDM3PqyC8SyCmwiWoWE5aiKWwlu0BALvc3J5efJl6pITwqnYSkHFJUOmLiUk8E/gW0EogdEcfmwwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;         0310&quot;
-        title=&quot;         0310&quot;
-        src=&quot;/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/c1b63/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png&quot;
-        srcset=&quot;/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/5a46d/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 300w,
-/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/0a47e/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 600w,
-/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/c1b63/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 1200w,
-/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/a6ec4/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 1438w&quot;
-        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;제가 원래 밖에서 사람들이랑 친화력은 좋아도..이렇게 랜선에서 화상으로 친해지는건 아직 어색한 사람이라..랜선 회식을 했다는게 아쉽네요ㅠ
-다들 직접 만나서 이야기를 했으면 더 많은 이야기를 했을텐데..코로나가 좀 괜찮아지면 오프라인 회식도 기대해봐야겠어요👍🏻&lt;/p&gt;
-&lt;h1 id=&quot;테코톡준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1%EC%A4%80%EB%B9%84&quot; aria-label=&quot;테코톡준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡준비&lt;/h1&gt;
-&lt;p&gt;우테코에서는 과정이 끝나기 전에 최소 한번 이상 테코톡 발표를 해야지 수료를 할 수 있습니다.&lt;/p&gt;
-&lt;p&gt;저는 시간이 흘러 우테코 레벨이 높아질수록 공부할 시간도 부족할 것 같아..매도 빨리 맞자!!는 생각으로 신청 지원이 열리자마자
-바로 &lt;code&gt;Git branch전략&lt;/code&gt;에 대한 발표 신청을 하였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 585px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 79.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAADe0lEQVQ4y0WT6XLaWBCFef9HmD9TqYyTTDmZSuLEeIsdgw222bUhQCChsIlVgGWz6pv2Hc+Mqrq6+9y+rW6do0SnW8N59xuTmx+sS1nCzBXWxwM2lXuwK3TPv+GffiHK3fyHUS2xN/IqHl6fYvz5Blo2+0+/k2h1G0R2mZ3vUj4+wro4QTv5xsI2oOvTy99hClZOHuFlUgyKD4Lds3Yd4k6bmakpfFarsitmSXjTDo3uBLMRcnpZ5OJnheOzHKlslbr3yG2uycmPorKrG5NsoU3JCrBbC+rtiILe4/g8Rzbfot5ZyYRjn/BpyWa7p1qrUXeaVHSDxfKRl6fT61EolSmVK2iGKXmf9WbLbg+xnE/DOf1BoOKtgInmqE0YLdist1iWTNVwqGg6y2WkGnptH01eEMrFgVzcbnfSLJYBdogjnC9oNJoKVw29cRvDn5GtRvx1ofP1yubwpMSnM41c45mTrMfxjcOp+O/pBmltQs5Z8VB/Iu+suS6P+HxZVflLfaIlE3qjkGZvxWXG4Pre5jxdIW/4+KMdebNDOt+g5i9xgzXuYIWn/Jpf4z2VekBO91X8giUagUe0XvLyRWq2iVOvYleF4XirVh4P+wyDHvFuzf9P/Grw9DinJ2z/iyeaQ4/ebE4w3XD7oHNXsMiIr7X6TJYxVafHvWC5cg23MxEbMww3yqaPsSgh4K5YZTTfCbYl4Y48yu6Un1rEwbcS75M6B9/Lym6sJ45ufN58zvHxosbboyJfUp7gz6TNiIy94uR+wKcfdRWnpT7hyIQzYXm13qEbFla1JhLRhL0l+xfZdPuYls18sVS23uyVxFabnZLOeBqKEn7xGD1LD5nQCVw6kzmd0Zr0vSHj10jdaRj1DsN5TNFwJdfRGwOpWdGfbelNNsqCcE/Dn5LTmpjNQJ0Lyy4Vb0rKiPiQrHB4ZvJO1v2Q1GSNZ76mWiq+LI3JVJ+4tSJuX322tuI8P+QsNyDX3ClcWHZF2HPFkeu5Im4LXdeJnv4Rdr/fx3EclcdxzH6/f7WdOp/NZniex2q1kvP9y8otvGEoOorJFJtKi5e3umirrbRVtHqcp8pc31nYXqiwdrARLW5UbDYnPGg+dnshun1ludAccmUsOLw0+SNZ4CBZ5O1xQbAZX29bvD8tK+yd+EP5K85KAT/NkGtrTjLfldo8p4W+YHP+BsQifqgGuyIhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;      &quot;
-        title=&quot;      &quot;
-        src=&quot;/static/889d6aa58c9d02aab7c4ce4d164b9083/78a22/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png&quot;
-        srcset=&quot;/static/889d6aa58c9d02aab7c4ce4d164b9083/5a46d/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png 300w,
-/static/889d6aa58c9d02aab7c4ce4d164b9083/78a22/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png 585w&quot;
-        sizes=&quot;(max-width: 585px) 100vw, 585px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;그 결과...우테코 4기의 테코톡 발표 스타트를 제가 끊게 되었습니다..
-3월 10일 첫 발표라니🤯&lt;/p&gt;
-&lt;p&gt;유튜브에 박제되는 만큼..열심히 준비해야겠어요🤯&lt;/p&gt;
-&lt;h1 id=&quot;마치며&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EC%B9%98%EB%A9%B0&quot; aria-label=&quot;마치며 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;마치며..&lt;/h1&gt;
-&lt;p&gt;이렇게 두번째 미션기간도 끝이 났네요😁&lt;/p&gt;
-&lt;p&gt;다음 미션도 열심히해서 많은 것을 배우는 2주가 되었으면 좋겠네요~
-다들 화이팅입니다🔥&lt;/p&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 로또 미션 피드백 정리]]></title><description><![CDATA[피드백을 주고받은 PR [1단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #390 [2단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #471 피드백 정리 1. for-loop를 Stream.forEach…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-07-우테코-레벨1-로또-피드백정리/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-07-우테코-레벨1-로또-피드백정리/</guid><pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;h1 id=&quot;피드백을-주고받은-pr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr&quot; aria-label=&quot;피드백을 주고받은 pr permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR&lt;/h1&gt;
 &lt;ul&gt;
@@ -14025,6 +13816,215 @@ model이나 view의 인스턴스 변수를 생성하며 둘 사이의 의존성�
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 로또 미션 회고  (2월 22일 ~ 3월 7일)]]></title><description><![CDATA[…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-07-우테코-레벨1-로또-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-07-우테코-레벨1-로또-회고/</guid><pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;미션진행&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AF%B8%EC%85%98%EC%A7%84%ED%96%89&quot; aria-label=&quot;미션진행 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;미션진행&lt;/h1&gt;
+&lt;p&gt;이번에 진행한 로또 미션은 새로운 페어인 &lt;code&gt;써머&lt;/code&gt;와 함께했습니다.
+그리고 이전 &lt;code&gt;스컬&lt;/code&gt;과 미션을 진행했던 것처럼 이번 미션 또한 &lt;code&gt;써머&lt;/code&gt;와 직접 만나서 진행을 해봤습니다😁&lt;/p&gt;
+&lt;p&gt;미션을 진행해보니 확실히 지난 자동차 미션보다는 난의도가 올라갔더군요😭
+이번 미션에는 지난번 미션에서 아래의 새로운 추가 요구사항이 생겼어요.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java Enum을 적용한다.&lt;/li&gt;
+&lt;li&gt;모든 원시 값과 문자열을 포장한다&lt;/li&gt;
+&lt;li&gt;일급 컬렉션을 쓴다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;지난번 자동차 경주 미션과 프리코스때도 Enum과 일급 컬렉션은 사용을 하였어서 크게 문제가 없었으나,
+&lt;code&gt;모든 원시 값과 문자열을 포장한다.&lt;/code&gt;의 추가사항은 처음 접해본 요구사항이어서 어려움을 느꼈습니다.
+원시 값을 포장하는 것에 대해 &lt;code&gt;써머&lt;/code&gt;와 함께 이론에 대해 학습하고 미션을 진행하였음에도 불구하고 둘 다 처음 사용해봐서..
+역시나 원시 값 포장에 대한 이점을 살리지 못하였습니다.&lt;/p&gt;
+&lt;p&gt;또한 지난 미션의 주된 목적이 TDD의 학습이었다면 이번 목적의 주된 목적은 OOP였는데..해당 내용들도 처음에는 살리지 못하였습니다.&lt;/p&gt;
+&lt;p&gt;하지만 리뷰어 &lt;code&gt;코니&lt;/code&gt;의 리뷰를 하나씩 받으며 코드를 수정하다보니 원시 값 포장의 이점도 살리고, 객체들을 나누고 객체들의 작업 분리를 하며
+미션이 끝날 때에는 처음보다 훨씬 OOP에 가까운 코드가 되어있었습니다.&lt;/p&gt;
+&lt;p&gt;앗..그리고 저는 이번 미션에서 OOP보다 더 어려움을 느꼈던 것은 클래스와 변수들의 네이밍이었습니다..
+&lt;code&gt;LottoNumber&lt;/code&gt;, &lt;code&gt;Lotto&lt;/code&gt;, &lt;code&gt;Lottos&lt;/code&gt;, &lt;code&gt;WinningNumbers&lt;/code&gt; 등 개발을 진행할 떄 비슷한 이름의 클래스들이 너무 많아 개발을 하며 너무 헷갈렸어요..
+제가 작성한 코드인데 개발 도중에도 헷갈리다니...정말 좋지 않은 네이밍이었던 것 같습니다..
+그래서 그런지 &lt;code&gt;코니&lt;/code&gt;에게도 네이밍에 관한 지적을 많이 받았던거 같아요😭&lt;/p&gt;
+&lt;p&gt;자세한 코드리뷰와 작성 코드는 아래의 링크에서 확인해보실 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-lotto/pull/390&quot;&gt;[1단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #390&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-lotto/pull/471&quot;&gt;[[2단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #471]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://seongwon97.github.io/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%A1%9C%EB%98%90-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;우아한테크코스 - 레벨1 로또 미션 피드백 정리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;데일리-준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%A4%80%EB%B9%84&quot; aria-label=&quot;데일리 준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데일리 준비&lt;/h1&gt;
+&lt;p&gt;아침마다 진행하는 &lt;code&gt;구구&lt;/code&gt;와 함께하는 데일리 미팅에서는 우테코 시작 셋째주부터
+그 날의 데일리 미팅을 진행하는 사회자(&lt;code&gt;마스터&lt;/code&gt;)를 뽑아 진행을 하였습니다.&lt;/p&gt;
+&lt;p&gt;주제는 다양하게 맛집 소개, 게임으로부터 시작하여, 앞으로 만들어보고싶은 프로젝트 소개 등 다양한 주제로 이야기를 하였습니다.
+그렇게 마스터의 순서가 돌고 돌아 저의 차례가 왔습니다.&lt;/p&gt;
+&lt;p&gt;저는 롯데시네마 드리미 출신인 만큼, 영화와 관련된 주제를 진행하였습니다👍🏻
+선정한 주제는 바로~~~&lt;code&gt;소리를 듣고 영화 제목 맞추기&lt;/code&gt;였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1079px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmUlEQVQoz4VTy26CUBDl591058ol66oLEx9I0WqD2goR35qY+IqKoBtro1ULnM4lQtBgO8nkDszM4cyZC4c7cxwH/737uZxg21Zojgs22bbtxoIgIBqNIhaLIRKJIJvNIplMgud5pNMZJPgnLMYdt5b1BEE5D8xzZqPRCM1mE91OBxqd5naLyXiM4WCA1WoFfTHB92EPJ9Dr4XDBh7BxXTudsD8cwnOsJ9DL3euwJTamaWJJTBaGgeVsho9iEcl4HJfpFDa9w3IJU9ex3mzAlLQDsvkM5/M5NE1DQZIgFgpolEow8nno1SomYh6f7zWgXAIoj2tuIss4qiqs4YCJ6UrgA+52Oxew025DFEWItIg38kwigVz8GYVMBi+0LIk8R7GUSmHc70N9LeJIU/kMw1Zv0FhypYIyMRAIvFavI03g1VoNSqMBiSToDoe3Ul719BlaloXz+ew6ix+a93E6z7QsVu9cr9uNhmwZbRq31WpBJmYNYsLiXq8HlXRiV0aj/JpiKAq+SFuFTlZzIuA/Rw5e9tA/50Ets18xSTYdnZQR7QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;          &quot;
+        title=&quot;          &quot;
+        src=&quot;/static/70632db6f4f0b71dc82993edd22865bc/cf4cc/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png&quot;
+        srcset=&quot;/static/70632db6f4f0b71dc82993edd22865bc/5a46d/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 300w,
+/static/70632db6f4f0b71dc82993edd22865bc/0a47e/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 600w,
+/static/70632db6f4f0b71dc82993edd22865bc/cf4cc/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 1079w&quot;
+        sizes=&quot;(max-width: 1079px) 100vw, 1079px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;하지만 데일리 마스터를 위해 주제 선정과 준비를 열심히 하였으나..
+넷플릭스의 보안 문제떄문에 줌으로 화면 공유를 하게되면 화면이 검게 나오는 점이 아쉬웠어요..&lt;/p&gt;
+&lt;p&gt;원래 이런 문제들은 소리를 듣고 참가자가 제목을 맞추면 해당 장면을 보여줘야하는데 말이죠😭&lt;/p&gt;
+&lt;p&gt;그래서 결국에는 게임하는 중간에 넷플이 아닌 유튜브로 플랫폼을 바꿔..제가 하나씩 검색하며 문제를 출제하고 화면 공유를 했습니다.😭&lt;/p&gt;
+&lt;p&gt;다음번에는 이런 게임을 준비한다면 더욱 확실하게 준비해봐야겠어요..&lt;/p&gt;
+&lt;h1 id=&quot;랜선회식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D&quot; aria-label=&quot;랜선회식 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;랜선회식&lt;/h1&gt;
+&lt;p&gt;글을 올리는 3월 7일인 오늘은 데일리 미팅 조의 랜선회식을 해봤어요!
+다른 조들이 랜선 회식을 하는건 자주 봤었는데, 제가 직접 해보려니까 뭔가 어색하기도 하면서 재밋기도 하네요😁&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACp0lEQVQoz22RZ0/TURyFS8uqcURApkCpjFJGy24ZBgEtlFFbitB/FWjUCCEsFQRpFepgOTAFWTWAEHmBg2hMjBBCwkfwAz3+aUkkkRcn5+be+3vuyT2S8oYx9KUC2XlW0jMbqK5pxFBRybCrB++nFd44H+EadfNj/4DOkTEWVzdYmF/iw8cNHg4M8Xtnj91fuyTGJyCRSJCos2soq3CQX9CMOstEZXkNtjwlo487ePV1E2eHjYH73Wzv7jEy+ZZlETTlcrL9eR33+ASdXV3MvfOgSEzyA5WpFej0N9DmNaHKrMdgMOOwtVFr0GGxVNHTb2FqwsmSd52FuVkWXz/C63nG+HMXD4b6mHj1mqXp+yTGnvcD08WEFdfuos2xosqoo7q6EfudQaw2C9trb1lfmWRwoJ95zxxjw0Oszj/n25dVNj+t0d17D6vg4LbdQkLMBT9QW2BCV3oTTe4hsJ6rlQ3YHX20CE1MvnThnZukv+06DnFo1jPDM/eU6Avs7eyjLzFyLjydmPhC5KfO+oEZ2lqK9C1kaRtJU9dRa7Ryy95Oe1sz72desLWxzG3BhHu4g+H+Vp6MjPJ96ysr3g2ycqtIVOpRJBcjlYUcATW1lBQLItCCOvs6cRdTiI66QFRkJFERYcRGRxMeFo5CocDeZOKpewyz2ewbDgwKEl2KJEDqh/la1hgpK28nN78JjVhMqDzs3+ExBYeEUlZcxOb2TwadTt+eNCDg/7u5RY1cuXbHV0qa2khSchmXTbMUG6c5fcb/0QHHBg/XMpn0xEd9KhHT5RcK5OnaUGvMJKsM1N89wNr7h7CIS36IVEZgYAiywGARFnzkQScDM3PqyC8SyCmwiWoWE5aiKWwlu0BALvc3J5efJl6pITwqnYSkHFJUOmLiUk8E/gW0EogdEcfmwwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;         0310&quot;
+        title=&quot;         0310&quot;
+        src=&quot;/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/c1b63/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png&quot;
+        srcset=&quot;/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/5a46d/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 300w,
+/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/0a47e/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 600w,
+/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/c1b63/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 1200w,
+/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/a6ec4/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 1438w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;제가 원래 밖에서 사람들이랑 친화력은 좋아도..이렇게 랜선에서 화상으로 친해지는건 아직 어색한 사람이라..랜선 회식을 했다는게 아쉽네요ㅠ
+다들 직접 만나서 이야기를 했으면 더 많은 이야기를 했을텐데..코로나가 좀 괜찮아지면 오프라인 회식도 기대해봐야겠어요👍🏻&lt;/p&gt;
+&lt;h1 id=&quot;테코톡준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1%EC%A4%80%EB%B9%84&quot; aria-label=&quot;테코톡준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡준비&lt;/h1&gt;
+&lt;p&gt;우테코에서는 과정이 끝나기 전에 최소 한번 이상 테코톡 발표를 해야지 수료를 할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;저는 시간이 흘러 우테코 레벨이 높아질수록 공부할 시간도 부족할 것 같아..매도 빨리 맞자!!는 생각으로 신청 지원이 열리자마자
+바로 &lt;code&gt;Git branch전략&lt;/code&gt;에 대한 발표 신청을 하였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 585px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 79.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAADe0lEQVQ4y0WT6XLaWBCFef9HmD9TqYyTTDmZSuLEeIsdgw222bUhQCChsIlVgGWz6pv2Hc+Mqrq6+9y+rW6do0SnW8N59xuTmx+sS1nCzBXWxwM2lXuwK3TPv+GffiHK3fyHUS2xN/IqHl6fYvz5Blo2+0+/k2h1G0R2mZ3vUj4+wro4QTv5xsI2oOvTy99hClZOHuFlUgyKD4Lds3Yd4k6bmakpfFarsitmSXjTDo3uBLMRcnpZ5OJnheOzHKlslbr3yG2uycmPorKrG5NsoU3JCrBbC+rtiILe4/g8Rzbfot5ZyYRjn/BpyWa7p1qrUXeaVHSDxfKRl6fT61EolSmVK2iGKXmf9WbLbg+xnE/DOf1BoOKtgInmqE0YLdist1iWTNVwqGg6y2WkGnptH01eEMrFgVzcbnfSLJYBdogjnC9oNJoKVw29cRvDn5GtRvx1ofP1yubwpMSnM41c45mTrMfxjcOp+O/pBmltQs5Z8VB/Iu+suS6P+HxZVflLfaIlE3qjkGZvxWXG4Pre5jxdIW/4+KMdebNDOt+g5i9xgzXuYIWn/Jpf4z2VekBO91X8giUagUe0XvLyRWq2iVOvYleF4XirVh4P+wyDHvFuzf9P/Grw9DinJ2z/iyeaQ4/ebE4w3XD7oHNXsMiIr7X6TJYxVafHvWC5cg23MxEbMww3yqaPsSgh4K5YZTTfCbYl4Y48yu6Un1rEwbcS75M6B9/Lym6sJ45ufN58zvHxosbboyJfUp7gz6TNiIy94uR+wKcfdRWnpT7hyIQzYXm13qEbFla1JhLRhL0l+xfZdPuYls18sVS23uyVxFabnZLOeBqKEn7xGD1LD5nQCVw6kzmd0Zr0vSHj10jdaRj1DsN5TNFwJdfRGwOpWdGfbelNNsqCcE/Dn5LTmpjNQJ0Lyy4Vb0rKiPiQrHB4ZvJO1v2Q1GSNZ76mWiq+LI3JVJ+4tSJuX322tuI8P+QsNyDX3ClcWHZF2HPFkeu5Im4LXdeJnv4Rdr/fx3EclcdxzH6/f7WdOp/NZniex2q1kvP9y8otvGEoOorJFJtKi5e3umirrbRVtHqcp8pc31nYXqiwdrARLW5UbDYnPGg+dnshun1ludAccmUsOLw0+SNZ4CBZ5O1xQbAZX29bvD8tK+yd+EP5K85KAT/NkGtrTjLfldo8p4W+YHP+BsQifqgGuyIhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;      &quot;
+        title=&quot;      &quot;
+        src=&quot;/static/889d6aa58c9d02aab7c4ce4d164b9083/78a22/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png&quot;
+        srcset=&quot;/static/889d6aa58c9d02aab7c4ce4d164b9083/5a46d/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png 300w,
+/static/889d6aa58c9d02aab7c4ce4d164b9083/78a22/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png 585w&quot;
+        sizes=&quot;(max-width: 585px) 100vw, 585px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;그 결과...우테코 4기의 테코톡 발표 스타트를 제가 끊게 되었습니다..
+3월 10일 첫 발표라니🤯&lt;/p&gt;
+&lt;p&gt;유튜브에 박제되는 만큼..열심히 준비해야겠어요🤯&lt;/p&gt;
+&lt;h1 id=&quot;마치며&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EC%B9%98%EB%A9%B0&quot; aria-label=&quot;마치며 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;마치며..&lt;/h1&gt;
+&lt;p&gt;이렇게 두번째 미션기간도 끝이 났네요😁&lt;/p&gt;
+&lt;p&gt;다음 미션도 열심히해서 많은 것을 배우는 2주가 되었으면 좋겠네요~
+다들 화이팅입니다🔥&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[Git Branch 전략]]></title><description><![CDATA[Git Branch 전략이란? 혼자 개발을 할 경우, git…]]></description><link>https://seongwon97.github.io/Git/2022-03-05-Git-Branch전략/</link><guid isPermaLink="false">https://seongwon97.github.io/Git/2022-03-05-Git-Branch전략/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;git-branch-전략이란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#git-branch-%EC%A0%84%EB%9E%B5%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;git branch 전략이란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Git Branch 전략이란?&lt;/h1&gt;
 &lt;p&gt;혼자 개발을 할 경우, git의 브랜를 아래와 같이 특정 작업을 할 때 새로운 브랜치를 새로 만들어 사용하거나 하나의 브랜치만을 사용하며 개발을 할 것입니다.
 &lt;span
