@@ -1,7 +1,7 @@
 ---
-title: "[JPA] JPA Specification을 통한 조회 필터링 기능 구현"
+title: "[JPA] JPA Specification(Criteria)을 통한 조회 필터링 기능 구현"
 date: 2022-08-17
-tags: ["SpringFramework", "JPA", "Specification", "동적 쿼리"]
+tags: ["SpringFramework", "JPA", "Specification", "동적 쿼리", "Criteria"]
 draft: false
 ---
 
@@ -29,8 +29,6 @@ draft: false
 
 그러던 중 알게된 것이 JPA의 Specification이다.
 
-# JPA Specification
-
 ## JPA Specification란?
 
 Spring Data JPA의 Specification은 Eric Evans의 “Domain Driven Design” 책에서 나온 개념으로부터 나오게 되었다. Specification은 검색 조건을 메서드 형태로 추상화하여 Repository 인터페이스에서 해당 검색 조건을 조합하고 쿼리하기 쉽게 할 수 있는 Spring Data JPA의 기능입니다. 즉, 동적으로 쿼리를 만들 수 있도록 지원해주는 JPA의 기능이다.
@@ -57,11 +55,11 @@ public interface GroupRepository extends JpaRepository<Group, Long>, JpaSpecific
 ```java
 public interface JpaSpecificationExecutor<T> {
 
-		Optional<T> findOne(@Nullable Specification<T> spec);
+    Optional<T> findOne(@Nullable Specification<T> spec);
 
-		List<T> findAll(@Nullable Specification<T> spec);
+    List<T> findAll(@Nullable Specification<T> spec);
 
-		...
+    ...
 }
 ```
 
@@ -73,8 +71,8 @@ Specification은 기본적으로 아래와 같은 구조로 이루어져 있다.
 >
 
 ```java
-public interface Specification<T> {
-  Predicate toPredicate(Root<T> root, CriteriaQuery<?> query,
+public interface Specification<T> { 
+    Predicate toPredicate(Root<T> root, CriteriaQuery<?> query,
             CriteriaBuilder builder);
 }
 ```
@@ -166,8 +164,8 @@ public class GroupSpecification {
 @RequestMapping("/api/groups")
 @RestController
 public class GroupController {
-		...
-		@GetMapping
+    ...
+    @GetMapping
     public ResponseEntity<GroupPageResponse> findGroups(@ModelAttribute GroupFindRequest groupFindRequest) {
         return ResponseEntity.ok(groupFindService.findGroups(groupFindRequest));
     }
@@ -195,11 +193,11 @@ public class GroupFindRequest {
 
 ```java
 public class GroupFindService {
-		...
-		public Page<Group> findAll(GroupFindRequest request) {
+    ...
+    public Page<Group> findAll(GroupFindRequest request) {
         Pageable pageable = PageRequest.of(request.getPage(), DEFAULT_PAGE_SIZE);
 				
-				Specification.where(GroupSpecification.initialize());
+        Specification.where(GroupSpecification.initialize());
         if (request.getCategory() != null) {
             Category category = Category.from(request.getCategory());
             specification = specification.and(GroupSpecification.filterByCategory(category));
@@ -218,7 +216,7 @@ public class GroupFindService {
 
         return groupRepository.findAll(specification, pageable);
     }
-		...
+    ...
 }
 ```
 
@@ -237,7 +235,7 @@ public class GroupFindService {
 @Component
 public class GroupSpecification {
 		
-		...
+    ...
     public Specification<Group> filterByCategory(Long categoryId) {
         if (categoryId == null) {
             return (root, query, criteriaBuilder) -> criteriaBuilder.conjunction();
@@ -256,14 +254,14 @@ public class GroupSpecification {
             return criteriaBuilder.or(nameContainKeyword, descriptionContainKeyword);
         };
     }
-		...
+    ...
 }
 ```
 
 ```java
 public class GroupFindService {
-		...
-		private Page<Group> findGroups(Specification<Group> specification, GroupFindRequest request) {
+    ...
+    private Page<Group> findGroups(Specification<Group> specification, GroupFindRequest request) {
         Pageable pageable = PageRequest.of(request.getPage(), DEFAULT_PAGE_SIZE);
 
         specification = specification.and(groupSpecification.filterByCategory(request.getCategory()))
@@ -273,7 +271,7 @@ public class GroupFindService {
 
         return groupRepository.findAll(specification, pageable);
     }
-		...
+    ...
 }
 ```
 
@@ -285,7 +283,7 @@ Specification을 통해 동적으로 쿼리를 만들며 여러개의 JQPL쿼리
 
 실제로 Specification은 실무에서 잘 사용하지 않는다고 한다. 자세한 이유는 찾지 못하였으나 아마 내가 직접 느낀 이유때문이지 않을까 싶다. 실무에서는 복잡한 쿼리에 대해서는 JPA의 Specification대신 QueryDSL을 사용한다고 한다.
 
-# Reference
+# 📚 Reference
 - [Spring Data JPA - Reference Documentation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#specifications)
 - [JPA Criteria로 관계 설정 없이 조인하기](https://kapentaz.github.io/jpa/JPA-Criteria%EB%A1%9C-%EA%B4%80%EA%B3%84-%EC%84%A4%EC%A0%95-%EC%97%86%EC%9D%B4-%EC%A1%B0%EC%9D%B8%ED%95%98%EA%B8%B0/#)
 - [Sping Data JPA Specification 의 여러가지 활용법](https://starrybleu.github.io/development/2018/07/31/spring-data-jpa-specification.html)
