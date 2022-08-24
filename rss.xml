@@ -1,4 +1,581 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 23 Aug 2022 15:43:56 GMT</lastBuildDate><item><title><![CDATA[[Spring JPA] Entity Mapping]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. JPA의 Entity란? Entity란 DB…]]></description><link>https://seongwon97.github.io/Spring/2022-08-23-JPA-엔티티매핑/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-23-JPA-엔티티매핑/</guid><pubDate>Tue, 23 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Aug 2022 08:35:21 GMT</lastBuildDate><item><title><![CDATA[[JPA] 엔티티간 연관관계]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. 이전까지의 데이터 중심의 연관관계 JPA를 사용하기 이전 JDBC를 이용한 개발을 할 때는 아래의 코드와 같이 Member…]]></description><link>https://seongwon97.github.io/Spring/2022-08-24-JPA-엔티티간_연관관계/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-24-JPA-엔티티간_연관관계/</guid><pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;해당 포스트는 인프런 김영한님의 &lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;자바 ORM 표준 JPA 프로그래밍 - 기본편&lt;/a&gt; 강의를 기반으로 작성하였습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-이전까지의-데이터-중심의-연관관계&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%9D%B4%EC%A0%84%EA%B9%8C%EC%A7%80%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A4%91%EC%8B%AC%EC%9D%98-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84&quot; aria-label=&quot;1 이전까지의 데이터 중심의 연관관계 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 이전까지의 데이터 중심의 연관관계&lt;/h1&gt;
+&lt;p&gt;JPA를 사용하기 이전 JDBC를 이용한 개발을 할 때는 아래의 코드와 같이 Member가 참여한 Team의 정보를 알기 위해 teamId를 갖는 것과 같은 데이터 중심 설계로 진행하였을 것이다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; id&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; teamId&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이러한 데이터 중심 설계는 객체의 테이블 설계에 맞춘 방식이라 테이블의 외래키를 객체에 그대로 가져오고 객체를 필드로 갖는 것이 아닌 외래키 값을 필드로 갖기에 객체간의 그래프 탐색이 불가능하다.&lt;/p&gt;
+&lt;p&gt;JPA는 객체지향 프로그래밍을 통해 개발을 하기 위해 만든 ORM의 표준인 만큼 위와 같이 데이터 중심 설계가 아닌 객체지향적인 설계를 할 수 있다. JPA에서는 아래와 같이 외래키 값이 아닌 Team 객체를 갖게 되며 &lt;code&gt;member.getTeam()&lt;/code&gt;을 통해 간단히 객체간의 탐색이 가능하게 구현할 수 있다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Getter&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;NoArgsConstructor&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Id&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;GeneratedValue&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;strategy&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;GenerationType&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;IDENTITY)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; id&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;		&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ManyToOne&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;		&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;JoinColumn&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;team_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;보기에는 간단해보이지만 JPA의 엔티티간 연관관계 매핑은 확실한 개념들과 주의할 점을 알아둬야 올바른 설계를 할 수 있다.&lt;/p&gt;
+&lt;h1 id=&quot;2-객체와-테이블의-패러다임-불일치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EA%B0%9D%EC%B2%B4%EC%99%80-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%98-%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84-%EB%B6%88%EC%9D%BC%EC%B9%98&quot; aria-label=&quot;2 객체와 테이블의 패러다임 불일치 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 객체와 테이블의 패러다임 불일치&lt;/h1&gt;
+&lt;p&gt;데이터베이스에서의 테이블 사이의 연관관계와 DB에서의 연관관계는 다른 점이 존재한다. 테이블간의 연관관계의 경우 foreign key사용해 연관된 테이블을 찾으나 객체의 경우 참조를 통해 연관된 객체를 찾아야 한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 957px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABjElEQVQoz32Sh6oqYQyEff/XERVRUCwo2MFesffe6xy+yAqH67mBbNjdZDL/zO/SH3G9XrXf7z95PB6tbrdb+/ctXq+XXDzu97s1UR+Ph57PpwaDgUqlktrttrrdrtVms6larab5fG59Tv/tdjMwwnU+nzUajTSZTBQOhy0ZWq1WajQa2mw2H3a73c4WsWA2mykYDKpcLtuCxWLxBoRZOp3WcDhUp9OxAb6dTieNx2Pb7rBer9eWLAKQRc7pADVABhKJhKLRqEKhkKrVqmDNIEOONs6RAMjlctafz+eVzWZVr9e1XC7fgGyHCcxgOZ1OPwnwt0AiNAWoUqmo1Wrpcrm8AfWfABC9AEdjFqLlX2EuO1cEwXu9nulZKBRMZI5BRR9AqeThcDBpisWimYfevwBhAlAgEJDH45HP51MmkzGTnIUYQGJIPB6X2+2W3+9XLBYzMr8AMYYmr9drxiSTSTMFbWDEAFozwHskElEqlTLtuWL/ANLc7/dNaBKD0Iw7+E0nCJCcjORKOf9+AIjkPQOPLzOhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/dee07aedb1a139d2046bf8c308740eed/6bff2/img.png&quot;
+        srcset=&quot;/static/dee07aedb1a139d2046bf8c308740eed/5a46d/img.png 300w,
+/static/dee07aedb1a139d2046bf8c308740eed/0a47e/img.png 600w,
+/static/dee07aedb1a139d2046bf8c308740eed/6bff2/img.png 957w&quot;
+        sizes=&quot;(max-width: 957px) 100vw, 957px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;더욱 자세히 설명해보자면 데이터베이스 테이블의 경우 Member에서 연관된 Team을 조회하거나 반대로 Team에서 자신과 연관된 Member를 조회하기 위해서는 &lt;code&gt;foreign key&lt;/code&gt;를 이용해서 모두 조회할 수 있다. 하지만 반대로 객체는 Member 객체에서 Team객체를 알기 위해서는 Member객체에 Team을 참조하는 &lt;code&gt;Team 필드&lt;/code&gt;가 존재하여야 하고 반대로 Team에서 자신과 연관된 Member를 모두 조회하기 위해서는 &lt;code&gt;List&amp;#x3C;Member&gt;필드&lt;/code&gt;가 존재하여야만 서로 조회가 가능하다. 즉, 테이블은 방향이라는 개념이 없이 foreign key 하나만으로 양방향 조회가 가능하지만 객체의 경우 각각의 참조용 필드를 만들며 단방향 연관관계 2개를 만들어야 한다.&lt;/p&gt;
+&lt;p&gt;둘 사이에는 이러한 패러다임의 불일치가 존재하여 우리는 객체간의 연관관계를 설정할 때 단방향인지, 양방향인지에 대한 &lt;strong&gt;연관관계의 방향&lt;/strong&gt;과, 1:1, 1:N, N:1, N:M인지에 대한 &lt;strong&gt;다중성&lt;/strong&gt;, &lt;strong&gt;연관관계의 주인&lt;/strong&gt; 등의 많은 내용을 고려하며 객체간의 관계를 설계하여야 한다.&lt;/p&gt;
+&lt;h1 id=&quot;3-연관관계-매핑-어노테이션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98&quot; aria-label=&quot;3 연관관계 매핑 어노테이션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 연관관계 매핑 어노테이션&lt;/h1&gt;
+&lt;p&gt;연관관계 매핑관련 어노테이션으로는 아래와 같은 어노테이션들이 존재한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@JoinColumn&lt;/code&gt; : 외래키를 매핑할 때 사용한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@OneToOne&lt;/code&gt; : 1 대1 연관관계를 매핑할 때 사용&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@OneToMany&lt;/code&gt; : 1 대 N 연관관계를 매핑할 때 사용&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@ManyToOne&lt;/code&gt; : N 대 1 연관관계를 매핑할 때 사용&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@ManyToMany&lt;/code&gt; : N 대 M 연관관계를 매핑할 때 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;31-joincolumn&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#31-joincolumn&quot; aria-label=&quot;31 joincolumn permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.1. @JoinColumn&lt;/h2&gt;
+&lt;p&gt;JoinColumn 어노테이션은 외래키를 매핑할 때 사용하는 어노테이션이다. 속성값으로는 &lt;code&gt;@Column&lt;/code&gt; 어노테이션과 비슷하게 &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;nullable&lt;/code&gt;, &lt;code&gt;insertable&lt;/code&gt;, &lt;code&gt;updatable&lt;/code&gt; 등의 속성들이 존재하며 추가적으로 &lt;code&gt;foreignKey&lt;/code&gt; , &lt;code&gt;columnDefinition&lt;/code&gt;이 존재한다. Column의 어노테이션과 중복되지 않고 JoinColumn만이 갖고 있는 &lt;code&gt;foreignKey&lt;/code&gt; , &lt;code&gt;columnDefinition&lt;/code&gt; 과 &lt;code&gt;name&lt;/code&gt; 속성에 대해 자세히 살펴보겠다.&lt;/p&gt;
+&lt;h3 id=&quot;311-name&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#311-name&quot; aria-label=&quot;311 name permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.1.1. name&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;테이블이 외래키를 저장하느 column 명을 정하는 속성이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;@JoinColumn&lt;/code&gt; 어노테이션을 사용하지 않거나 name속성을 정의하지 않을 경우 기본적으로 Column 명은 &lt;code&gt;필드명_id&lt;/code&gt; 로 정의된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;312-columndefinition&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#312-columndefinition&quot; aria-label=&quot;312 columndefinition permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.1.2. columnDefinition&lt;/h3&gt;
+&lt;p&gt;외래키가 참조하는 타켓 테이블의 컬럼 이름을 설정하는 속성이다. 기본값은 타겟 테이블의 &lt;code&gt;기본키의 컬럼 이름&lt;/code&gt;이다.&lt;/p&gt;
+&lt;h3 id=&quot;333-foreignkey&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#333-foreignkey&quot; aria-label=&quot;333 foreignkey permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.3.3. foreignKey&lt;/h3&gt;
+&lt;p&gt;외래키 제약조건을 설정하는 속성이다.&lt;/p&gt;
+&lt;p&gt;해당 속성을 정의하지 않으면 외래키 제약조건은 아래와 같이 JPA에서 랜덤한 값으로 설정된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 386px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 24%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAArUlEQVQY04WQVwrDQAxEfRrXL2NclnXv97/QhCdYE0wgH0J9NKNo2zZ1Xae2bXWep5qm0XVdOo5DZVkqjmOlaaokSR7/y+gVRaGoqirN8yzvvdZ11TiO2vdd4RB155zV8cMwaJomM+KQQyTPc0VZlmlZFvV9b00WiQHC0wM8HKUWZsnDDgoNEJoUYYXk7+v3fRsrFhl+y37HJplBFmCCAVzXtf2Rq/wQFQz/M7A+AaSiRk4P2SIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/cdfd12aaad97c5cd1bb5b298232d67ae/7bc0b/img_1.png&quot;
+        srcset=&quot;/static/cdfd12aaad97c5cd1bb5b298232d67ae/5a46d/img_1.png 300w,
+/static/cdfd12aaad97c5cd1bb5b298232d67ae/7bc0b/img_1.png 386w&quot;
+        sizes=&quot;(max-width: 386px) 100vw, 386px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이러한 랜덤값은 추후 테이블의 제약조건을 살펴볼때 알아보기 힘들게 되는데 해당 옵션을 설정하면 개발자가 원하는 이름으로 제약조건을 설정할 수 있다. 아래와 같이 @ForeignKey 어노테이션을 통해 외래키 제약조건을 설정하면 된다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Id&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;GeneratedValue&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;strategy&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;GenerationType&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;IDENTITY)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; id&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ManyToOne&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;JoinColumn&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;foreignKey&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;member_team&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;))&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 293px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 31.399317406143346%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVQY022QV6rDUAxEsxp3Yxv33hsuGLz/tUwYgUMeeR+6QkL3aEYv27YxjiP6vkcURaiqCvu+I01T6W3bJnUYhlBVFbqu/4RpmjAMQ/LLsiwkSYIsyyTyPMcwDJIJJ5R1EAQCZXieB9d14fs+HMf5wATIR1EUGTzPE3Eco2kazPMswLqupWb/ui4cx4GyLNF1ndRFUUDTtL9AyqZdDjGoiqqZqYzgZVkETFjbtgL51/JT0AKH+Ykg3pDqeIZHKVXSCZd/2/yxzC0c5K2oZJomrOsqcPbv+5ZlPA2VPRYJeuIBvgHK+MQeuEM5ywAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/93dab389bc35b91983b21c7d6d7ebcbb/3cf3e/img_2.png&quot;
+        srcset=&quot;/static/93dab389bc35b91983b21c7d6d7ebcbb/3cf3e/img_2.png 293w&quot;
+        sizes=&quot;(max-width: 293px) 100vw, 293px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;32-다중성-어노테이션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#32-%EB%8B%A4%EC%A4%91%EC%84%B1-%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98&quot; aria-label=&quot;32 다중성 어노테이션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2. 다중성 어노테이션&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;@OneToOne&lt;/code&gt;, &lt;code&gt;@OneToMany&lt;/code&gt;, &lt;code&gt;@ManyToOne&lt;/code&gt;, &lt;code&gt;@ManyToMany&lt;/code&gt; 은 엔티티간의 1:1, 1:N, N:1, N:M 관계를 나타내기 위해 사용하는 어노테이션이다. 각각의 객체간의 관계에 맞게 어노테이션을 사용하면 되며 속성은 아래와 같다.&lt;/p&gt;
+&lt;p&gt;(연관관계 매핑에 대한 자세한 내용은 아래의 내용에서 다루겠다.)&lt;/p&gt;
+&lt;h3 id=&quot;321-optional&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#321-optional&quot; aria-label=&quot;321 optional permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2.1. optional&lt;/h3&gt;
+&lt;p&gt;참조된 엔티티의 필수 존재 여부를 설정하는 옵션이다. 기본값은 true이며 &lt;code&gt;@JoinColumn&lt;/code&gt;에서 &lt;code&gt;nullable=true&lt;/code&gt;를 한 것과 동일하다. 기본값인 true를 할 때는 일반적으로 Join시에 outer join을 하게 되며 false인 경우에는 일반적으로 Inner join을 한다.&lt;/p&gt;
+&lt;h3 id=&quot;322-fetch&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#322-fetch&quot; aria-label=&quot;322 fetch permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2.2. fetch&lt;/h3&gt;
+&lt;p&gt;참조된 엔티티의 데이터를 가져오는 전략이다. fetch 전략으로는 &lt;code&gt;FetchType.EAGER&lt;/code&gt;과 &lt;code&gt;FetchType.LAZY&lt;/code&gt;가 존재한다. EAGER는 참조된 엔티티를 즉시 조회하는 전략으로 기본적으로 Join을 통해 조회한다. LAZY는 프록시를 사용하여 초기에는 참조값에 프록시 객체를 주입시키고 실제로 참조 엔티티를 사용할 때 조회를 하는 전략이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;@~ToMany&lt;/code&gt;의 경우 default값이 &lt;code&gt;LAZY&lt;/code&gt;, &lt;code&gt;@~ToOne&lt;/code&gt;의 경우 default값이 &lt;code&gt;EAGER&lt;/code&gt;이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;323-cascade&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#323-cascade&quot; aria-label=&quot;323 cascade permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2.3. cascade&lt;/h3&gt;
+&lt;p&gt;해당 엔티티와 연관된 엔티티의 상태를 제어하도록 설정하는 속성이다. 부모가 삭제되면 자식들을 모두 삭제와 같이 부모 엔티티를 기준으로 적용이 된다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CascadeType.ALL&lt;/code&gt; : 아래의 모든 옵션을 적용한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CascadeType.PERSIST&lt;/code&gt; : 해당 엔티티의 &lt;code&gt;persist()&lt;/code&gt; 발생 시 연관된 엔티티 모두 저장(영속화, &lt;code&gt;persist()&lt;/code&gt;)한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CascadeType.MERGE&lt;/code&gt; : 해당 엔티티의 &lt;code&gt;merge()&lt;/code&gt; 발생 시 연관된 엔티티 모두 수정하거나 저장(&lt;code&gt;merge()&lt;/code&gt;)한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CascadeType.REMOVE&lt;/code&gt; : 해당 엔티티의 &lt;code&gt;remove()&lt;/code&gt; 발생 시 연관된 엔티티 모두 삭제(&lt;code&gt;remove()&lt;/code&gt;)한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CascadeType.REFRESH&lt;/code&gt; : 해당 엔티티의 &lt;code&gt;refresh()&lt;/code&gt; 발생 시 연관된 엔티티 모두 DB로부터 다시 불러(&lt;code&gt;refresh()&lt;/code&gt;)온다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;CascadeType.DETACH&lt;/code&gt; : 해당 엔티티의 &lt;code&gt;detach()&lt;/code&gt; 발생 시 연관된 엔티티 모두 준 영속 상태(영속성 컨텍스트에서 삭제, &lt;code&gt;detach()&lt;/code&gt;)로 바꾼다.&lt;/p&gt;
+&lt;h3 id=&quot;324-orphanremoval&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#324-orphanremoval&quot; aria-label=&quot;324 orphanremoval permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2.4. orphanRemoval&lt;/h3&gt;
+&lt;p&gt;부모 엔티티와 연관 관계가 사라진 엔티티가 될 경우 자동으로 삭제시켜주는 속성이다. 기본값은 &lt;code&gt;false&lt;/code&gt;이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;부모 엔티티를 기준으로 내가 사라졌을 때, 자식을 없애겠다!!&lt;/strong&gt; 라는 설정이라 &lt;code&gt;@ManyTo~&lt;/code&gt; 의 어노테이션에는 없는 속성이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;OneToMany&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;mappedBy&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;team&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;cascade&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;CascadeType&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;REMOVE&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;orphanRemoval&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; members &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;		&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ManyToOne&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;JoinColumn&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;foreignKey&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;member_team&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;))&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;325-targetentity&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#325-targetentity&quot; aria-label=&quot;325 targetentity permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2.5. targetEntity&lt;/h3&gt;
+&lt;p&gt;연결된 엔티티의 타입을 지정할 수 있다. 기본값으로는 해당 필드의 타입을 읽어서 사용되기에 주로 사용될 일이 없다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ManyToOne&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;targetEntity&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;class)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;326-️-mappedby-️&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#326-%EF%B8%8F-mappedby-%EF%B8%8F&quot; aria-label=&quot;326 ️ mappedby ️ permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3.2.6. ⭐️ mappedBy ⭐️&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;@ManyTo~&lt;/code&gt; 의 어노테이션에는 없는 속성이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;외래키를 관리하지 않는 엔티티에서 양방향 연관관계를 설정하는데 사용하는 속성이다. 속성의 값으로는 외래키를 관리하는 연관관계 주인 엔티티의 &lt;strong&gt;외래키 필드 이름으로 설정&lt;/strong&gt;하면 된다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;OneToMany&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;mappedBy&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;team&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; members &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;		&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ManyToOne&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;4-연관관계-주인&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EC%A3%BC%EC%9D%B8&quot; aria-label=&quot;4 연관관계 주인 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. 연관관계 주인&lt;/h1&gt;
+&lt;p&gt;앞서 말했듯이 데이터베이스의 테이블과 다르게 객체의 경우, 양방향 관계를 가지게 된다면 서로를 참조하는 2개의 단방향 연관관계를 만들어야 한다.  이러한 양방향 관계에서는 각각의 데이터 사이의 연관관계가 업데이트 되었을 때, 이를 관리하는 객체를 정해야한다. 즉, 외래키를 관리해주는 객체를 정해야하고 우리는 해당 객체를 연관관계의 주인이라고 부른다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;편의를 위해 아래의 내용에서는 연관관계의 주인이 아닌 객체를 &lt;strong&gt;노예&lt;/strong&gt;라고 부르겠다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;41-연관관계-주인-특징&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#41-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EC%A3%BC%EC%9D%B8-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;41 연관관계 주인 특징 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.1. 연관관계 주인 특징&lt;/h2&gt;
+&lt;p&gt;연관관계 주인의 특징은 다음과 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;연관관계 주인은 외래키의 등록, 수정과 같은 관리를 담당한다.&lt;/li&gt;
+&lt;li&gt;주인이 아닌 객체는 데이터의 읽기만 가능하다.&lt;/li&gt;
+&lt;li&gt;주인은 mappedBy속성 설정을 하지 않고 노예 객체는 mappedBy 속성으로 주인을 지정해야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;42-연관관계-주인은-어떤-객체가&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#42-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EC%A3%BC%EC%9D%B8%EC%9D%80-%EC%96%B4%EB%96%A4-%EA%B0%9D%EC%B2%B4%EA%B0%80&quot; aria-label=&quot;42 연관관계 주인은 어떤 객체가 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.2. 연관관계 주인은 어떤 객체가!?&lt;/h2&gt;
+&lt;p&gt;연관관계의 주인은 외래키를 관리해주는 객체라고 하였다. 그렇다면 테이블상에서 외래키를 관리해주는 객체는 어떤 객체가 될까?? 이해를 위해 먼저 아래의 사진을 살펴보겠다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 957px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABjElEQVQoz32Sh6oqYQyEff/XERVRUCwo2MFesffe6xy+yAqH67mBbNjdZDL/zO/SH3G9XrXf7z95PB6tbrdb+/ctXq+XXDzu97s1UR+Ph57PpwaDgUqlktrttrrdrtVms6larab5fG59Tv/tdjMwwnU+nzUajTSZTBQOhy0ZWq1WajQa2mw2H3a73c4WsWA2mykYDKpcLtuCxWLxBoRZOp3WcDhUp9OxAb6dTieNx2Pb7rBer9eWLAKQRc7pADVABhKJhKLRqEKhkKrVqmDNIEOONs6RAMjlctafz+eVzWZVr9e1XC7fgGyHCcxgOZ1OPwnwt0AiNAWoUqmo1Wrpcrm8AfWfABC9AEdjFqLlX2EuO1cEwXu9nulZKBRMZI5BRR9AqeThcDBpisWimYfevwBhAlAgEJDH45HP51MmkzGTnIUYQGJIPB6X2+2W3+9XLBYzMr8AMYYmr9drxiSTSTMFbWDEAFozwHskElEqlTLtuWL/ANLc7/dNaBKD0Iw7+E0nCJCcjORKOf9+AIjkPQOPLzOhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/dee07aedb1a139d2046bf8c308740eed/6bff2/img_3.png&quot;
+        srcset=&quot;/static/dee07aedb1a139d2046bf8c308740eed/5a46d/img_3.png 300w,
+/static/dee07aedb1a139d2046bf8c308740eed/0a47e/img_3.png 600w,
+/static/dee07aedb1a139d2046bf8c308740eed/6bff2/img_3.png 957w&quot;
+        sizes=&quot;(max-width: 957px) 100vw, 957px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위의 관계를 보면 알 수 있듯이 Team과 Member중에 Member가 외래키를 갖는 것을 알 수 있다. 즉, DB의 입장에서 보면 외래키는 1:N과 같은 관계에서는 N이 외래키를 갖게 되며 우리는 1:N관계에서 N인 객체를 연관관계 주인으로 선택하면 된다.&lt;/p&gt;
+&lt;h2 id=&quot;43-주의할-점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#43-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90&quot; aria-label=&quot;43 주의할 점 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.3. 주의할 점!&lt;/h2&gt;
+&lt;h3 id=&quot;431-양방향-매핑시-연관관계-주인이-아닌-노예-객체에-값을-할당해서는-안된다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#431-%EC%96%91%EB%B0%A9%ED%96%A5-%EB%A7%A4%ED%95%91%EC%8B%9C-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EC%A3%BC%EC%9D%B8%EC%9D%B4-%EC%95%84%EB%8B%8C-%EB%85%B8%EC%98%88-%EA%B0%9D%EC%B2%B4%EC%97%90-%EA%B0%92%EC%9D%84-%ED%95%A0%EB%8B%B9%ED%95%B4%EC%84%9C%EB%8A%94-%EC%95%88%EB%90%9C%EB%8B%A4&quot; aria-label=&quot;431 양방향 매핑시 연관관계 주인이 아닌 노예 객체에 값을 할당해서는 안된다 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.3.1. 양방향 매핑시 연관관계 주인이 아닌 노예 객체에 값을 할당해서는 안된다.&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; team &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;모모&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(team);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; member &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;Rex&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getMember&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(member);&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 연관관계 주인이 아닌 Team에서 필드에 Member를 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(member);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;연관관계의 노예 객체는 JPA에서 탐색을 하지 않는다. 이러한 이유때문에 연관관계의 노예 객체는 읽기만 가능하고 쓰기는 불가능하다. 만약 노예 객체에 값을 할당시 주인 객체의 Team 참조값은 null이 들어갈 것이다.&lt;/p&gt;
+&lt;p&gt;그렇다고 주인 객체인 Member에서만 Team필드에 할당해줘서도 안 된다. 객체의 연관관계를 단방향으로만 설정해줄 경우 하나의 트렌잭션 내에서 flush, clear가 없는 상태로 여러 로직이 진행될 때 1차 캐시에 저장된 DB와 연결이 안 된 순수한 값들을 사용하게 되어서 노예로부터 주인의 데이터를 조회할 때 빈 List가 리턴되는 문제가 발생할 수 있다. 그리고 객체지향적으로 생각해도 양쪽에 값을 설정해주는게 맞다.&lt;/p&gt;
+&lt;p&gt;양쪽에 값을 할당해주기 위해서는 &lt;strong&gt;연관관계 편의 메서드&lt;/strong&gt;를 생성하는 것이 좋다. 연관관계 편의 메서드는 아래와 같이 하나의 메서드에서 양쪽의 관계를 매핑해주는 메서드를 의미한다. 해당 메서드의 위치는 연관관계 주인﹒노예 중 어떤 객체에 위치하여도 상관없다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; participate&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; team;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getMembers&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;432-양방향-매핑시-무한-루프를-조심하여야-한다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#432-%EC%96%91%EB%B0%A9%ED%96%A5-%EB%A7%A4%ED%95%91%EC%8B%9C-%EB%AC%B4%ED%95%9C-%EB%A3%A8%ED%94%84%EB%A5%BC-%EC%A1%B0%EC%8B%AC%ED%95%98%EC%97%AC%EC%95%BC-%ED%95%9C%EB%8B%A4&quot; aria-label=&quot;432 양방향 매핑시 무한 루프를 조심하여야 한다 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4.3.2. 양방향 매핑시 무한 루프를 조심하여야 한다.&lt;/h3&gt;
+&lt;p&gt;JPA 뿐만 아니라 기본적인 프로그래밍을 생각하여도 양방향 매핑으로 생기는 순환참조는 조심하여야 한다. 개발자는 양방향 매핑시 항상 순환참조가 없는지를 체크하며 개발을 진행하여야 한다.&lt;/p&gt;
+&lt;p&gt;대표적으로 순환참조를 조심해야할 내용은 &lt;code&gt;lombok&lt;/code&gt;의 &lt;code&gt;toString()&lt;/code&gt;, &lt;code&gt;JSON 생성 라이브러리&lt;/code&gt;가 있다. lombok을 통해 toString을 만들 경우 내부적으로 객체간의 순환참조가 발생할 수 있다. JSON 생성 라이브러리의 경우 Controller에서 Entity를 반환할 때 발생하게 된다. 다들 알다싶이 Controller에서 Entity를 직접 반환하는 일은 피하는 것이 좋다.&lt;/p&gt;
+&lt;h1 id=&quot;5-연관관계-다중성-매핑&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%8B%A4%EC%A4%91%EC%84%B1-%EB%A7%A4%ED%95%91&quot; aria-label=&quot;5 연관관계 다중성 매핑 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5. 연관관계 다중성 매핑&lt;/h1&gt;
+&lt;h2 id=&quot;51-다대일--n1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#51-%EB%8B%A4%EB%8C%80%EC%9D%BC--n1&quot; aria-label=&quot;51 다대일  n1 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5.1. 다대일  (N:1)&lt;/h2&gt;
+&lt;p&gt;다대일 단방향 관계의 경우 가장 많이 사용되는 연관관계로 외래키를 N쪽에 두면 된다. 양방향 연관관계 역시 N쪽에 위치시키면 되며 양쪽을 서로 참조하도록 개발하면 된다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;OneToMany&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;mappedBy&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;team&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; members &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// N&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;		&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ManyToOne&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;		&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;JoinColumn&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;team_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;52-일대다-1n&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#52-%EC%9D%BC%EB%8C%80%EB%8B%A4-1n&quot; aria-label=&quot;52 일대다 1n permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5.2. 일대다 (1:N)&lt;/h2&gt;
+&lt;p&gt;1:N 연관관계는 실무에서 사용하는 것을 권장하지 않는 매핑 방법이다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWklEQVQoz52SSW/CUAyE+f//hhO5IeUCBIkDEog17IiwbwlLFKb9LL1Ubemllp78knjG9kwK+ozX66V3cTweNRqNtFqtNJlMdLlc9Fc4joK7pGmqJEl0OBws3+933W43xXGs5XKpdrut+Xyu5/Op6/Wq/X6v8/lsNWAdaU4IaDqdqtFo2H02mxkZgO12axNCOBgMrK5Wq6nVammz2djJCbMsswurdbtdAzMl+V1Qw4H0dDqZLEybEzIFB8J6va5KpaIgCGwawjV02a272+0scx6PxxchXSCj42KxUBRF+k/kpiAyOuEg3fr9vpEiONr0ej1rhnbD4dBq1uu1rc07nhkKI7+5PB6PVa1W5XmerdzpdAyIQWR0BdhsNuX7vorFokqlkpnIZvwVRog2BGuXy2XrisNhGFoR39ENnTEKMoioRXMaMcyvCREWEGDWdx1/aoRZyOCkcPK4mg+JHPVXggKEwAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/19564d949f5016ab2b2e3191ccb51b88/c1b63/img_4.png&quot;
+        srcset=&quot;/static/19564d949f5016ab2b2e3191ccb51b88/5a46d/img_4.png 300w,
+/static/19564d949f5016ab2b2e3191ccb51b88/0a47e/img_4.png 600w,
+/static/19564d949f5016ab2b2e3191ccb51b88/c1b63/img_4.png 1200w,
+/static/19564d949f5016ab2b2e3191ccb51b88/434c7/img_4.png 1381w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위의 이미지에서 객체의 연관관계에서는 Team에서는 해당 팀에 속한 멤버들을 알고 있지만 Member들은 자신이 속한 팀을 알지 못한다. 하지만 테이블에서의 연관관계는 해당 연관관계를 구현함에도 불구하고 외래키는 Team이 아닌 Member에서 갖게 되어서 객체의 설계와 DB설계를 비교하였을 때 &lt;strong&gt;외래키 관리의 불일치&lt;/strong&gt;가 발생하게 된다. 그리고 해당 구조로 테스트를 해보면 Member객체를 &lt;code&gt;persist()&lt;/code&gt;후에 Team객체에 Member객체를 넣어주고 &lt;code&gt;persist()&lt;/code&gt;하게 된다면 Member 테이블에 Team_id의 값을 넣어주기 위해 Update 쿼리가 하나 더 날라가게 된다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;9&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;OneToMany&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;JoinColumn&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;team_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; members &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;10&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; member &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;Rex&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(member);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; team &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;모모&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getMembers&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(member);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;persist&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(team);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;실제로 위의 코드를 실행하였을 때, 아래와 같이 2개의 insert 쿼리 이후 한개의 Update 쿼리가 날라가게 된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 495px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 94%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAABwElEQVQ4y52US0/CQBSF+TG0hUJ5F1qeQmKj6MKoMWzcyMat/39xPd/INEpIaF3cMG2Hr+fcczuNXq9n6XRqu/XaXmYzO8zn9rBa2Xqzsd1uZ9vt1rrdrsVxbJ1O52o1OtoYaXE3mdhXv2/H4dDewtBiQfwmD6sCbfiNcym7kcK5FCe612q1asNKIBUEgeWLhRX395bluQ0Ggz+QykC/cTQa2ULAyXjs1OaquupKIDVVMBsFk6ZpCcB2u90uoZV6SILYS0g7y2ylhGcolG1Un1u/CkySxIayWcjuUeqOAr0KnAmK9YnS9yorW45Ut7L8KTUHKX4MQosEaf/Hsl+MpSTV2BBKIJAfm9qh+EWz2XSB8HXkWBb8KgjVp19f5djMBCAQQiDx32lXqfh8bAAtl0uXLslTURQ565eKZ+65eky/4/Cn725sGA8KZagkXeCoRmmmFrDmZezhmo+A4n/PYjAhH/p1PQRaFIXt93s3JmwCRLHmngePFRprXkDh7EmMg+6/00NgbOTBUCfNuTXG5tp1KFCodRMgCvs6tngrlrDLdZ1AnMtTuS9lrW8YEPZQWedAvTiHQADSH2z855Tx9Q2eXUpgFmuLbwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/56bd6939cb73cf12bf73984c08b495e7/a4d88/img_5.png&quot;
+        srcset=&quot;/static/56bd6939cb73cf12bf73984c08b495e7/5a46d/img_5.png 300w,
+/static/56bd6939cb73cf12bf73984c08b495e7/a4d88/img_5.png 495w&quot;
+        sizes=&quot;(max-width: 495px) 100vw, 495px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;사실 더 많은 쿼리문이 날라가서 비효율적이긴하나 성능적으로는 큰 차이는 없다. 하지만 객체지향적인 프로그래밍을 하였을 때 사용자가 Member객체에 대한 수정을 안하고 Team객체에 대한 수정만 하였을 뿐인데 Member테이블에 변화를 주는 예상하지 못한 쿼리문은 개발자에게 혼란을 줄 수 있다. 이러한 이유 때문에 영한님은 OneToMany 단방향 매칭은 추천하지 않는다고 한다. 이러한 경우에는 유지보수를 위해 객체의 데이터 손해를 보더라도 양방향 매핑을 하던가 ManyToOne으로 단방향으로 되도록 개발하는 것이 좋다고 한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📌  &lt;code&gt;@OneToMany&lt;/code&gt; 단방향 매핑의 경우 &lt;code&gt;@JoinColumn&lt;/code&gt;을 꼭 사용해야한다. 그렇지 않으면 &lt;code&gt;@JoinTable&lt;/code&gt;방식을 사용하요 아래와 같이 예상하지 못한 중간 테이블이 생기게 된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 254px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 35.82677165354331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABBklEQVQoz32QWWrEQAxEfRqD93VsvI+38b6Av+b+B6lQAk9CCPkQrZbUr0qteJ6HpmnQ9z2GYUCapqjrGtu2oaoqJEmCruswz7PU933HcRwYxxGPxwNRFEHXdRiGIaEQSEjbtng+n/B9H1mWiUie52CfdwryzjkKcNZ1XQFqmvYNJF1VVYRhiGmacJ6nDPEBoXRC2Ov1ErF1XRHHscC5EbcgkEGWcpMty5L1COLJCIJAHhZFIS7ptixLqVOUMzzplGIfh7flZVnwfr9xXZe4JYgrEsK/Y58OKcK1mRPKHjegKcW2bVEm2DTNT1DAcRwZYs4andz5X6c4pNWfH0vw77jr9z/9F1+HsOWcfSD55wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/fbde19f3410b3955f5509d828ca94c96/6a91e/img_6.png&quot;
+        srcset=&quot;/static/fbde19f3410b3955f5509d828ca94c96/6a91e/img_6.png 254w&quot;
+        sizes=&quot;(max-width: 254px) 100vw, 254px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;53-일대일-11&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#53-%EC%9D%BC%EB%8C%80%EC%9D%BC-11&quot; aria-label=&quot;53 일대일 11 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5.3. 일대일 (1:1)&lt;/h2&gt;
+&lt;p&gt;1:1 매핑은 전반적으로 다대일 관계와 유사하며 양방향 매핑을 할 때는 외래키를 관리하는 객체가 연관관계의 주인이 되고 반대편은 노예 객체가 되어 &lt;code&gt;mappedBy&lt;/code&gt; 속성을 적용해줘야 한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;11&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;OneToOne&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;JoinColumn&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;card_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Card&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; card&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Card&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;OneToOne&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;mappedBy&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;card&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;독특한 점이라면 1:1 매핑답게 외래키를 주 테이블과 대상 테이블 어떠한 곳에 둬도 상관이 없다. 하지만 알아둬야 할 것이 있다. 데이터베이스에서 외래키의 위치는 어떠한 위치에 있어도 문제될 것이 없지만 객체의 입장에서는 외래키가 없는 테이블 객체에서의 단방향 매핑은 JPA에서 지원하지 않는다는 점이다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 653px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABnUlEQVQoz3WSV4sCQRCE9///FkHwQUFMGPHJgIo555yz9vEVrJxwN9Ds7ExPdVdVO/bHul6v1ul0rN/v23A41P5wONh/6/1+f/bOdru1Xq+nmM/nerharQQ0Ho8FOhgMbLFY2H6/N/L5526329nlcvkCdQDJZrOWTqet0WjYcrm0brdrp9NJyQT76XRq9XpdwJlMxorFogA5dwEJp1wu22g0EphLazKZCOj1en1VJxeg9Xptx+NR4C4guQKMx+OWSCQsn88LaDabKel+v6sziqApAVChUJA8zWZTtJ/P55eeDroQPIQCGt1ut08ClQE7n886J5CnVCp9gJGoWq2qEecv1zAll8tZrVZTVCoVPQCcO4A4b7fbMg/qBIwcDn0+n3m9XoM+DmIU6/F4iDqdozGP0DAcDlsoFJJEmEgB8kQ5FotZMBiUc+hIZWhsNhsFDyiaSqUsGo0qNxKJWCAQUOetVkv3mCRA9ACMrzvMv8fG7dTv95vH47FkMin6aIhBdMw/GgvQddAVnkq/J98FpGvmEGfdSUAaaOO+O14/7nQyy3aP+MUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/cf646c4f61d9675b7e193c89108901c4/e7dce/img_7.png&quot;
+        srcset=&quot;/static/cf646c4f61d9675b7e193c89108901c4/5a46d/img_7.png 300w,
+/static/cf646c4f61d9675b7e193c89108901c4/0a47e/img_7.png 600w,
+/static/cf646c4f61d9675b7e193c89108901c4/e7dce/img_7.png 653w&quot;
+        sizes=&quot;(max-width: 653px) 100vw, 653px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;구현을 한다면 해당 관계를 양방향 관계로 만들거나 외래키가 있는 테이블 객체에서의 단방향 매핑을 하도록 해야한다.&lt;/p&gt;
+&lt;h3 id=&quot;531-외래키-위치별-장단점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#531-%EC%99%B8%EB%9E%98%ED%82%A4-%EC%9C%84%EC%B9%98%EB%B3%84-%EC%9E%A5%EB%8B%A8%EC%A0%90&quot; aria-label=&quot;531 외래키 위치별 장단점 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5.3.1 외래키 위치별 장단점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;주 테이블에 위치한 외래키 (위 사진에서의 Member)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;주로 접근하는 객체가 대상 객체의 참조를 가지는 것처럼 주 테이블에 외래키를 두고 대상 테이블을 찾는 방법은 객체지향 개발자들이 선호하는 방식이다. 해당 방법은 JPA의 매핑이 편리하고 주 테이블만 조회하여도 대상 테이블에 데이터가 있는지 확인이 가능하다는 장점이 있다. 단점으로는 값이 없다면 외래키에 null값이 허용된다는 점이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;대상 테이블에 위치한 외래키 (위 사진에서의 Locker)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;대상 테이블에 외래키를 위치시키는 방법은 전통적인 데이터베이스 개발자가 선호하는 방법이다. 해당 방법은 주 테이블과 대상 테이블을 1:1에서 1:N으로 변경할 때 테이블 구조를 유지할 수 있다는 확장성 측면에서 이점이 있으나 &lt;strong&gt;JPA상에서는 프록시 기능의 한계로 지연로딩으로 설정을 하여도 항상 즉시로딩이 되는 문제점이 있다.&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;아래의 이미지의 관계를 보면 외래키를 Locker가 관리하고 있기에 Member를 조회할 경우 Locker의 존재 유무를 알기 위해 Locker 테이블을 조회하며 Locker가 있는지 찾아야 한다. 그리고 그 결과에 따라 Locker 필드에 Proxy객체를 넣을지 Null값을 넣을지 정하게 되는데 해당 과정에서 이미 Member와 Locker에 대한 쿼리를 날리게 되어서 프록시의 의미가 없어지게 된다. 그래서 지연로딩을 설정해도 즉시 로딩이 된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 665px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlklEQVQoz3WSR4pDQQxE//2P4o2XxuC0sHGOOOeMc86phifzh9mMQHRAXSpVtfN6vXS/3/V+v/X5fMSZPB6PqlararVaqtVqyufz2mw2Iqinlnw8Hno+n3bP2VksFloul0qlUopGo6rX61qtVppMJvbwcrlou92q2+2q2WxqNBppvV4rm81a/Ww203Q6tTrCoajf7xsATGhwvV5t/RtMcLvdjDFMd7udNYIV6/l8/gIyVigUUjqdVjwe/wXsdDr2iD3FMDidTkomkwqHwwY8Ho+NBHtAGd2Zz+d20W63bRzOjDEcDtXr9eweILSCIY1KpZJpWigUTCpIIRtSOPonYEQjpIAJiVZu0GAwGFgiWaVSMVCHsdjQLZFIWLfD4WBMSQxiHBjDDvcxCInK5bLpCTNw9vv915RcLie/369AIGDO8dBl434h12WYxGIxq0dLGkKIegPEfq/Xa2DBYNAewBKdYEh3TGE0n88nj8ejSCSiYrGoTCZjRvLVGo3GFxDBoU3SjUuSP/g3YIkBJOaR6IsUpPvpfwAef+BgMcDx9wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/3802716aa568b39803aa3a2c711ccd8a/5f4af/img_8.png&quot;
+        srcset=&quot;/static/3802716aa568b39803aa3a2c711ccd8a/5a46d/img_8.png 300w,
+/static/3802716aa568b39803aa3a2c711ccd8a/0a47e/img_8.png 600w,
+/static/3802716aa568b39803aa3a2c711ccd8a/5f4af/img_8.png 665w&quot;
+        sizes=&quot;(max-width: 665px) 100vw, 665px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;54-다대다-nm&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#54-%EB%8B%A4%EB%8C%80%EB%8B%A4-nm&quot; aria-label=&quot;54 다대다 nm permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5.4. 다대다 (N:M)&lt;/h2&gt;
+&lt;p&gt;다대다 방법을 위한 &lt;code&gt;@ManyToMany&lt;/code&gt;는 사용을 지양해야하는 매핑 어노테이션이다. 이유는 관계형 데이터베이스와 객체의 컬렉션간의 불일치로부터 발생하게 된다. 데이터베이스의 경우 2개의 테이블로 다대다 관계를 표현할 수 없기에 다대다 관계는 연결 테이블을 통해 일대다와 다대일 관계로 풀어가야 한다. 하지만 객체의 경우 2개의 컬렉션으로 다대다 관계의 표현이 가능하다.&lt;/p&gt;
+&lt;p&gt;JPA에서는 이러한 불일치를 자동으로 연결 테이블을 만들어주며 해결하였으나 실제 실무에서 사용하는 중간 테이블은 단순 연결로 끝나는 것이 아닌 추가적인 데이터를 넣게 되는 경우가 많아 &lt;code&gt;@ManyToMany&lt;/code&gt;의 사용은 지양하고 중간 연결 테이블용 엔티티를 추가하여 &lt;code&gt;@OneToMany&lt;/code&gt;, &lt;code&gt;@ManyToOne&lt;/code&gt;으로 풀어서 표현하는 것이 좋다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;@ManyToMany&lt;/code&gt;를 사용한다면 중간 연결 테이블에 대한 설정을 &lt;code&gt;@JoinTable&lt;/code&gt; 어노테이션을 통해 할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;12&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ManyToMany&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;JoinTable&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;member_team&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; teams &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Team&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ManyToMany&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;mappedBy&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;teams&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; members &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;6-구현-팁-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#6-%EA%B5%AC%ED%98%84-%ED%8C%81-&quot; aria-label=&quot;6 구현 팁  permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;6. 구현 팁 📌&lt;/h1&gt;
+&lt;p&gt;객체지향적으로 구현을 생각하였을 때 양방향 연관관계는 신경써야할 것이 많다. 그래서 가능하면 객체간의 관계는 단방향으로 만드는 것이 좋다. 처음에 DB 설계를 할 때는 일단 단방향 매핑으로 설계를 완료하는 것이 좋다. 그 후에 개발을 진행하며 조회 기능들을 추가할 때 반대 방향을 추가하며 필요한 경우에만 양방향을 만드는 것이 좋다.&lt;/p&gt;
+&lt;h1 id=&quot;7-reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#7-reference&quot; aria-label=&quot;7 reference permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;7. Reference&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;자바 ORM 표준 JPA 프로그래밍 - 기본편 - 인프런 | 강의&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://yearnlune.github.io/java/jpa-relationship/#&quot;&gt;JPA Relationship&lt;/a&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk6 { color: #98C379; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring JPA] Entity Mapping]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. JPA의 Entity란? Entity란 DB…]]></description><link>https://seongwon97.github.io/Spring/2022-08-23-JPA-엔티티매핑/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-08-23-JPA-엔티티매핑/</guid><pubDate>Tue, 23 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;해당 포스트는 인프런 김영한님의 &lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;자바 ORM 표준 JPA 프로그래밍 - 기본편&lt;/a&gt; 강의를 기반으로 작성하였습니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;1-jpa의-entity란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-jpa%EC%9D%98-entity%EB%9E%80&quot; aria-label=&quot;1 jpa의 entity란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. JPA의 Entity란?&lt;/h1&gt;
@@ -9025,73 +9602,32 @@ IOC를 적용한다면 우리가 라이브러리를 호출하여 사용하는 �
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring 에러처리] Illegal reflective access by org.springframework.cglib.core.ReflectUtils]]></title><description><![CDATA[초보 웹 개발자를 위한 스프링 5 책의 내용을 학습하던 중, 아래와 같은 warning메시지가 뜨는 것을 확인했습니다.  위의 warning 메시지는 스프링 구버전에 있는 에러 중의 하니이다. 해당 경고문의 해결은 간단하게도 Spring…]]></description><link>https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;초보 웹 개발자를 위한 스프링 5 책의 내용을 학습하던 중, 아래와 같은 warning메시지가 뜨는 것을 확인했습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring 에러처리] Could not autowired. No bean of~]]></title><description><![CDATA[스프링에 해당 Bean들을 주입하였는데, Bean이 없어 Autowired를 할 수 없는 메시지가 나올 때가 있다. 이럴 경우 실제로 Bean 주입이 없을 수도 있으나, IntelliJ의 오류로 프로그램 실행 전에 Bean…]]></description><link>https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1092px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 764px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 13.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmUlEQVQI102OSwvCMBCEg4+KVi1eVfCgBzU+Dlrapk0aFfT//6JxNqngYfhmJ2R21X1sUaUWQlExsSg5m9QxdzglNfSwDjyQ+0Gk5nxOYi48Mtv1DZSft3hmLVpSfDN1wb+ymPvOfxYeD/JNynzj8suoCct0V7hRFVTOh5olhrIzF64TSZb/rqW/yufuGina9gxWqsTyT2vqC7gQV9jcufy+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;1&quot;
-        title=&quot;1&quot;
-        src=&quot;/static/03b3256916f81df6acc499f78e7c5f7b/2cffa/1.png&quot;
-        srcset=&quot;/static/03b3256916f81df6acc499f78e7c5f7b/5a46d/1.png 300w,
-/static/03b3256916f81df6acc499f78e7c5f7b/0a47e/1.png 600w,
-/static/03b3256916f81df6acc499f78e7c5f7b/2cffa/1.png 1092w&quot;
-        sizes=&quot;(max-width: 1092px) 100vw, 1092px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;위의 warning 메시지는 &lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues/20414&quot;&gt;스프링 구버전에 있는 에러&lt;/a&gt; 중의 하니이다.&lt;/p&gt;
-&lt;p&gt;해당 경고문의 해결은 간단하게도 Spring Framework 5.1이상, Spring Boot 2.1이상의 버전으로 업그레이드 하면 사라진다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 577px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 10.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAX0lEQVQI11WMUQqAIBQEPU+Spj4tTSut+19pUxKhj4GBZYeRdQjxQDoLfExQmuCDQrkNrmKQG90H+e/5ofrX4JyDCSExCwFNFtpQDRqQXWp0wdbxuxr+w3+03a2yBie82i9BumFjTq4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 23.333333333333332%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQY032Q7W6CQBBFeZuCHyy7GJGyIEgsLrCA1TSp1fd/jNMN9k/TpD9O7mQyuTNzvXq/RGuFVBtUpIhDSbhasVgEjsW/rNzcer3+hWdrn+NbRpoVpEnK2E4Mw5lT29F2jr7HOO2sdfQ/vY7GGPKi+GPqbUSAUhIhIsIooulqpmuLPVtO/Yixo9OBk33WZphoHcZO5GWF778QBL4jmPGyxCeS7t14g4gk42R43Cwf9y/ePx+cLzculzv9dKVxCw5NR9W01Maiq5rIxaREjBQuqjDEU+ESGcezoZSKpDigyyO6qOYL9P6peXkgK0p2WU6SaVJdsN29zoZSqNlQiJBvDcupNRhxYTUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;img&quot;
         title=&quot;img&quot;
-        src=&quot;/static/a8234b89fd5783312e22fc559482c6ef/065e2/img.png&quot;
-        srcset=&quot;/static/a8234b89fd5783312e22fc559482c6ef/5a46d/img.png 300w,
-/static/a8234b89fd5783312e22fc559482c6ef/065e2/img.png 577w&quot;
-        sizes=&quot;(max-width: 577px) 100vw, 577px&quot;
+        src=&quot;/static/97d6963d0a344a50fe670a23e4c0fd77/f3c12/img.png&quot;
+        srcset=&quot;/static/97d6963d0a344a50fe670a23e4c0fd77/5a46d/img.png 300w,
+/static/97d6963d0a344a50fe670a23e4c0fd77/0a47e/img.png 600w,
+/static/97d6963d0a344a50fe670a23e4c0fd77/f3c12/img.png 764w&quot;
+        sizes=&quot;(max-width: 764px) 100vw, 764px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;5.0.2버전이었던 Spring Framework를 아래와 같이 최신버전인 5.3.19버전으로 업그레이드하니 문제가 해결되었다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 534px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 12.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfElEQVQI122P4QqDMAyE+zw2YYJNa20nUqVs7/9At1gVHNuPj+QuCUfMcymIKSPEhEffw9pOsd+Q/fX+oXtmrW+s9YWyVSxlQ5wyZBzgo4OfHEIW+CQYZ9+07L5quebauzDojWsYIgYzg4hAZ92Tmm71SCa+/BO+zW9ffADKKl5BrP8mGgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;img 1&quot;
-        title=&quot;img 1&quot;
-        src=&quot;/static/81265bde050b29338d7471c97db0a835/a07a7/img_1.png&quot;
-        srcset=&quot;/static/81265bde050b29338d7471c97db0a835/5a46d/img_1.png 300w,
-/static/81265bde050b29338d7471c97db0a835/a07a7/img_1.png 534w&quot;
-        sizes=&quot;(max-width: 534px) 100vw, 534px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;스프링에 해당 Bean들을 주입하였는데, Bean이 없어 Autowired를 할 수 없는 메시지가 나올 때가 있다.&lt;/p&gt;
+&lt;p&gt;이럴 경우 실제로 Bean 주입이 없을 수도 있으나, IntelliJ의 오류로 프로그램 실행 전에 Bean이 없다고 판단할 수도 있다.&lt;/p&gt;
+&lt;p&gt;그래서 이러한 에러가 발견될 경우, 먼저 프로그램 실행을 해보고, 그 후에 Bean이 실제로 생성되지 않았는지 확인을 해야한다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/46671472/illegal-reflective-access-by-org-springframework-cglib-core-reflectutils1&quot;&gt;참고자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.inflearn.com/questions/170577&quot;&gt;참고링크&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
@@ -9182,32 +9718,73 @@ IOC를 적용한다면 우리가 라이브러리를 호출하여 사용하는 �
     opacity: 0.7;
   }
   
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring 에러처리] Could not autowired. No bean of~]]></title><description><![CDATA[스프링에 해당 Bean들을 주입하였는데, Bean이 없어 Autowired를 할 수 없는 메시지가 나올 때가 있다. 이럴 경우 실제로 Bean 주입이 없을 수도 있으나, IntelliJ의 오류로 프로그램 실행 전에 Bean…]]></description><link>https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Spring 에러처리] Illegal reflective access by org.springframework.cglib.core.ReflectUtils]]></title><description><![CDATA[초보 웹 개발자를 위한 스프링 5 책의 내용을 학습하던 중, 아래와 같은 warning메시지가 뜨는 것을 확인했습니다.  위의 warning 메시지는 스프링 구버전에 있는 에러 중의 하니이다. 해당 경고문의 해결은 간단하게도 Spring…]]></description><link>https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</guid><pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;초보 웹 개발자를 위한 스프링 5 책의 내용을 학습하던 중, 아래와 같은 warning메시지가 뜨는 것을 확인했습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 764px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1092px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 23.333333333333332%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQY032Q7W6CQBBFeZuCHyy7GJGyIEgsLrCA1TSp1fd/jNMN9k/TpD9O7mQyuTNzvXq/RGuFVBtUpIhDSbhasVgEjsW/rNzcer3+hWdrn+NbRpoVpEnK2E4Mw5lT29F2jr7HOO2sdfQ/vY7GGPKi+GPqbUSAUhIhIsIooulqpmuLPVtO/Yixo9OBk33WZphoHcZO5GWF778QBL4jmPGyxCeS7t14g4gk42R43Cwf9y/ePx+cLzculzv9dKVxCw5NR9W01Maiq5rIxaREjBQuqjDEU+ESGcezoZSKpDigyyO6qOYL9P6peXkgK0p2WU6SaVJdsN29zoZSqNlQiJBvDcupNRhxYTUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 13.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmUlEQVQI102OSwvCMBCEg4+KVi1eVfCgBzU+Dlrapk0aFfT//6JxNqngYfhmJ2R21X1sUaUWQlExsSg5m9QxdzglNfSwDjyQ+0Gk5nxOYi48Mtv1DZSft3hmLVpSfDN1wb+ymPvOfxYeD/JNynzj8suoCct0V7hRFVTOh5olhrIzF64TSZb/rqW/yufuGina9gxWqsTyT2vqC7gQV9jcufy+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;1&quot;
+        title=&quot;1&quot;
+        src=&quot;/static/03b3256916f81df6acc499f78e7c5f7b/2cffa/1.png&quot;
+        srcset=&quot;/static/03b3256916f81df6acc499f78e7c5f7b/5a46d/1.png 300w,
+/static/03b3256916f81df6acc499f78e7c5f7b/0a47e/1.png 600w,
+/static/03b3256916f81df6acc499f78e7c5f7b/2cffa/1.png 1092w&quot;
+        sizes=&quot;(max-width: 1092px) 100vw, 1092px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;위의 warning 메시지는 &lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues/20414&quot;&gt;스프링 구버전에 있는 에러&lt;/a&gt; 중의 하니이다.&lt;/p&gt;
+&lt;p&gt;해당 경고문의 해결은 간단하게도 Spring Framework 5.1이상, Spring Boot 2.1이상의 버전으로 업그레이드 하면 사라진다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 577px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 10.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAX0lEQVQI11WMUQqAIBQEPU+Spj4tTSut+19pUxKhj4GBZYeRdQjxQDoLfExQmuCDQrkNrmKQG90H+e/5ofrX4JyDCSExCwFNFtpQDRqQXWp0wdbxuxr+w3+03a2yBie82i9BumFjTq4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;img&quot;
         title=&quot;img&quot;
-        src=&quot;/static/97d6963d0a344a50fe670a23e4c0fd77/f3c12/img.png&quot;
-        srcset=&quot;/static/97d6963d0a344a50fe670a23e4c0fd77/5a46d/img.png 300w,
-/static/97d6963d0a344a50fe670a23e4c0fd77/0a47e/img.png 600w,
-/static/97d6963d0a344a50fe670a23e4c0fd77/f3c12/img.png 764w&quot;
-        sizes=&quot;(max-width: 764px) 100vw, 764px&quot;
+        src=&quot;/static/a8234b89fd5783312e22fc559482c6ef/065e2/img.png&quot;
+        srcset=&quot;/static/a8234b89fd5783312e22fc559482c6ef/5a46d/img.png 300w,
+/static/a8234b89fd5783312e22fc559482c6ef/065e2/img.png 577w&quot;
+        sizes=&quot;(max-width: 577px) 100vw, 577px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;스프링에 해당 Bean들을 주입하였는데, Bean이 없어 Autowired를 할 수 없는 메시지가 나올 때가 있다.&lt;/p&gt;
-&lt;p&gt;이럴 경우 실제로 Bean 주입이 없을 수도 있으나, IntelliJ의 오류로 프로그램 실행 전에 Bean이 없다고 판단할 수도 있다.&lt;/p&gt;
-&lt;p&gt;그래서 이러한 에러가 발견될 경우, 먼저 프로그램 실행을 해보고, 그 후에 Bean이 실제로 생성되지 않았는지 확인을 해야한다.&lt;/p&gt;
+&lt;p&gt;5.0.2버전이었던 Spring Framework를 아래와 같이 최신버전인 5.3.19버전으로 업그레이드하니 문제가 해결되었다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 534px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 12.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfElEQVQI122P4QqDMAyE+zw2YYJNa20nUqVs7/9At1gVHNuPj+QuCUfMcymIKSPEhEffw9pOsd+Q/fX+oXtmrW+s9YWyVSxlQ5wyZBzgo4OfHEIW+CQYZ9+07L5quebauzDojWsYIgYzg4hAZ92Tmm71SCa+/BO+zW9ffADKKl5BrP8mGgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img 1&quot;
+        title=&quot;img 1&quot;
+        src=&quot;/static/81265bde050b29338d7471c97db0a835/a07a7/img_1.png&quot;
+        srcset=&quot;/static/81265bde050b29338d7471c97db0a835/5a46d/img_1.png 300w,
+/static/81265bde050b29338d7471c97db0a835/a07a7/img_1.png 534w&quot;
+        sizes=&quot;(max-width: 534px) 100vw, 534px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.inflearn.com/questions/170577&quot;&gt;참고링크&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/46671472/illegal-reflective-access-by-org-springframework-cglib-core-reflectutils1&quot;&gt;참고자료&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;style class=&quot;grvsc-styles&quot;&gt;
   .grvsc-container {
@@ -10136,6 +10713,201 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk&quot;
+        title=&quot;tecotalk&quot;
+        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
+        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
+/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
+/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
+        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
+&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
+&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk2&quot;
+        title=&quot;tecotalk2&quot;
+        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
+        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
+/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
+/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
+        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
+&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
+&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
+&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
+&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
+&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
+난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
+&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
+그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
+네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
+&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
+올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;state pattern&quot;
+        title=&quot;state pattern&quot;
+        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
+        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
+/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
+/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
+        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
+그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
+&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
+두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
+저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
+코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
+&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 피드백 정리]]></title><description><![CDATA[피드백을 주고받은 PR & 작성 코드 [1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257 작성한 1단계 미션 코드 [2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311 작성한 2단계 미션 코드 피드백 정리…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-피드백정리/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-피드백정리/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;h1 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h1&gt;
 &lt;ul&gt;
@@ -10411,201 +11183,6 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/2022-03-21-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk&quot;
-        title=&quot;tecotalk&quot;
-        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
-        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
-/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
-/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
-        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
-&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
-&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk2&quot;
-        title=&quot;tecotalk2&quot;
-        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
-        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
-/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
-/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
-        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
-&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
-&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
-&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
-&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
-&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
-난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
-&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
-그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
-네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
-&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
-올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;state pattern&quot;
-        title=&quot;state pattern&quot;
-        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
-        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
-/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
-/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
-        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
-그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
-&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
-두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
-저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
-코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
-&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item16. public 클래스에서는 public 필드가 아닌 접근자 메서드를 사용하라]]></title><description><![CDATA[이 글은 Effective Java 3/E…]]></description><link>https://seongwon97.github.io/Java/2022-03-17-이펙티브자바-16/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/2022-03-17-이펙티브자바-16/</guid><pubDate>Thu, 17 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -11782,6 +12359,200 @@ Cloneable…]]></description><link>https://seongwon97.github.io/Java/2022-03-15-
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item12. toString을 항상 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. toString 메서드 Object의 기본 toString메서드는 기본적으로 클래스 이름@1…]]></description><link>https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-12-toString재정의/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-12-toString재정의/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;tostring-메서드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tostring-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;tostring 메서드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toString 메서드&lt;/h1&gt;
+&lt;p&gt;Object의 기본 toString메서드는 기본적으로 &lt;code&gt;클래스 이름@16진수로 표현한 해시코드&lt;/code&gt;를 반환합니다.&lt;/p&gt;
+&lt;p&gt;실제로 Object.java파일의 toString메서드를 보면 다음과 같습니다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getClass&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toHexString&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;hashCode&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위의 메서드를 보면 처음 말한바와 같이 &lt;code&gt;클래스 이름@16진수로 표현한 해시코드&lt;/code&gt;을 return 하는 것을 확인할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;테스트를 해보면 다음과 같습니다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; position&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; main&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;[] &lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(car);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 출력 결과 : Car@6b71769e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;테스트 결과를 보면 Car를 출력하였을 때 &lt;code&gt;Car@6b71769e&lt;/code&gt;라는 결과가 나온 것을 확인할 수 있습니다. 하지만 이러한 형태의 문자열은 일반적으로 우리가 원하는 결과가 아니고 정보를 얻을 수 있는 좋은 정보도 아닙니다.&lt;/p&gt;
+&lt;p&gt;toString의 일반 규약을 보면 &quot;간결하면서 사람이 읽기 쉬운 형태의 유익한 정보를 반환해야한다.&quot;와 &quot;모든 하위 클래스에서 이 메서드를 재정의하라&quot;라고 합니다.
+따라서 우리는 toString이 유익한 정보를 반환하도록 재정의해줘야 합니다.&lt;/p&gt;
+&lt;p&gt;여기서 모든 클래스에서 toString을 재정의하라는 것은 도대체 왜 그런 걸까요?
+그것은 바로 디버깅을 위해서 입니다. toString메서드는 우리가 따로 호출하지 않더라도 오류가 발생하여 로깅할 때와 같이 자동으로 호출되기도 합니다.
+만약 toString을 재정의 하지 않고 &lt;code&gt;Car@6b71769e&lt;/code&gt;와 같은 결과만을 본다면 해당 메시지는 쓸모 없는 메시지가 될 것이라 꼭 toString을 재정의하여야 한다는 것입니다.&lt;/p&gt;
+&lt;h1 id=&quot;tostring-재정의하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tostring-%EC%9E%AC%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;tostring 재정의하기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toString 재정의하기&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;좋은 toString 재정의를 하려면 객체가 가진 모든 정보를 반환하는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;만약 객체가 가진 정보(필드)가 너무 거대하거나 객체의 상태가 문자열로 표현하기에 적합하지 않다면 요약 정보를 담아 출력을 하도록 한다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;구현을 할 때는 &lt;strong&gt;포맷을 문서화할지 정해야한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;포맷을 문서화하면 해당 객체는 표준적이고, 명확하고, 사람이 읽기 쉽게 된다.&lt;/li&gt;
+&lt;li&gt;전화번호 같이 &lt;code&gt;000-0000-0000&lt;/code&gt;와 같은 것은 포맷을 문서화하는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;&lt;font color =&quot;red&quot;&gt;하지만 포맷을 명시하면 해당 클래스는 앞서 정의한 포맷에 얽매이게 된다.&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;프로그래머들이 해당 문자열을 파싱해서 데이터를 사용한다면, 포맷 값이 변화하면 관련 내용들이 모두 변경되게 된다.&lt;/li&gt;
+&lt;li&gt;포맷을 명시하지 않는다면 향후 정보를 더 넣거나 포맷을 개선할 수 있는 유연성을 얻게 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;포맷을 명시하든 아니든 의도는 명확히 밝혀야한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;포맷을 명시한다면 포맷에 대한 정보까지 주석으로 남겨두는 것이 좋고, 포맷을 명시하지 않는다면 형식이 변경될 수 있다고 명시해야한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;하지만 toString으로 반환되는 값을 통해 로직을 작성하는 것은 좋지 않아 사용하지 않는 것이 좋다!!
+그 대신 해당 정보를 얻어올 수 있는 API를 제공해야한다. 즉, getter를 통해 개발자들이 필요한 정보를 얻어 올 수 있도록 하는 것이 좋다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;핵심-정리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B5%EC%8B%AC-%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;핵심 정리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;핵심 정리&lt;/h1&gt;
+&lt;p&gt;모든 구체 클래스에서 Object의 toString을 재정의하자. 상위 클래스에서 이미 알맞게 재정의한 경우는 예외다.
+toString을 재정의한 클래스는 사용하기에도 즐겁고 그 클래스를 사용한 시스템을 디버깅하기 쉽게 해준다.
+toString은 해당 객체에 관한 명확하고 유용한 정보를 읽기 좋은 형태로 반환해야 한다.&lt;/p&gt;
+&lt;h1 id=&quot;add&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#add&quot; aria-label=&quot;add permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Add&lt;/h1&gt;
+&lt;p&gt;우아한 테크코스 Level1의 1단계 미션을 진행하며 다음과 같은 피드백을 받았습니다.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 781px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB0UlEQVQoz6VT25KiUAzk/z9uH2ZqdRwFBLnfDxdFQHvSEWZrt2qelqpUwuHY6e5EK89SRHGCIAyR5QXqukHdNDCmxbIsmOcZs+Tn84mfnqYx6Poek9y1pmlCnCQaaZohy3Ikaap1UZTajPX9fsfyeOCxBn88TbM2HMcRo3wnlkUWYRQhimJcLgEuQYiz58NxXHj+Bb6c8f37TDLvV1WNxhhVYtpW67btYLFDFMcKRNnMBGcErIVhGEbwBTyQzLv8VpTlCtKqRax7kW3RGWXneSI7VclxnGi9WcEmBN0sYWaj6/WqVvwlue9adEJ/aQ3+5+HMODjr4+3Xy6tVXlFWGIZB6A9ou06mXoskg0FkLRJU9BrMUwG26ZMpw5JzNdx2HBxPNk62g8PhqJnvHAIb9QImnX5g92eldMr0JBHPUvEnl10sxfBSmPKMRt9uI27i0231i95RQS8NuKMbqEomoOuecSI7ic/jSZkxOzwXplwd9+zJQDKdqIJJI1qy/AtIP8iKbLI810hlsZNYViQM0NQVJvVn0iXmfZ3sOlWdsMQmW/ZwURa/dx84fB6FrYuDG2HnG7zZGd6dHDs7xH6/x27/ukP2ZVXJX67RoRnZwQ3wCx34kZ0BV9uuAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;toString 피드백&quot;
+        title=&quot;toString 피드백&quot;
+        src=&quot;/static/bdbc6517ea04d106a727ec5e2aa3690a/7fee5/toString_Override.png&quot;
+        srcset=&quot;/static/bdbc6517ea04d106a727ec5e2aa3690a/5a46d/toString_Override.png 300w,
+/static/bdbc6517ea04d106a727ec5e2aa3690a/0a47e/toString_Override.png 600w,
+/static/bdbc6517ea04d106a727ec5e2aa3690a/7fee5/toString_Override.png 781w&quot;
+        sizes=&quot;(max-width: 781px) 100vw, 781px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Domain에 toString을 재정의하여 OutputView에서 &lt;code&gt;System.out.println(car)&lt;/code&gt;와 같이 사용을 하다보니 domain과 view의 관계가 엮이게 되었습니다.
+즉, view의 출력 결과를 변경하려면 domain을 변경해야하는 문제점이 생긴 것입니다.&lt;/p&gt;
+&lt;p&gt;여기서 다시 알 수 있는 것은 MVC패턴에서 toString재정의한 내용을 view에서 사용하면 model과 view의 관계가 엮이게 된다는 문제가 생긴다는 것을 알 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;toString으로 반환되는 값을 통해 로직을 작성하는 것은 좋지 않아 사용하지 않는 것이 좋다(remind)❗️❗️
+하지만 디버깅을 위해 toString의 재정의는 꼭 하자❗️❗️&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk6 { color: #98C379; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item11. equals를 재정의하려거든 hashCode도 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. 서론 Ojbect 명세서에는 다음과 같은 규약이 있다. eauals…]]></description><link>https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-11/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-11/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -11978,200 +12749,6 @@ Cloneable…]]></description><link>https://seongwon97.github.io/Java/2022-03-15-
   .one-dark-pro .mtk7 { color: #D19A66; }
   .one-dark-pro .mtk5 { color: #7F848E; }
   .one-dark-pro .mtk8 { color: #56B6C2; }
-  .one-dark-pro .grvsc-line-highlighted::before {
-    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
-    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
-  }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item12. toString을 항상 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. toString 메서드 Object의 기본 toString메서드는 기본적으로 클래스 이름@1…]]></description><link>https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-12-toString재정의/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/2022-03-14-이펙티브자바-12-toString재정의/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
-&lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;tostring-메서드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tostring-%EB%A9%94%EC%84%9C%EB%93%9C&quot; aria-label=&quot;tostring 메서드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toString 메서드&lt;/h1&gt;
-&lt;p&gt;Object의 기본 toString메서드는 기본적으로 &lt;code&gt;클래스 이름@16진수로 표현한 해시코드&lt;/code&gt;를 반환합니다.&lt;/p&gt;
-&lt;p&gt;실제로 Object.java파일의 toString메서드를 보면 다음과 같습니다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getClass&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toHexString&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;hashCode&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;위의 메서드를 보면 처음 말한바와 같이 &lt;code&gt;클래스 이름@16진수로 표현한 해시코드&lt;/code&gt;을 return 하는 것을 확인할 수 있습니다.&lt;/p&gt;
-&lt;p&gt;테스트를 해보면 다음과 같습니다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; position&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; main&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;[] &lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(car);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 출력 결과 : Car@6b71769e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;테스트 결과를 보면 Car를 출력하였을 때 &lt;code&gt;Car@6b71769e&lt;/code&gt;라는 결과가 나온 것을 확인할 수 있습니다. 하지만 이러한 형태의 문자열은 일반적으로 우리가 원하는 결과가 아니고 정보를 얻을 수 있는 좋은 정보도 아닙니다.&lt;/p&gt;
-&lt;p&gt;toString의 일반 규약을 보면 &quot;간결하면서 사람이 읽기 쉬운 형태의 유익한 정보를 반환해야한다.&quot;와 &quot;모든 하위 클래스에서 이 메서드를 재정의하라&quot;라고 합니다.
-따라서 우리는 toString이 유익한 정보를 반환하도록 재정의해줘야 합니다.&lt;/p&gt;
-&lt;p&gt;여기서 모든 클래스에서 toString을 재정의하라는 것은 도대체 왜 그런 걸까요?
-그것은 바로 디버깅을 위해서 입니다. toString메서드는 우리가 따로 호출하지 않더라도 오류가 발생하여 로깅할 때와 같이 자동으로 호출되기도 합니다.
-만약 toString을 재정의 하지 않고 &lt;code&gt;Car@6b71769e&lt;/code&gt;와 같은 결과만을 본다면 해당 메시지는 쓸모 없는 메시지가 될 것이라 꼭 toString을 재정의하여야 한다는 것입니다.&lt;/p&gt;
-&lt;h1 id=&quot;tostring-재정의하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tostring-%EC%9E%AC%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0&quot; aria-label=&quot;tostring 재정의하기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;toString 재정의하기&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;좋은 toString 재정의를 하려면 객체가 가진 모든 정보를 반환하는 것이 좋다.&lt;/li&gt;
-&lt;li&gt;만약 객체가 가진 정보(필드)가 너무 거대하거나 객체의 상태가 문자열로 표현하기에 적합하지 않다면 요약 정보를 담아 출력을 하도록 한다.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;구현을 할 때는 &lt;strong&gt;포맷을 문서화할지 정해야한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;포맷을 문서화하면 해당 객체는 표준적이고, 명확하고, 사람이 읽기 쉽게 된다.&lt;/li&gt;
-&lt;li&gt;전화번호 같이 &lt;code&gt;000-0000-0000&lt;/code&gt;와 같은 것은 포맷을 문서화하는 것이 좋다.&lt;/li&gt;
-&lt;li&gt;&lt;font color =&quot;red&quot;&gt;하지만 포맷을 명시하면 해당 클래스는 앞서 정의한 포맷에 얽매이게 된다.&lt;/font&gt;&lt;/li&gt;
-&lt;li&gt;프로그래머들이 해당 문자열을 파싱해서 데이터를 사용한다면, 포맷 값이 변화하면 관련 내용들이 모두 변경되게 된다.&lt;/li&gt;
-&lt;li&gt;포맷을 명시하지 않는다면 향후 정보를 더 넣거나 포맷을 개선할 수 있는 유연성을 얻게 된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;포맷을 명시하든 아니든 의도는 명확히 밝혀야한다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;포맷을 명시한다면 포맷에 대한 정보까지 주석으로 남겨두는 것이 좋고, 포맷을 명시하지 않는다면 형식이 변경될 수 있다고 명시해야한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;하지만 toString으로 반환되는 값을 통해 로직을 작성하는 것은 좋지 않아 사용하지 않는 것이 좋다!!
-그 대신 해당 정보를 얻어올 수 있는 API를 제공해야한다. 즉, getter를 통해 개발자들이 필요한 정보를 얻어 올 수 있도록 하는 것이 좋다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;핵심-정리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B5%EC%8B%AC-%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;핵심 정리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;핵심 정리&lt;/h1&gt;
-&lt;p&gt;모든 구체 클래스에서 Object의 toString을 재정의하자. 상위 클래스에서 이미 알맞게 재정의한 경우는 예외다.
-toString을 재정의한 클래스는 사용하기에도 즐겁고 그 클래스를 사용한 시스템을 디버깅하기 쉽게 해준다.
-toString은 해당 객체에 관한 명확하고 유용한 정보를 읽기 좋은 형태로 반환해야 한다.&lt;/p&gt;
-&lt;h1 id=&quot;add&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#add&quot; aria-label=&quot;add permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Add&lt;/h1&gt;
-&lt;p&gt;우아한 테크코스 Level1의 1단계 미션을 진행하며 다음과 같은 피드백을 받았습니다.
-&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 781px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 59.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB0UlEQVQoz6VT25KiUAzk/z9uH2ZqdRwFBLnfDxdFQHvSEWZrt2qelqpUwuHY6e5EK89SRHGCIAyR5QXqukHdNDCmxbIsmOcZs+Tn84mfnqYx6Poek9y1pmlCnCQaaZohy3Ikaap1UZTajPX9fsfyeOCxBn88TbM2HMcRo3wnlkUWYRQhimJcLgEuQYiz58NxXHj+Bb6c8f37TDLvV1WNxhhVYtpW67btYLFDFMcKRNnMBGcErIVhGEbwBTyQzLv8VpTlCtKqRax7kW3RGWXneSI7VclxnGi9WcEmBN0sYWaj6/WqVvwlue9adEJ/aQ3+5+HMODjr4+3Xy6tVXlFWGIZB6A9ou06mXoskg0FkLRJU9BrMUwG26ZMpw5JzNdx2HBxPNk62g8PhqJnvHAIb9QImnX5g92eldMr0JBHPUvEnl10sxfBSmPKMRt9uI27i0231i95RQS8NuKMbqEomoOuecSI7ic/jSZkxOzwXplwd9+zJQDKdqIJJI1qy/AtIP8iKbLI810hlsZNYViQM0NQVJvVn0iXmfZ3sOlWdsMQmW/ZwURa/dx84fB6FrYuDG2HnG7zZGd6dHDs7xH6/x27/ukP2ZVXJX67RoRnZwQ3wCx34kZ0BV9uuAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;toString 피드백&quot;
-        title=&quot;toString 피드백&quot;
-        src=&quot;/static/bdbc6517ea04d106a727ec5e2aa3690a/7fee5/toString_Override.png&quot;
-        srcset=&quot;/static/bdbc6517ea04d106a727ec5e2aa3690a/5a46d/toString_Override.png 300w,
-/static/bdbc6517ea04d106a727ec5e2aa3690a/0a47e/toString_Override.png 600w,
-/static/bdbc6517ea04d106a727ec5e2aa3690a/7fee5/toString_Override.png 781w&quot;
-        sizes=&quot;(max-width: 781px) 100vw, 781px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Domain에 toString을 재정의하여 OutputView에서 &lt;code&gt;System.out.println(car)&lt;/code&gt;와 같이 사용을 하다보니 domain과 view의 관계가 엮이게 되었습니다.
-즉, view의 출력 결과를 변경하려면 domain을 변경해야하는 문제점이 생긴 것입니다.&lt;/p&gt;
-&lt;p&gt;여기서 다시 알 수 있는 것은 MVC패턴에서 toString재정의한 내용을 view에서 사용하면 model과 view의 관계가 엮이게 된다는 문제가 생긴다는 것을 알 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;toString으로 반환되는 값을 통해 로직을 작성하는 것은 좋지 않아 사용하지 않는 것이 좋다(remind)❗️❗️
-하지만 디버깅을 위해 toString의 재정의는 꼭 하자❗️❗️&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
-  .one-dark-pro {
-    background-color: #282c34;
-    color: #abb2bf;
-  }
-  .one-dark-pro .mtki { font-style: italic; }
-  .one-dark-pro .mtk9 { color: #C678DD; }
-  .one-dark-pro .mtk4 { color: #E06C75; }
-  .one-dark-pro .mtk11 { color: #E5C07B; }
-  .one-dark-pro .mtk3 { color: #61AFEF; }
-  .one-dark-pro .mtk1 { color: #ABB2BF; }
-  .one-dark-pro .mtk8 { color: #56B6C2; }
-  .one-dark-pro .mtk6 { color: #98C379; }
-  .one-dark-pro .mtk5 { color: #7F848E; }
   .one-dark-pro .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
