@@ -1,5 +1,5 @@
 ---
-title: "[Spring JPA] JPA Specification을 통한 조회 필터링 기능 구현"
+title: "[JPA] JPA Specification을 통한 조회 필터링 기능 구현"
 date: 2022-08-17
 tags: ["SpringFramework", "JPA", "Specification", "동적 쿼리"]
 draft: false
