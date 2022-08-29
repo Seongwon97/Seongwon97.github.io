@@ -1,0 +1,903 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/><style data-href="/styles.d53766664f3eaba3db40.css" id="gatsby-global-css">/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}button{background-color:transparent;background-image:none}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}fieldset,ol,ul{margin:0;padding:0}ol,ul{list-style:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}hr{border-top-width:1px}img{border-style:solid}textarea{resize:vertical}input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#a0aec0}input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#a0aec0}input::placeholder,textarea::placeholder{color:#a0aec0}[role=button],button{cursor:pointer}table{border-collapse:collapse}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}button,input,optgroup,select,textarea{padding:0;line-height:inherit;color:inherit}code,kbd,pre,samp{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}</style><meta name="generator" content="Gatsby 2.32.13"/><style type="text/css">
+    .toc-header.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .toc-header.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .toc-header svg,
+    h2 .toc-header svg,
+    h3 .toc-header svg,
+    h4 .toc-header svg,
+    h5 .toc-header svg,
+    h6 .toc-header svg {
+      visibility: hidden;
+    }
+    h1:hover .toc-header svg,
+    h2:hover .toc-header svg,
+    h3:hover .toc-header svg,
+    h4:hover .toc-header svg,
+    h5:hover .toc-header svg,
+    h6:hover .toc-header svg,
+    h1 .toc-header:focus svg,
+    h2 .toc-header:focus svg,
+    h3 .toc-header:focus svg,
+    h4 .toc-header:focus svg,
+    h5 .toc-header:focus svg,
+    h6 .toc-header:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="icon" href="/favicon-32x32-219f5f1c2ff5084c4162c59e17deafcf.png" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#3F4145"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48-219f5f1c2ff5084c4162c59e17deafcf.png"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72-219f5f1c2ff5084c4162c59e17deafcf.png"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96-219f5f1c2ff5084c4162c59e17deafcf.png"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144-219f5f1c2ff5084c4162c59e17deafcf.png"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192-219f5f1c2ff5084c4162c59e17deafcf.png"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256-219f5f1c2ff5084c4162c59e17deafcf.png"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384-219f5f1c2ff5084c4162c59e17deafcf.png"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512-219f5f1c2ff5084c4162c59e17deafcf.png"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><title data-react-helmet="true">Google Java Style Guide | Seongwon.dev</title><meta data-react-helmet="true" name="description" content="들어가기 전 취업 준비를 하며 우아한형제들의 프로그래밍 교육 프로그램인 우테코에 대해 알게 되어 지원하게 되었습니다.
+서류와 1차 코딩테스트 결과 운이 좋게 우테코 프리코스를 수강할 기회가 생겨 오늘부터 미션을 수행하게 되었습니다. 프리코스는 매주 주어진 미션을 수행하며 주도적으로 프로그래밍 학습하며 성장을 하는 과정입니다. 프리코스를 참여하며 Googl…"/><meta data-react-helmet="true" property="og:title" content="Google Java Style Guide"/><meta data-react-helmet="true" property="og:image" content="/static/social-image-a9505eec87be8dc332d0538480aeaa09.png"/><meta data-react-helmet="true" property="og:description" content="들어가기 전 취업 준비를 하며 우아한형제들의 프로그래밍 교육 프로그램인 우테코에 대해 알게 되어 지원하게 되었습니다.
+서류와 1차 코딩테스트 결과 운이 좋게 우테코 프리코스를 수강할 기회가 생겨 오늘부터 미션을 수행하게 되었습니다. 프리코스는 매주 주어진 미션을 수행하며 주도적으로 프로그래밍 학습하며 성장을 하는 과정입니다. 프리코스를 참여하며 Googl…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:image" content="/static/social-image-a9505eec87be8dc332d0538480aeaa09.png"/><meta data-react-helmet="true" name="twitter:creator" content="Seongwon"/><meta data-react-helmet="true" name="twitter:title" content="Google Java Style Guide"/><meta data-react-helmet="true" name="twitter:description" content="들어가기 전 취업 준비를 하며 우아한형제들의 프로그래밍 교육 프로그램인 우테코에 대해 알게 되어 지원하게 되었습니다.
+서류와 1차 코딩테스트 결과 운이 좋게 우테코 프리코스를 수강할 기회가 생겨 오늘부터 미션을 수행하게 되었습니다. 프리코스는 매주 주어진 미션을 수행하며 주도적으로 프로그래밍 학습하며 성장을 하는 과정입니다. 프리코스를 참여하며 Googl…"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-2da3c169fb26441916c3.js"/><link as="script" rel="preload" href="/framework-eb684e3e828ad13b3940.js"/><link as="script" rel="preload" href="/styles-84a9bc99193fe5828ffe.js"/><link as="script" rel="preload" href="/dc6a8720040df98778fe970bf6c000a41750d3ae-17eb047fb821ccbad0b0.js"/><link as="script" rel="preload" href="/app-a7357771ecd5ee9dba56.js"/><link as="script" rel="preload" href="/d7eeaac4-dcbe97e7a5aa158c9d08.js"/><link as="script" rel="preload" href="/5e2a4920-da90abce4a08c86a094c.js"/><link as="script" rel="preload" href="/1bfc9850-409296e666dade882413.js"/><link as="script" rel="preload" href="/commons-d4794f4d9e0af84805d6.js"/><link as="script" rel="preload" href="/7a297f752dcfe258c0b0106d89edb3a916af916e-35686b2093ef54ff3248.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-c13fb2d53b7ec5e4b38f.js"/><link as="fetch" rel="preload" href="/page-data/Java/20211125-Google_Java_Style_Guide/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3911196313.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/4111100897.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><noscript><style data-emotion-css="18dual">.css-18dual{position:fixed;bottom:0;left:0;margin-left:0.5rem;margin-bottom:0.5rem;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;box-shadow:0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));font-size:0.875rem;font-weight:700;padding-left:1rem;padding-right:1rem;padding-top:0.75rem;padding-bottom:0.75rem;background-color:#c6cefc;z-index:9999;}</style><div class="css-18dual"><style data-emotion-css="5x4yj0">.css-5x4yj0{fill:currentColor;width:1.5rem;height:1.5rem;margin-right:0.5rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 192 512" class="css-5x4yj0" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg><style data-emotion-css="1f2k2gl">.css-1f2k2gl{margin-left:0.5rem;}</style><div class="css-1f2k2gl">Please enable JavaScript to use this site.<br/>JavaScript를 활성화 시켜주세요.</div></div></noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="f6s0ma">.css-f6s0ma{-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);background-color:#FFFFFF;color:#333333;}</style><style data-emotion-css="acifd">.css-acifd{min-height:100vh;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);background-color:#FFFFFF;color:#333333;}</style><div class="css-acifd e1r7j5660"><style data-emotion-css="8ezs2g">.css-8ezs2g{min-height:calc(100vh - 100px);}</style><div class="css-8ezs2g"><style data-emotion-css="evzedb">.css-evzedb{background:linear-gradient( 90deg,#434cf5,#c6cefc );}</style><div class="css-evzedb"><style data-emotion-css="1mqm4zt">.css-1mqm4zt{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:1280px;margin-left:auto;margin-right:auto;padding:1.25rem;}</style><nav class="css-1mqm4zt esdsp220"><style data-emotion-css="1usmgm5">.css-1usmgm5{font-size:1.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));font-weight:700;}</style><a class="css-1usmgm5" href="/">Seongwon.dev</a><a aria-label="search page" href="/search"><style data-emotion-css="47445j">.css-47445j{--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));margin-top:auto;margin-bottom:auto;width:2rem;height:2rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-47445j" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg></a></nav></div><style data-emotion-css="16kfbrf">.css-16kfbrf{background:linear-gradient( 90deg,#434cf5,#c6cefc );position:fixed;width:100%;box-shadow:0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);z-index:100;-webkit-transition:all 300ms cubic-bezier(0,0,0.2,1);transition:all 300ms cubic-bezier(0,0,0.2,1);top:-100px;}</style><div class="css-16kfbrf"><nav class="css-1mqm4zt esdsp220"><a class="css-1usmgm5" href="/">Seongwon.dev</a><a aria-label="search page" href="/search"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-47445j" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg></a></nav></div><style data-emotion-css="w27u98">.css-w27u98{margin-top:1rem;padding-left:1rem;padding-right:1rem;}</style><div class="blog-post-container css-w27u98"><div class="blog-post"><style data-emotion-css="1bdwg0l">.css-1bdwg0l{width:100%;max-width:768px;margin-left:auto;margin-right:auto;}</style><div class="css-1bdwg0l etadk2t0"><style data-emotion-css="1abxlfd">.css-1abxlfd{font-size:2.25rem;font-weight:700;margin-bottom:1rem;}@media (min-width:768px){.css-1abxlfd{font-size:3rem;}}</style><h1 class="blog-title css-1abxlfd">Google Java Style Guide</h1><style data-emotion-css="cpn9zx">.css-cpn9zx{font-size:1rem;margin-bottom:1rem;}</style><h2 class="blog-date css-cpn9zx">2021년 11월 25일</h2><style data-emotion-css="cet0rr">.css-cet0rr{margin-bottom:0.5rem;}</style><div class="blog-tags css-cet0rr"><style data-emotion-css="1ak4bcm">.css-1ak4bcm{white-space:nowrap;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);font-size:1rem;font-weight:700;border-radius:9999px;margin-right:0.5rem;margin-top:0.25rem;margin-bottom:0.25rem;padding-top:0.25rem;padding-bottom:0.25rem;padding-left:0.75rem;padding-right:0.75rem;background-color:#edf2f7;color:#3737B9;}</style><button class="css-1ak4bcm">Java</button><button class="css-1ak4bcm">Google Java Style Guide</button></div><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1i57it9">.css-1i57it9{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#434cf5,#c6cefc,#91eac9 );}</style><div class="css-1i57it9"></div></div></div><div class="blog-content"><style data-emotion-css="taxs14">.css-taxs14{-webkit-scrollbar-width:thin;-moz-scrollbar-width:thin;-ms-scrollbar-width:thin;scrollbar-width:thin;-webkit-scrollbar-color:gray transparent;-moz-scrollbar-color:gray transparent;-ms-scrollbar-color:gray transparent;scrollbar-color:gray transparent;display:none;}.css-taxs14::-webkit-scrollbar{width:4px;}.css-taxs14::-webkit-scrollbar-track{background-color:transparent;}.css-taxs14::-webkit-scrollbar-thumb{border-radius:9999px;background-color:gray;}.css-taxs14::-webkit-scrollbar-button{width:0;height:0;}@media screen and (min-width:1280px){.css-taxs14{float:right;position:-webkit-sticky;position:sticky;top:100px;width:calc((100vw - 720px) / 2 - 80px);max-width:250px;margin-right:1rem;overflow:auto;word-break:break-word;max-height:calc(100vh - 200px);fontsize:1rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-left-width:4px;border-image:linear-gradient( 180deg,#434cf5,#c6cefc,#91eac9 );border-image-slice:1;}}</style><div class="css-taxs14"><style data-emotion-css="13af3fo">.css-13af3fo{margin-left:1rem;margin-right:1rem;}</style><div class="css-13af3fo"><style data-emotion-css="17i5xbf">.css-17i5xbf{font-weight:700;margin-bottom:0.5rem;font-size:1.125rem;--text-opacity:1;color:rgba(74,85,104,var(--text-opacity));}</style><h3 class="css-17i5xbf">TOC</h3><style data-emotion-css="1me4zjn">.css-1me4zjn ul{margin-left:0.5rem;}.css-1me4zjn ul > li a:hover{color:#555555;}.css-1me4zjn ul > li a{-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);--text-opacity:1;color:rgba(160,174,192,var(--text-opacity));font-size:0.875rem;}.css-1me4zjn ul > li a[href=""]{font-size:0.95rem;color:#555555;}</style><div class="css-1me4zjn"><ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0-%EC%A0%84">들어가기 전</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#1-%EC%86%8C%EA%B0%9C">1. 소개</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#11-%EC%9A%A9%EC%96%B4-%EC%A0%95%EB%A6%AC">1.1 용어 정리</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#12-%EA%B0%80%EC%9D%B4%EB%93%9C-%EB%85%B8%ED%8A%B8">1.2 가이드 노트</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#2-%EC%86%8C%EC%8A%A4%ED%8C%8C%EC%9D%BC%EC%9D%98-%EA%B8%B0%EB%B3%B8">2 소스파일의 기본</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#21-%ED%8C%8C%EC%9D%BC%EB%AA%85">2.1 파일명</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#%ED%8C%8C%EC%9D%BC-%EC%9D%B8%EC%BD%94%EB%94%A9-utf-8">파일 인코딩: UTF-8</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#23-%ED%8A%B9%EC%88%98%EB%AC%B8%EC%9E%90">2.3 특수문자</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#231-%EA%B3%B5%EB%B0%B1-%EB%AC%B8%EC%9E%90">2.3.1 공백 문자</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#232-%ED%8A%B9%EC%88%98-%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84-%EC%8B%9C%ED%80%80%EC%8A%A4">2.3.2 특수 이스케이프 시퀀스</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#233-non-ascii-%EB%AC%B8%EC%9E%90">2.3.3 Non-ASCII 문자</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#3-%EC%86%8C%EC%8A%A4%ED%8C%8C%EC%9D%BC-%EA%B5%AC%EC%A1%B0">3 소스파일 구조</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#31-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-%EB%98%90%EB%8A%94-%EC%A0%80%EC%9E%91%EA%B6%8C-%EC%A0%95%EB%B3%B4-%EC%9E%88%EB%8A%94-%EA%B2%BD%EC%9A%B0">3.1 라이선스 또는 저작권 정보 (있는 경우)</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#32-package-statement">3.2 Package statement</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#33-import-statements">3.3 Import statements</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#331-no-wildcard-imports">3.3.1 No wildcard imports</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#332-no-line-wrapping-%EC%A4%84%EB%B0%94%EA%BF%88-%EC%97%86%EC%9D%8C">3.3.2 No line-wrapping (줄바꿈 없음)</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#333-%EC%88%9C%EC%84%9C%EC%99%80-%EA%B0%84%EA%B2%A9">3.3.3 순서와 간격</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#334-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%97%90-static%EC%9D%84-import%ED%95%98%EC%A7%80-%EC%95%8A%EA%B8%B0">3.3.4 클래스에 static을 import하지 않기</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#34-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%84%A0%EC%96%B8">3.4 클래스 선언</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#341-%EC%A0%95%ED%99%95%ED%9E%88-%ED%95%98%EB%82%98%EC%9D%98-%EC%B5%9C%EC%83%81%EC%9C%84-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%84%A0%EC%96%B8">3.4.1 정확히 하나의 최상위 클래스 선언</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#342-content%EC%9D%98-%EC%88%9C%EC%84%9C">3.4.2 content의 순서</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#3421-overloads-never-split">3.4.2.1 Overloads: never split</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#4-formatting">4. Formatting</a></p>
+<ul>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#41-brace-%EC%A4%91%EA%B4%84%ED%98%B8">4.1 Brace (중괄호)</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#411-%EC%84%A0%ED%83%9D-%EC%82%AC%ED%95%AD%EC%9D%B8-%EA%B2%BD%EC%9A%B0%EC%97%90%EB%8F%84-%EC%A4%91%EA%B4%84%ED%98%B8%EB%8A%94-%EC%82%AC%EC%9A%A9%ED%95%9C%EB%8B%A4">4.1.1 선택 사항인 경우에도 중괄호는 사용한다.</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#412-%EB%B9%84%EC%96%B4%EC%9E%88%EC%A7%80-%EC%95%8A%EC%9D%80-%EB%B8%94%EB%A1%9D--k--r-style">4.1.2 비어있지 않은 블록 : K &#x26; R Style</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#413-%EB%B9%88-%EB%B8%94%EB%A1%9D--%EA%B0%84%EA%B2%B0%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4">4.1.3 빈 블록 : 간결할 수 있다</a></li>
+</ul>
+</li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#42-%EB%B8%94%EB%A1%9D-%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0-2-spaces">4.2 블록 들여쓰기: +2 spaces</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#43-%ED%95%9C-%EC%A4%84%EC%97%90-%ED%95%98%EB%82%98%EC%9D%98-%EB%AA%85%EB%A0%B9%EC%96%B4statement">4.3 한 줄에 하나의 명령어(statement)</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#44-%EC%97%B4-%EC%A0%9C%ED%95%9C-100">4.4 열 제한: 100</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#45-%EC%A4%84-%EB%B0%94%EA%BF%88-line-wrapping">4.5 줄 바꿈 (Line-wrapping)</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#451-%EC%96%B8%EC%A0%9C-%EB%8B%A4%EC%9D%8C-%EB%AC%B8%EC%9E%A5%EC%9C%BC%EB%A1%9C-%EB%82%B4%EB%A6%B4%EC%A7%80">4.5.1 언제 다음 문장으로 내릴지</a></li>
+</ul>
+</li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#47-%EC%86%8C%EA%B4%84%ED%98%B8-%EA%B7%B8%EB%A3%B9">4.7 소괄호 그룹</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#48-%ED%8A%B9%EB%B3%84%ED%95%9C-%EA%B5%AC%EC%A1%B0">4.8 특별한 구조</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#48-enum-%ED%81%B4%EB%9E%98%EC%8A%A4">4.8. Enum 클래스</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#482-%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8">4.8.2 변수 선언</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#4821-%EC%84%A0%EC%96%B8%EB%8B%B9-%ED%95%98%EB%82%98%EC%9D%98-%EB%B3%80%EC%88%98%EB%A7%8C">4.8.2.1 선언당 하나의 변수만!</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#4822-%ED%95%84%EC%9A%94%ED%95%A0-%EB%95%8C-%EC%84%A0%EC%96%B8">4.8.2.2 필요할 때 선언</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#483-%EB%B0%B0%EC%97%B4">4.8.3 배열</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#4831-%EB%B0%B0%EC%97%B4-%EC%B4%88%EA%B8%B0%ED%99%94%EB%8A%94-block-like%EC%97%90%EC%84%9C-%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4">4.8.3.1 배열 초기화는 "block-like"에서 가능하다.</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#4832-c%EC%8A%A4%ED%83%80%EC%9D%BC%EC%9D%98-%EB%B0%B0%EC%97%B4-%EC%84%A0%EC%96%B8%EC%9D%80-%EC%82%AC%EC%9A%A9-no">4.8.3.2 C스타일의 배열 선언은 사용 No</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#484-switch%EA%B5%AC%EB%AC%B8">4.8.4 Switch구문</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#4841-%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0">4.8.4.1 들여쓰기</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#4842-%EC%8B%A4%ED%8C%A8-%EC%A3%BC%EC%84%9D">4.8.4.2 실패: 주석</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#4843-default%EC%BC%80%EC%9D%B4%EC%8A%A4%EA%B0%80-%EC%A1%B4%EC%9E%AC%ED%95%A9%EB%8B%88%EB%8B%A4">4.8.4.3 <code>default</code>케이스가 존재합니다</a></li>
+</ul>
+</li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#485-%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98">4.8.5 어노테이션</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#486-%EC%A3%BC%EC%84%9D">4.8.6 주석</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#4861-%EB%B8%94%EB%9F%AD-%EC%A3%BC%EC%84%9D-%EC%8A%A4%ED%83%80%EC%9D%BC">4.8.6.1 블럭 주석 스타일</a></li>
+</ul>
+</li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#487-%EC%A0%91%EA%B7%BC-%EC%A0%9C%ED%95%9C%EC%9E%90">4.8.7 접근 제한자</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#488-%EC%88%AB%EC%9E%90-%EB%A6%AC%ED%84%B0%EB%9F%B4">4.8.8 숫자 리터럴</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#5-naming">5. Naming</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#51-%EB%AA%A8%EB%93%A0-%EC%8B%9D%EB%B3%84%EC%9E%90%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B3%B5%ED%86%B5-%EA%B7%9C%EC%B9%99">5.1 모든 식별자에 대한 공통 규칙</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#52-%EC%8B%9D%EB%B3%84%EC%9E%90-%ED%83%80%EC%9E%85%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B7%9C%EC%B9%99">5.2 식별자 타입에 대한 규칙</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#521-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%9D%B4%EB%A6%84">5.2.1 패키지 이름</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#522-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%9D%B4%EB%A6%84">5.2.2 클래스 이름</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#523-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%9D%B4%EB%A6%84">5.2.3 메서드 이름</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#524-%EC%83%81%EC%88%98-%EC%9D%B4%EB%A6%84">5.2.4 상수 이름</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#525-%EC%83%81%EC%88%98%EA%B0%80-%EC%95%84%EB%8B%8C-%ED%95%84%EB%93%9C%EC%9D%98-%EC%9D%B4%EB%A6%84">5.2.5 상수가 아닌 필드의 이름</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#526-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%9D%98-%EC%9D%B4%EB%A6%84">5.2.6 파라미터의 이름</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#527-%EC%A7%80%EC%97%AD-%EB%B3%80%EC%88%98%EC%9D%98-%EC%9D%B4%EB%A6%84">5.2.7 지역 변수의 이름</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#528-%ED%83%80%EC%9E%85-%EB%B3%80%EC%88%98%EC%9D%98-%EC%9D%B4%EB%A6%84">5.2.8 타입 변수의 이름</a></li>
+</ul>
+</li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#53-camel-case-defined">5.3 Camel case: defined</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#6-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%97%B0%EC%8A%B5">6. 프로그래밍 연습</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#61-override--%ED%95%AD%EC%83%81-%EC%82%AC%EC%9A%A9">6.1 <code>@Override</code> : 항상 사용</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#62-%EC%98%88%EC%99%B8-%EC%9E%A1%EA%B8%B0-%EC%83%9D%EB%9E%B5%ED%95%98%EC%A7%80-%EB%A7%90-%EA%B2%83">6.2 예외 잡기: 생략하지 말 것</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#63-%EC%A0%95%EC%A0%81-%EB%A9%A4%EB%B2%84-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%8C">6.3 정적 멤버: 클래스를 사용할 수 있음</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#64-finalizers-%EC%82%AC%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EC%9D%8C">6.4 Finalizers: 사용되지 않음</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#7-javadoc">7. JavaDoc</a></p>
+<ul>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#71-formatting">7.1 Formatting</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#711-%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8-%ED%98%95%EC%8B%9D">7.1.1 일반적인 형식</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#712-%EB%8B%A8%EB%9D%BD-paragraphs">7.1.2 단락 (Paragraphs)</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#713-%EB%B8%94%EB%A1%9D-%ED%83%9C%EA%B7%B8">7.1.3 블록 태그</a></li>
+</ul>
+</li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#72-%EC%9A%94%EC%95%BD-%EC%A1%B0%EA%B0%81fragment">7.2 요약 조각(fragment)</a></li>
+<li>
+<p><a href="/Java/20211125-Google_Java_Style_Guide/#73-javadoc%EC%9D%B4-%EC%96%B4%EB%94%94%EC%84%9C-%EC%93%B0%EC%9D%B4%EB%8A%94%EC%A7%80">7.3 Javadoc이 어디서 쓰이는지</a></p>
+<ul>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#731-%EC%98%88%EC%99%B8-%EC%9E%90%EA%B0%80-%EC%84%A4%EB%AA%85-%EB%A9%94%EC%84%9C%EB%93%9C">7.3.1 예외: 자가-설명 메서드</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#732-%EC%98%88%EC%99%B8-overrides">7.3.2 예외: overrides</a></li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#734-javadoc%EC%9D%B4-%ED%95%84%EC%9A%94%EC%97%86%EB%8A%94-%EC%9D%B4%EC%9C%A0">7.3.4 Javadoc이 필요없는 이유</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/Java/20211125-Google_Java_Style_Guide/#reference">Reference</a></li>
+</ul></div></div></div><div class="css-1bdwg0l etadk2t0"><div><style data-emotion-css="18ks7l0">.css-18ks7l0{font-size:1rem;word-break:break-word;}.css-18ks7l0 h1 > a > svg,.css-18ks7l0 h2 > a > svg,.css-18ks7l0 h3 > a > svg,.css-18ks7l0 h4 > a > svg,.css-18ks7l0 h5 > a > svg,.css-18ks7l0 h6 > a > svg{fill:#000;}.css-18ks7l0 h1,.css-18ks7l0 h2{font-size:1.25rem;font-weight:600;margin-top:1.5rem;margin-bottom:1.5rem;}.css-18ks7l0 h3,.css-18ks7l0 h4,.css-18ks7l0 h5,.css-18ks7l0 h6{font-size:1.125rem;margin-top:1.5rem;margin-bottom:1.5rem;font-weight:600;}@media (min-width:640px){.css-18ks7l0 h1,.css-18ks7l0 h2{font-size:1.5rem;}.css-18ks7l0 h3,.css-18ks7l0 h4,.css-18ks7l0 h5,.css-18ks7l0 h6{font-size:1.25rem;}}.css-18ks7l0 a{color:#3737B9;}.css-18ks7l0 a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-18ks7l0 p{margin:0.3rem;margin-top:0.75rem;margin-bottom:0.75rem;}.css-18ks7l0 ul,.css-18ks7l0 ol{margin:0.3rem;margin-left:2rem;}.css-18ks7l0 li > p,.css-18ks7l0 li > ul,.css-18ks7l0 li > ol{margin-bottom:0;}.css-18ks7l0 ol{list-style-type:decimal;}.css-18ks7l0 ul{list-style-type:disc;}.css-18ks7l0 blockquote{padding:0.5rem;background-color:#eee;margin:0.3rem;margin-top:0.5rem;margin-bottom:0.5rem;border-left-width:4px;border-color:#c6cefc;}.css-18ks7l0 blockquote > p{margin:0.5rem;}.css-18ks7l0 blockquote > h1,.css-18ks7l0 blockquote > h2,.css-18ks7l0 blockquote > h3,.css-18ks7l0 blockquote > h4,.css-18ks7l0 blockquote > h5{margin-top:0.5rem;margin-bottom:0.5rem;}.css-18ks7l0 td,.css-18ks7l0 th{padding-left:0.5rem;padding-right:0.5rem;padding-top:0.25rem;padding-bottom:0.25rem;border-width:1px;border-color:#c6cefc;}.css-18ks7l0 tr:nth-of-type(even){background-color:#eee;}.css-18ks7l0 th{background-color:#eee;}.css-18ks7l0 table{margin-bottom:1.5rem;display:block;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:0 auto;overflow-x:auto;white-space:nowrap;}.css-18ks7l0 p > code,.css-18ks7l0 li > code{padding-top:0.1rem;padding-bottom:0.1rem;padding-right:0.25rem;padding-left:0.25rem;border-radius:0.25rem;color:#3737B9;background-color:#eee;white-space:pre-line;}.css-18ks7l0 pre.grvsc-container{margin-top:24px;margin-bottom:24px;}.css-18ks7l0 hr{margin-top:24px;margin-bottom:24px;height:2px;border:none;background:linear-gradient( 270deg,#434cf5,#c6cefc,#91eac9 );}</style><div class="markdown css-18ks7l0"><h1 id="들어가기-전" style="position:relative;"><a href="#%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0-%EC%A0%84" aria-label="들어가기 전 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>들어가기 전</h1>
+<p>취업 준비를 하며 우아한형제들의 프로그래밍 교육 프로그램인 우테코에 대해 알게 되어 지원하게 되었습니다.
+서류와 1차 코딩테스트 결과 운이 좋게 우테코 프리코스를 수강할 기회가 생겨 오늘부터 미션을 수행하게 되었습니다. 프리코스는 매주 주어진 미션을 수행하며 주도적으로 프로그래밍 학습하며 성장을 하는 과정입니다. 프리코스를 참여하며 <a href="https://google.github.io/styleguide/javaguide.html#s4.8.1-enum-classes">Google Java Style Guide</a>에 대해 알게 되었고 해당 가이드를 완벽히 이해하고 잊혀질 때쯤 쉽게 복습하기위해 번역을 하며 정리해보고자 합니다.</p>
+<hr>
+<h1 id="1-소개" style="position:relative;"><a href="#1-%EC%86%8C%EA%B0%9C" aria-label="1 소개 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 소개</h1>
+<p>이 문서는 Java프로그래밍의 소스코드에 대한 Google의 코딩 표준의 완벽한 정의 문서 입니다. Java 소스파일은 여기에 있는 규칙을 준수하는 경우에만 Google스타일에 있다고 설명할 수 있습니다.</p>
+<p>다른 프로그래밍 스타일 가이드와 마찬가지로 서식의 미적 문제뿐만 아니라 다른 유형의 규약이나 코딩 표준도 다루고 있다. 그러나 이 문서는 우리가 보편적으로 따르는 엄격한 규칙에 주로 초점을 맞추고 있으며, (인간이든 도구이든) 명확하게 집행할 수 없는 조언은 피하고 있습니다.</p>
+<h2 id="11-용어-정리" style="position:relative;"><a href="#11-%EC%9A%A9%EC%96%B4-%EC%A0%95%EB%A6%AC" aria-label="11 용어 정리 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.1 용어 정리</h2>
+<p>용어들은 본 문서에서는 달리 명시되지 않은 한 다음과 같다.</p>
+<ol>
+<li>class라는 용어는 일반적인 class, enum class, interface 또는 어노테이션 타입의@interface를 포괄적으로 칭합니다.</li>
+<li>class의 member라는 용어는 중첩 클래스, 필드, 메서드 또는 생성자를 포괄한 용어입니다. 즉 이니셜라이저와 주석을 제외한 클래스의 모든 최상위 콘텐츠를 의미하기 위해 포괄적으로 사용됩니다.</li>
+<li>comment라는 용어는 항상 구현 comment를 나타냅니다. 우리는 "documentation comments"이라는 문구를 사용하지 않고, "Javadoc"이라는 공통 용어를 사용합니다.</li>
+</ol>
+<p>기타 "용어 참고사항"은 문서 전체에 가끔 나타납니다.</p>
+<h2 id="12-가이드-노트" style="position:relative;"><a href="#12-%EA%B0%80%EC%9D%B4%EB%93%9C-%EB%85%B8%ED%8A%B8" aria-label="12 가이드 노트 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.2 가이드 노트</h2>
+<p>이 문서의 예제 코드는 비표준 입니다. 즉, 예제는 Google 스타일이지만 코드를 표현하는 유일한 스타일리시한 방법을 설명하지 않을 수 있습니다 . 예제에서 선택한 선택적 형식 지정은 규칙으로 적용되어서는 안 됩니다.</p>
+<hr>
+<h1 id="2-소스파일의-기본" style="position:relative;"><a href="#2-%EC%86%8C%EC%8A%A4%ED%8C%8C%EC%9D%BC%EC%9D%98-%EA%B8%B0%EB%B3%B8" aria-label="2 소스파일의 기본 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2 소스파일의 기본</h1>
+<h2 id="21-파일명" style="position:relative;"><a href="#21-%ED%8C%8C%EC%9D%BC%EB%AA%85" aria-label="21 파일명 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1 파일명</h2>
+<p>소스 파일 이름은 포함하는 최상위 클래스의 대소문자를 구분하는 이름과 <code>.java</code> 확장자로 구성됩니다.</p>
+<h2 id="파일-인코딩-utf-8" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%BC-%EC%9D%B8%EC%BD%94%EB%94%A9-utf-8" aria-label="파일 인코딩 utf 8 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파일 인코딩: UTF-8</h2>
+<p>소스 파일은 UTF-8로 인코딩됩니다.</p>
+<h2 id="23-특수문자" style="position:relative;"><a href="#23-%ED%8A%B9%EC%88%98%EB%AC%B8%EC%9E%90" aria-label="23 특수문자 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3 특수문자</h2>
+<h3 id="231-공백-문자" style="position:relative;"><a href="#231-%EA%B3%B5%EB%B0%B1-%EB%AC%B8%EC%9E%90" aria-label="231 공백 문자 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3.1 공백 문자</h3>
+<p>해당 라인을 끝내는 문자를 제외하고는 ASCII horizontal space character (0x20)는 소스 파일에서 나타나는 유일한 공백 문자입니다.</p>
+<p>이것은 다음을 의미합니다.</p>
+<ol>
+<li>문자열 및 문자 리터럴의 다른 모든 공백 문자는 이스케이프됩니다.</li>
+<li>들여쓰기에는 탭 문자가 사용되지 않습니다.</li>
+</ol>
+<h3 id="232-특수-이스케이프-시퀀스" style="position:relative;"><a href="#232-%ED%8A%B9%EC%88%98-%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84-%EC%8B%9C%ED%80%80%EC%8A%A4" aria-label="232 특수 이스케이프 시퀀스 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3.2 특수 이스케이프 시퀀스</h3>
+<p>특수 이스케이프 시퀀스(<code>\b</code>, <code>\t</code>, <code>\n</code>, <code>\f</code>, <code>\r</code>, <code>\'</code>, <code>\</code>, <code>\\</code>)를 가진 문자들은 해당 8진수(예: <code>\012</code>) 또는 유니코드(예: <code>\u000a</code>) 이스케이프대신 해당 시퀀스를 사용합니다.</p>
+<h3 id="233-non-ascii-문자" style="position:relative;"><a href="#233-non-ascii-%EB%AC%B8%EC%9E%90" aria-label="233 non ascii 문자 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3.3 Non-ASCII 문자</h3>
+<p>나머지 Non-ASCII 문자의 경우 실제 유니코드 문자(예: <code>∞</code>) 또는 이에 상응하는 유니코드 이스케이프(예: <code>\u221e</code>)가 사용됩니다. 유니코드가 문자열 리터럴 및 주석 외부로 이스케이프되는 것은 강력히 권장되지 않지만 선택은 코드 를 읽고 이해하기 쉽게 만드는 것에 달려 있습니다.</p>
+<blockquote>
+<p>팁: 유니코드 이스케이프 사례에서, 때로는 실제 유니코드 문자를 사용하는 경우에도 설명 설명이 매우 유용할 수 있습니다.</p>
+</blockquote>
+<p>Example
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 766px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 29.000000000000004%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIElEQVQY002PV5KEMBBDuf8ddyIYjLMxTgRNmw21H6qmXOJJ6u69hHQFwmZIWy617/+aTcL9PZPEt4/80uW//349y1rRve4Mj2cPNnJwLaCswbJE+GUlQ0JYM5wPuD2e+Lo98HoPGMj77hl6NmJgHNYt8CEipozOSYdxYjBGQ4QRcuUoISA5i70WHFvFvm1QSkFrBSE4tNKQksKlhPcO53EA54nj2NGteoWdHYIN8NbCkUpKiHST95dyjAQzsPSmtaZwA/VzW5F9P4h30iWgnyOcMEg2wvQE4StygyzLpYPSm1FRo2maaCK7Wk4jzR2GKyDQolLK5e1yrch7QqVpMUeULaNSw9ay3QbbaLIQAjPnGEd2NasESG0JtW+qxGneD2I1yqIJwRp7AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="img"
+        title="img"
+        src="/static/1a1268195a3326cbb0362042bc64fb04/f7616/img.png"
+        srcset="/static/1a1268195a3326cbb0362042bc64fb04/5a46d/img.png 300w,
+/static/1a1268195a3326cbb0362042bc64fb04/0a47e/img.png 600w,
+/static/1a1268195a3326cbb0362042bc64fb04/f7616/img.png 766w"
+        sizes="(max-width: 766px) 100vw, 766px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
+<blockquote>
+<p>팁: 일부 프로그램이 ASCII가 아닌 문자를 제대로 처리하지 못할 수 있다는 두려움 때문에 코드 가독성을 낮추지 마십시오. 그런 일이 발생하면 해당 프로그램이 손상 되어 수정 되어야 합니다 .</p>
+</blockquote>
+<hr>
+<h1 id="3-소스파일-구조" style="position:relative;"><a href="#3-%EC%86%8C%EC%8A%A4%ED%8C%8C%EC%9D%BC-%EA%B5%AC%EC%A1%B0" aria-label="3 소스파일 구조 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3 소스파일 구조</h1>
+<p>소스 파일은 다음과 같은 순서 로 구성됩니다 .</p>
+<ol>
+<li>라이센스 또는 저작권 정보 (있는 경우)</li>
+<li>Package statement (서술)</li>
+<li>Import statements</li>
+<li>정확히 하나의 최상위 클래스</li>
+</ol>
+<p>정확히 하나의 빈 줄 은 존재하는 각 섹션을 구분합니다.</p>
+<h2 id="31-라이선스-또는-저작권-정보-있는-경우" style="position:relative;"><a href="#31-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-%EB%98%90%EB%8A%94-%EC%A0%80%EC%9E%91%EA%B6%8C-%EC%A0%95%EB%B3%B4-%EC%9E%88%EB%8A%94-%EA%B2%BD%EC%9A%B0" aria-label="31 라이선스 또는 저작권 정보 있는 경우 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.1 라이선스 또는 저작권 정보 (있는 경우)</h2>
+<p>라이선스 또는 저작권 정보가 파일에 속해 있으면 여기에 속합니다.</p>
+<h2 id="32-package-statement" style="position:relative;"><a href="#32-package-statement" aria-label="32 package statement permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.2 Package statement</h2>
+<p>Package statement는 줄바꿈을 하지 않습니다. 또한 열 제한(섹션 4.4 열 제한:100)도 적용되지 않습니다.</p>
+<h2 id="33-import-statements" style="position:relative;"><a href="#33-import-statements" aria-label="33 import statements permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.3 Import statements</h2>
+<h3 id="331-no-wildcard-imports" style="position:relative;"><a href="#331-no-wildcard-imports" aria-label="331 no wildcard imports permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.3.1 No wildcard imports</h3>
+<p>Wildcard imports과 static은 사용하지 않습니다.</p>
+<blockquote>
+<p>Wildcard import는 <code>import java.util.*</code>와 같이 <code>*</code>을 의미한다.</p>
+</blockquote>
+<h3 id="332-no-line-wrapping-줄바꿈-없음" style="position:relative;"><a href="#332-no-line-wrapping-%EC%A4%84%EB%B0%94%EA%BF%88-%EC%97%86%EC%9D%8C" aria-label="332 no line wrapping 줄바꿈 없음 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.3.2 No line-wrapping (줄바꿈 없음)</h3>
+<p>Import statements는 줄바꿈을 하지 않습니다. 또한 열 제한(섹션 4.4 열 제한:100)도 적용되지 않습니다.</p>
+<h3 id="333-순서와-간격" style="position:relative;"><a href="#333-%EC%88%9C%EC%84%9C%EC%99%80-%EA%B0%84%EA%B2%A9" aria-label="333 순서와 간격 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.3.3 순서와 간격</h3>
+<p>import는 다음과 같은 순서를 따라야한다.</p>
+<ol>
+<li>단일 블록에 모든 static import하기</li>
+<li>단일 블록에 모든 non-static import하기</li>
+</ol>
+<p>static import와 non-static import가 있는 경우, 공백의 줄을 추가하여 두개의 블록을 구분합니다. 그 외에는 공백의 구분 줄이 있으면 안됩니다.</p>
+<p>각 블록내에서 가져온 이름은 ASCII정렬 순서로 나타내야합니다.  (참고: '.'가 ';'보다 먼저 정렬되기 때문에 import문 내에서는 ASCII 정렬 순서를 따르지 않는다.)</p>
+<h3 id="334-클래스에-static을-import하지-않기" style="position:relative;"><a href="#334-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%97%90-static%EC%9D%84-import%ED%95%98%EC%A7%80-%EC%95%8A%EA%B8%B0" aria-label="334 클래스에 static을 import하지 않기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.3.4 클래스에 static을 import하지 않기</h3>
+<p>static import는 static중첩 클래스에 사용되지 않는다. 그것들은 일반적인 import를 해야한다.</p>
+<h2 id="34-클래스-선언" style="position:relative;"><a href="#34-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%84%A0%EC%96%B8" aria-label="34 클래스 선언 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.4 클래스 선언</h2>
+<h3 id="341-정확히-하나의-최상위-클래스-선언" style="position:relative;"><a href="#341-%EC%A0%95%ED%99%95%ED%9E%88-%ED%95%98%EB%82%98%EC%9D%98-%EC%B5%9C%EC%83%81%EC%9C%84-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%84%A0%EC%96%B8" aria-label="341 정확히 하나의 최상위 클래스 선언 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.4.1 정확히 하나의 최상위 클래스 선언</h3>
+<p>각 최상위 클래스는 자체 소스 파일에 있어야합니다.</p>
+<h3 id="342-content의-순서" style="position:relative;"><a href="#342-content%EC%9D%98-%EC%88%9C%EC%84%9C" aria-label="342 content의 순서 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.4.2 content의 순서</h3>
+<p>클래스의 member와 initializer의 순서는 학습력에 큰 영향을 끼칩니다. 그러나 옳바른 방법은 없으며 클래스마다 다른 방법으로 콘텐츠를 정렬할 수 있습니다.</p>
+<p>중요한 것은 각 클래스가 논리적인 순서를 사용한다는 것인데, 이는 유지관리자가 질문을 하면 그의 질문에 답을 할 수 있어야합니다.</p>
+<p>잘못된 예를 들면, 새로운 메서드들을 단순하게 클래스의 끝에 추가하는 것이 있습니다. 이는 논리적인 순서가 아니라 단순히 날짜 순서대로 추가한 것입니다.</p>
+<h4 id="3421-overloads-never-split" style="position:relative;"><a href="#3421-overloads-never-split" aria-label="3421 overloads never split permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.4.2.1 Overloads: never split</h4>
+<p>클래스 내에 여러개의 Constructor가 존재하거나 동일한 이름의 Method가 존재한다면 이들 사이에 다른 코드 없이 순차적으로 나타내야합니다. (private member도 포함)</p>
+<hr>
+<h1 id="4-formatting" style="position:relative;"><a href="#4-formatting" aria-label="4 formatting permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Formatting</h1>
+<p>용어 정리: block-like construct(블록과 유사한 구성?구조?)는 클래스, 메서드, 생성자의 본문(body)를 나타냅니다.
+섹션 4.8.3.1인 Array initializer에 따르면 모든 Array initializer는 선택적으로 block-like construct처럼 처리될 수 있습니다.</p>
+<h2 id="41-brace-중괄호" style="position:relative;"><a href="#41-brace-%EC%A4%91%EA%B4%84%ED%98%B8" aria-label="41 brace 중괄호 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.1 Brace (중괄호)</h2>
+<h3 id="411-선택-사항인-경우에도-중괄호는-사용한다" style="position:relative;"><a href="#411-%EC%84%A0%ED%83%9D-%EC%82%AC%ED%95%AD%EC%9D%B8-%EA%B2%BD%EC%9A%B0%EC%97%90%EB%8F%84-%EC%A4%91%EA%B4%84%ED%98%B8%EB%8A%94-%EC%82%AC%EC%9A%A9%ED%95%9C%EB%8B%A4" aria-label="411 선택 사항인 경우에도 중괄호는 사용한다 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.1.1 선택 사항인 경우에도 중괄호는 사용한다.</h3>
+<p><code>if</code>, <code>else</code>, <code>for</code>, <code>do</code>, <code>while</code> 구문에서 body가 비어있거나 단 한 줄의 코드만 있어도 중괄호는 있어야한다.</p>
+<h3 id="412-비어있지-않은-블록--k--r-style" style="position:relative;"><a href="#412-%EB%B9%84%EC%96%B4%EC%9E%88%EC%A7%80-%EC%95%8A%EC%9D%80-%EB%B8%94%EB%A1%9D--k--r-style" aria-label="412 비어있지 않은 블록  k  r style permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.1.2 비어있지 않은 블록 : K &#x26; R Style</h3>
+<p>중괄호는 비어있지 않은 블록과 block-like construct에 대해서 Kernighan and Ritchie style를 따른다.</p>
+<ul>
+<li>열리는 중괄호 앞에는 줄 바꿈이 없어야한다.</li>
+<li>열리는 중괄호 뒤에는 줄 바꿈을 해야한다.</li>
+<li>닫는 중괄호 앞에는 줄 바꿈을 해야한다.</li>
+<li>명령문, 메서드, 생성자 또는 클래스의 본문이 끝났을 때는 닫는 중괄호 다음에 줄을 바꿔야한다. 만약 else나 콤마뒤에 나오는 부분일 경우 줄 바꿈 하지 않는다.</li>
+</ul>
+<p>Example:</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">return</span><span class="mtk4"> () </span><span class="mtk9">-&gt;</span><span class="mtk4"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">while</span><span class="mtk4"> (</span><span class="mtk3">condition</span><span class="mtk4">()) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk3">method</span><span class="mtk4">()</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">return</span><span class="mtk4"> </span><span class="mtk9">new</span><span class="mtk4"> </span><span class="mtk3">MyClass</span><span class="mtk4">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk1">@</span><span class="mtk11">Override</span><span class="mtk4"> </span><span class="mtk9">public</span><span class="mtk3"> </span><span class="mtk9">void</span><span class="mtk3"> method</span><span class="mtk1">()</span><span class="mtk3"> </span><span class="mtk1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">if</span><span class="mtk1"> (</span><span class="mtk3">condition</span><span class="mtk1">()) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">try</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">something</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      } </span><span class="mtk9">catch</span><span class="mtk1"> (</span><span class="mtk11">ProblemException</span><span class="mtk1"> </span><span class="mtk4 mtki">e</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">recover</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    } </span><span class="mtk9">else</span><span class="mtk1"> </span><span class="mtk9">if</span><span class="mtk1"> (</span><span class="mtk3">otherCondition</span><span class="mtk1">()) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk3">somethingElse</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    } </span><span class="mtk9">else</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk3">lastThing</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span><span class="mtk1">;</span></span></span></code></pre>
+<p>emun 클래스들은 예외가 있다. (섹션 4.8.1)</p>
+<h3 id="413-빈-블록--간결할-수-있다" style="position:relative;"><a href="#413-%EB%B9%88-%EB%B8%94%EB%A1%9D--%EA%B0%84%EA%B2%B0%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4" aria-label="413 빈 블록  간결할 수 있다 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.1.3 빈 블록 : 간결할 수 있다</h3>
+<p>빈 블록이나  block-like construct는 K &#x26; B 스타일 일 수도 있다.(섹션 4.1.2에 설명된다.) 그 대안으로 다중 블록 문(여러 블록을 직접 포함하는 문, <code>if/else</code> 또는 <code>try/catch/finally</code>)의 일부가 아니면 중괄호(<code>{ }</code>)를 열자마자 문자나 줄 바꿈 없이 바로 닫을 수 있습니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk5 mtki">// 허용됩니다.</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">void</span><span class="mtk4"> </span><span class="mtk3">doNothing</span><span class="mtk4">() {}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk5 mtki">// 허용됩니다.</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">void</span><span class="mtk4"> </span><span class="mtk3">doNothingElse</span><span class="mtk4">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  }</span></span></span></code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">  // 허용 불가!!! 멀티 블록에서는 비어있는 블록을 쓸 수 없습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  try {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    doSomething();</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  } catch (Exception e) {}</span></span></code></pre>
+<h2 id="42-블록-들여쓰기-2-spaces" style="position:relative;"><a href="#42-%EB%B8%94%EB%A1%9D-%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0-2-spaces" aria-label="42 블록 들여쓰기 2 spaces permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.2 블록 들여쓰기: +2 spaces</h2>
+<p>새로운 블록이나 블록과 block-liked construct가 열릴 때마다 두 칸씩 들여쓰기를 한다. 블록이 끝나면 들여쓰기는 이전의 레벨로 돌아가며 들여쓰기 레벨은 블록 전체의 코드와 주석에 모두 적용됩니다. (4.1.2 비어있지 않은 블록 : K &#x26; R Style의 예제 코드를 참조하십시오.)</p>
+<h2 id="43-한-줄에-하나의-명령어statement" style="position:relative;"><a href="#43-%ED%95%9C-%EC%A4%84%EC%97%90-%ED%95%98%EB%82%98%EC%9D%98-%EB%AA%85%EB%A0%B9%EC%96%B4statement" aria-label="43 한 줄에 하나의 명령어statement permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.3 한 줄에 하나의 명령어(statement)</h2>
+<p>각 명령어 뒤에는 줄 바꿈이 옵니다.</p>
+<h2 id="44-열-제한-100" style="position:relative;"><a href="#44-%EC%97%B4-%EC%A0%9C%ED%95%9C-100" aria-label="44 열 제한 100 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.4 열 제한: 100</h2>
+<p>Java코드에서 열 제한은 100자입니다. 여기서 문자들은 유니코드의 코드 포인트를 의미하며 아래의 명시된 경우를 제외하고는 이 제한을 초과하는 모든 줄은 섹션 4.5에 설명된 대로 줄 바꿈을 해야합니다.</p>
+<blockquote>
+<p>각 유니코드의 코드 포인트는 디스플레이에 표시된 너비가 더 크거나 작더라도 하나의 문자로 계산된다. 예를 들어 full-width character(한국어, 중국어 등을 의미)를 사용하는 경우 규칙에서 제한한 글자 수 보다 일찍 줄 바꿈 할 수 있다.</p>
+</blockquote>
+<p>예외:</p>
+<ol>
+<li>열 제한을 준수할 수 없는 행 (ex. Javadoc의 긴 URL또는 긴 JSNI 메서드 참조)</li>
+<li><code>package</code>와 <code>import</code>문 (섹션 3.2 package statement &#x26; 3.3 import statements)</li>
+<li>shell에 잘라내어 붙여넣을 수 있는 주석</li>
+</ol>
+<h2 id="45-줄-바꿈-line-wrapping" style="position:relative;"><a href="#45-%EC%A4%84-%EB%B0%94%EA%BF%88-line-wrapping" aria-label="45 줄 바꿈 line wrapping permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.5 줄 바꿈 (Line-wrapping)</h2>
+<p>용어 정리: 한 줄을 차지할 수 있는 코드가 여러 줄로 나뉘면 이 활동을 줄 바꿈이라고 한다.</p>
+<p>모든 상황에서 줄 바꿈하는 방법을 정확히 보여주는 포괄적이고 결정적인 공식은 없습니다. 하지만 매우 자주 동일한 코드 조각을 줄 바꿈하는 몇 가지 유효한 방법이 있습니다.</p>
+<blockquote>
+<p>참고: 줄 바꿈의 일반적인 이유는 열 제한 오버플로를 방지하기 위한 것이지만 실제로 열 제한에 맞는 코드라도 작성자의 재량에 따라 줄 바꿈 될 수 있습니다.</p>
+</blockquote>
+<blockquote>
+<p>팁: 메서드 또는 지역 변수를 추출하면 줄 바꿈 없이 문제를 해결할 수 있습니다.</p>
+</blockquote>
+<h3 id="451-언제-다음-문장으로-내릴지" style="position:relative;"><a href="#451-%EC%96%B8%EC%A0%9C-%EB%8B%A4%EC%9D%8C-%EB%AC%B8%EC%9E%A5%EC%9C%BC%EB%A1%9C-%EB%82%B4%EB%A6%B4%EC%A7%80" aria-label="451 언제 다음 문장으로 내릴지 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.5.1 언제 다음 문장으로 내릴지</h3>
+<p>줄 바꿈의 주요 원칙은 더 높은 수준(level)에서 바꾸는 것입니다. 또한:</p>
+<ol>
+<li>non-assignment 연산자에서 줄 바꿈이 일어난 경우 줄 바꿈은 기호 이전에 위치합니다.  (C++ 및 JavaScript와 같은 다른 언어에서 Google 스타일에 사용되는 것과 동일한 방식이 아닙니다.)</li>
+<li>
+<p>operator-like 기호에도 동일하게 적용된다</p>
+<ul>
+<li>the dot separator (<code>.</code>)</li>
+<li>the two colons of a method reference (<code>::</code>)</li>
+<li>an ampersand in a type bound (<code>&#x3C;T extends Foo &#x26; Bar></code>)</li>
+<li>a pipe in a catch block (<code>catch (FooException | BarException e)</code>)</li>
+</ul>
+</li>
+<li>
+<p>대입(assignment) 연산자에서 줄 바꿈이 일어나면 일반적으로 기호 뒤에 줄 바꿈이 일어나지만 어느 쪽에서 일어나도 상관없습니다.</p>
+<ul>
+<li>이것은 향상된 for문(<code>foreach</code>)의 "assignment-operator-like"콜론에도 적용됩니다.</li>
+</ul>
+</li>
+<li>메서드 또는 생성자 이름 뒤에 여는 괄호가 있을 때 줄바꿈을 합니다..</li>
+<li>콤마 앞에 오는 토큰에 연결되어 있을 때 줄바꿈을 합니다.</li>
+<li>
+<p>줄은 람다식의 인접한 화살표에서는 바뀌지 않습니다.. 하지만 람다의 몸체가 한 줄로 되어 있다면 바꿔도 됩니다. 예를들면:</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">MyLambda</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk11">Long</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk11">Object</span><span class="mtk1">&gt;</span><span class="mtk4"> lambda </span><span class="mtk8">=</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">(</span><span class="mtk11">String</span><span class="mtk4"> label</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk11">Long</span><span class="mtk4"> value</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk11">Object</span><span class="mtk4"> obj) </span><span class="mtk9">-&gt;</span><span class="mtk4"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span><span class="mtk1">;</span></span></span></code></pre>
+</li>
+</ol>
+<p>Predicate<String> predicate = str ->
+longExpressionInvolving(str);</p>
+<pre class="grvsc-container one-dark-pro" data-language="" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">&gt; 참고: 줄 바꿈의 주요 목표는 코드를 명확하게 하는 것입니다. 코드 가 반드시 가장 적은 수의 줄에 들어가는 것은 아닙니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">### 4.5.2 들여쓰기 지속은 최소 +4 스페이스</span></span>
+<span class="grvsc-line"><span class="grvsc-source">줄 바꿈을 할 때, 첫 번째 줄 이후의 각 줄은 원래의 줄에서 최소 +4스페이스만큼 들여쓰기를 해줘야합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">연속된 행이 여러개인 경우 들여쓰기는 +4이상으로 변경 가능합니다. 일반적으로 두 개의 연속된 행은 구문적으로 병렬인 요소로 사용할 때 동일한 들여쓰기의 레벨을 사용합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">수평 정렬에 관한 섹션 4.6.3은 특정 토큰을 이전 라인과 정렬하기 위해 가변적인 숫자의 공간을 사용하는 관행을 다룹니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">## 4.6 공백</span></span>
+<span class="grvsc-line"><span class="grvsc-source">### 4.6.1 수직 공백</span></span>
+<span class="grvsc-line"><span class="grvsc-source">하나의 공백 줄은 아래와 같은 상황에 사용합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">1. 연속적인 멤버 또는 클래스의 초기화: 필드, 생성자, 메서드, 중첩 클래스, 정적 초기화, 인스턴스 초기화</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - 예외: 연속적인 두개의 필드 사이의 공백은 선택입니다. 이러한 공백은 논리적 그룹을 만드는데 필요합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - 예외: enum 상수의 공백 줄은 섹션 4.8.1에서 다룹니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">2. 이 문서의 다른 섹션에서도 필요합니다. (섹션 3의 소스파일 구조, 그리고 섹션 3.3의 import구문)</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">하나의 공백 줄은 어디서나 가독성을 향상시킬 수 있습니다. 예를들어 코드를 논리적으로 나눌 때 사용합니다. 첫 번째 멤버 나 초기화 앞에있는 빈 줄 또는 클래스의 마지막 멤버 나 초기화 뒤에 오는 공백 줄은 권장되거나 권장되지 않는다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">다수의 연속된 공백 줄은 허용되지만 요구되지 않습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">### 4.6.2 가로 공백</span></span>
+<span class="grvsc-line"><span class="grvsc-source">리터럴, 주석 및 Javadoc을 제외하고 언어 또는 기타 스타일 규칙이 필요한 곳을 넘어서는 경우 단일 ASCII 공간이 다음 위치에만 나타납니다</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">1. 예약어를 나누는 경우, `if`, `for`, `catch`와 같은 예약어 이후 나오는 여는 괄호`(`에서 사용한다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">2. 예약어를 나누는 경우, `else`, `catch`같은 예약어 이후 닫는 중괄호`}`에서 사용한다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - ex) `} else {`, `} catch {`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">3. 아래 2가지 경우를 제외하고 중괄호`{` 를 열기 전에 사용한다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - `@SomeAnnotation({a, b})` (no space is used)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - `String[][] x = {{&quot;foo&quot;}}`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">4. 이항 또는 삼항 연산자의 양쪽에 사용한다. 이것은 &quot;operator-like&quot;기호에도 적용된다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - 인접한 타입 바인딩의 엠퍼센드 연산자에서 사용한다. `&lt;T extends Foo &amp; Bar&gt;`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - 여러 예외를 처리하는 catch블록 프이프에서 사용한다. `catch (FooException | BarException e)`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - 향상된 for(&quot;foreach&quot;)문의 콜론(` : `)에서 사용한다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - 화살표를 사용한 람다식 표현에서 사용한다. `(String str) -&gt; str.length()`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - 하지만 두개의 콜론(`::`)을 사용하는 경우 공백을 주지 않는다. `Object::toString`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - dot(.)을 사용하는 경우에도 공백을 주지 않는다. `object.toString()`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">5. `,:;` 혹은 캐스팅 할 때 닫는 괄호`)` 뒤에서 사용한다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - `Parent child = (Parent) childObject`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">6. 더블 슬래시`//`에서 양쪽에 사용한다. 여러 수의 공백이 허용되지만 필수사항은 아니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">7. 타임과 변수 선언 사이에 사용한다. `List&lt;String&gt; list`</span></span>
+<span class="grvsc-line"><span class="grvsc-source">8. 선택사항 : 배열 선언문 사이의 공백은 선택사항이다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   - `new int[] {5, 6}` 와`new int[] { 5, 6 }`는 모두 가능하다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">9. 타임 어노테이션과 `[]` 또는 `...`사이에 사용한다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">이 규칙은 라인의 시작 또는 끝에 추가 공백을 요구하거나 금지하는 것이 아닙니다. 이 규칙들은 내부 공간만을 다루는 내용입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">### 4.6.3 수평정렬: 요구되지 않음</span></span>
+<span class="grvsc-line"><span class="grvsc-source">용어 정리: 수평정렬(Horizontal alignment)은 특정 토큰이 이전 줄의 특정 다른 토큰 아래에 표시하기위해 다양한 수의 추가 공백을 추가하는 방법입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">이러한 작업은 허용되지만 Google style에서는 요구되지 않습니다.(필수사항 X)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">심지어 이미 쓰고 있는 상황에서도 수평 정렬을 유지하는게 필수가 아니라고 말합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">여기 수평정렬의 예시가 있습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">```java</span></span>
+<span class="grvsc-line"><span class="grvsc-source">private int x; // this is fine</span></span>
+<span class="grvsc-line"><span class="grvsc-source">private Color color; // this too</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">private int   x;      // permitted, but future edits</span></span>
+<span class="grvsc-line"><span class="grvsc-source">private Color color;  // may leave it unaligned</span></span></code></pre>
+<blockquote>
+<p>팁: 정렬은 가독성을 높여줍니다. 하지만 이것은 추후의 유지관리에 문제점을 만들 수 있습니다. 추후에 한 줄만 수정한다고 가정해보면 이 변경으로 이전에 맞춰둔 서식이 엉망이 될 수 있습니다. 허용은 됩니다. 그리고 이것은 개발자가 근처 줄의 공백을 조정하도록 촉구하며 연속적인 재형식화를 유발할 수 있습니다. 최악의 경우 혼잡하지 않은 상황이 될 수 있지만 근본적으로 버전 히스토리 정보가 손상되고 검토자를 드리게하고 merge충돌이 일어나게 됩니다.</p>
+</blockquote>
+<h2 id="47-소괄호-그룹" style="position:relative;"><a href="#47-%EC%86%8C%EA%B4%84%ED%98%B8-%EA%B7%B8%EB%A3%B9" aria-label="47 소괄호 그룹 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.7 소괄호 그룹</h2>
+<p>선택적 그룹화 괄호는 작성자와 검토자가 코드 없이 코드를 잘못 해석하거나 코드를 읽기 쉽게 만들 가능성이 없다는 데 동의하는 경우에만 생략된다. 모든 독자가 전체 Java 연산자 우선 순위 테이블을 암기한다고 가정하는 것은 타당하지 않습니다. -> 가능하면 소괄호로 감싸라~</p>
+<h2 id="48-특별한-구조" style="position:relative;"><a href="#48-%ED%8A%B9%EB%B3%84%ED%95%9C-%EA%B5%AC%EC%A1%B0" aria-label="48 특별한 구조 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8 특별한 구조</h2>
+<h3 id="48-enum-클래스" style="position:relative;"><a href="#48-enum-%ED%81%B4%EB%9E%98%EC%8A%A4" aria-label="48 enum 클래스 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8. Enum 클래스</h3>
+<p>enum 상수 뒤에 따라오는 각각의 콤마 뒤의 줄바꿈은 선택사항입니다. 추가로 공백줄도 허용됩니다. (일반적으로 하나만 허용)</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">private</span><span class="mtk4"> </span><span class="mtk9">enum</span><span class="mtk4"> </span><span class="mtk11">Answer</span><span class="mtk4"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk7">YES</span><span class="mtk4"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">Override</span><span class="mtk4"> </span><span class="mtk9">public</span><span class="mtk3"> </span><span class="mtk11">String</span><span class="mtk3"> toString</span><span class="mtk1">()</span><span class="mtk3"> </span><span class="mtk1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">return</span><span class="mtk1"> </span><span class="mtk6">&quot;yes&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk7">NO</span><span class="mtk4">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk7">MAYBE</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
+<p>메서드가 없거나 documentation이 없는 enum클래스는 배열 초기화(initializer)와 같은 포멧으로 작성될 수 있습니다. (섹션 4.8.3.1참조)</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">private</span><span class="mtk4"> </span><span class="mtk9">enum</span><span class="mtk4"> </span><span class="mtk11">Suit</span><span class="mtk4"> { </span><span class="mtk7">CLUBS</span><span class="mtk4">, </span><span class="mtk7">HEARTS</span><span class="mtk4">, </span><span class="mtk7">SPADES</span><span class="mtk4">, </span><span class="mtk7">DIAMONDS</span><span class="mtk4"> }</span></span></span></code></pre>
+<p>enum클래스는 클래스이므로 다른 클래스 포메팅 규칙들이 적용됩니다.</p>
+<h3 id="482-변수-선언" style="position:relative;"><a href="#482-%EB%B3%80%EC%88%98-%EC%84%A0%EC%96%B8" aria-label="482 변수 선언 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.2 변수 선언</h3>
+<h4 id="4821-선언당-하나의-변수만" style="position:relative;"><a href="#4821-%EC%84%A0%EC%96%B8%EB%8B%B9-%ED%95%98%EB%82%98%EC%9D%98-%EB%B3%80%EC%88%98%EB%A7%8C" aria-label="4821 선언당 하나의 변수만 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.2.1 선언당 하나의 변수만!</h4>
+<p>모든 변수 선언은 한 개씩합니다.
+<code>int a, b;</code>와 같은 선언은 사용하지 않습니다.</p>
+<p>예외: 여러개의 변수 선언은 for문의 헤더에만 허용합니다.</p>
+<h4 id="4822-필요할-때-선언" style="position:relative;"><a href="#4822-%ED%95%84%EC%9A%94%ED%95%A0-%EB%95%8C-%EC%84%A0%EC%96%B8" aria-label="4822 필요할 때 선언 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.2.2 필요할 때 선언</h4>
+<p>지역변수는 블럭이나 block-like construct가 시작될 때 습관적으로 쓰일 필요는 없습니다. 그 대신, 지역 변수는 범위를 좁히기 위해 그것들이 처음 사용될 때 가까운 위치에 선언합니다. (이유가 있어야한다.) 지역 변수 선언은 전형적으로 초기화를 시키거나 선언과 동시에 초기화를 시킵니다.</p>
+<h3 id="483-배열" style="position:relative;"><a href="#483-%EB%B0%B0%EC%97%B4" aria-label="483 배열 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.3 배열</h3>
+<h4 id="4831-배열-초기화는-block-like에서-가능하다" style="position:relative;"><a href="#4831-%EB%B0%B0%EC%97%B4-%EC%B4%88%EA%B8%B0%ED%99%94%EB%8A%94-block-like%EC%97%90%EC%84%9C-%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4" aria-label="4831 배열 초기화는 block like에서 가능하다 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.3.1 배열 초기화는 "block-like"에서 가능하다.</h4>
+<p>배열 초기화는 "block-like construct"처럼 포매팅 될 수 있습니다.
+예를 들면 아래의 경우는 모두 가능합니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">new</span><span class="mtk4"> </span><span class="mtk9">int</span><span class="mtk4">[] {           </span><span class="mtk9">new</span><span class="mtk4"> </span><span class="mtk9">int</span><span class="mtk4">[] {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk7">0</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">1</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">2</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">3</span><span class="mtk4">            </span><span class="mtk7">0</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}                       1</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">                        </span><span class="mtk7">2</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">new</span><span class="mtk4"> </span><span class="mtk9">int</span><span class="mtk4">[] {             </span><span class="mtk7">3</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk7">0</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">1</span><span class="mtk1">,</span><span class="mtk4">               }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  2</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">3</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}                     new </span><span class="mtk9">int</span><span class="mtk4">[]</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">                          {</span><span class="mtk7">0</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">1</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">2</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">3</span><span class="mtk4">}</span></span></span></code></pre>
+<h4 id="4832-c스타일의-배열-선언은-사용-no" style="position:relative;"><a href="#4832-c%EC%8A%A4%ED%83%80%EC%9D%BC%EC%9D%98-%EB%B0%B0%EC%97%B4-%EC%84%A0%EC%96%B8%EC%9D%80-%EC%82%AC%EC%9A%A9-no" aria-label="4832 c스타일의 배열 선언은 사용 no permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.3.2 C스타일의 배열 선언은 사용 No</h4>
+<p>대괄호는 변수 옆이 아닌 타입 옆에 붙어야합니다.
+<code>String[] args</code> -> O
+<code>String args[]</code> -> X</p>
+<h3 id="484-switch구문" style="position:relative;"><a href="#484-switch%EA%B5%AC%EB%AC%B8" aria-label="484 switch구문 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.4 Switch구문</h3>
+<p>용어 정리: switch블럭의 중괄호 안에는 여러개의 구문 그룹들이 들어간다. 각각의 구문 그룹들은 하나 또는 여러개의 switch라벨 (<code>case FOO:</code>또는 <code>default:</code>)이 붙습니다.</p>
+<h4 id="4841-들여쓰기" style="position:relative;"><a href="#4841-%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0" aria-label="4841 들여쓰기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.4.1 들여쓰기</h4>
+<p>다른 블록들처럼 switch블록의 들여쓰기는 +2입니다.</p>
+<p>switch라벨 이후 줄 바꿈이 오고 들여쓰기 레벨이 +2가 됩니다. 그 다음에 오는 switch라벨은 이전의 들여쓰기 레벨을 따릅니다.</p>
+<h4 id="4842-실패-주석" style="position:relative;"><a href="#4842-%EC%8B%A4%ED%8C%A8-%EC%A3%BC%EC%84%9D" aria-label="4842 실패 주석 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.4.2 실패: 주석</h4>
+<p>switch블록 안에서 구문 그룹들은 갑자기 종료될 수 있습니다.(<code>break</code>, <code>continue</code>, <code>return</code> 또는 exception에 의해서) 혹은 다음 구문으로 실행이 넘어가는 것을 표시할 수 있습니다. 이러한 상황에서는 (<code>// fall through</code>)와 같은 주석을 달 수 있습니다. 이 특별한 주석은 마지막 구문에는 올 필요가 없습니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">switch</span><span class="mtk4"> (input) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">case</span><span class="mtk4"> </span><span class="mtk7">1</span><span class="mtk9">:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">case</span><span class="mtk4"> </span><span class="mtk7">2</span><span class="mtk9">:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk3">prepareOneOrTwo</span><span class="mtk4">()</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk5 mtki">// fall through</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">case</span><span class="mtk4"> </span><span class="mtk7">3</span><span class="mtk9">:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk3">handleOneTwoOrThree</span><span class="mtk4">()</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">break</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">default:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk3">handleLargeNumber</span><span class="mtk4">(input)</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
+<p><code>case1</code>에서는 뒤에 주석이 필요없습니다. 오직 마지막 구문에만 쓰이면 됩니다.</p>
+<h4 id="4843-default케이스가-존재합니다" style="position:relative;"><a href="#4843-default%EC%BC%80%EC%9D%B4%EC%8A%A4%EA%B0%80-%EC%A1%B4%EC%9E%AC%ED%95%A9%EB%8B%88%EB%8B%A4" aria-label="4843 default케이스가 존재합니다 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.4.3 <code>default</code>케이스가 존재합니다</h4>
+<p>각각의 switch구문은 <code>default</code>구문에 코드가 없더라도 <code>default</code>구문을 포함하고 있습니다.</p>
+<p>예외: enum타입의 switch구문은 다른 모든 경우의 처리를 다 하였다면 default를 생략 가능합니다. 이것은 IDE나 다른 정적 분석 둘에서 놓친 것들을 경고해줍니다.</p>
+<h3 id="485-어노테이션" style="position:relative;"><a href="#485-%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98" aria-label="485 어노테이션 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.5 어노테이션</h3>
+<p>어노테이션을 documentation block이후에 클래스나 함수 혹은 생성자에 적용됩니다. 그리고 각각의 어노테이션들은 그들만의 줄을 가지고 있습니다. (즉, 한줄에 하나의 어노테이션을 갖고 있다.) 이것들의 줄바꿈(개행)은 줄바꿈에 해당되지 않습니다. 그래서 들여쓰기 레벨이 증가하지 않습니다.
+Example</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">Override</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">Nullable</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4"> </span><span class="mtk3">getNameIfPresent</span><span class="mtk4">() { </span><span class="mtk1">...</span><span class="mtk4"> }</span></span></span></code></pre>
+<p>예외: 파라미터가 없는 단일 어노테이션은 다음 예제와 같이 한줄에 쓸 수 있습니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">Override</span><span class="mtk4"> </span><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">int</span><span class="mtk4"> </span><span class="mtk3">hashCode</span><span class="mtk4">() { </span><span class="mtk1">...</span><span class="mtk4"> }</span></span></span></code></pre>
+<p>필드에 적용되는 어노테이션은 한 줄에 쓸 수 있습니다. 이 경우 여러개의 어노테이션(파라미터가 있어도 가능)이 한 줄에 쓸 수 있습니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="11"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">Partial</span><span class="mtk4"> </span><span class="mtk1">@</span><span class="mtk11">Mock</span><span class="mtk4"> </span><span class="mtk11">DataLoader</span><span class="mtk4"> loader</span><span class="mtk1">;</span></span></span></code></pre>
+<p>파라미터나 지역변수, 타입에 적용되는 어노테이션들의 특정한 포매팅 규칙은 없습니다.</p>
+<h3 id="486-주석" style="position:relative;"><a href="#486-%EC%A3%BC%EC%84%9D" aria-label="486 주석 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.6 주석</h3>
+<p>이 섹션은 구현 주석에 대한 내용입니다. Javadoc의 섹션 7에 있습니다.</p>
+<p>모든 줄 바꿈 앞에는 임의의 공백이 오고 그 뒤에는 구현 주석이 올 수 있습니다. 이러한 주석은 행을 비어있지 않게 만듭니다.</p>
+<h4 id="4861-블럭-주석-스타일" style="position:relative;"><a href="#4861-%EB%B8%94%EB%9F%AD-%EC%A3%BC%EC%84%9D-%EC%8A%A4%ED%83%80%EC%9D%BC" aria-label="4861 블럭 주석 스타일 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.6.1 블럭 주석 스타일</h4>
+<p>블럭 주석 스타일은 둘러쌓인 코드와 같은 들여쓰기 레벨을 가집니다.
+<code>/* ... */</code> 나 <code>// ...</code>의 스타일을 가집니다.
+여러 줄의 <code>/* ... */</code>주석은 각각의 줄이 <code>*</code>로 시작하여야합니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">/*</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * This is          // And so           /* Or you can</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * okay.            // is this.          * even do this. */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4"> </span><span class="mtk8">*/</span></span></span></code></pre>
+<p>주석은 별표 또는 기타 문자로 그려진 박스에 넣지 않습니다.</p>
+<blockquote>
+<p>팁: 여러 줄의 주석에는 문단 형식으로 re-wrap을 하고 싶다면 <code>/* ... */</code>를 사용합니다. 대부분의 포매터들은 <code>// ...</code>스타일의 주석 블록의 re-wrap을 지원하지 않습니다.</p>
+</blockquote>
+<h3 id="487-접근-제한자" style="position:relative;"><a href="#487-%EC%A0%91%EA%B7%BC-%EC%A0%9C%ED%95%9C%EC%9E%90" aria-label="487 접근 제한자 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.7 접근 제한자</h3>
+<p>클래스 및 멤버 수정자가 존재하는 경우 아래의 Java에서 권장하는 순서대로 나타냅니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="13"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">protected</span><span class="mtk4"> </span><span class="mtk9">private</span><span class="mtk4"> </span><span class="mtk9">abstract</span><span class="mtk4"> </span><span class="mtk9">default</span><span class="mtk4"> </span><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk9">transient</span><span class="mtk4"> </span><span class="mtk9">volatile</span><span class="mtk4"> </span><span class="mtk9">synchronized</span><span class="mtk4"> </span><span class="mtk9">native</span><span class="mtk4"> </span><span class="mtk9">strictfp</span></span></span></code></pre>
+<h3 id="488-숫자-리터럴" style="position:relative;"><a href="#488-%EC%88%AB%EC%9E%90-%EB%A6%AC%ED%84%B0%EB%9F%B4" aria-label="488 숫자 리터럴 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.8.8 숫자 리터럴</h3>
+<p>long의 값을 가지는 정수 리터럴은 대문자 L의 접미사를 가집니다.
+소문자를 사용하는 경우 1과 헷갈릴 수 있어서 대문자를 사용합니다.
+예를 들면 3000000000l 대신 3000000000L을 사용합니다.</p>
+<hr>
+<h1 id="5-naming" style="position:relative;"><a href="#5-naming" aria-label="5 naming permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Naming</h1>
+<h2 id="51-모든-식별자에-대한-공통-규칙" style="position:relative;"><a href="#51-%EB%AA%A8%EB%93%A0-%EC%8B%9D%EB%B3%84%EC%9E%90%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B3%B5%ED%86%B5-%EA%B7%9C%EC%B9%99" aria-label="51 모든 식별자에 대한 공통 규칙 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.1 모든 식별자에 대한 공통 규칙</h2>
+<p>식별자는 반드시 ASCII문자와 숫자를 사용해야합니다. 그리고 가끔은 userscore(<code>_</code>)를 이용하기도 합니다. 그러므로 유효한 식별자의 이름은 정규식 <code>\w+</code>와 매칭됩니다.</p>
+<p>구글 스타일에 따르면 특수한 접미사 또는 접두사는 사용하지 않습니다.
+예를 들면 <code>name_</code>, <code>mName</code>, <code>s_name</code>, <code>kName</code>와 같은 식별자는 사용하지 않습니다.</p>
+<h2 id="52-식별자-타입에-대한-규칙" style="position:relative;"><a href="#52-%EC%8B%9D%EB%B3%84%EC%9E%90-%ED%83%80%EC%9E%85%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B7%9C%EC%B9%99" aria-label="52 식별자 타입에 대한 규칙 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2 식별자 타입에 대한 규칙</h2>
+<h3 id="521-패키지-이름" style="position:relative;"><a href="#521-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%9D%B4%EB%A6%84" aria-label="521 패키지 이름 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.1 패키지 이름</h3>
+<p>패키지 이름은 모두 소문자로 작성하며 긴 단어의 경우 단순히 연결하여 작성합니다.(언더바도 사용 금지)</p>
+<ul>
+<li>com.example.deepspace (O)</li>
+<li>com.example.deepSpace (X)</li>
+<li>com.example.deep_space (X)</li>
+</ul>
+<h3 id="522-클래스-이름" style="position:relative;"><a href="#522-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%9D%B4%EB%A6%84" aria-label="522 클래스 이름 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.2 클래스 이름</h3>
+<p>클래스의 이름은 <strong>UpperCamelCase</strong>로 작성합니다.</p>
+<p>클래스의 이름은 일반적으로 명사나 명사구입니다. 예를 들면 <code>Character</code>또는 <code>ImmutableList</code>를 사용합니다.
+인터페이스의 이름 또한 명사나 명사구를 사용합니다. 하지만 가끔씩 형용사나 형용사구가 사용되기도 합니다.(ex. <code>Readable</code> )</p>
+<p>어노테이션은 따로 잘 만들어진 규칙이 없습니다.</p>
+<p>테스트 클래스들은 테스트 하고자하는 클래스의 이름이 앞에 오고 <code>Test</code>를 붙여줍니다.
+예를 들면 <code>HashTest</code>, <code>HashIntegrationTest</code>와 같이 정합니다.</p>
+<h3 id="523-메서드-이름" style="position:relative;"><a href="#523-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%9D%B4%EB%A6%84" aria-label="523 메서드 이름 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.3 메서드 이름</h3>
+<p>메서드의 이름도 <strong>UpperCamelCase</strong>로 작성합니다.</p>
+<p>메서드의 이름은 일반적으로 동사나 동사구를 사용합니다. 예를 들면 <code>sendMessage</code> 또는 <code>stop</code>이 있습니다.</p>
+<p>Underscore(<code>_</code>)는 JUnit테스트에서 논리적 컴포넌트를 분리시키기 위해 각각의 lowerCamelCase로 변경시켜 나올 수 있습니다.
+하나의 전형적인 패턴은 <code>&#x3C;methodUnderTest>_&#x3C;state></code> 입니다. 예를 들면 <code>pop_emptyStack</code>와 같이 합니다. 테스트 메서드 이름엔 정답이 없습니다.</p>
+<h3 id="524-상수-이름" style="position:relative;"><a href="#524-%EC%83%81%EC%88%98-%EC%9D%B4%EB%A6%84" aria-label="524 상수 이름 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.4 상수 이름</h3>
+<p>상수의 이름은 CONSTANT<em>CASE를 사용합니다. CONSTANT</em>CASE는 모두 대문자이며 각각의 단어는 언더스코어(<code>_</code>)로 구분합니다. 하지만 상수가 정확히 무엇일까요?</p>
+<p>상수는 변경될 수 없고 그것들의 메서드에서 부작용이 보여서는 안되는 <code>static final</code> 필드를 의미합니다. 이것은 primitive, String, 불변타입 그리고 불변 컬렉션을 포함합니다. 만약 어떠한 인스턴스의 상태가 바뀐다면 그것은 상수가 아닙니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="14"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// Constants</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk9">int</span><span class="mtk4"> NUMBER </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">5</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">ImmutableList</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk1">&gt;</span><span class="mtk4"> NAMES </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk11">ImmutableList</span><span class="mtk1">.</span><span class="mtk3">of</span><span class="mtk1">(</span><span class="mtk6">&quot;Ed&quot;</span><span class="mtk1">, </span><span class="mtk6">&quot;Ann&quot;</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">ImmutableMap</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk11">Integer</span><span class="mtk1">&gt;</span><span class="mtk4"> AGES </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk11">ImmutableMap</span><span class="mtk1">.</span><span class="mtk3">of</span><span class="mtk1">(</span><span class="mtk6">&quot;Ed&quot;</span><span class="mtk1">, </span><span class="mtk7">35</span><span class="mtk1">, </span><span class="mtk6">&quot;Ann&quot;</span><span class="mtk1">, </span><span class="mtk7">32</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">Joiner</span><span class="mtk4"> COMMA_JOINER </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk11">Joiner</span><span class="mtk1">.</span><span class="mtk3">on</span><span class="mtk1">(</span><span class="mtk6">&#39;,&#39;</span><span class="mtk1">);</span><span class="mtk4"> </span><span class="mtk5 mtki">// because Joiner is immutable</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">SomeMutableType</span><span class="mtk4">[] EMPTY_ARRAY </span><span class="mtk8">=</span><span class="mtk4"> {}</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">enum</span><span class="mtk4"> </span><span class="mtk11">SomeEnum</span><span class="mtk4"> { </span><span class="mtk7">ENUM_CONSTANT</span><span class="mtk4"> }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// Not constants</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4"> nonFinal </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk6">&quot;non-final&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4"> nonStatic </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk6">&quot;non-static&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">Set</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk1">&gt;</span><span class="mtk4"> mutableCollection </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk9">new</span><span class="mtk4"> </span><span class="mtk11">HashSet</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk1">&gt;</span><span class="mtk4">()</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">ImmutableSet</span><span class="mtk1">&lt;</span><span class="mtk11">SomeMutableType</span><span class="mtk1">&gt;</span><span class="mtk4"> mutableElements </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk11">ImmutableSet</span><span class="mtk1">.</span><span class="mtk3">of</span><span class="mtk1">(mutable);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">ImmutableMap</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk11">SomeMutableType</span><span class="mtk1">&gt;</span><span class="mtk4"> mutableValues </span><span class="mtk8">=</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk11">ImmutableMap</span><span class="mtk1">.</span><span class="mtk3">of</span><span class="mtk1">(</span><span class="mtk6">&quot;Ed&quot;</span><span class="mtk1">, mutableInstance, </span><span class="mtk6">&quot;Ann&quot;</span><span class="mtk1">, mutableInstance2);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">Logger</span><span class="mtk4"> logger </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk11">Logger</span><span class="mtk1">.</span><span class="mtk3">getLogger</span><span class="mtk1">(</span><span class="mtk11">MyClass</span><span class="mtk1">.</span><span class="mtk3">getName</span><span class="mtk1">());</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">static</span><span class="mtk4"> </span><span class="mtk9">final</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4">[] nonEmptyArray </span><span class="mtk8">=</span><span class="mtk4"> {</span><span class="mtk6">&quot;these&quot;</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk6">&quot;can&quot;</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk6">&quot;change&quot;</span><span class="mtk4">}</span><span class="mtk1">;</span></span></span></code></pre>
+<p>이것들의 이름은 일반적으로 명사나 명사구를 사용합니다.</p>
+<h3 id="525-상수가-아닌-필드의-이름" style="position:relative;"><a href="#525-%EC%83%81%EC%88%98%EA%B0%80-%EC%95%84%EB%8B%8C-%ED%95%84%EB%93%9C%EC%9D%98-%EC%9D%B4%EB%A6%84" aria-label="525 상수가 아닌 필드의 이름 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.5 상수가 아닌 필드의 이름</h3>
+<p>상수가 아닌 필드의 이름은 <strong>lowerCamelCase</strong>를 사용합니다.</p>
+<p>이름은 전형적으로 명사나 명사구를 이용합니다.
+ex) <code>computedValues</code>, <code>index</code></p>
+<h3 id="526-파라미터의-이름" style="position:relative;"><a href="#526-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%9D%98-%EC%9D%B4%EB%A6%84" aria-label="526 파라미터의 이름 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.6 파라미터의 이름</h3>
+<p>파라미터의 이름은 <strong>lowerCamelCase</strong>를 사용합니다.</p>
+<p>public 메서드에서 하나의 문자를 사용한 파라미터의 이름은 피해야합니다.</p>
+<h3 id="527-지역-변수의-이름" style="position:relative;"><a href="#527-%EC%A7%80%EC%97%AD-%EB%B3%80%EC%88%98%EC%9D%98-%EC%9D%B4%EB%A6%84" aria-label="527 지역 변수의 이름 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.7 지역 변수의 이름</h3>
+<p>지역 변수의 이름은 <strong>lowerCamelCase</strong>를 사용합니다.</p>
+<p>심지어 <code>final</code>이나 불변, 지역 변수는 상수로 간주되어서는 안되고 상수 스타일로 기술해서도 안됩니다.</p>
+<h3 id="528-타입-변수의-이름" style="position:relative;"><a href="#528-%ED%83%80%EC%9E%85-%EB%B3%80%EC%88%98%EC%9D%98-%EC%9D%B4%EB%A6%84" aria-label="528 타입 변수의 이름 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.2.8 타입 변수의 이름</h3>
+<p>각각의 변수 타입은 아래의 두가지 스타일을 따릅니다.</p>
+<ul>
+<li>하나의 대문자, 선택적으로 뒤에 하나의 숫자가 따라올 수 있다.
+ex) <code>E</code>, <code>T</code>, <code>X</code>, <code>T2</code></li>
+<li>클래스를 위해서 사용되는 이름의 형식에 <code>T</code>대문자가 따라오는 형식
+ex) <code>RequestT</code>, <code>FooBarT</code></li>
+</ul>
+<h2 id="53-camel-case-defined" style="position:relative;"><a href="#53-camel-case-defined" aria-label="53 camel case defined permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.3 Camel case: defined</h2>
+<p>때때로 영어 구문을 카멜 케이스로 바꾸는 이유가 하나 이상 존재한다. 예를 들어, "IPv6" 또는 "iOS"와 같은 특이한 구조나 두문자어가 있을 때처럼 말이다. 예측 가능성을 높이기 위해 Google Style은 다음과 같은 결정론적 체계를 지정합니다.</p>
+<p>이름을 산문 형태로 시작한다:</p>
+<ol>
+<li>구를 평문의 ASCII로 변경하고 어퍼스트로피(<code>'</code>)를 없앤다. 예를 들면 "Müller's algorithm"를 "Muellers algorithm"로 변경한다.</li>
+<li>
+<p>결과를 단어로 나누고 남은 공백과 구두점으로 나눈다. (일반적으로 하이픈(<code>-</code>)으로 나눈다)</p>
+<ul>
+<li>추천 : 어떤 단어가 이미 카멜 케이스 방식이 쓰인다면 이것을 구성하는 부분들로 나눈다. (ex. "AdWords" -> "ad words")
+※ iOS는 카멜 케이스가 아니다. 이 부분은 어떠한 약속에도 위배됨으로 적용하지 않는다.</li>
+</ul>
+</li>
+<li>
+<p>이제 모두 lowercase로 바꾸고 그리고 첫번째 글자를 대문자로 바꿔줍니다.</p>
+<ul>
+<li>각각의 단어는 Upper camel case를 적용한다.</li>
+<li>첫번째로 오는 단어는 lower camel case를 적용한다.</li>
+</ul>
+</li>
+<li>마침내 단어들을 하나의 식별자로 합칩니다.</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 773px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 29.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/0lEQVQY01WQi46DIBRE/f8/3GSTrtYiykMBBR/g9EK3bpdkIMxhBkL14Bo/rYAyK5TdrlVMHg2TZdVuf/kkTazlY2HKrpcvSXbZUN1bhlvdoLkzqNHCzQGWNNkZzY2h+e4wUEH2rPMUCpAPA/llMDUzjCFv9jDEFr+ics5Ba4Vp1MB5gqaiMyUoqcBZh8XNKOOXxzki9QlRRrL+ZypNRR3voJSC9x4xxqJ9PyCkAOsYeM9pv79YitjMho2R6h27OYr3zlX5df3QQwqBEEK5MdFNx3FA0j8N9QDZyVJ4sZVKQryUvaxSmIP58GfgDZ2mP+oNlmm5/MLoRelMf/pgT7P6z4b3vCIAAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="img 1"
+        title="img 1"
+        src="/static/913709310bbd65cd4dc29896b490ca80/612f7/img_1.png"
+        srcset="/static/913709310bbd65cd4dc29896b490ca80/5a46d/img_1.png 300w,
+/static/913709310bbd65cd4dc29896b490ca80/0a47e/img_1.png 600w,
+/static/913709310bbd65cd4dc29896b490ca80/612f7/img_1.png 773w"
+        sizes="(max-width: 773px) 100vw, 773px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
+<p>*은 사용가능하나 권장되지 않는다.</p>
+<blockquote>
+<p>노트: 일부 단어들은 영어에서 모호하게 하이픈(<code>-</code>)으로 연결된다. 예를 들어 "nonempty"와 "non-empty"가 모두 올바르므로 메서드 이름 checkNonempty와 checkNonempty도 모두 정확합니다.</p>
+</blockquote>
+<hr>
+<h1 id="6-프로그래밍-연습" style="position:relative;"><a href="#6-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%97%B0%EC%8A%B5" aria-label="6 프로그래밍 연습 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. 프로그래밍 연습</h1>
+<h2 id="61-override--항상-사용" style="position:relative;"><a href="#61-override--%ED%95%AD%EC%83%81-%EC%82%AC%EC%9A%A9" aria-label="61 override  항상 사용 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.1 <code>@Override</code> : 항상 사용</h2>
+<p>메서드가 오버라이딩을 하면 <code>@Override</code> 어노테이션을 붙여줍니다. 이것은 상위 클래스를 오버라이딩하는 클래스 메서드, 인터페이스 메소드를 구현하느 클래스 메서드, 상위 인터페이스의 메서드를 재구현하는 인터페이스 메서드 모두 포함입니다.</p>
+<p>예외: 부모 메서드가 <code>@Deprecated</code>된 경우 <code>@Override</code>를 생략할 수 있습니다.</p>
+<h2 id="62-예외-잡기-생략하지-말-것" style="position:relative;"><a href="#62-%EC%98%88%EC%99%B8-%EC%9E%A1%EA%B8%B0-%EC%83%9D%EB%9E%B5%ED%95%98%EC%A7%80-%EB%A7%90-%EA%B2%83" aria-label="62 예외 잡기 생략하지 말 것 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.2 예외 잡기: 생략하지 말 것</h2>
+<p>아래에 언급된 경우를 제외하고는 catch된 예외에 대한 응답으로 아무 것도 하지 않는 경우가 매우 드뭅니다. (일반적으로 로그를 남기거나 불가능하다고 간주되면 <code>AssertionError</code>로 다시 던져주는 반응을 합니다.)</p>
+<p>캐치 블록에서 아무것도 하지 않는 것이 적절하다면 아래와 같이 주석을 남겨야합니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="15"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">try</span><span class="mtk4"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">int</span><span class="mtk4"> i </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk11">Integer</span><span class="mtk1">.</span><span class="mtk3">parseInt</span><span class="mtk1">(response);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk9">return</span><span class="mtk4"> </span><span class="mtk3">handleNumericResponse</span><span class="mtk4">(i)</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">} </span><span class="mtk9">catch</span><span class="mtk4"> (</span><span class="mtk11">NumberFormatException</span><span class="mtk4"> </span><span class="mtk4 mtki">ok</span><span class="mtk4">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk5 mtki">// it&#39;s not numeric; that&#39;s fine, just continue</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">return</span><span class="mtk4"> </span><span class="mtk3">handleTextResponse</span><span class="mtk4">(response)</span></span></span></code></pre>
+<p>예외: 테스트에서 예외를 잡는 부분은 expected, 혹은 expected로 시작하는 이름을 지으면서 무시할 수 있습니다. 다음 예제는 테스트에서 예외가 나오는게 확실한 상황에서 사용되는 대중적인 형식으로 주석이 필요없습니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="16"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">try</span><span class="mtk4"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk11">emptyStack</span><span class="mtk1">.</span><span class="mtk3">pop</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">  </span><span class="mtk3">fail</span><span class="mtk4">()</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">} </span><span class="mtk9">catch</span><span class="mtk4"> (</span><span class="mtk11">NoSuchElementException</span><span class="mtk4"> </span><span class="mtk4 mtki">expected</span><span class="mtk4">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
+<h2 id="63-정적-멤버-클래스를-사용할-수-있음" style="position:relative;"><a href="#63-%EC%A0%95%EC%A0%81-%EB%A9%A4%EB%B2%84-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%8C" aria-label="63 정적 멤버 클래스를 사용할 수 있음 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.3 정적 멤버: 클래스를 사용할 수 있음</h2>
+<p>정적 클래스 멤버에 대한 참조가 규정되어야 하는 경우 해당 클래스 유형의 참조 또는 표현식이 아니라 클래스의 이름으로 규정됩니다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="17"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">Foo</span><span class="mtk4"> aFoo </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk1">...;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">Foo</span><span class="mtk1">.</span><span class="mtk3">aStaticMethod</span><span class="mtk1">();</span><span class="mtk4"> </span><span class="mtk5 mtki">// good</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">aFoo</span><span class="mtk1">.</span><span class="mtk3">aStaticMethod</span><span class="mtk1">();</span><span class="mtk4"> </span><span class="mtk5 mtki">// bad</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">somethingThatYieldsAFoo</span><span class="mtk4">()</span><span class="mtk1">.</span><span class="mtk3">aStaticMethod</span><span class="mtk1">();</span><span class="mtk4"> </span><span class="mtk5 mtki">// very bad</span></span></span></code></pre>
+<h2 id="64-finalizers-사용되지-않음" style="position:relative;"><a href="#64-finalizers-%EC%82%AC%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EC%9D%8C" aria-label="64 finalizers 사용되지 않음 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.4 Finalizers: 사용되지 않음</h2>
+<p><code>Object.finalize</code>를 override하는 것은 매우 드뭅니다.</p>
+<blockquote>
+<p>Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.</p>
+</blockquote>
+<hr>
+<h1 id="7-javadoc" style="position:relative;"><a href="#7-javadoc" aria-label="7 javadoc permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. JavaDoc</h1>
+<h2 id="71-formatting" style="position:relative;"><a href="#71-formatting" aria-label="71 formatting permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.1 Formatting</h2>
+<h3 id="711-일반적인-형식" style="position:relative;"><a href="#711-%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8-%ED%98%95%EC%8B%9D" aria-label="711 일반적인 형식 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.1.1 일반적인 형식</h3>
+<p>JavaDoc 블록의 일반적인 포메팅은 아래의 예제와 같다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="18"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">/**</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * Multiple lines of Javadoc text are written here,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * wrapped normally...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">int</span><span class="mtk4"> </span><span class="mtk3">method</span><span class="mtk4">(</span><span class="mtk11">String</span><span class="mtk4"> p1) { </span><span class="mtk1">...</span><span class="mtk4"> }</span></span></span></code></pre>
+<p>또는 아래의 단일 줄의 예시와 같다.</p>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="19"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">/** An especially short bit of Javadoc. */</span></span></span></code></pre>
+<p>기본 형식은 항상 허용됩니다. comment marker와 함께 Javadoc블록 전체가 한 줄에 들어갈 수 있는 경우에는 위와 같이 한 줄로 사용 가능합니다. <code>@return</code>과 같은 블록 태그가 없는 경우에만 해당됩니다.</p>
+<h3 id="712-단락-paragraphs" style="position:relative;"><a href="#712-%EB%8B%A8%EB%9D%BD-paragraphs" aria-label="712 단락 paragraphs permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.1.2 단락 (Paragraphs)</h3>
+<p>한 개의 빈 줄(정렬된 선행 별표(<code>*</code>)만 포함하는 행)은 단락 사이와 블록 태그의 그룹 앞에 표시됩니다. 첫 번째 단락을 제외한 각 단락은 첫 번째 단어 바로 앞에 <code>&#x3C;p></code>가 있고 뒤에 공백이 없습니다.</p>
+<h3 id="713-블록-태그" style="position:relative;"><a href="#713-%EB%B8%94%EB%A1%9D-%ED%83%9C%EA%B7%B8" aria-label="713 블록 태그 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.1.3 블록 태그</h3>
+<p>사용되는 표준 "블록 태그"는 <code>@param</code>, <code>@return</code>, <code>@throws</code>, <code>@deprecated</code> 순서로 표시되며 이 네 가지 유형은 빈 서술이 있으면 안됩니다. 블록 태그가 한 줄에 맞지 않으면 <code>@</code> 위치에서 들여쓰기 4번을 합니다.</p>
+<h2 id="72-요약-조각fragment" style="position:relative;"><a href="#72-%EC%9A%94%EC%95%BD-%EC%A1%B0%EA%B0%81fragment" aria-label="72 요약 조각fragment permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.2 요약 조각(fragment)</h2>
+<p>각각의 JavaDoc블록은 간단한 summary fargment로 시작한다. 이 frament는 매우 중요하다. 이것은 클래스 및 메서드 인덱스와 같은 특정 컨텍스트에 나타나는 텍스트의 유일한 부분입니다.</p>
+<p>fragment는 완전한 문장이 아닌 명사구나 동사구입니다. 이것은 <code>A {@code Foo} is a...</code>나 <code>This method returns...</code>로 시작하지 않고 <code>Save the record.</code>와 같은 완전한 명령형으로 작성되지도 않습니다. 하지만 fragment는 완전한 문장인 것처럼 대문자와 구두점이 있습니다.</p>
+<blockquote>
+<p>팁: 일반적인 실수는 <code>/** @return the customer ID */</code>형식으로 간단한 JavaDoc을 작성하는 것입니다. 이것은 올바르지 않으며 <code>/** Returns the customer ID. */</code>으로 변경되어야 합니다.</p>
+</blockquote>
+<h2 id="73-javadoc이-어디서-쓰이는지" style="position:relative;"><a href="#73-javadoc%EC%9D%B4-%EC%96%B4%EB%94%94%EC%84%9C-%EC%93%B0%EC%9D%B4%EB%8A%94%EC%A7%80" aria-label="73 javadoc이 어디서 쓰이는지 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.3 Javadoc이 어디서 쓰이는지</h2>
+<p>최소한 JavaDoc은 모든 <code>public</code>클래스와 <code>public</code>, <code>protected</code>멤버에 쓰입니다.
+몇몇의 예외는 아래와 같습니다.</p>
+<h3 id="731-예외-자가-설명-메서드" style="position:relative;"><a href="#731-%EC%98%88%EC%99%B8-%EC%9E%90%EA%B0%80-%EC%84%A4%EB%AA%85-%EB%A9%94%EC%84%9C%EB%93%9C" aria-label="731 예외 자가 설명 메서드 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.3.1 예외: 자가-설명 메서드</h3>
+<p>Javadoc은 <code>getFoo</code>와 같이 "간단하고 명백한" 메서드에 대해 선택사항입니다.
+이 경우 "foo를 반환한다"는 말 밖에 할 말이 없습니다.</p>
+<blockquote>
+<p>중요! : 일반적인 독자가 알아야 할 관련 정보를 생략하는 것을 정당화하기 위해 이 예외를 인용하는 것은 적절하지 않습니다. 예를 들어, <code>getCanonicalName</code>이라는 메서드의 경우 일반적인 독자가 "canonical name"이라는 용어가 무엇인지 모를 수 있어 해당 문서를 생략하면 안됩니다.</p>
+</blockquote>
+<h3 id="732-예외-overrides" style="position:relative;"><a href="#732-%EC%98%88%EC%99%B8-overrides" aria-label="732 예외 overrides permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.3.2 예외: overrides</h3>
+<p>Javadoc은 supertype메서드를 override하는데 항상 존재하지 않습니다.</p>
+<h3 id="734-javadoc이-필요없는-이유" style="position:relative;"><a href="#734-javadoc%EC%9D%B4-%ED%95%84%EC%9A%94%EC%97%86%EB%8A%94-%EC%9D%B4%EC%9C%A0" aria-label="734 javadoc이 필요없는 이유 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.3.4 Javadoc이 필요없는 이유</h3>
+<p>다른 클래스와 멤버들은 Javadoc을 필요에 따라 원하는 대로 갖는다.</p>
+<p>구현 주석이 클래스나 멤버의 전반적인 목적이나 동작을 정의하는 데 사용될 때마다 해당 주석은 대신 Javadoc으로 작성됩니다(<code>/**</code>사용).</p>
+<p>필수가 아닌 Javadoc은 섹션 7.1.2, 7.1.3 및 7.2의 형식 지정 규칙을 따르도록 엄격하게 요구되지는 않지만 물론 권장됩니다.</p>
+<hr>
+<h1 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h1>
+<ul>
+<li><a href="https://google.github.io/styleguide/javaguide.html#s1-introduction">Google Java Style Guide</a></li>
+<li><a href="https://github.com/JunHoPark93/google-java-styleguide">Github - JunHoPark93/google-java-styleguide</a></li>
+<li><a href="https://github.com/binghe819/TIL/blob/master/JAVA/%EA%B8%B0%ED%83%80/google%20java%20style%20guide.md">Google Java Style Guide - 번역</a></li>
+</ul>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .mtk6 { color: #98C379; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+</style></div></div></div></div><div class="css-1bdwg0l etadk2t0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><div class="css-1l4w6pd"><div class="css-1i57it9"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div><style data-emotion-css="14e3tt2">.css-14e3tt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-14e3tt2"><style data-emotion-css="1cwag5x">.css-1cwag5x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#FF813E;}</style><a target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/seongwon" class="css-1cwag5x"><style data-emotion-css="9u48bm">.css-9u48bm{margin-right:0.5rem;}</style><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee" class="css-9u48bm"/><span>Buy me a coffee</span></a></div></div></div></div><div class="css-1bdwg0l etadk2t0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 eazp2vb0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry eazp2vb1"></div><div class="css-1pwr1ry eazp2vb1"><style data-emotion-css="83wtrm">.css-83wtrm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#eee;border-radius:0.25rem;border-right-width:4px;border-color:#c6cefc;}.css-83wtrm:hover{background-color:#ddd;}</style><a rel="next" class="css-83wtrm" href="/Git/20211125-Git커밋 메시지 규약/"><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="2m7hin">.css-2m7hin{color:#3737B9;}</style><p class="css-2m7hin">다음 포스트</p><p>Git 커밋 메세지 규약 정리 - The AngularJS commit conventions.</p></div><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e1b6rdiw0"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e1b6rdiw1"><style data-emotion-css="p5b1u1">.css-p5b1u1{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(214,188,250,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-p5b1u1{margin-bottom:1rem;}}</style><div class="css-p5b1u1 gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE50lEQVQ4y0WU+U/TdxjHq86ZzB9mXLYscYvLZjymcU4TN4/oyMRr4sSbdSKnomIRszEZbg4QuQ+BUm7aUsollBYKpVAKlEMQ5HbqpmZzLvtx2T/w2tMvoL/2m74+z/N+3u+3KvmGhnJtPLX6VAac5Twba+bJqJUnI008uWfh9+FGfhtq4NFgPQ/6apjqqWLCXcn9Tj3DjlIGWorotRTQVZ9HR00Oqp9iwjHo4tHlxGEsTmC4Q89TgXlB88DHd+/wcKCWGU81k91VjHcZXwHtRXiaCnDfyaOzVoARoce4dSMSW1U6bfU5OBtzBdTIs9Emnt33TuqFNgi0fg5qFqiJ0Y6KOWChALUKsKMmG1VooB/GokRGXSam5PXB1mL5g5HpXhPTst50j4lJt5GJLgPjMtVIeykjIo13wqG2Elm5kN6mfFk5dxa4ffvHmMtu8s+DTgbtZbSbs+RDJtkJkcRGfcuPmgCuhn/Nze/PkvjdWX6+eobOuhzGXHruyuP9zTp6LHm46m7jrM5CtXvbKgyFifw50SZrGHE35gs0jaS4c0SEHiVEvR/1sd2cPbWH4ABfgk770lyZwrgAvfr12QroFpleArd9uhKLKZu/ppyMdhplfJ0AM0i+fh7N+ZOEBx4k8IQPoQIL+2Yv4fKA3ZQqK5fTL+t6rFoF6J263Qv0272OLmuxArwvOnqshbhFj2tRaiJC/LkQ7EfIaR/CAvZwTr2XiMADtIskI85SPC06BehuuK1c2FEjQM3xrfQ5ynk+6WTcbcZjExtY8kn4IZhL544SduYgqz9awVvLl7Fm1XsEnfTBUpbAPTmOx5qv6Nd1J0d0z6KtKgPVJf8tDDr1PJcJJ3tqGGwplsvpuBUXRlTEcU75+6BSLWDJ4sUsXLiQQ3u2YK1IZKi1SGC5orlMV5cl62ZiF+upLh7ZzLDLqEw4JcC7rSVy7UKyEyPRCDDoxJesXbGMg5tWot65jgjR0l4lqWoWMzfk4KoXV9Rm4BDdW0xpqKJOfs6EJODFdAfTnlrFCt7XtSnRXA4/KkfYR+Dhz6hMi+Kx+DHu0nGs+iT6bdo5WCbOmnQcMl1zZSqqYL8tPJIkvJjpZKavTjHrcHsJurSrRF84weWwwxzz/QRzykWGqpPw37eDZmOKpEOiVpc5C5R1HaKf93fVoR2rmemvUYC/DjSI2GVKGkqzYggKOMD6dR+y/M2lWOPVuNJDWL92A3lJV0QWLc7aeaAcxJSOzSBA360fMOAo4e8HLgU44qzgYZ+Z+JhQFixazGuvv8G7b79DdJg/PWLiC0EBZP2iEVMXzK2bKb7NpLUyjWZ9Mqpdm96nW+Lz3x8jUgYOxrpMPB+3iQ+DWLRkKds3b+T66S+IDT/Cv49biYsOl4NFiam1c8AMZV27MXUW+NWuNdIwOfQ4ixiUOE0P1Eli9DKNjm7x5GBbqdRVuXjUwES3gR7xntsiVnl5kFdAmxd4JnAjsTf2k54ViNuuo7IgjoQYKYD6bJ7eaxArSVV1VjAksvQKzCPN0m3JVQ6iXNcstSd2aRH9bBW3xNianZjLYxmR2CXHBRGm9qE0M0auXaaU6ZjLMNd9JUr3zZaBtIs86J2wvTqNVsl2i2FuZW1SpPgnieKMi1zT+JOXfAWrIUPCb1Dq3tvOL4Ets8D5uM0mJF258LyG/wMQ4lRaLX4Z6QAAAABJRU5ErkJggg==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/88a66867dae51fb125504f10c9702215/2c344/profile.png 1x,
+/static/88a66867dae51fb125504f10c9702215/f20a7/profile.png 1.5x,
+/static/88a66867dae51fb125504f10c9702215/714e6/profile.png 2x" /><img loading="lazy" width="128" height="128" srcset="/static/88a66867dae51fb125504f10c9702215/2c344/profile.png 1x,
+/static/88a66867dae51fb125504f10c9702215/f20a7/profile.png 1.5x,
+/static/88a66867dae51fb125504f10c9702215/714e6/profile.png 2x" src="/static/88a66867dae51fb125504f10c9702215/2c344/profile.png" alt="profileImg" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><div><span>Written by </span><style data-emotion-css="1t4jyca">.css-1t4jyca{display:inline-block;font-size:1.25rem;font-weight:700;border-radius:9999px;margin-bottom:0.5rem;padding-left:0.75rem;padding-right:0.75rem;--bg-opacity:1;background-color:rgba(237,242,247,var(--bg-opacity));color:#3737B9;}</style><p class="css-1t4jyca">@<!-- -->Seongwon</p><style data-emotion-css="vg2p6i">.css-vg2p6i{font-size:0.875rem;font-weight:400;margin-bottom:0.5rem;}</style><div class="css-vg2p6i">열심히 성장중인 우테코 4기 BE 렉스입니다 🦖</div></div></div><style data-emotion-css="1air669">.css-1air669{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-left:0.5rem;margin-right:0.5rem;}</style><div class="css-1air669"><div class="css-1i57it9"></div></div><style data-emotion-css="1baulvz">.css-1baulvz{display:inline-block;}</style><a title="github Link" href="https://github.com/Seongwon97" class="css-1baulvz"><style data-emotion-css="vnd1fq">.css-vnd1fq{width:2rem;height:2rem;margin-top:1rem;margin-left:1rem;-webkit-transition:all 300ms cubic-bezier(0,0,0.2,1);transition:all 300ms cubic-bezier(0,0,0.2,1);color:#888;}.css-vnd1fq:hover{color:#000;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" class="css-vnd1fq" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a><a title="facebook Link" href="https://www.facebook.com/profile.php?id=100004105792447" class="css-1baulvz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-vnd1fq" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></div><style data-emotion-css="18jj1tc">.css-18jj1tc{margin-top:1.25rem;margin-left:0.5rem;margin-right:0.5rem;}</style><div class="css-18jj1tc"><div class="utterances"></div></div></div></div><style data-emotion-css="xgi74q">.css-xgi74q{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:fixed;bottom:0;right:0;padding-right:1.5rem;padding-bottom:1.5rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><div class="css-xgi74q el51cds0"><style data-emotion-css="1a68u">.css-1a68u{box-shadow:0 2px 2px 0 rgba(0,0,0,0.15);-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);background-color:#FFFFFF;color:#636363;font-size:0.75rem;padding-left:0.5rem;padding-right:0.5rem;padding-top:0.5rem;padding-bottom:0.5rem;border-radius:9999px;--transform-translate-x:0;--transform-translate-y:0;--transform-rotate:0;--transform-skew-x:0;--transform-skew-y:0;--transform-scale-x:1;--transform-scale-y:1;-webkit-transform:translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));-ms-transform:translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));transform:translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-content:flex-end;-ms-flex-line-pack:end;align-content:flex-end;z-index:100;}.css-1a68u:hover{background-color:#404040;color:#FFFFFF;}.css-1a68u:hover{--transform-scale-x:1.05;--transform-scale-y:1.05;}</style><button title="change to darkmode" class="css-1a68u"><style data-emotion-css="1alqh2e">.css-1alqh2e{fill:currentColor;--text-opacity:1;color:rgba(246,224,94,var(--text-opacity));width:1rem;height:1rem;margin-top:auto;margin-bottom:auto;margin-left:0;margin-right:0;}@media (min-width:768px){.css-1alqh2e{display:inline-block;margin-left:0.25rem;margin-right:0.25rem;}}</style><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="css-1alqh2e" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><style data-emotion-css="flxr9x">.css-flxr9x{display:none;margin-right:0;}@media (min-width:768px){.css-flxr9x{display:inline-block;margin-right:0.25rem;}}</style><span class="css-flxr9x">다크 모드로 보기</span></button><style data-emotion-css="15afv4q">.css-15afv4q{box-shadow:0 2px 2px 0 rgba(0,0,0,0.15);-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);background-color:#FFFFFF;color:#636363;font-size:0.75rem;padding-left:0.5rem;padding-right:0.5rem;padding-top:0.5rem;padding-bottom:0.5rem;border-radius:9999px;--transform-translate-x:0;--transform-translate-y:0;--transform-rotate:0;--transform-skew-x:0;--transform-skew-y:0;--transform-scale-x:1;--transform-scale-y:1;-webkit-transform:translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));-ms-transform:translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));transform:translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));cursor:pointer;margin-left:0.5rem;margin-top:auto;margin-bottom:auto;z-index:100;}.css-15afv4q:hover{background-color:#404040;color:#FFFFFF;}.css-15afv4q:hover{--transform-scale-x:1.05;--transform-scale-y:1.05;}</style><button title="top page" class="css-15afv4q"><style data-emotion-css="13htjwu">.css-13htjwu{width:1rem;height:1rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-13htjwu" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M868 545.5L536.1 163a31.96 31.96 0 0 0-48.3 0L156 545.5a7.97 7.97 0 0 0 6 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"></path></svg></button></div><style data-emotion-css="1k8xcyw">.css-1k8xcyw{text-align:center;padding-top:2rem;padding-bottom:2rem;bottom:0;}</style><footer class="css-1k8xcyw"><style data-emotion-css="1xju3od">.css-1xju3od{font-size:0.75rem;font-weight:700;}</style><a href="https://github.com/Seongwon97" class="css-1xju3od">©SeongwonOh</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-176158326-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Java/20211125-Google_Java_Style_Guide/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-2f72579fb641bf14a0fa.js"],"app":["/app-a7357771ecd5ee9dba56.js"],"component---src-pages-404-js":["/component---src-pages-404-js-7c870a7d2887aec81e13.js"],"component---src-pages-index-js":["/component---src-pages-index-js-00adaf82f0b474dbba85.js"],"component---src-pages-search-js":["/component---src-pages-search-js-0bd0fa40581866873b37.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-c13fb2d53b7ec5e4b38f.js"],"component---src-templates-category-js":["/component---src-templates-category-js-7ced1e41f0af300d999b.js"]};/*]]>*/</script><script src="/polyfill-2f72579fb641bf14a0fa.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-c13fb2d53b7ec5e4b38f.js" async=""></script><script src="/7a297f752dcfe258c0b0106d89edb3a916af916e-35686b2093ef54ff3248.js" async=""></script><script src="/commons-d4794f4d9e0af84805d6.js" async=""></script><script src="/1bfc9850-409296e666dade882413.js" async=""></script><script src="/5e2a4920-da90abce4a08c86a094c.js" async=""></script><script src="/d7eeaac4-dcbe97e7a5aa158c9d08.js" async=""></script><script src="/app-a7357771ecd5ee9dba56.js" async=""></script><script src="/dc6a8720040df98778fe970bf6c000a41750d3ae-17eb047fb821ccbad0b0.js" async=""></script><script src="/styles-84a9bc99193fe5828ffe.js" async=""></script><script src="/framework-eb684e3e828ad13b3940.js" async=""></script><script src="/webpack-runtime-2da3c169fb26441916c3.js" async=""></script></body></html>
