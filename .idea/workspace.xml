@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="257f812e-5a81-4e46-b0f6-4013ae8c9c69" name="Changes" comment="chore: 배포 설정 업데이트">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/gatsby.deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gatsby.deploy.yml" afterDir="false" />
+    <list default="true" id="257f812e-5a81-4e46-b0f6-4013ae8c9c69" name="Changes" comment="post: [JPA] 영속성 전이와 고아객체">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Spring/2022-06-22-Valid란.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Spring/2022-06-22-Valid란.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Spring/2022-08-25-JPA-프록시와-지연로딩.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Spring/2022-08-25-JPA-프록시와-지연로딩.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,20 +60,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/content/posts" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/content/assets" />
       <recent name="$PROJECT_DIR$/content/posts" />
+      <recent name="$PROJECT_DIR$/content/posts/DevOps/image" />
+      <recent name="$PROJECT_DIR$/content/posts/DevOps" />
+      <recent name="$PROJECT_DIR$/content/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/content/posts/우아한테크코스/image" />
-      <recent name="$PROJECT_DIR$/content/posts/우아한테크코스" />
-      <recent name="$PROJECT_DIR$/content/posts/우아한테크코스/프리코스/20211231 우테코 최종 결과" />
-      <recent name="$PROJECT_DIR$/content/posts/우아한테크코스/프리코스/20211218 우테코 최종 코딩테스트 후기" />
-      <recent name="$PROJECT_DIR$/content/posts/우아한테크코스/프리코스/20211217 우테코 최종 코딩테스트 대비2" />
+      <recent name="$PROJECT_DIR$/content/posts/Java/image" />
+      <recent name="$PROJECT_DIR$/content/posts/Java/Effective Java/20220220 이펙티브자바 12" />
+      <recent name="$PROJECT_DIR$/content/posts/Java" />
+      <recent name="$PROJECT_DIR$/content/posts/Java/20220311 자바의 상속" />
+      <recent name="$PROJECT_DIR$/content/posts/Java/20220302 제너릭 인터페이스를 이용한 예외처리" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,7 +106,14 @@
       <workItem from="1661103345185" duration="1864000" />
       <workItem from="1661106158176" duration="6549000" />
       <workItem from="1661153348617" duration="393000" />
-      <workItem from="1661153813913" duration="1219000" />
+      <workItem from="1661153813913" duration="1475000" />
+      <workItem from="1661155414279" duration="7608000" />
+      <workItem from="1661176431551" duration="396000" />
+      <workItem from="1661184196555" duration="2984000" />
+      <workItem from="1661232552741" duration="8312000" />
+      <workItem from="1661403596095" duration="2480000" />
+      <workItem from="1661663635230" duration="610000" />
+      <workItem from="1661682549591" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="chore: github action 수정">
       <created>1661109612653</created>
@@ -126,7 +136,147 @@
       <option name="project" value="LOCAL" />
       <updated>1661153981241</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: social image 업데이트">
+      <created>1661160899212</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661160899212</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: social image, icon 업데이트">
+      <created>1661162745973</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661162745973</updated>
+    </task>
+    <task id="LOCAL-00006" summary="post: [DevOps] Jenkins를 통한 CI/CD 구축기 3편 (Frontend CI/CD 구축)">
+      <created>1661167648740</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661167648740</updated>
+    </task>
+    <task id="LOCAL-00007" summary="post: [AWS, MySQL] - Private Ec2에 MySQL설치 및 원격 접속 설정하기">
+      <created>1661167808865</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661167808865</updated>
+    </task>
+    <task id="LOCAL-00008" summary="post: [DevOps] - Jenkins를 통한 CI/CD 구축기 4편 (Backend DB 구축)">
+      <created>1661168007626</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661168007626</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: 라이트모드 테마 컬러 변경">
+      <created>1661176596594</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661176596594</updated>
+    </task>
+    <task id="LOCAL-00010" summary="post: [Spring JPA] JPA Specification을 통한 조회 필터링 기능 구현">
+      <created>1661184210682</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1661184210682</updated>
+    </task>
+    <task id="LOCAL-00011" summary="post: [Spring JPA] Entity Mapping">
+      <created>1661184798242</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661184798242</updated>
+    </task>
+    <task id="LOCAL-00012" summary="post: Java관련 포스팅 이전">
+      <created>1661187412592</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1661187412592</updated>
+    </task>
+    <task id="LOCAL-00013" summary="post: update [Spring JPA] - JPA란?">
+      <created>1661268794556</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1661268794556</updated>
+    </task>
+    <task id="LOCAL-00014" summary="post: update [Spring JPA] Entity Mapping">
+      <created>1661268827134</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1661268827134</updated>
+    </task>
+    <task id="LOCAL-00015" summary="post: [JPA] 엔티티간 연관관계">
+      <created>1661329486296</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1661329486296</updated>
+    </task>
+    <task id="LOCAL-00016" summary="post: JPA 관련 포스트 제목 prefix 수정">
+      <created>1661329539343</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1661329539343</updated>
+    </task>
+    <task id="LOCAL-00017" summary="post: update [JPA] 엔티티간 연관관계">
+      <created>1661351910055</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1661351910055</updated>
+    </task>
+    <task id="LOCAL-00018" summary="post: update [JPA] 엔티티(Entity) 매핑">
+      <created>1661351937075</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1661351937075</updated>
+    </task>
+    <task id="LOCAL-00019" summary="post: update [JPA] JPA Specification(Criteria)을 통한 조회 필터링 기능 구현">
+      <created>1661352008375</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1661352008375</updated>
+    </task>
+    <task id="LOCAL-00020" summary="post: update [JPA] 엔티티 생명주기와 영속성 컨텍스트">
+      <created>1661352074625</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1661352074625</updated>
+    </task>
+    <task id="LOCAL-00021" summary="post: update [JPA] JPA란?">
+      <created>1661352083987</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1661352083987</updated>
+    </task>
+    <task id="LOCAL-00022" summary="post: [JPA] 프록시와 지연로딩">
+      <created>1661403615866</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1661403615866</updated>
+    </task>
+    <task id="LOCAL-00023" summary="post: [JPA] 영속성 전이와 고아객체">
+      <created>1661515993104</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1661515993104</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +297,26 @@
     <MESSAGE value="chore: github action 수정" />
     <MESSAGE value="post: 우테코 관련 포스트 이전" />
     <MESSAGE value="chore: 배포 설정 업데이트" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: 배포 설정 업데이트" />
+    <MESSAGE value="feat: social image 업데이트" />
+    <MESSAGE value="feat: social image, icon 업데이트" />
+    <MESSAGE value="post: [DevOps] Jenkins를 통한 CI/CD 구축기 3편 (Frontend CI/CD 구축)" />
+    <MESSAGE value="post: [AWS, MySQL] - Private Ec2에 MySQL설치 및 원격 접속 설정하기" />
+    <MESSAGE value="post: [DevOps] - Jenkins를 통한 CI/CD 구축기 4편 (Backend DB 구축)" />
+    <MESSAGE value="feat: 라이트모드 테마 컬러 변경" />
+    <MESSAGE value="post: [Spring JPA] JPA Specification을 통한 조회 필터링 기능 구현" />
+    <MESSAGE value="post: [Spring JPA] Entity Mapping" />
+    <MESSAGE value="post: Java관련 포스팅 이전" />
+    <MESSAGE value="post: update [Spring JPA] - JPA란?" />
+    <MESSAGE value="post: update [Spring JPA] Entity Mapping" />
+    <MESSAGE value="post: [JPA] 엔티티간 연관관계" />
+    <MESSAGE value="post: JPA 관련 포스트 제목 prefix 수정" />
+    <MESSAGE value="post: update [JPA] 엔티티간 연관관계" />
+    <MESSAGE value="post: update [JPA] 엔티티(Entity) 매핑" />
+    <MESSAGE value="post: update [JPA] JPA Specification(Criteria)을 통한 조회 필터링 기능 구현" />
+    <MESSAGE value="post: update [JPA] 엔티티 생명주기와 영속성 컨텍스트" />
+    <MESSAGE value="post: update [JPA] JPA란?" />
+    <MESSAGE value="post: [JPA] 프록시와 지연로딩" />
+    <MESSAGE value="post: [JPA] 영속성 전이와 고아객체" />
+    <option name="LAST_COMMIT_MESSAGE" value="post: [JPA] 영속성 전이와 고아객체" />
   </component>
 </project>
