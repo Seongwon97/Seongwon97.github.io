@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Aug 2022 15:39:22 GMT</lastBuildDate><item><title><![CDATA[[JPA] JPQL이란?]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. JPQL이란? JPA만의 기술을 사용했을 때는 DB…]]></description><link>https://seongwon97.github.io/Spring/20220829-JPA-JPQL/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/20220829-JPA-JPQL/</guid><pubDate>Mon, 29 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Aug 2022 15:51:37 GMT</lastBuildDate><item><title><![CDATA[[JPA] JPQL이란?]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. JPQL이란? JPA만의 기술을 사용했을 때는 DB…]]></description><link>https://seongwon97.github.io/Spring/20220829-JPA-JPQL/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/20220829-JPA-JPQL/</guid><pubDate>Mon, 29 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;해당 포스트는 인프런 김영한님의 &lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;자바 ORM 표준 JPA 프로그래밍 - 기본편&lt;/a&gt; 강의를 기반으로 작성하였습니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;1-jpql이란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-jpql%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;1 jpql이란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. JPQL이란?&lt;/h1&gt;
@@ -12133,6 +12133,201 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk&quot;
+        title=&quot;tecotalk&quot;
+        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
+        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
+/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
+/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
+        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
+&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
+&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk2&quot;
+        title=&quot;tecotalk2&quot;
+        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
+        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
+/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
+/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
+        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
+&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
+&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
+&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
+&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
+&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
+난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
+&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
+그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
+네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
+&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
+올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;state pattern&quot;
+        title=&quot;state pattern&quot;
+        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
+        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
+/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
+/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
+        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
+그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
+&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
+두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
+저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
+코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
+&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 피드백 정리]]></title><description><![CDATA[피드백을 주고받은 PR & 작성 코드 [1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257 작성한 1단계 미션 코드 [2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311 작성한 2단계 미션 코드 피드백 정리…]]></description><link>https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-피드백정리/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-피드백정리/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;h1 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h1&gt;
 &lt;ul&gt;
@@ -12408,201 +12603,6 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk&quot;
-        title=&quot;tecotalk&quot;
-        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
-        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
-/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
-/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
-        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
-&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
-&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk2&quot;
-        title=&quot;tecotalk2&quot;
-        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
-        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
-/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
-/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
-        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
-&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
-&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
-&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
-&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
-&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
-난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
-&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
-그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
-네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
-&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
-올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;state pattern&quot;
-        title=&quot;state pattern&quot;
-        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
-        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
-/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
-/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
-        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
-그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
-&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
-두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
-저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
-코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
-&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item16. public 클래스에서는 public 필드가 아닌 접근자 메서드를 사용하라]]></title><description><![CDATA[이 글은 Effective Java 3/E…]]></description><link>https://seongwon97.github.io/Java/20220317-이펙티브자바-16/</link><guid isPermaLink="false">https://seongwon97.github.io/Java/20220317-이펙티브자바-16/</guid><pubDate>Thu, 17 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -20194,299 +20194,6 @@ Github는 Git의 repository를 관리하는 &lt;strong&gt;클라우드 기반의
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우테코 프리코스] 3주차 과제 회고]]></title><description><![CDATA[3주차 과제를 들어가기 앞서 이번 과제는 마지막 미션인 만큼 시작하기 앞서 2주차 피드백과…]]></description><link>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</guid><pubDate>Tue, 14 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;3주차-과제를-들어가기-앞서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C%EB%A5%BC-%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0-%EC%95%9E%EC%84%9C&quot; aria-label=&quot;3주차 과제를 들어가기 앞서 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3주차 과제를 들어가기 앞서&lt;/h1&gt;
-&lt;p&gt;이번 과제는 마지막 미션인 만큼 시작하기 앞서 2주차 피드백과 2주차 과제에서 작성한 나의 코드 및 다른 지원자들의 코드 리뷰를 하는데 많은 시간을 투자하였습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;해당 리뷰에 대한 정리 자료는 다음 링크를 통해 확인하실 수 있습니다.
-&lt;a href=&quot;https://velog.io/@seongwon97/%EC%9A%B0%ED%85%8C%EC%BD%94-%ED%94%84%EB%A6%AC%EC%BD%94%EC%8A%A4-2%EC%A3%BC%EC%B0%A8-%ED%94%84%EB%A6%AC%EC%BD%94%EC%8A%A4-%EB%A6%AC%EB%B7%B0-%EC%A0%95%EB%A6%AC&quot;&gt;2주차 피드백 정리&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2주차 과제 리뷰를 하며 가장 크게 놀랐던 점은 다른 사람의 코드 리뷰를 하며 있었습니다. 같은 과제를 받아서 수행하였음에도 불구하고 프리코스 미션에 MVC패턴, 싱글톤, 일급 컬렉션 등 많은 기술들을 적용하며 과제를 진행하였다는 것에 놀라며 나도 3주차 과제의 진행에는 여러 기술들을 사용해보자!는 다짐을 하며 진행하였습니다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;우테코-프리코스-3주차-과제마지막&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9A%B0%ED%85%8C%EC%BD%94-%ED%94%84%EB%A6%AC%EC%BD%94%EC%8A%A4-3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C%EB%A7%88%EC%A7%80%EB%A7%89&quot; aria-label=&quot;우테코 프리코스 3주차 과제마지막 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;우테코 프리코스 3주차 과제(마지막...!)&lt;/h1&gt;
-&lt;h2 id=&quot;-미션-간단-설명&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EB%AF%B8%EC%85%98-%EA%B0%84%EB%8B%A8-%EC%84%A4%EB%AA%85&quot; aria-label=&quot; 미션 간단 설명 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🚀 미션 간단 설명&lt;/h2&gt;
-&lt;p&gt;이번 미션은 우리가 일상생활에서 쉽게 볼 수 있는 자판기를 코드로 구현하는 미션입니다.
-&lt;br&gt;미션 코드의 진행 순서는 다음과 같습니다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;자판기가 보유한 금액을 입력합니다.&lt;/li&gt;
-&lt;li&gt;1에서 입력된 금액으로 자판기는 랜덤하게 동전을 생성한다. (보유한 동전 출력)&lt;/li&gt;
-&lt;li&gt;자판기에서 판매할 상퓸 리스트를 입력합니다.&lt;/li&gt;
-&lt;li&gt;음료를 구매할 투입 금액을 입력합니다.&lt;/li&gt;
-&lt;li&gt;구매할 음료를 입력한다.
-(위의 4,5번을 잔돈이 상품의 최저 가격보다 적거나, 모든 상품이 소진 된 경우까지 반복한다.)&lt;/li&gt;
-&lt;li&gt;잔돈을 반환한다. (잔돈이 부족한 경우 반환할 수 있는 금액만 반환한다.)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;-제약사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%EC%A0%9C%EC%95%BD%EC%82%AC%ED%95%AD&quot; aria-label=&quot; 제약사항 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🔒 제약사항&lt;/h2&gt;
-&lt;h3 id=&quot;1-coin&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-coin&quot; aria-label=&quot;1 coin permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Coin&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;다음 Coin클래스를 활용해야 한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;2-입력&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%9E%85%EB%A0%A5&quot; aria-label=&quot;2 입력 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 입력&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;상품명, 가격, 수량은 쉼표(&lt;code&gt;,&lt;/code&gt;)로 구분하며 개별 상품은 대괄호(&lt;code&gt;[]&lt;/code&gt;)로 묶어 세미콜론(&lt;code&gt;:&lt;/code&gt;)으로 구분한다.&lt;/li&gt;
-&lt;li&gt;옳바르지 않는 입력이 들어오면 &lt;code&gt;IllegalArgumentException&lt;/code&gt;를 발생 시키고 &quot;[ERROR]&quot;로 시작하는 에러 메시지 출력 후 재입력을 받는다.&lt;/li&gt;
-&lt;li&gt;사용자의 입력은 &lt;code&gt;camp.nextstep.edu.missionutils.Console&lt;/code&gt;의 &lt;code&gt;readLine()&lt;/code&gt;을 활용한다.&lt;/li&gt;
-&lt;li&gt;입력 받아야 할 값 list&lt;/li&gt;
-&lt;li&gt;자판기가 보유한 금액&lt;/li&gt;
-&lt;li&gt;상품 list&lt;/li&gt;
-&lt;li&gt;투입금액&lt;/li&gt;
-&lt;li&gt;구입할 상품명&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;3-출력&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%B6%9C%EB%A0%A5&quot; aria-label=&quot;3 출력 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 출력&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;잔돈은 반환된 동전만 출력한다.&lt;/li&gt;
-&lt;li&gt;예외 상황 발생 시 &lt;code&gt;[ERROR]&lt;/code&gt;로 시작하는 에러 문구를 출력해야한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;4-그-외의-제약사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-%EA%B7%B8-%EC%99%B8%EC%9D%98-%EC%A0%9C%EC%95%BD%EC%82%AC%ED%95%AD&quot; aria-label=&quot;4 그 외의 제약사항 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. 그 외의 제약사항&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;JDK 8 버전 사용&lt;/li&gt;
-&lt;li&gt;Indent depth를 2까지만 허용&lt;/li&gt;
-&lt;li&gt;3항 연산자 사용 금지&lt;/li&gt;
-&lt;li&gt;메서드는 최대한 한가지 기능만!&lt;/li&gt;
-&lt;li&gt;메서드의 길이가 15라인을 넘지 않도록 구현&lt;/li&gt;
-&lt;li&gt;Else 사용 금지! -&gt; if절에서 return 하는 방식으로 구현하도록!&lt;/li&gt;
-&lt;li&gt;Random, Scanner API대신 &lt;code&gt;camp.nextstep.edu.missionutils&lt;/code&gt;에서 제공하는 &lt;code&gt;Randoms&lt;/code&gt;, &lt;code&gt;Console&lt;/code&gt; API를 활용!&lt;/li&gt;
-&lt;li&gt;src/test/java 디렉터리의 ApplicationTest에 있는 모든 테스트 케이스가 성공해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;h1 id=&quot;-프리코스-3주차에서-배운점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-%ED%94%84%EB%A6%AC%EC%BD%94%EC%8A%A4-3%EC%A3%BC%EC%B0%A8%EC%97%90%EC%84%9C-%EB%B0%B0%EC%9A%B4%EC%A0%90&quot; aria-label=&quot; 프리코스 3주차에서 배운점 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🎓 프리코스 3주차에서 배운점&lt;/h1&gt;
-&lt;h2 id=&quot;1-첫째도-mvc-둘째도-mvc-셋째도-mvc&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%B2%AB%EC%A7%B8%EB%8F%84-mvc-%EB%91%98%EC%A7%B8%EB%8F%84-mvc-%EC%85%8B%EC%A7%B8%EB%8F%84-mvc&quot; aria-label=&quot;1 첫째도 mvc 둘째도 mvc 셋째도 mvc permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 첫째도 MVC, 둘째도 MVC, 셋째도 MVC!!!!!&lt;/h2&gt;
-&lt;p&gt;이번 과제를 진행하며는 다른 것 보다도 MVC를 익히고 적용시키자는 다짐을 하며 과제를 하였습니다.&lt;/p&gt;
-&lt;p&gt;MVC패턴은 기존에는 스프링 프레임워크를 학습하며 적용을 하고는 하였는데 기존에는 강의를 들으며 따라서 학습을 할 뿐이지 혼자서 MVC패턴을 구현해본 적이 없었습니다. 그래서 그런가 MVC패턴의 전반적인 개념은 알고 있어도 직접 구현을 하려니까 손이 쉽게 움직이지 않았습니다.&lt;/p&gt;
-&lt;p&gt;그래서 저는 다른 사람들의 2주차 코드리뷰, MVC테코톡 영상들, 구글링을 하며 MVC의 개념과 형태를 익히며 정리 자료를 만들었습니다. 그리고 테코톡 영상들을 찾아보며 2년 전에는 &lt;a href=&quot;https://www.youtube.com/watch?v=uoVNJkyXX0I&quot;&gt;해리, 션님&lt;/a&gt; 이 강의를 하고 작년에는 &lt;a href=&quot;https://www.youtube.com/watch?v=es1ckjHOzTI&quot;&gt;범블비님&lt;/a&gt; , 올해는 &lt;a href=&quot;https://www.youtube.com/watch?v=ogaXW6KPc8I&quot;&gt;제리님&lt;/a&gt; 이 MVC영상을 찍을 정도로 MVC패턴은 그만큼 중요하다는 것을 느끼며 더욱 열심히 공부를 하고 이번 마지막 과제에서 가장 많은 신경을 쓴 것 같습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;MVC 정리자료 링크 : &lt;a href=&quot;https://velog.io/@seongwon97/MVC-%ED%8C%A8%ED%84%B4%EC%9D%B4%EB%9E%80&quot;&gt;MVC패턴이란?&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;MVC 패턴은 들어가기 앞서 학습을 하며 전반적인 이론 정리를 하고, 다른 코드들을 많이 봤음에도 불구하고 코드 작성은 쉽지 않았습니다.&lt;/p&gt;
-&lt;p&gt;패턴을 적용하다보니 &lt;strong&gt;해당 기능은 Model로 가야하나 Controller로 가야하나..?&lt;/strong&gt;하는 고민들을 수없이 많이 하다보니 기존에 빠르게 구현할 수 있었던 코드들도 작성하는데 엄청난 시간이 걸렸던 것 같습니다..😂😂&lt;/p&gt;
-&lt;p&gt;그렇게 과제를 진행하다보니 요구사항 정리부터 과제 완료까지 대략 12시간이라는 시간이 걸렸던 것 같습니다..다음주 토요일에 예정되어있는 최종 시험은 5시간만 주어지는데 말이죠😥😥&lt;/p&gt;
-&lt;p&gt;처음 작성한 코드의 구조는 아래의 사진과 같습니다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/c426b3ab-ffac-4a20-9356-53319304d2c8/image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;가장 기본적인 구조로 Service, Repository없이 Model, View, Controller로 코드를 작성하다보니 모든 비즈니스 로직은 Model에 위치하여 Model이 하는 작업의 양이 매우 많이 있었고 코드들이 길어지다보니 코드의 가독성 또한 좋지 못한 것을 느낄 수 있었습니다.&lt;/p&gt;
-&lt;p&gt;그래서 저는 &lt;a href=&quot;https://www.youtube.com/watch?v=uoVNJkyXX0I&quot;&gt;해리, 션님의 테코톡 영상&lt;/a&gt; 에서 션님이 잠깐동안 언급하였던 Service 레이어를 생성하며 코드의 작업을 분배고자 하였습니다. 처음에는 기존 코드의 리펙토링을 시도하였지만 코드의 결합도가 너무 높아서 리펙토링을 하기 힘들었습니다.. MVC패턴의 가장 큰 장점이 &lt;strong&gt;코드의 독립성&lt;/strong&gt;과 &lt;strong&gt;코드의 가독성, 재사용성&lt;/strong&gt;인데 처음 적용하였던 MVC 적용 코드는 모든 장점을 놓친 잘못된 코드라는 것을 알게 되었습니다😥 (제가 처음 작성한 MVC라 코드의 분리를 잘 못한 것 같습니다..)&lt;/p&gt;
-&lt;p&gt;그래서 저는 새로운 &lt;code&gt;branch&lt;/code&gt;를 다시 생성하여 처음부터 model, view, controller, service, repository로 나누어 개발을 진행했습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Model&lt;/strong&gt;에는 사용될 class&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;View&lt;/strong&gt;에는 input, output과 관련된 UI관련 코드들&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Controller&lt;/strong&gt;에는 View와 Service를 연결시켜서 Main함수에서 바로 호출하여 프로그램을 실행 시킬 수 있도록 하는 코드들&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;service&lt;/strong&gt;에는 전반적인 비즈니스 로직들&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;repository&lt;/strong&gt;에서는 원래 Spring프레임워크에서는 DB의 데이터를 읽고 쓰는 만큼 실제 사용할 객체를 생성&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;위와 같은 방법으로 파일을 생성하며 프로그래밍을 하다보니 아래와 같은 파일 구조가 나왔습니다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/38e72aeb-fb61-4fe0-8a28-09b8bf5af1ec/image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;다시 작성한 코드들는 비즈니스 Model(domain)에서 분리하고 Service에 생성을 하다보니 MVC만을 사용한 코드들보다 확실히 코드의 가독성이 올라가고 재사용성이 높아진 것 같았습니다.&lt;/p&gt;
-&lt;p&gt;특히 비즈니스 코드를 분리하다보니 리펙토링을 하면서도 별 다른 문제가 발생하지 않는 것을 확인할 수 있었습니다.&lt;/p&gt;
-&lt;h2 id=&quot;2-싱글톤-패턴-적용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4-%EC%A0%81%EC%9A%A9&quot; aria-label=&quot;2 싱글톤 패턴 적용 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 싱글톤 패턴 적용&lt;/h2&gt;
-&lt;p&gt;싱글톤 패턴은 이번 과제를 진행하며 공부하였던 내용 중 하나입니다.
-이전까지 싱글톤이라는 이름을 많이 들어봤으나 싱글톤을 언제 사용해야하는지? 싱글톤의 이점과 문제점은 무엇인지?에 대해서는 자세히 몰랐습니다.&lt;/p&gt;
-&lt;p&gt;코드 리뷰를 진행하며 다른 몇몇 지원자들이 싱글톤 패턴을 코드에 적용한 사례를 보고 해당 내용 또한 개념부터 공부를 하며 실제 코드에 적용까지 진행하였습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;싱글톤 패턴 정리 자료 링크 : &lt;a href=&quot;https://velog.io/@seongwon97/%EC%8B%B1%EA%B8%80%ED%86%A4Singleton-%ED%8C%A8%ED%84%B4%EC%9D%B4%EB%9E%80&quot;&gt;싱글톤(Singleton) 패턴이란?&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;싱글톤 패턴을 공부하다보니 이번 과제에서 제가 작성한 코드에서는 model, view, controller, service, repository로 구조를 구성하며 두번째로 프로그래밍한 과제의 &lt;code&gt;Repository&lt;/code&gt;부분에 적용을 하는 것이 좋다고 생각됐습니다.&lt;/p&gt;
-&lt;p&gt;저는 코드의 repository부분을 실제 데이터를 저장하고 해당 값들을 반환하는 코드들로 구성하였기 때문에 repository부분만큼은 한개의 인스턴스를 사용해야 한다고 생각했습니다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ChangeRepository&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ChangeRepository&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; instance &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;ChangeRepository&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; change&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; ChangeRepository&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ChangeRepository&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; getInstance&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; instance;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;그 결과 ChangeRepository와 같은 모든 repository에 싱글톤 패턴을 적용하여 프로그램 내에서 한개의 인스턴스만이 생성되도록 하였습니다.&lt;/p&gt;
-&lt;h2 id=&quot;3-enum클래스-학습-및-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-enum%ED%81%B4%EB%9E%98%EC%8A%A4-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;3 enum클래스 학습 및 사용 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Enum클래스 학습 및 사용&lt;/h2&gt;
-&lt;p&gt;이번 과제에는 아래의 Coin객체를 사용하는 요구사항이 있었습니다. 평상시에 enum을 별로 사용을 하지 않았던 저는 주어진 객체 코드를 이해하기도 어려웠습니다. 그래서 enum의 기본적인 개념부터 공부를 하며 enum에 대해 익히고 무사히 사용할 수 있었습니다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;enum&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Coin&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;COIN_500&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;),&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;COIN_100&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;),&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;COIN_50&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;),&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;COIN_10&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;final&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; amount&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;Coin&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;final&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; amount;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;enum을 사용하며 프로그래밍을 하다보니 코드의 가독성과 해당 코인 외의 새로운 코인을 추가로 생성할 수 없다는 점에서 안정성이 높아진다는 것을 느끼게 되었습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Enum정리자료 : &lt;a href=&quot;https://velog.io/@seongwon97/%EC%9E%90%EB%B0%94%EC%9D%98-Enum-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0&quot;&gt;자바의 Enum 정복하기&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;4-stream-학습-및-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-stream-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;4 stream 학습 및 사용 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Stream 학습 및 사용&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/d75342e2-00d8-4776-a24e-dc3613e6bdd8/image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;2주차 피드백에는 다음 사진과 같이 &lt;strong&gt;Java에서 제공하는 api를 적극 활용하라&lt;/strong&gt;는 피드백이 있었습니다. java에서 많은 api들이 존재하지만 저는 그 중에서도 &lt;code&gt;stream&lt;/code&gt;을 공부하여 적용해보았습니다.&lt;/p&gt;
-&lt;p&gt;Coin클래스에서 파라미터로 받는 &lt;code&gt;remainMoney&lt;/code&gt;보다 적은 돈을 가진 코인의 값들을 list로 반환하는 &lt;code&gt;getAvailableCoinValueList&lt;/code&gt;의 코드를 예시로 보겠습니다. 아래의 코드는 &lt;code&gt;Stream&lt;/code&gt;을 적용하기 전의 코드입니다. 물론 해당 코드도 depth는 2이고 코드의 길이가 많이 길지 않아 가독성이 떨어지는거 같지는 않습니다. 하지만 저는 배우는 입장이기에 해당 코드를 &lt;code&gt;stream&lt;/code&gt;을 적용하여 변경시켜봤습니다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getAvailableCoinValueList&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; remainMoney) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; coinValueList &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Coin&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; c &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Coin&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;            &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getAmount&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; remainMoney) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;            }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;            &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;coinValueList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getAmount&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;        }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; coinValueList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;stream을 적용한 코드는 다음과 같습니다. 코드에 stream을 적용해보니 확실히 코드의 길이가 간결해졌고 stream을 알고 있다는 가정하에서는 코드의 가독성도 높아진 것 같습니다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getAvailableCoinValueList&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; remainMoney) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Coin&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;())&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(coin &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;coin&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getAmount&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;() &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; remainMoney)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(Coin&lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;getAmount)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;sequential&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Collectors&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;stream을 학습하다보니 생각보다 많은 내용이 존재하였습니다. 내용이 너무 많은 만큼 다른 학습 내용과 다르게 따로 정리를 하지는 못하였으나 구글에서 좋은 정리 자료가 있어 공유를 합니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;참조한 Stream정리자료&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://futurecreator.github.io/2018/08/26/java-8-streams/&quot;&gt;https://futurecreator.github.io/2018/08/26/java-8-streams/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;5-intellij의-단축어-활용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#5-intellij%EC%9D%98-%EB%8B%A8%EC%B6%95%EC%96%B4-%ED%99%9C%EC%9A%A9&quot; aria-label=&quot;5 intellij의 단축어 활용 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5. IntelliJ의 단축어 활용&lt;/h2&gt;
-&lt;p&gt;과제를 진행하며 리펙토링을 많이 하다 보니 불필요한 import들이 많이 발생하였습니다.
-불필요한 import들을 하나씩 제거하다보니 1주차 피드백으로 아래와 같이 IDE의 기능을 활용하라던 피드백이 떠올라 불필요한 import제거를 해주는 단축어는 없는지 찾아봤습니다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/dfdd448d-16f4-4b45-a065-9eb2d3648913/image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;검색을 하다보니 실제로 불필요한 import문을 제거하는 단축키가 존재하였고 해당 기능을 적극 활용하여 불필요한 imort문들을 제거하는 작업을 진행하였습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;사용하지 않는 import문을 정리하는 단축키&lt;/strong&gt;
-윈도우 : Ctrl + Alt + O
-Mac OS : ^ + ⌥ + O&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/2714be18-ca8e-4e55-bd3f-9f7f29f8317f/image.png&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;6-일급-컬렉션-학습&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#6-%EC%9D%BC%EA%B8%89-%EC%BB%AC%EB%A0%89%EC%85%98-%ED%95%99%EC%8A%B5&quot; aria-label=&quot;6 일급 컬렉션 학습 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;6. 일급 컬렉션 학습&lt;/h2&gt;
-&lt;p&gt;2주차 과제를 마치고 코드 리뷰를 하던 중 &lt;a href=&quot;https://github.com/jayjaehunchoi&quot;&gt;jayjaehunchoi&lt;/a&gt; 지원자님의 제출 코드와 학습 정리 자료를 보던 중 &lt;strong&gt;일급 컬렉션&lt;/strong&gt;이라는 용어를 처음 접하게 되었습니다. 난생 처음 들어보는 용어인 만큼 나중에라도 도움이 되겠지!라는 마음으로 일급 컬렉션이 무엇인지에 대해 학습을 하고 코드에 적용을 해보고자 하였습니다.&lt;/p&gt;
-&lt;p&gt;일급 컬렉션은 &lt;code&gt;final&lt;/code&gt;로도 컬렉션의 불변을 만들 수 없기에 하나의 컬렉션을 wrapping하여 만든 것입니다. 하지만 프로젝트를 진행하다보니 컬렉션으로 관리 할 데이터들은 다음 정보들이 존재하였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. 상품 정보(ProductRepository)&lt;/strong&gt;
-상품 정보의 경우는 자판기가 상품을 판매하게 된다면 남은 상품의 개수를 변경시켜야 하여 일급 컬렉션을 적용은 불적합하다고 판단이 판단했습니다.
-&lt;strong&gt;2. Machine이 보유한 각각의 Coin개수에 대한 데이터(MachineCoinRepository)&lt;/strong&gt;
-Coin의 개수는 초기 설정을 제외하고는 Coin개수가 불변하지만 초기 코인 개수의 설정 메서드에 &lt;code&gt;put()&lt;/code&gt;이 사용되어 일급 컬렉션을 구현하였다고는 말을 할 수 없을 것 같습니다. 또 초기 코인 개수의 설정 메서드를 &lt;code&gt;put()&lt;/code&gt;을 사용하지 않고 생성자 부분에서 할 수는 있었지만 그러기 위해서는 MachineCoinRepository에 적용한 싱글톤 적용을 풀어야 했기에 일급 컬렉션의 완벽한 적용은 하지 못하였습니다.&lt;/p&gt;
-&lt;p&gt;일급 컬렉션의 실제 적용은 못하였지만 새로운 지식을 쌓아갔다는 것으로 만족하며 토요일에 있을 최종 코딩테스트나 이후의 프로그래밍에서는 일급 컬렉션을 적용할 수 있으면 실제 적용을 해보려고 합니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;일급 컬렉션 정리자료 링크 : &lt;a href=&quot;https://velog.io/@seongwon97/%EC%9D%BC%EA%B8%89-%EC%BB%AC%EB%A0%89%EC%85%98%EC%9D%B4%EB%9E%80&quot;&gt;일급 컬렉션이란?&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;7-상수-위치의-변경&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#7-%EC%83%81%EC%88%98-%EC%9C%84%EC%B9%98%EC%9D%98-%EB%B3%80%EA%B2%BD&quot; aria-label=&quot;7 상수 위치의 변경 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;7. 상수 위치의 변경&lt;/h2&gt;
-&lt;p&gt;2주차까지 과제를 진행하였을 때 메시지를 포함한 모든 상수들은 하나의 클래스 파일을 생성하여 한 곳에서 관리를 하였습니다. 그 당시 저는 한 곳에서 모든 상수를 관리하는 것이 코드가 더 깔끔해 보인다고 생각하여 한 곳에서 관리하였습니다.&lt;/p&gt;
-&lt;p&gt;하지만 다른 지원자들의 코드 리뷰를 하며 상수를 사용되는 클래스의 상단에 정의를 하여 사용하는 코드들을 접하다보니 코드를 해당 코드를 처음 접하는 사람의 입장에서는 모든 상수를 한 개의 클래스에 모으는 방법보다 사용되는 클래스 상단에 정의를 하는게 좋을 것 같다는 생각이 들었습니다.&lt;/p&gt;
-&lt;p&gt;그래서 이번 과제에서는 에러 메시지를 제외한 모든 상수 값들은 각각의 클래스 상단에 정의를 하였으며 에러 메시지만 기존의 방법처럼 클래스를 새로 생성하여 한 곳에서 관리하였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/ce3bca4c-5c81-444c-b7ee-0382ab0b555b/image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;해당 방법에는 정답은 따로 없는 것 같습니다. 하지만 앞으로도 여러 방법을 사용하여 상수들을 관리해보고 더욱 좋은 방법을 찾아보도록 노력하겠습니다.&lt;/p&gt;
-&lt;h2 id=&quot;아쉬웠던-점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%95%84%EC%89%AC%EC%9B%A0%EB%8D%98-%EC%A0%90&quot; aria-label=&quot;아쉬웠던 점 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;아쉬웠던 점😥&lt;/h2&gt;
-&lt;p&gt;이번 과제를 하면서 가장 아쉬웠던 점은 두번째로 작성한 코드에서는 코드를 작성하며 Test코드를 작성하지 못하였던 점이었습니다. MVC패턴을 Model, View, Controll만 적용한 첫번째 코드를 작성하였을 때는 여러 조건에 따라 Test코드를 작성하며 진행을 하였으나 Model, View, Controller, Service, Repository의 구조로 새로운 branch를 만들어 프로그래밍을 하였을 때는 시간에 쫓기는 마음이 들어 Test코드를 작성하지 못하였습니다😥&lt;/p&gt;
-&lt;p&gt;물론 첫번째로 프로그래밍하였던 Branch에서 상황별 Test코드를 작성하고 테스트를 진행하여 해당 로직들에 문제가 없는 것을 확인하였으나 새로운 구조로 작성하였던 로직들을 합치는 과정에서 예상치 못하였던 오류들이 발생하여 Test코드 부재에 대해 아쉬움이 남았습니다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;3주차-과제-후기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-%ED%9B%84%EA%B8%B0&quot; aria-label=&quot;3주차 과제 후기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3주차 과제 후기&lt;/h1&gt;
-&lt;p&gt;1주차 2주차 과제와 비교하였을 때 확실히 이번 과제는 난의도가 높았던 것 같습니다.
-제가 MVC패턴을 적용 학습을 하며 과제를 진행하여 많은 시간이 걸린 것도 있지만 같은 과제를 다시 진행하였음에도 불구하고 많은 시간이 걸렸던 것 같습니다..&lt;/p&gt;
-&lt;p&gt;이번 주차는 MVC패턴을 학습하고 적용하는데 거의 모든 시간을 투자했다고 봐도 무방합니다.
-일주일이라는 기간 동안 MVC 학습에 많은 시간을 투자하였으나 어느까지의 기능이 서비스에서 담당하여야 하고 또 어디까지의 기능이 컨트롤러서 담당해야하는지 헷갈리는 것 같습니다. &lt;strong&gt;해당 내용은 우테코에 합격을 하여 꼭 배우고 싶습니다&lt;/strong&gt;🔥🔥🔥&lt;/p&gt;
-&lt;p&gt;※ 우테코 프리코스 3주 과정에 대한 최종 후기는 새로운 글로 남기겠습니다.&lt;/p&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
-  .one-dark-pro {
-    background-color: #282c34;
-    color: #abb2bf;
-  }
-  .one-dark-pro .mtki { font-style: italic; }
-  .one-dark-pro .mtk9 { color: #C678DD; }
-  .one-dark-pro .mtk4 { color: #E06C75; }
-  .one-dark-pro .mtk11 { color: #E5C07B; }
-  .one-dark-pro .mtk1 { color: #ABB2BF; }
-  .one-dark-pro .mtk8 { color: #56B6C2; }
-  .one-dark-pro .mtk3 { color: #61AFEF; }
-  .one-dark-pro .mtk7 { color: #D19A66; }
-  .one-dark-pro .grvsc-line-highlighted::before {
-    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
-    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
-  }
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우테코 프리코스] 프리코스 참여후기]]></title><description><![CDATA[우테코란? 우테코는 우아한 형제들에서 개발 인력 양성을 위한 무료 IT교육 프로그램입니다.
 저는 이번 웹 백엔드 4기 교육생으로 지원을 하였고 1차 합격자가 되어 프리코스 과정을 진행하게 되었고 벌써…]]></description><link>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-참여후기/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-참여후기/</guid><pubDate>Tue, 14 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;우테코란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9A%B0%ED%85%8C%EC%BD%94%EB%9E%80&quot; aria-label=&quot;우테코란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;우테코란?&lt;/h1&gt;
 &lt;p&gt;우테코는 &lt;strong&gt;우아한 형제들&lt;/strong&gt;에서 개발 인력 양성을 위한 &lt;strong&gt;무료 IT교육 프로그램&lt;/strong&gt;입니다.
@@ -20698,7 +20405,7 @@ Coin의 개수는 초기 설정을 제외하고는 Coin개수가 불변하지만
     opacity: 0.7;
   }
   
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우테코 프리코스] 3주차 과제 회고]]></title><description><![CDATA[3주차 과제를 들어가기 앞서 이번 과제는 마지막 미션인 만큼 시작하기 앞서 2주차 피드백과…]]></description><link>https://seongwon97.github.io/Woowacourse/20211214-우테코_프리코스_3주차_과제회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20211214-우테코_프리코스_3주차_과제회고/</guid><pubDate>Tue, 14 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;3주차-과제를-들어가기-앞서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C%EB%A5%BC-%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0-%EC%95%9E%EC%84%9C&quot; aria-label=&quot;3주차 과제를 들어가기 앞서 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3주차 과제를 들어가기 앞서&lt;/h1&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우테코 프리코스] 3주차 과제 회고]]></title><description><![CDATA[3주차 과제를 들어가기 앞서 이번 과제는 마지막 미션인 만큼 시작하기 앞서 2주차 피드백과…]]></description><link>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</guid><pubDate>Tue, 14 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;3주차-과제를-들어가기-앞서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C%EB%A5%BC-%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0-%EC%95%9E%EC%84%9C&quot; aria-label=&quot;3주차 과제를 들어가기 앞서 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3주차 과제를 들어가기 앞서&lt;/h1&gt;
 &lt;p&gt;이번 과제는 마지막 미션인 만큼 시작하기 앞서 2주차 피드백과 2주차 과제에서 작성한 나의 코드 및 다른 지원자들의 코드 리뷰를 하는데 많은 시간을 투자하였습니다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;해당 리뷰에 대한 정리 자료는 다음 링크를 통해 확인하실 수 있습니다.
@@ -20764,26 +20471,7 @@ Coin의 개수는 초기 설정을 제외하고는 Coin개수가 불변하지만
 &lt;p&gt;패턴을 적용하다보니 &lt;strong&gt;해당 기능은 Model로 가야하나 Controller로 가야하나..?&lt;/strong&gt;하는 고민들을 수없이 많이 하다보니 기존에 빠르게 구현할 수 있었던 코드들도 작성하는데 엄청난 시간이 걸렸던 것 같습니다..😂😂&lt;/p&gt;
 &lt;p&gt;그렇게 과제를 진행하다보니 요구사항 정리부터 과제 완료까지 대략 12시간이라는 시간이 걸렸던 것 같습니다..다음주 토요일에 예정되어있는 최종 시험은 5시간만 주어지는데 말이죠😥😥&lt;/p&gt;
 &lt;p&gt;처음 작성한 코드의 구조는 아래의 사진과 같습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 487px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 78.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAABr0lEQVQ4y51Sy27bMBD0JxWFXcd8SCRFkVRERZSt2kEQ5NICvbT3fksCBL30O6crWwmcwnIeh8ECS3I4s7Oz7NsDws9HxN9/cfnrEdn3B8L9WN+Ke+Q//mBhesyYcpDaYZGu4b/eQpcVpK2QFQSqnM5ehSqpesyXDDOe5WAEITPU3Qap36JNCU2bYJ3DSkgwOmNyrOP9/8EzhfmXC1KYa3DCUAU1RezA0w5FnSBchCSI8hLSNxCFp8dqf/8YTxx7wucmXVRFCbfeokg9tCO7RCAMWTLloeriNOHYe0lIkHTA6g6r9Q10IEU+jg+erKkXBJOEQ2Nvmeb1OVxh2d/C+QCmikk1b1I4BDOvWnBKO7UttC0plGw/8Cmy1xWSzfmGFFI4agyGaztpd1rhEIp1CJsddEz0AdmlIEQx7JmZVHc+FJljOajqbxBjhK8bhDrChuqDhLnCigh5t0UdGxgXIEidOFL4Psu0h369g7nqkBuLzBxmxz4cChf45Bqw7R3WqUMg2ysawzmy04THa1O3WNBi2/qQMsvN89q8i3B4dEHrseh3CGS5Gmxbf1bZKcJ/Wzk5cLXMYZoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;img&quot;
-        title=&quot;img&quot;
-        src=&quot;/static/18750b21fa841fd7c060a0ad07e25908/7b439/img.png&quot;
-        srcset=&quot;/static/18750b21fa841fd7c060a0ad07e25908/5a46d/img.png 300w,
-/static/18750b21fa841fd7c060a0ad07e25908/7b439/img.png 487w&quot;
-        sizes=&quot;(max-width: 487px) 100vw, 487px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/c426b3ab-ffac-4a20-9356-53319304d2c8/image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;가장 기본적인 구조로 Service, Repository없이 Model, View, Controller로 코드를 작성하다보니 모든 비즈니스 로직은 Model에 위치하여 Model이 하는 작업의 양이 매우 많이 있었고 코드들이 길어지다보니 코드의 가독성 또한 좋지 못한 것을 느낄 수 있었습니다.&lt;/p&gt;
 &lt;p&gt;그래서 저는 &lt;a href=&quot;https://www.youtube.com/watch?v=uoVNJkyXX0I&quot;&gt;해리, 션님의 테코톡 영상&lt;/a&gt; 에서 션님이 잠깐동안 언급하였던 Service 레이어를 생성하며 코드의 작업을 분배고자 하였습니다. 처음에는 기존 코드의 리펙토링을 시도하였지만 코드의 결합도가 너무 높아서 리펙토링을 하기 힘들었습니다.. MVC패턴의 가장 큰 장점이 &lt;strong&gt;코드의 독립성&lt;/strong&gt;과 &lt;strong&gt;코드의 가독성, 재사용성&lt;/strong&gt;인데 처음 적용하였던 MVC 적용 코드는 모든 장점을 놓친 잘못된 코드라는 것을 알게 되었습니다😥 (제가 처음 작성한 MVC라 코드의 분리를 잘 못한 것 같습니다..)&lt;/p&gt;
 &lt;p&gt;그래서 저는 새로운 &lt;code&gt;branch&lt;/code&gt;를 다시 생성하여 처음부터 model, view, controller, service, repository로 나누어 개발을 진행했습니다.&lt;/p&gt;
@@ -20795,26 +20483,7 @@ Coin의 개수는 초기 설정을 제외하고는 Coin개수가 불변하지만
 &lt;li&gt;&lt;strong&gt;repository&lt;/strong&gt;에서는 원래 Spring프레임워크에서는 DB의 데이터를 읽고 쓰는 만큼 실제 사용할 객체를 생성&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;위와 같은 방법으로 파일을 생성하며 프로그래밍을 하다보니 아래와 같은 파일 구조가 나왔습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 414px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 111.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLklEQVQ4y51UyXLTUBD0jeTEB3DLiao4kAtUbMna932xFQcoEw78/yc0Pc9SrKS8KBy69Kx6avd0z8zs+s7C1dzAp1WJm/ovbpwGH+9tfJibuCauesi9KZjppg2NMAwT3/IWznaHKIygWw4M2+3hQO5NwWxpWFjyINBIGuUVyu4JeVmhqBskeQk3jLFYmZC7C8HKUuelYffPA2bDS60nlXOYVXDaLeKiImFBhR5M14fh8Onsz1p/d/jmhVDrSx4INZZqeQG+r38hIGFKxFQZZTnCVJCp32LJIGSM2dsXgqhoELaPSEhmOC4edOOViqH8QeVRwoN8Gw9LDZ+7P/CqNfxgH9CxP76oUAjlYy9KobVPCIuaJZcqvbGqU2QnSw6yEt7mB5Kypl+F8lRgut7Zco+XLNBXuO2e4dHLkq2T161CQrVub8FFhW8J5/QwoIc5VWZVjbxqkPIcJJkKalLJg4dBWsBstiy9gMemVogS2H44veQxvDiFufnJ9mGDk2TwTjA5lHHJC23voZQs45dyDB16N/Th5JQPM23hax9KQf+EUJrcjxM1dqfIzhCa+NL9psIWKcdMEfZLQuZ5EuHrlA3cbp7hly2qZq2SHS+Ed5UsKcdlA7/p4HAvWj2RzPM+4f+YFMsNsHjcwWP7BPTNZ+qybQSrM019sWTxUC1ZToj0oCStn1F3MhSdodxtdvSwQcZAZEKk9GGNvc9DfnRfdbC6jmSNGjtRN15h5xT+A1joA8HiM9ZpAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;img 1&quot;
-        title=&quot;img 1&quot;
-        src=&quot;/static/9f580a45272a65f55cc5462e6739187a/b910a/img_1.png&quot;
-        srcset=&quot;/static/9f580a45272a65f55cc5462e6739187a/5a46d/img_1.png 300w,
-/static/9f580a45272a65f55cc5462e6739187a/b910a/img_1.png 414w&quot;
-        sizes=&quot;(max-width: 414px) 100vw, 414px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/38e72aeb-fb61-4fe0-8a28-09b8bf5af1ec/image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;다시 작성한 코드들는 비즈니스 Model(domain)에서 분리하고 Service에 생성을 하다보니 MVC만을 사용한 코드들보다 확실히 코드의 가독성이 올라가고 재사용성이 높아진 것 같았습니다.&lt;/p&gt;
 &lt;p&gt;특히 비즈니스 코드를 분리하다보니 리펙토링을 하면서도 별 다른 문제가 발생하지 않는 것을 확인할 수 있었습니다.&lt;/p&gt;
 &lt;h2 id=&quot;2-싱글톤-패턴-적용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4-%EC%A0%81%EC%9A%A9&quot; aria-label=&quot;2 싱글톤 패턴 적용 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 싱글톤 패턴 적용&lt;/h2&gt;
@@ -20858,27 +20527,7 @@ Coin의 개수는 초기 설정을 제외하고는 Coin개수가 불변하지만
 &lt;p&gt;Enum정리자료 : &lt;a href=&quot;https://velog.io/@seongwon97/%EC%9E%90%EB%B0%94%EC%9D%98-Enum-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0&quot;&gt;자바의 Enum 정복하기&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;4-stream-학습-및-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-stream-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;4 stream 학습 및 사용 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Stream 학습 및 사용&lt;/h2&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1061px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 18%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAoElEQVQY021OwQqFMAzz/39I8DJ2GZ4Gk32AMBGdQ91NEc0jhXmQVwhZszRt5b1H27boug51XcM5h77vobWGtRbGGDRNA6UU9n3Ht57neZmopmnCsixY1xUxRmFqKSVs24Z5nuVNnYHUcs7C13W9QW8gjQwsg2WYGsGh+76FieM4hM/zxL+qxnGUsBAChmGQ69gXcEG5nEyUZfSWnv/0/gCPIy0hKVyHQQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;img 2&quot;
-        title=&quot;img 2&quot;
-        src=&quot;/static/5e13074ac099f6c46c8aa7ac1b4d8c2e/f5209/img_2.png&quot;
-        srcset=&quot;/static/5e13074ac099f6c46c8aa7ac1b4d8c2e/5a46d/img_2.png 300w,
-/static/5e13074ac099f6c46c8aa7ac1b4d8c2e/0a47e/img_2.png 600w,
-/static/5e13074ac099f6c46c8aa7ac1b4d8c2e/f5209/img_2.png 1061w&quot;
-        sizes=&quot;(max-width: 1061px) 100vw, 1061px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/d75342e2-00d8-4776-a24e-dc3613e6bdd8/image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;2주차 피드백에는 다음 사진과 같이 &lt;strong&gt;Java에서 제공하는 api를 적극 활용하라&lt;/strong&gt;는 피드백이 있었습니다. java에서 많은 api들이 존재하지만 저는 그 중에서도 &lt;code&gt;stream&lt;/code&gt;을 공부하여 적용해보았습니다.&lt;/p&gt;
 &lt;p&gt;Coin클래스에서 파라미터로 받는 &lt;code&gt;remainMoney&lt;/code&gt;보다 적은 돈을 가진 코인의 값들을 list로 반환하는 &lt;code&gt;getAvailableCoinValueList&lt;/code&gt;의 코드를 예시로 보겠습니다. 아래의 코드는 &lt;code&gt;Stream&lt;/code&gt;을 적용하기 전의 코드입니다. 물론 해당 코드도 depth는 2이고 코드의 길이가 많이 길지 않아 가독성이 떨어지는거 같지는 않습니다. 하지만 저는 배우는 입장이기에 해당 코드를 &lt;code&gt;stream&lt;/code&gt;을 적용하여 변경시켜봤습니다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getAvailableCoinValueList&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; remainMoney) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -20909,55 +20558,14 @@ Coin의 개수는 초기 설정을 제외하고는 Coin개수가 불변하지만
 &lt;h2 id=&quot;5-intellij의-단축어-활용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#5-intellij%EC%9D%98-%EB%8B%A8%EC%B6%95%EC%96%B4-%ED%99%9C%EC%9A%A9&quot; aria-label=&quot;5 intellij의 단축어 활용 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;5. IntelliJ의 단축어 활용&lt;/h2&gt;
 &lt;p&gt;과제를 진행하며 리펙토링을 많이 하다 보니 불필요한 import들이 많이 발생하였습니다.
 불필요한 import들을 하나씩 제거하다보니 1주차 피드백으로 아래와 같이 IDE의 기능을 활용하라던 피드백이 떠올라 불필요한 import제거를 해주는 단축어는 없는지 찾아봤습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 663px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 33%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABOElEQVQoz41QXW+CQBDk//8QxaRpk1I/aJ/KY9M+W61CgUaBA+RDQAEdd9f4bDe57O7dzOzeaC/jCaaTCT4+v2BZ75jOTCyWSwyGQ+otjOltNBrhe7GA+foGwzAwM03KzxjoOh4en+hdRxApcGjrtY3tdos4SST7/h/SNMXPaoUgCOC6LubzOaqqguf7WNIwz/Ng2zaYu6a8ImzXdVfBosix3+9RlnxKFEWB3W6HpqmpLlHXtdxlWSZ1nueC47osC+G2bStLdH0PLaHNMgbRA5NUHEMpJXUYRiIeRhFSyoy7/YaHKBUhIiwPYVzPgtxsNhskSSpfqWgyC+ZEYCEW4E3/G1pMZPaBtwnCkDz0xbtf8s5xHBnEk0+nE87n892jHY8H8aFpGjH2cGjAdzX17FPbXs2+Ee7FBWuIDH1H6zxaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;img 3&quot;
-        title=&quot;img 3&quot;
-        src=&quot;/static/37545f6c717c3fa3cfcdb37a2981bc8e/0786c/img_3.png&quot;
-        srcset=&quot;/static/37545f6c717c3fa3cfcdb37a2981bc8e/5a46d/img_3.png 300w,
-/static/37545f6c717c3fa3cfcdb37a2981bc8e/0a47e/img_3.png 600w,
-/static/37545f6c717c3fa3cfcdb37a2981bc8e/0786c/img_3.png 663w&quot;
-        sizes=&quot;(max-width: 663px) 100vw, 663px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/dfdd448d-16f4-4b45-a065-9eb2d3648913/image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;검색을 하다보니 실제로 불필요한 import문을 제거하는 단축키가 존재하였고 해당 기능을 적극 활용하여 불필요한 imort문들을 제거하는 작업을 진행하였습니다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;사용하지 않는 import문을 정리하는 단축키&lt;/strong&gt;
 윈도우 : Ctrl + Alt + O
 Mac OS : ^ + ⌥ + O&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 26.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABFElEQVQY01WQ23KCMBRF+ZaOKFO5FQIEQWIFhCjiZbz0of//G6uRPvmwZp2zJ5nkHKuqawq1odzWrIzzSk1+8crTfIUs15Qbc0YpCuNXn5g8XRVv5OsKS6U+hUjIY0EexQh3iW/b+Is5juMYFrhBSJRGyCIhURViXfCVZzihyyJYvmH9KsnPeOBxufE4X7mfLtyMn7sdXdPQGLddj8wyZBSQypwkk5OjOCYwj3muh+f9Y43CZSgl+22DVt/ozTe9GbUVgtQgkmS67PsBofNBGHj4YYT76TG358xmM2wzkW3PptrSXYvuO/RhoNeapmmpzV5r87sJU3d6T3caOZ13XO4jx+eT4Xo12ZF60GyH3rinOe75A6eQqPed/X/fAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;img 4&quot;
-        title=&quot;img 4&quot;
-        src=&quot;/static/f634ed0ec2ce67ab3c22e609899cc31f/c1b63/img_4.png&quot;
-        srcset=&quot;/static/f634ed0ec2ce67ab3c22e609899cc31f/5a46d/img_4.png 300w,
-/static/f634ed0ec2ce67ab3c22e609899cc31f/0a47e/img_4.png 600w,
-/static/f634ed0ec2ce67ab3c22e609899cc31f/c1b63/img_4.png 1200w,
-/static/f634ed0ec2ce67ab3c22e609899cc31f/52576/img_4.png 1412w&quot;
-        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/2714be18-ca8e-4e55-bd3f-9f7f29f8317f/image.png&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;6-일급-컬렉션-학습&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#6-%EC%9D%BC%EA%B8%89-%EC%BB%AC%EB%A0%89%EC%85%98-%ED%95%99%EC%8A%B5&quot; aria-label=&quot;6 일급 컬렉션 학습 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;6. 일급 컬렉션 학습&lt;/h2&gt;
 &lt;p&gt;2주차 과제를 마치고 코드 리뷰를 하던 중 &lt;a href=&quot;https://github.com/jayjaehunchoi&quot;&gt;jayjaehunchoi&lt;/a&gt; 지원자님의 제출 코드와 학습 정리 자료를 보던 중 &lt;strong&gt;일급 컬렉션&lt;/strong&gt;이라는 용어를 처음 접하게 되었습니다. 난생 처음 들어보는 용어인 만큼 나중에라도 도움이 되겠지!라는 마음으로 일급 컬렉션이 무엇인지에 대해 학습을 하고 코드에 적용을 해보고자 하였습니다.&lt;/p&gt;
 &lt;p&gt;일급 컬렉션은 &lt;code&gt;final&lt;/code&gt;로도 컬렉션의 불변을 만들 수 없기에 하나의 컬렉션을 wrapping하여 만든 것입니다. 하지만 프로젝트를 진행하다보니 컬렉션으로 관리 할 데이터들은 다음 정보들이 존재하였습니다.&lt;/p&gt;
@@ -20973,27 +20581,7 @@ Coin의 개수는 초기 설정을 제외하고는 Coin개수가 불변하지만
 &lt;p&gt;2주차까지 과제를 진행하였을 때 메시지를 포함한 모든 상수들은 하나의 클래스 파일을 생성하여 한 곳에서 관리를 하였습니다. 그 당시 저는 한 곳에서 모든 상수를 관리하는 것이 코드가 더 깔끔해 보인다고 생각하여 한 곳에서 관리하였습니다.&lt;/p&gt;
 &lt;p&gt;하지만 다른 지원자들의 코드 리뷰를 하며 상수를 사용되는 클래스의 상단에 정의를 하여 사용하는 코드들을 접하다보니 코드를 해당 코드를 처음 접하는 사람의 입장에서는 모든 상수를 한 개의 클래스에 모으는 방법보다 사용되는 클래스 상단에 정의를 하는게 좋을 것 같다는 생각이 들었습니다.&lt;/p&gt;
 &lt;p&gt;그래서 이번 과제에서는 에러 메시지를 제외한 모든 상수 값들은 각각의 클래스 상단에 정의를 하였으며 에러 메시지만 기존의 방법처럼 클래스를 새로 생성하여 한 곳에서 관리하였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 963px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 50.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKklEQVQoz42S23ICIRBE/RvlMsAAe9NVK///UZ2GjVaslFkfuuZl6T1n4DAlg4saLFUxDxk5OGjM0KAoqSKEAOcsrHWcjLXbfJNDEotbNlj1hKsecS2CdbjxBxcMeUQMEc67zwtLsPgqJ9yKwT0fsRbFZbzjXFdMZUHSAi/Cwq3I/lP2JFyoPUWmTQ0Y84CiFSkqleNW9CjcIxTq1GjRSBP3N1J5yJ5kipgS5Ifukb3SQ1OI4nBmybQsmM7XnnFe+oV45+G9MP4zQud9/zhTPaeAlCu0UDeXvr9224lR6r8W2nfK1CNhUxdPbTEkNn0KD3nxvcSY04vy89b/FPJQjY5PJWKuCfNUexamlsKMna69zShxn7Dtp2s3GlJ6Cb/C3TkheUvoq9kr/AYStDIyoEghMgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;img 5&quot;
-        title=&quot;img 5&quot;
-        src=&quot;/static/1f7f17c8d878c48c8d67f3a5ff47a65f/e4a12/img_5.png&quot;
-        srcset=&quot;/static/1f7f17c8d878c48c8d67f3a5ff47a65f/5a46d/img_5.png 300w,
-/static/1f7f17c8d878c48c8d67f3a5ff47a65f/0a47e/img_5.png 600w,
-/static/1f7f17c8d878c48c8d67f3a5ff47a65f/e4a12/img_5.png 963w&quot;
-        sizes=&quot;(max-width: 963px) 100vw, 963px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/seongwon97/post/ce3bca4c-5c81-444c-b7ee-0382ab0b555b/image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;해당 방법에는 정답은 따로 없는 것 같습니다. 하지만 앞으로도 여러 방법을 사용하여 상수들을 관리해보고 더욱 좋은 방법을 찾아보도록 노력하겠습니다.&lt;/p&gt;
 &lt;h2 id=&quot;아쉬웠던-점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%95%84%EC%89%AC%EC%9B%A0%EB%8D%98-%EC%A0%90&quot; aria-label=&quot;아쉬웠던 점 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;아쉬웠던 점😥&lt;/h2&gt;
 &lt;p&gt;이번 과제를 하면서 가장 아쉬웠던 점은 두번째로 작성한 코드에서는 코드를 작성하며 Test코드를 작성하지 못하였던 점이었습니다. MVC패턴을 Model, View, Controll만 적용한 첫번째 코드를 작성하였을 때는 여러 조건에 따라 Test코드를 작성하며 진행을 하였으나 Model, View, Controller, Service, Repository의 구조로 새로운 branch를 만들어 프로그래밍을 하였을 때는 시간에 쫓기는 마음이 들어 Test코드를 작성하지 못하였습니다😥&lt;/p&gt;
