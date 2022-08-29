@@ -58,8 +58,8 @@
 <url> <loc>https://seongwon97.github.io/Java/20220304-이펙티브자바-7/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Git/20220303-파일의_마지막_개행/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220303-이펙티브자바-5/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Java/20220302-동등성과-동일성/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220302-제너릭-인터페이스를-활용한-예외처리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Java/20220302-동등성과-동일성/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-이펙티브자바-3-싱글턴임을-보증하라/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-이펙티브자바-4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-제너릭이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -82,9 +82,10 @@
 <url> <loc>https://seongwon97.github.io/Java/20211210-일급_컬렉션이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211210-우테코-프리코스-2주차-피드백-정리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/ETC/20211207_MVC패턴이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Java/20220218-Unit-Test란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Java/20211203-Private메서드의-Unit-Test/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211203-우테코-프리코스-2주차-과제-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211128-우테코-프리코스-1주차-과제-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Java/20211127-Unit-Test란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Git/20211125-Git커밋 메시지 규약/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20211125-Google_Java_Style_Guide/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/DevOps/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
