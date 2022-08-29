@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://seongwon97.github.io/Spring/2022-08-29-JPA-JPQL/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-08-26-JPA-영속성_전이와_고아객체/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-08-25-JPA-프록시와-지연로딩/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-08-24-JPA-엔티티간_연관관계/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -17,8 +18,8 @@
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-29-ArgumentResolver란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-28-Spring-vs-SpringBoot/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/ETC/2022-06-27-Framework-vs-Library/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Spring/2022-06-26-Interceptor란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-27-Filter와Interceptor차이/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Spring/2022-06-26-Interceptor란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-25-Filter란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-24-MockMvc란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-23-SpringBootTest어노테이션-학습하기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -31,8 +32,8 @@
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-16-스프링-Bean/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-15-RequestParam-RequestBody-ModelAndAttribute비교/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-06-14-스프링-DI-IoC/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-05-02-스프링-couldnot-autowired-no-bean/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Spring/2022-05-02-스프링-error-Illegal-reflection/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-04-22-Spring-Post-Mapping/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/2022-04-21-Spring-Get-Mapping/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Git/2022-03-23-미션코드로-잔디심기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -74,8 +75,8 @@
 <url> <loc>https://seongwon97.github.io/Woowacourse/2021-12-17-우테코-최종-코딩테스트-대비2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/2021-12-16-우테코-최종-코딩테스트-대비1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/ETC/2021-12-14_싱글턴 패턴이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Woowacourse/2021-12-14-우테코 프리코스 3주차 과제 회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/2021-12-14-우테코-프리코스-참여후기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Woowacourse/2021-12-14-우테코 프리코스 3주차 과제 회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/2021-12-14-우테코_프리코스_3주차_과제회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/2021-12-13-Enum이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/2021-12-10-일급_컬렉션이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
