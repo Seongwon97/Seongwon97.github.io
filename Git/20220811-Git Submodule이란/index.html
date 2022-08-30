@@ -125,7 +125,7 @@
 <h2 id="준비" style="position:relative;"><a href="#%EC%A4%80%EB%B9%84" aria-label="준비 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>준비</h2>
 <p>서브모듈을 적용하기 위해 먼저 private 레포지토리를 하나 생성한다. 필자의 경우 팀원들과 Project를 진행하는 중이며 현재 팀의 Organization이 있기에 Organization안에 security라는 이름의 Private 레포지토리를 만들었다. 레포지토를 private로 만든 이유는 외부에 노출되면 안되는 데이터들을 저장할 것이기에 서브모듈에 사용할 레포지토리를 private으로 생성하였다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">2022-momo          // 팀의 Organization</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">				⌙ security // 서브모듈에 사용할 레포지토리</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      ⌙ security // 서브모듈에 사용할 레포지토리</span></span></span></code></pre>
 <p>이제 해당 레포지토리 안에 우리가 서브모듈로 관리를 하고 싶은 정보들을 추가한다. 필자는 yml파일을 분리하여 관리를 하다보니 <code>application-datasource.yml</code>, <code>application-jwt.yml</code>, <code>application-oauth2.yml</code>, <code>application.yml</code> 파일들을 위치시켰다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"

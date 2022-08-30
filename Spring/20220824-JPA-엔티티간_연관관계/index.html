@@ -445,7 +445,7 @@
     </span></p>
 <p>사실 더 많은 쿼리문이 날라가서 비효율적이긴하나 성능적으로는 큰 차이는 없다. 하지만 객체지향적인 프로그래밍을 하였을 때 사용자가 Member객체에 대한 수정을 안하고 Team객체에 대한 수정만 하였을 뿐인데 Member테이블에 변화를 주는 예상하지 못한 쿼리문은 개발자에게 혼란을 줄 수 있다. 이러한 이유 때문에 영한님은 OneToMany 단방향 매칭은 추천하지 않는다고 한다. 이러한 경우에는 유지보수를 위해 객체의 데이터 손해를 보더라도 양방향 매핑을 하던가 ManyToOne으로 단방향으로 되도록 개발하는 것이 좋다고 한다.</p>
 <blockquote>
-<p>📌  <code>@OneToMany</code> 단방향 매핑의 경우 <code>@JoinColumn</code>을 꼭 사용해야한다. 그렇지 않으면 <code>@JoinTable</code>방식을 사용하요 아래와 같이 예상하지 못한 중간 테이블이 생기게 된다.</p>
+<p>📌  <code>@OneToMany</code> 단방향 매핑의 경우 <code>@JoinColumn</code>을 꼭 사용해야한다. 그렇지 않으면 <code>@JoinTable</code>방식을 사용하게 되고 아래와 같이 예상하지 못한 중간 테이블이 생기게 된다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 254px; "

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 30 Aug 2022 09:31:15 GMT</lastBuildDate><item><title><![CDATA[[JPA] JPQL이란?]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. JPQL이란? JPA만의 기술을 사용했을 때는 DB…]]></description><link>https://seongwon97.github.io/Spring/20220829-JPA-JPQL/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/20220829-JPA-JPQL/</guid><pubDate>Mon, 29 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon97.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 30 Aug 2022 15:32:23 GMT</lastBuildDate><item><title><![CDATA[[JPA] JPQL이란?]]></title><description><![CDATA[해당 포스트는 인프런 김영한님의 자바 ORM 표준 JPA 프로그래밍 - 기본편 강의를 기반으로 작성하였습니다. 1. JPQL이란? JPA만의 기술을 사용했을 때는 DB…]]></description><link>https://seongwon97.github.io/Spring/20220829-JPA-JPQL/</link><guid isPermaLink="false">https://seongwon97.github.io/Spring/20220829-JPA-JPQL/</guid><pubDate>Mon, 29 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;해당 포스트는 인프런 김영한님의 &lt;a href=&quot;https://www.inflearn.com/course/ORM-JPA-Basic/dashboard&quot;&gt;자바 ORM 표준 JPA 프로그래밍 - 기본편&lt;/a&gt; 강의를 기반으로 작성하였습니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;1-jpql이란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-jpql%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;1 jpql이란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. JPQL이란?&lt;/h1&gt;
@@ -1039,15 +1039,15 @@
 &lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;getName()메서드를 통해 Member의 이름을 조회하게 된다면 target을 확인한다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;연결된 객체가 있다면 해당 target 객체의 getName()메서드를 호출하여 결과를 반환한다.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;getName()&lt;/code&gt;메서드를 통해 Member의 이름을 조회하게 된다면 target을 확인한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;연결된 객체가 있다면 해당 target 객체의 &lt;code&gt;getName()&lt;/code&gt;메서드를 호출하여 결과를 반환한다.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;1번 단계에서 연결된 객체가 없다면 영속성 컨텍스트에 target 객체의 초기화를 요청한다.&lt;/li&gt;
 &lt;li&gt;영속성 컨텍스트는 DB에서 target 객체를 찾아 저장한다.&lt;/li&gt;
 &lt;li&gt;찾은 target 객체를 이용해 실제 Entity를 생성하고 Proxy객체의 target에 연결한다.&lt;/li&gt;
-&lt;li&gt;연결된 target객체의 getName()메서드를 호출하여 결과를 반환한다.&lt;/li&gt;
+&lt;li&gt;연결된 target객체의 &lt;code&gt;getName()&lt;/code&gt;메서드를 호출하여 결과를 반환한다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;13-프록시의-특징&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#13-%ED%94%84%EB%A1%9D%EC%8B%9C%EC%9D%98-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;13 프록시의 특징 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1.3. 프록시의 특징&lt;/h2&gt;
 &lt;p&gt;여기서 알아야 할 점과 주의해야할 점들이 존재한다.&lt;/p&gt;
@@ -1162,9 +1162,9 @@
 &lt;ol&gt;
 &lt;li&gt;모든 연관관계에서 지연로딩(LAZY)를 사용해라.&lt;/li&gt;
 &lt;li&gt;실무에서 즉시로딩을 사용하지 마라.&lt;/li&gt;
-&lt;li&gt;JPQL fetch 조인이나 Entity grapgh 기능을 사용해라&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;JPQL fetch 조인&lt;/code&gt;이나 &lt;code&gt;Entity grapgh&lt;/code&gt; 기능을 사용해라&lt;/li&gt;
 &lt;li&gt;즉시 로딩은 상상하지 못한 쿼리가 날아간다는 점을 기억해라.&lt;/li&gt;
-&lt;li&gt;@OneToOne, @ManyToOne은 조심하자. 기본이 즉시로딩이므로 LAZY로 꼭 설정하고, @OneToMany나 @ManyToMany는 기본이 지연로딩이니까 그냥 두자&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@OneToOne&lt;/code&gt;, &lt;code&gt;@ManyToOne&lt;/code&gt;은 조심하자. 기본이 즉시로딩이므로 LAZY로 꼭 설정하고, &lt;code&gt;@OneToMany&lt;/code&gt;나 &lt;code&gt;@ManyToMany&lt;/code&gt;는 기본이 지연로딩이니까 그냥 두자&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&quot;-reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-reference&quot; aria-label=&quot; reference permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;📚 Reference&lt;/h1&gt;
 &lt;ul&gt;
@@ -1618,7 +1618,7 @@
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;사실 더 많은 쿼리문이 날라가서 비효율적이긴하나 성능적으로는 큰 차이는 없다. 하지만 객체지향적인 프로그래밍을 하였을 때 사용자가 Member객체에 대한 수정을 안하고 Team객체에 대한 수정만 하였을 뿐인데 Member테이블에 변화를 주는 예상하지 못한 쿼리문은 개발자에게 혼란을 줄 수 있다. 이러한 이유 때문에 영한님은 OneToMany 단방향 매칭은 추천하지 않는다고 한다. 이러한 경우에는 유지보수를 위해 객체의 데이터 손해를 보더라도 양방향 매핑을 하던가 ManyToOne으로 단방향으로 되도록 개발하는 것이 좋다고 한다.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;📌  &lt;code&gt;@OneToMany&lt;/code&gt; 단방향 매핑의 경우 &lt;code&gt;@JoinColumn&lt;/code&gt;을 꼭 사용해야한다. 그렇지 않으면 &lt;code&gt;@JoinTable&lt;/code&gt;방식을 사용하요 아래와 같이 예상하지 못한 중간 테이블이 생기게 된다.&lt;/p&gt;
+&lt;p&gt;📌  &lt;code&gt;@OneToMany&lt;/code&gt; 단방향 매핑의 경우 &lt;code&gt;@JoinColumn&lt;/code&gt;을 꼭 사용해야한다. 그렇지 않으면 &lt;code&gt;@JoinTable&lt;/code&gt;방식을 사용하게 되고 아래와 같이 예상하지 못한 중간 테이블이 생기게 된다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 254px; &quot;
@@ -1898,14 +1898,14 @@
 &lt;p&gt;시퀀스 방법은 &lt;code&gt;IDENTITY&lt;/code&gt;와 다르게  DB에 PK값이 없는 채로 데이터를 보내는 것이 아니라 먼저 Sequence Generator를 DB 서버에서 찾아서 다음번에 사용할 PK값을 call해서 불러온다. 그 후 애플리케이션에서 PK를 객체에 할당하여 영속성 컨텍스트에 보관한다. 덕분에 &lt;strong&gt;데이터를 저장할 때 바로 Insert 쿼리를 날리지 않아도 된다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;해당 방법을 사용하면 매번 sequence를 받아와야해서 성능상의 손해를 볼 수 있다. 해당 손해는 @SquenceGenerator의 allocationSize 속성을 설정하면 손해를 줄일 수 있다.&lt;/p&gt;
+&lt;p&gt;해당 방법을 사용하면 매번 sequence를 받아와야해서 성능상의 손해를 볼 수 있다. 해당 손해는 &lt;code&gt;@SquenceGenerator&lt;/code&gt;의 &lt;code&gt;allocationSize&lt;/code&gt; 속성을 설정하면 손해를 줄일 수 있다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;allocationSize설정으로 얻는 이점 - 데이터베이스 시퀀스를 한번에 설정한 개수를 증가시킵니다. 데이터베이스 시퀀스를 생성할 때 한번 호출에 50씩 증가하게 만들 수 있습니다.
+&lt;li&gt;&lt;code&gt;allocationSize&lt;/code&gt;설정으로 얻는 이점 - 데이터베이스 시퀀스를 한번에 설정한 개수를 증가시킵니다. 데이터베이스 시퀀스를 생성할 때 한번 호출에 50씩 증가하게 만들 수 있다.
 그러면 처음에 시퀀스가 1이면 이 시퀀스를 호출하면 50이 되겠지요.그러면 애플리케이션에서는 1~50번까지는 메모리에서 값을 꺼내서 사용하고,
 51이 되는 순간 DB 시퀀스를 호출합니다. 그러면 DB 시퀀스가 50 -&gt; 100이 되겠지요.
 그러면 애플리케이션은 51~100까지 메모리에서 값을 증가시키면서 사용합니다.
 결과적으로 애플리케이션은 50번에 1번만 DB를 호출해서 시퀀스를 증가시키면 됩니다.
-이렇게 하면 네트워크 호출이 줄어서 성능이 향상됩니다^^&lt;/li&gt;
+이렇게 하면 네트워크 호출이 줄어서 성능이 향상된다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2504,9 +2504,11 @@ column 설정 변경을 할 때 테이블의 기본 세팅값에 변경이 있�
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[DevOps] - Jenkins를 통한 CI/CD 구축기 4편 (Backend DB 구축)]]></title><description><![CDATA[이전까지의 과정으로는 DB를 Spring의 인메모리 H2 DB를 사용하여 CI/CD과정이 진행될 때마다 DB데이터들이 초기화되었다. 이번 포스팅에서는 DB를 영구적으로 보관하기 위해 MySQL DB를 구축 및 연결하는 과정을 다뤄보려 한다. 1. DB…]]></description><link>https://seongwon97.github.io/DevOps/20220814-CICD구축기4/</link><guid isPermaLink="false">https://seongwon97.github.io/DevOps/20220814-CICD구축기4/</guid><pubDate>Sun, 14 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;이전까지의 과정으로는 DB를 Spring의 인메모리 H2 DB를 사용하여 CI/CD과정이 진행될 때마다 DB데이터들이 초기화되었다. 이번 포스팅에서는 DB를 영구적으로 보관하기 위해 MySQL DB를 구축 및 연결하는 과정을 다뤄보려 한다.&lt;/p&gt;
 &lt;h1 id=&quot;1-db서버-생성-및-mysql-설치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-db%EC%84%9C%EB%B2%84-%EC%83%9D%EC%84%B1-%EB%B0%8F-mysql-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;1 db서버 생성 및 mysql 설치 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. DB서버 생성 및 MySQL 설치&lt;/h1&gt;
 &lt;p&gt;DB서버는 앞선 과정에서 만들었던 EC2와는 다르게 외부와의 접근을 열어둘 필요가 없기에 Public IP할당 없이 EC2를 생성하면 보안적으로 이점을 얻을 수 있다. Private IP만을 갖고있는 EC2를 생성한 후, 아래의 게시글을 따라 MySQL을 설치해보겠다.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.notion.so/AWS-Private-Ec2-MySQL-0a2252edb57d408d9c7a2435141a95c2&quot;&gt;[AWS] Private Ec2에 MySQL설치 및 원격 접속 설정하기&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MySQL설치 내용만으로도 내용이 방대하여 포스트를 분리하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://seongwon.dev/DevOps/20220813-MySQL%EC%84%A4%EC%B9%98_%EC%9B%90%EA%B2%A9%EC%A0%91%EC%86%8D%EC%84%A4%EC%A0%95/&quot;&gt;[AWS] Private Ec2에 MySQL설치 및 원격 접속 설정하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;2-서브모듈을-통한-db-정보-관리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88%EC%9D%84-%ED%86%B5%ED%95%9C-db-%EC%A0%95%EB%B3%B4-%EA%B4%80%EB%A6%AC&quot; aria-label=&quot;2 서브모듈을 통한 db 정보 관리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 서브모듈을 통한 DB 정보 관리&lt;/h1&gt;
 &lt;p&gt;이제 앞서 만든 DB서버를 우리가 만든 Spring 프로젝트에 연결하여야 한다. 이때 DB정보는 외부에 노출되면 안되기에 다른 프로젝트 파일들과 함께 올려서는 안 되기에 DB정보 연결에 대해서는 생각을 좀 해봐야 한다.&lt;/p&gt;
@@ -2519,7 +2521,7 @@ column 설정 변경을 할 때 테이블의 기본 세팅값에 변경이 있�
 &lt;p&gt;하지만 각각의 방법을 생각해봤을 때, 첫번째 방법은 각각의 실행 서버에 DB정보를 환경변수로 설정해줘야하기에 배포 서버가 1개가 아닌 여러개가 존재한다면 여러개의 서버에 직접 접근하여 설정을 해줘야 할 것이다. 또한 DB정보가 업데이트될 경우 다시 여러개의 서버에 직접 접근하여 각각 업데이트를 해줘야 하는 불편함이 발생할 것이다.&lt;/p&gt;
 &lt;p&gt;두번째 방법은 빌드 이전에 프로젝트 설정 파일을 한 번만 업데이트 해주면 되기에 앞서 있던 문제는 해결할 수 있으나, 해당 방법 또한 DB의 변경점이 있을 경우 빌드를 담당하는 Jenkins 서버에 직접 접근하여 스크립트를 수정하는 번거로움이 발생할 것이다. 그래서 최종적으로 서브모듈을 도입하게 되었다. 서브모듈을 도입함으로써 해당 문제를 해결하였다.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;../Git/2022-08-11-Git%20Submodule%EC%9D%B4%EB%9E%80.md&quot;&gt;Git Submodule&lt;/a&gt;에 대한 자세한 사용법은 내용은 다음 포스트를 참고하길 바란다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://seongwon.dev/Git/20220811-Git%20Submodule%EC%9D%B4%EB%9E%80/&quot;&gt;Git Submodule&lt;/a&gt;에 대한 자세한 사용법은 내용은 다음 포스트를 참고하길 바란다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;위의 포스트를 참조하여 DB와 JWT토큰 값과 같이 외부에 노출되면 안되는 정보를 담기 위한 Private 레포를 만들어 아래와 같은 DB 서버의 MySQL정보를 추가하고 Submodule을 연동했다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;yaml&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;spring&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
@@ -2642,7 +2644,7 @@ column 설정 변경을 할 때 테이블의 기본 세팅값에 변경이 있�
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;                }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;            }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;				...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;        ...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&quot;마치며&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EC%B9%98%EB%A9%B0&quot; aria-label=&quot;마치며 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;마치며&lt;/h1&gt;
@@ -3026,7 +3028,7 @@ column 설정 변경을 할 때 테이블의 기본 세팅값에 변경이 있�
 &lt;h2 id=&quot;준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A4%80%EB%B9%84&quot; aria-label=&quot;준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;준비&lt;/h2&gt;
 &lt;p&gt;서브모듈을 적용하기 위해 먼저 private 레포지토리를 하나 생성한다. 필자의 경우 팀원들과 Project를 진행하는 중이며 현재 팀의 Organization이 있기에 Organization안에 security라는 이름의 Private 레포지토리를 만들었다. 레포지토를 private로 만든 이유는 외부에 노출되면 안되는 데이터들을 저장할 것이기에 서브모듈에 사용할 레포지토리를 private으로 생성하였다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;bash&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;2022-momo          // 팀의 Organization&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;				⌙ security // 서브모듈에 사용할 레포지토리&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;      ⌙ security // 서브모듈에 사용할 레포지토리&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;이제 해당 레포지토리 안에 우리가 서브모듈로 관리를 하고 싶은 정보들을 추가한다. 필자는 yml파일을 분리하여 관리를 하다보니 &lt;code&gt;application-datasource.yml&lt;/code&gt;, &lt;code&gt;application-jwt.yml&lt;/code&gt;, &lt;code&gt;application-oauth2.yml&lt;/code&gt;, &lt;code&gt;application.yml&lt;/code&gt; 파일들을 위치시켰다.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -4347,13 +4349,15 @@ column 설정 변경을 할 때 테이블의 기본 세팅값에 변경이 있�
 &lt;p&gt;프로젝트를 진행하게 된다면 서비스를 배포하기까지 개발, 테스트, 빌드 배포 등의 많은 과정들이 필요하다. 개발자들이 개발 외에도 테스트, 빌드, 배포 등의 과정을 매번 수행하기에는 번거로과 시간적으로 많은 투자가 필요하다. 이러한 반복적인 작업을 해결하기 위해 만들어진 것이 바로 CI/CD이다.&lt;/p&gt;
 &lt;p&gt;젠킨스(Jenkins)는 세계적으로 많은 개발자들이 사용중인 CI 툴이다. 젠킨스는 CI 툴답게 다수의 개발자들이 하나의 프로그램을 개발할 때 공유 영역인 Git등의 저장소에 저장된 프로젝트를 버전 충돌을 방지하며 지속적 통합이 가능하도록 해 준다. 젠킨스는 원래 허드슨 프로젝트로 개발되었다. 허드슨의 개발은 2004년 여름에 썬 마이크로시스템즈에서 시작되었다. 2005년 2월에 java.net에 처음 출시되었다.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;웹사이트: jenkins-ci.org
-발표일: 2011년 2월 2일
-프로그래밍 언어: Java
-최근 버전: 2.23.3
-운영체제: 크로스 플랫폼
-종류: 지속적 통합
-라이선스: MIT&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;웹사이트: jenkins-ci.org&lt;/li&gt;
+&lt;li&gt;발표일: 2011년 2월 2일&lt;/li&gt;
+&lt;li&gt;프로그래밍 언어: Java&lt;/li&gt;
+&lt;li&gt;최근 버전: 2.23.3&lt;/li&gt;
+&lt;li&gt;운영체제: 크로스 플랫폼&lt;/li&gt;
+&lt;li&gt;종류: 지속적 통합&lt;/li&gt;
+&lt;li&gt;라이선스: MIT&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;CI/CD에 대해 더욱 자세히 알고싶다면 해당 게시글을 참고하세요👍&lt;/p&gt;
@@ -14868,215 +14872,6 @@ ex) &lt;code&gt;int add(int x, int y);&lt;/code&gt;&lt;/li&gt;
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 로또 미션 회고  (2월 22일 ~ 3월 7일)]]></title><description><![CDATA[…]]></description><link>https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-회고/</guid><pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;미션진행&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AF%B8%EC%85%98%EC%A7%84%ED%96%89&quot; aria-label=&quot;미션진행 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;미션진행&lt;/h1&gt;
-&lt;p&gt;이번에 진행한 로또 미션은 새로운 페어인 &lt;code&gt;써머&lt;/code&gt;와 함께했습니다.
-그리고 이전 &lt;code&gt;스컬&lt;/code&gt;과 미션을 진행했던 것처럼 이번 미션 또한 &lt;code&gt;써머&lt;/code&gt;와 직접 만나서 진행을 해봤습니다😁&lt;/p&gt;
-&lt;p&gt;미션을 진행해보니 확실히 지난 자동차 미션보다는 난의도가 올라갔더군요😭
-이번 미션에는 지난번 미션에서 아래의 새로운 추가 요구사항이 생겼어요.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Java Enum을 적용한다.&lt;/li&gt;
-&lt;li&gt;모든 원시 값과 문자열을 포장한다&lt;/li&gt;
-&lt;li&gt;일급 컬렉션을 쓴다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;지난번 자동차 경주 미션과 프리코스때도 Enum과 일급 컬렉션은 사용을 하였어서 크게 문제가 없었으나,
-&lt;code&gt;모든 원시 값과 문자열을 포장한다.&lt;/code&gt;의 추가사항은 처음 접해본 요구사항이어서 어려움을 느꼈습니다.
-원시 값을 포장하는 것에 대해 &lt;code&gt;써머&lt;/code&gt;와 함께 이론에 대해 학습하고 미션을 진행하였음에도 불구하고 둘 다 처음 사용해봐서..
-역시나 원시 값 포장에 대한 이점을 살리지 못하였습니다.&lt;/p&gt;
-&lt;p&gt;또한 지난 미션의 주된 목적이 TDD의 학습이었다면 이번 목적의 주된 목적은 OOP였는데..해당 내용들도 처음에는 살리지 못하였습니다.&lt;/p&gt;
-&lt;p&gt;하지만 리뷰어 &lt;code&gt;코니&lt;/code&gt;의 리뷰를 하나씩 받으며 코드를 수정하다보니 원시 값 포장의 이점도 살리고, 객체들을 나누고 객체들의 작업 분리를 하며
-미션이 끝날 때에는 처음보다 훨씬 OOP에 가까운 코드가 되어있었습니다.&lt;/p&gt;
-&lt;p&gt;앗..그리고 저는 이번 미션에서 OOP보다 더 어려움을 느꼈던 것은 클래스와 변수들의 네이밍이었습니다..
-&lt;code&gt;LottoNumber&lt;/code&gt;, &lt;code&gt;Lotto&lt;/code&gt;, &lt;code&gt;Lottos&lt;/code&gt;, &lt;code&gt;WinningNumbers&lt;/code&gt; 등 개발을 진행할 떄 비슷한 이름의 클래스들이 너무 많아 개발을 하며 너무 헷갈렸어요..
-제가 작성한 코드인데 개발 도중에도 헷갈리다니...정말 좋지 않은 네이밍이었던 것 같습니다..
-그래서 그런지 &lt;code&gt;코니&lt;/code&gt;에게도 네이밍에 관한 지적을 많이 받았던거 같아요😭&lt;/p&gt;
-&lt;p&gt;자세한 코드리뷰와 작성 코드는 아래의 링크에서 확인해보실 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-lotto/pull/390&quot;&gt;[1단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #390&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-lotto/pull/471&quot;&gt;[[2단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #471]&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://seongwon97.github.io/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%A1%9C%EB%98%90-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;우아한테크코스 - 레벨1 로또 미션 피드백 정리&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;데일리-준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%A4%80%EB%B9%84&quot; aria-label=&quot;데일리 준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데일리 준비&lt;/h1&gt;
-&lt;p&gt;아침마다 진행하는 &lt;code&gt;구구&lt;/code&gt;와 함께하는 데일리 미팅에서는 우테코 시작 셋째주부터
-그 날의 데일리 미팅을 진행하는 사회자(&lt;code&gt;마스터&lt;/code&gt;)를 뽑아 진행을 하였습니다.&lt;/p&gt;
-&lt;p&gt;주제는 다양하게 맛집 소개, 게임으로부터 시작하여, 앞으로 만들어보고싶은 프로젝트 소개 등 다양한 주제로 이야기를 하였습니다.
-그렇게 마스터의 순서가 돌고 돌아 저의 차례가 왔습니다.&lt;/p&gt;
-&lt;p&gt;저는 롯데시네마 드리미 출신인 만큼, 영화와 관련된 주제를 진행하였습니다👍🏻
-선정한 주제는 바로~~~&lt;code&gt;소리를 듣고 영화 제목 맞추기&lt;/code&gt;였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1079px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmUlEQVQoz4VTy26CUBDl591058ol66oLEx9I0WqD2goR35qY+IqKoBtro1ULnM4lQtBgO8nkDszM4cyZC4c7cxwH/737uZxg21Zojgs22bbtxoIgIBqNIhaLIRKJIJvNIplMgud5pNMZJPgnLMYdt5b1BEE5D8xzZqPRCM1mE91OBxqd5naLyXiM4WCA1WoFfTHB92EPJ9Dr4XDBh7BxXTudsD8cwnOsJ9DL3euwJTamaWJJTBaGgeVsho9iEcl4HJfpFDa9w3IJU9ex3mzAlLQDsvkM5/M5NE1DQZIgFgpolEow8nno1SomYh6f7zWgXAIoj2tuIss4qiqs4YCJ6UrgA+52Oxew025DFEWItIg38kwigVz8GYVMBi+0LIk8R7GUSmHc70N9LeJIU/kMw1Zv0FhypYIyMRAIvFavI03g1VoNSqMBiSToDoe3Ul719BlaloXz+ew6ix+a93E6z7QsVu9cr9uNhmwZbRq31WpBJmYNYsLiXq8HlXRiV0aj/JpiKAq+SFuFTlZzIuA/Rw5e9tA/50Ets18xSTYdnZQR7QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;          &quot;
-        title=&quot;          &quot;
-        src=&quot;/static/70632db6f4f0b71dc82993edd22865bc/cf4cc/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png&quot;
-        srcset=&quot;/static/70632db6f4f0b71dc82993edd22865bc/5a46d/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 300w,
-/static/70632db6f4f0b71dc82993edd22865bc/0a47e/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 600w,
-/static/70632db6f4f0b71dc82993edd22865bc/cf4cc/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 1079w&quot;
-        sizes=&quot;(max-width: 1079px) 100vw, 1079px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;하지만 데일리 마스터를 위해 주제 선정과 준비를 열심히 하였으나..
-넷플릭스의 보안 문제떄문에 줌으로 화면 공유를 하게되면 화면이 검게 나오는 점이 아쉬웠어요..&lt;/p&gt;
-&lt;p&gt;원래 이런 문제들은 소리를 듣고 참가자가 제목을 맞추면 해당 장면을 보여줘야하는데 말이죠😭&lt;/p&gt;
-&lt;p&gt;그래서 결국에는 게임하는 중간에 넷플이 아닌 유튜브로 플랫폼을 바꿔..제가 하나씩 검색하며 문제를 출제하고 화면 공유를 했습니다.😭&lt;/p&gt;
-&lt;p&gt;다음번에는 이런 게임을 준비한다면 더욱 확실하게 준비해봐야겠어요..&lt;/p&gt;
-&lt;h1 id=&quot;랜선회식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D&quot; aria-label=&quot;랜선회식 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;랜선회식&lt;/h1&gt;
-&lt;p&gt;글을 올리는 3월 7일인 오늘은 데일리 미팅 조의 랜선회식을 해봤어요!
-다른 조들이 랜선 회식을 하는건 자주 봤었는데, 제가 직접 해보려니까 뭔가 어색하기도 하면서 재밋기도 하네요😁&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 54.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACp0lEQVQoz22RZ0/TURyFS8uqcURApkCpjFJGy24ZBgEtlFFbitB/FWjUCCEsFQRpFepgOTAFWTWAEHmBg2hMjBBCwkfwAz3+aUkkkRcn5+be+3vuyT2S8oYx9KUC2XlW0jMbqK5pxFBRybCrB++nFd44H+EadfNj/4DOkTEWVzdYmF/iw8cNHg4M8Xtnj91fuyTGJyCRSJCos2soq3CQX9CMOstEZXkNtjwlo487ePV1E2eHjYH73Wzv7jEy+ZZlETTlcrL9eR33+ASdXV3MvfOgSEzyA5WpFej0N9DmNaHKrMdgMOOwtVFr0GGxVNHTb2FqwsmSd52FuVkWXz/C63nG+HMXD4b6mHj1mqXp+yTGnvcD08WEFdfuos2xosqoo7q6EfudQaw2C9trb1lfmWRwoJ95zxxjw0Oszj/n25dVNj+t0d17D6vg4LbdQkLMBT9QW2BCV3oTTe4hsJ6rlQ3YHX20CE1MvnThnZukv+06DnFo1jPDM/eU6Avs7eyjLzFyLjydmPhC5KfO+oEZ2lqK9C1kaRtJU9dRa7Ryy95Oe1sz72desLWxzG3BhHu4g+H+Vp6MjPJ96ysr3g2ycqtIVOpRJBcjlYUcATW1lBQLItCCOvs6cRdTiI66QFRkJFERYcRGRxMeFo5CocDeZOKpewyz2ewbDgwKEl2KJEDqh/la1hgpK28nN78JjVhMqDzs3+ExBYeEUlZcxOb2TwadTt+eNCDg/7u5RY1cuXbHV0qa2khSchmXTbMUG6c5fcb/0QHHBg/XMpn0xEd9KhHT5RcK5OnaUGvMJKsM1N89wNr7h7CIS36IVEZgYAiywGARFnzkQScDM3PqyC8SyCmwiWoWE5aiKWwlu0BALvc3J5efJl6pITwqnYSkHFJUOmLiUk8E/gW0EogdEcfmwwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;         0310&quot;
-        title=&quot;         0310&quot;
-        src=&quot;/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/c1b63/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png&quot;
-        srcset=&quot;/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/5a46d/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 300w,
-/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/0a47e/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 600w,
-/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/c1b63/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 1200w,
-/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/a6ec4/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 1438w&quot;
-        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;제가 원래 밖에서 사람들이랑 친화력은 좋아도..이렇게 랜선에서 화상으로 친해지는건 아직 어색한 사람이라..랜선 회식을 했다는게 아쉽네요ㅠ
-다들 직접 만나서 이야기를 했으면 더 많은 이야기를 했을텐데..코로나가 좀 괜찮아지면 오프라인 회식도 기대해봐야겠어요👍🏻&lt;/p&gt;
-&lt;h1 id=&quot;테코톡준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1%EC%A4%80%EB%B9%84&quot; aria-label=&quot;테코톡준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡준비&lt;/h1&gt;
-&lt;p&gt;우테코에서는 과정이 끝나기 전에 최소 한번 이상 테코톡 발표를 해야지 수료를 할 수 있습니다.&lt;/p&gt;
-&lt;p&gt;저는 시간이 흘러 우테코 레벨이 높아질수록 공부할 시간도 부족할 것 같아..매도 빨리 맞자!!는 생각으로 신청 지원이 열리자마자
-바로 &lt;code&gt;Git branch전략&lt;/code&gt;에 대한 발표 신청을 하였습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 585px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 79.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAADe0lEQVQ4y0WT6XLaWBCFef9HmD9TqYyTTDmZSuLEeIsdgw222bUhQCChsIlVgGWz6pv2Hc+Mqrq6+9y+rW6do0SnW8N59xuTmx+sS1nCzBXWxwM2lXuwK3TPv+GffiHK3fyHUS2xN/IqHl6fYvz5Blo2+0+/k2h1G0R2mZ3vUj4+wro4QTv5xsI2oOvTy99hClZOHuFlUgyKD4Lds3Yd4k6bmakpfFarsitmSXjTDo3uBLMRcnpZ5OJnheOzHKlslbr3yG2uycmPorKrG5NsoU3JCrBbC+rtiILe4/g8Rzbfot5ZyYRjn/BpyWa7p1qrUXeaVHSDxfKRl6fT61EolSmVK2iGKXmf9WbLbg+xnE/DOf1BoOKtgInmqE0YLdist1iWTNVwqGg6y2WkGnptH01eEMrFgVzcbnfSLJYBdogjnC9oNJoKVw29cRvDn5GtRvx1ofP1yubwpMSnM41c45mTrMfxjcOp+O/pBmltQs5Z8VB/Iu+suS6P+HxZVflLfaIlE3qjkGZvxWXG4Pre5jxdIW/4+KMdebNDOt+g5i9xgzXuYIWn/Jpf4z2VekBO91X8giUagUe0XvLyRWq2iVOvYleF4XirVh4P+wyDHvFuzf9P/Grw9DinJ2z/iyeaQ4/ebE4w3XD7oHNXsMiIr7X6TJYxVafHvWC5cg23MxEbMww3yqaPsSgh4K5YZTTfCbYl4Y48yu6Un1rEwbcS75M6B9/Lym6sJ45ufN58zvHxosbboyJfUp7gz6TNiIy94uR+wKcfdRWnpT7hyIQzYXm13qEbFla1JhLRhL0l+xfZdPuYls18sVS23uyVxFabnZLOeBqKEn7xGD1LD5nQCVw6kzmd0Zr0vSHj10jdaRj1DsN5TNFwJdfRGwOpWdGfbelNNsqCcE/Dn5LTmpjNQJ0Lyy4Vb0rKiPiQrHB4ZvJO1v2Q1GSNZ76mWiq+LI3JVJ+4tSJuX322tuI8P+QsNyDX3ClcWHZF2HPFkeu5Im4LXdeJnv4Rdr/fx3EclcdxzH6/f7WdOp/NZniex2q1kvP9y8otvGEoOorJFJtKi5e3umirrbRVtHqcp8pc31nYXqiwdrARLW5UbDYnPGg+dnshun1ludAccmUsOLw0+SNZ4CBZ5O1xQbAZX29bvD8tK+yd+EP5K85KAT/NkGtrTjLfldo8p4W+YHP+BsQifqgGuyIhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;      &quot;
-        title=&quot;      &quot;
-        src=&quot;/static/889d6aa58c9d02aab7c4ce4d164b9083/78a22/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png&quot;
-        srcset=&quot;/static/889d6aa58c9d02aab7c4ce4d164b9083/5a46d/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png 300w,
-/static/889d6aa58c9d02aab7c4ce4d164b9083/78a22/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png 585w&quot;
-        sizes=&quot;(max-width: 585px) 100vw, 585px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;그 결과...우테코 4기의 테코톡 발표 스타트를 제가 끊게 되었습니다..
-3월 10일 첫 발표라니🤯&lt;/p&gt;
-&lt;p&gt;유튜브에 박제되는 만큼..열심히 준비해야겠어요🤯&lt;/p&gt;
-&lt;h1 id=&quot;마치며&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EC%B9%98%EB%A9%B0&quot; aria-label=&quot;마치며 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;마치며..&lt;/h1&gt;
-&lt;p&gt;이렇게 두번째 미션기간도 끝이 났네요😁&lt;/p&gt;
-&lt;p&gt;다음 미션도 열심히해서 많은 것을 배우는 2주가 되었으면 좋겠네요~
-다들 화이팅입니다🔥&lt;/p&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 로또 미션 피드백 정리]]></title><description><![CDATA[피드백을 주고받은 PR [1단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #390 [2단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #471 피드백 정리 1. for-loop를 Stream.forEach…]]></description><link>https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-피드백정리/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-피드백정리/</guid><pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;h1 id=&quot;피드백을-주고받은-pr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr&quot; aria-label=&quot;피드백을 주고받은 pr permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR&lt;/h1&gt;
 &lt;ul&gt;
@@ -15457,6 +15252,215 @@ model이나 view의 인스턴스 변수를 생성하며 둘 사이의 의존성�
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 로또 미션 회고  (2월 22일 ~ 3월 7일)]]></title><description><![CDATA[…]]></description><link>https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-회고/</link><guid isPermaLink="false">https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-회고/</guid><pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;미션진행&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AF%B8%EC%85%98%EC%A7%84%ED%96%89&quot; aria-label=&quot;미션진행 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;미션진행&lt;/h1&gt;
+&lt;p&gt;이번에 진행한 로또 미션은 새로운 페어인 &lt;code&gt;써머&lt;/code&gt;와 함께했습니다.
+그리고 이전 &lt;code&gt;스컬&lt;/code&gt;과 미션을 진행했던 것처럼 이번 미션 또한 &lt;code&gt;써머&lt;/code&gt;와 직접 만나서 진행을 해봤습니다😁&lt;/p&gt;
+&lt;p&gt;미션을 진행해보니 확실히 지난 자동차 미션보다는 난의도가 올라갔더군요😭
+이번 미션에는 지난번 미션에서 아래의 새로운 추가 요구사항이 생겼어요.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java Enum을 적용한다.&lt;/li&gt;
+&lt;li&gt;모든 원시 값과 문자열을 포장한다&lt;/li&gt;
+&lt;li&gt;일급 컬렉션을 쓴다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;지난번 자동차 경주 미션과 프리코스때도 Enum과 일급 컬렉션은 사용을 하였어서 크게 문제가 없었으나,
+&lt;code&gt;모든 원시 값과 문자열을 포장한다.&lt;/code&gt;의 추가사항은 처음 접해본 요구사항이어서 어려움을 느꼈습니다.
+원시 값을 포장하는 것에 대해 &lt;code&gt;써머&lt;/code&gt;와 함께 이론에 대해 학습하고 미션을 진행하였음에도 불구하고 둘 다 처음 사용해봐서..
+역시나 원시 값 포장에 대한 이점을 살리지 못하였습니다.&lt;/p&gt;
+&lt;p&gt;또한 지난 미션의 주된 목적이 TDD의 학습이었다면 이번 목적의 주된 목적은 OOP였는데..해당 내용들도 처음에는 살리지 못하였습니다.&lt;/p&gt;
+&lt;p&gt;하지만 리뷰어 &lt;code&gt;코니&lt;/code&gt;의 리뷰를 하나씩 받으며 코드를 수정하다보니 원시 값 포장의 이점도 살리고, 객체들을 나누고 객체들의 작업 분리를 하며
+미션이 끝날 때에는 처음보다 훨씬 OOP에 가까운 코드가 되어있었습니다.&lt;/p&gt;
+&lt;p&gt;앗..그리고 저는 이번 미션에서 OOP보다 더 어려움을 느꼈던 것은 클래스와 변수들의 네이밍이었습니다..
+&lt;code&gt;LottoNumber&lt;/code&gt;, &lt;code&gt;Lotto&lt;/code&gt;, &lt;code&gt;Lottos&lt;/code&gt;, &lt;code&gt;WinningNumbers&lt;/code&gt; 등 개발을 진행할 떄 비슷한 이름의 클래스들이 너무 많아 개발을 하며 너무 헷갈렸어요..
+제가 작성한 코드인데 개발 도중에도 헷갈리다니...정말 좋지 않은 네이밍이었던 것 같습니다..
+그래서 그런지 &lt;code&gt;코니&lt;/code&gt;에게도 네이밍에 관한 지적을 많이 받았던거 같아요😭&lt;/p&gt;
+&lt;p&gt;자세한 코드리뷰와 작성 코드는 아래의 링크에서 확인해보실 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-lotto/pull/390&quot;&gt;[1단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #390&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-lotto/pull/471&quot;&gt;[[2단계 - 로또(자동)] 렉스(오성원) 미션 제출합니다. #471]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://seongwon97.github.io/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%A1%9C%EB%98%90-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;우아한테크코스 - 레벨1 로또 미션 피드백 정리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;데일리-준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%A4%80%EB%B9%84&quot; aria-label=&quot;데일리 준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데일리 준비&lt;/h1&gt;
+&lt;p&gt;아침마다 진행하는 &lt;code&gt;구구&lt;/code&gt;와 함께하는 데일리 미팅에서는 우테코 시작 셋째주부터
+그 날의 데일리 미팅을 진행하는 사회자(&lt;code&gt;마스터&lt;/code&gt;)를 뽑아 진행을 하였습니다.&lt;/p&gt;
+&lt;p&gt;주제는 다양하게 맛집 소개, 게임으로부터 시작하여, 앞으로 만들어보고싶은 프로젝트 소개 등 다양한 주제로 이야기를 하였습니다.
+그렇게 마스터의 순서가 돌고 돌아 저의 차례가 왔습니다.&lt;/p&gt;
+&lt;p&gt;저는 롯데시네마 드리미 출신인 만큼, 영화와 관련된 주제를 진행하였습니다👍🏻
+선정한 주제는 바로~~~&lt;code&gt;소리를 듣고 영화 제목 맞추기&lt;/code&gt;였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1079px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmUlEQVQoz4VTy26CUBDl591058ol66oLEx9I0WqD2goR35qY+IqKoBtro1ULnM4lQtBgO8nkDszM4cyZC4c7cxwH/737uZxg21Zojgs22bbtxoIgIBqNIhaLIRKJIJvNIplMgud5pNMZJPgnLMYdt5b1BEE5D8xzZqPRCM1mE91OBxqd5naLyXiM4WCA1WoFfTHB92EPJ9Dr4XDBh7BxXTudsD8cwnOsJ9DL3euwJTamaWJJTBaGgeVsho9iEcl4HJfpFDa9w3IJU9ex3mzAlLQDsvkM5/M5NE1DQZIgFgpolEow8nno1SomYh6f7zWgXAIoj2tuIss4qiqs4YCJ6UrgA+52Oxew025DFEWItIg38kwigVz8GYVMBi+0LIk8R7GUSmHc70N9LeJIU/kMw1Zv0FhypYIyMRAIvFavI03g1VoNSqMBiSToDoe3Ul719BlaloXz+ew6ix+a93E6z7QsVu9cr9uNhmwZbRq31WpBJmYNYsLiXq8HlXRiV0aj/JpiKAq+SFuFTlZzIuA/Rw5e9tA/50Ets18xSTYdnZQR7QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;          &quot;
+        title=&quot;          &quot;
+        src=&quot;/static/70632db6f4f0b71dc82993edd22865bc/cf4cc/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png&quot;
+        srcset=&quot;/static/70632db6f4f0b71dc82993edd22865bc/5a46d/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 300w,
+/static/70632db6f4f0b71dc82993edd22865bc/0a47e/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 600w,
+/static/70632db6f4f0b71dc82993edd22865bc/cf4cc/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EC%98%81%ED%99%94_%EB%A7%9E%EC%B6%94%EA%B8%B0.png 1079w&quot;
+        sizes=&quot;(max-width: 1079px) 100vw, 1079px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;하지만 데일리 마스터를 위해 주제 선정과 준비를 열심히 하였으나..
+넷플릭스의 보안 문제떄문에 줌으로 화면 공유를 하게되면 화면이 검게 나오는 점이 아쉬웠어요..&lt;/p&gt;
+&lt;p&gt;원래 이런 문제들은 소리를 듣고 참가자가 제목을 맞추면 해당 장면을 보여줘야하는데 말이죠😭&lt;/p&gt;
+&lt;p&gt;그래서 결국에는 게임하는 중간에 넷플이 아닌 유튜브로 플랫폼을 바꿔..제가 하나씩 검색하며 문제를 출제하고 화면 공유를 했습니다.😭&lt;/p&gt;
+&lt;p&gt;다음번에는 이런 게임을 준비한다면 더욱 확실하게 준비해봐야겠어요..&lt;/p&gt;
+&lt;h1 id=&quot;랜선회식&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D&quot; aria-label=&quot;랜선회식 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;랜선회식&lt;/h1&gt;
+&lt;p&gt;글을 올리는 3월 7일인 오늘은 데일리 미팅 조의 랜선회식을 해봤어요!
+다른 조들이 랜선 회식을 하는건 자주 봤었는데, 제가 직접 해보려니까 뭔가 어색하기도 하면서 재밋기도 하네요😁&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACp0lEQVQoz22RZ0/TURyFS8uqcURApkCpjFJGy24ZBgEtlFFbitB/FWjUCCEsFQRpFepgOTAFWTWAEHmBg2hMjBBCwkfwAz3+aUkkkRcn5+be+3vuyT2S8oYx9KUC2XlW0jMbqK5pxFBRybCrB++nFd44H+EadfNj/4DOkTEWVzdYmF/iw8cNHg4M8Xtnj91fuyTGJyCRSJCos2soq3CQX9CMOstEZXkNtjwlo487ePV1E2eHjYH73Wzv7jEy+ZZlETTlcrL9eR33+ASdXV3MvfOgSEzyA5WpFej0N9DmNaHKrMdgMOOwtVFr0GGxVNHTb2FqwsmSd52FuVkWXz/C63nG+HMXD4b6mHj1mqXp+yTGnvcD08WEFdfuos2xosqoo7q6EfudQaw2C9trb1lfmWRwoJ95zxxjw0Oszj/n25dVNj+t0d17D6vg4LbdQkLMBT9QW2BCV3oTTe4hsJ6rlQ3YHX20CE1MvnThnZukv+06DnFo1jPDM/eU6Avs7eyjLzFyLjydmPhC5KfO+oEZ2lqK9C1kaRtJU9dRa7Ryy95Oe1sz72desLWxzG3BhHu4g+H+Vp6MjPJ96ysr3g2ycqtIVOpRJBcjlYUcATW1lBQLItCCOvs6cRdTiI66QFRkJFERYcRGRxMeFo5CocDeZOKpewyz2ewbDgwKEl2KJEDqh/la1hgpK28nN78JjVhMqDzs3+ExBYeEUlZcxOb2TwadTt+eNCDg/7u5RY1cuXbHV0qa2khSchmXTbMUG6c5fcb/0QHHBg/XMpn0xEd9KhHT5RcK5OnaUGvMJKsM1N89wNr7h7CIS36IVEZgYAiywGARFnzkQScDM3PqyC8SyCmwiWoWE5aiKWwlu0BALvc3J5efJl6pITwqnYSkHFJUOmLiUk8E/gW0EogdEcfmwwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;         0310&quot;
+        title=&quot;         0310&quot;
+        src=&quot;/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/c1b63/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png&quot;
+        srcset=&quot;/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/5a46d/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 300w,
+/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/0a47e/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 600w,
+/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/c1b63/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 1200w,
+/static/6620b5bd80c1c3c7a8fa7787ad06ad8a/a6ec4/%EB%8D%B0%EC%9D%BC%EB%A6%AC_%EB%9E%9C%EC%84%A0%ED%9A%8C%EC%8B%9D_0310.png 1438w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;제가 원래 밖에서 사람들이랑 친화력은 좋아도..이렇게 랜선에서 화상으로 친해지는건 아직 어색한 사람이라..랜선 회식을 했다는게 아쉽네요ㅠ
+다들 직접 만나서 이야기를 했으면 더 많은 이야기를 했을텐데..코로나가 좀 괜찮아지면 오프라인 회식도 기대해봐야겠어요👍🏻&lt;/p&gt;
+&lt;h1 id=&quot;테코톡준비&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1%EC%A4%80%EB%B9%84&quot; aria-label=&quot;테코톡준비 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡준비&lt;/h1&gt;
+&lt;p&gt;우테코에서는 과정이 끝나기 전에 최소 한번 이상 테코톡 발표를 해야지 수료를 할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;저는 시간이 흘러 우테코 레벨이 높아질수록 공부할 시간도 부족할 것 같아..매도 빨리 맞자!!는 생각으로 신청 지원이 열리자마자
+바로 &lt;code&gt;Git branch전략&lt;/code&gt;에 대한 발표 신청을 하였습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 585px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 79.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAADe0lEQVQ4y0WT6XLaWBCFef9HmD9TqYyTTDmZSuLEeIsdgw222bUhQCChsIlVgGWz6pv2Hc+Mqrq6+9y+rW6do0SnW8N59xuTmx+sS1nCzBXWxwM2lXuwK3TPv+GffiHK3fyHUS2xN/IqHl6fYvz5Blo2+0+/k2h1G0R2mZ3vUj4+wro4QTv5xsI2oOvTy99hClZOHuFlUgyKD4Lds3Yd4k6bmakpfFarsitmSXjTDo3uBLMRcnpZ5OJnheOzHKlslbr3yG2uycmPorKrG5NsoU3JCrBbC+rtiILe4/g8Rzbfot5ZyYRjn/BpyWa7p1qrUXeaVHSDxfKRl6fT61EolSmVK2iGKXmf9WbLbg+xnE/DOf1BoOKtgInmqE0YLdist1iWTNVwqGg6y2WkGnptH01eEMrFgVzcbnfSLJYBdogjnC9oNJoKVw29cRvDn5GtRvx1ofP1yubwpMSnM41c45mTrMfxjcOp+O/pBmltQs5Z8VB/Iu+suS6P+HxZVflLfaIlE3qjkGZvxWXG4Pre5jxdIW/4+KMdebNDOt+g5i9xgzXuYIWn/Jpf4z2VekBO91X8giUagUe0XvLyRWq2iVOvYleF4XirVh4P+wyDHvFuzf9P/Grw9DinJ2z/iyeaQ4/ebE4w3XD7oHNXsMiIr7X6TJYxVafHvWC5cg23MxEbMww3yqaPsSgh4K5YZTTfCbYl4Y48yu6Un1rEwbcS75M6B9/Lym6sJ45ufN58zvHxosbboyJfUp7gz6TNiIy94uR+wKcfdRWnpT7hyIQzYXm13qEbFla1JhLRhL0l+xfZdPuYls18sVS23uyVxFabnZLOeBqKEn7xGD1LD5nQCVw6kzmd0Zr0vSHj10jdaRj1DsN5TNFwJdfRGwOpWdGfbelNNsqCcE/Dn5LTmpjNQJ0Lyy4Vb0rKiPiQrHB4ZvJO1v2Q1GSNZ76mWiq+LI3JVJ+4tSJuX322tuI8P+QsNyDX3ClcWHZF2HPFkeu5Im4LXdeJnv4Rdr/fx3EclcdxzH6/f7WdOp/NZniex2q1kvP9y8otvGEoOorJFJtKi5e3umirrbRVtHqcp8pc31nYXqiwdrARLW5UbDYnPGg+dnshun1ludAccmUsOLw0+SNZ4CBZ5O1xQbAZX29bvD8tK+yd+EP5K85KAT/NkGtrTjLfldo8p4W+YHP+BsQifqgGuyIhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;      &quot;
+        title=&quot;      &quot;
+        src=&quot;/static/889d6aa58c9d02aab7c4ce4d164b9083/78a22/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png&quot;
+        srcset=&quot;/static/889d6aa58c9d02aab7c4ce4d164b9083/5a46d/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png 300w,
+/static/889d6aa58c9d02aab7c4ce4d164b9083/78a22/%ED%85%8C%EC%BD%94%ED%86%A1_%EC%9D%BC%EC%A0%95.png 585w&quot;
+        sizes=&quot;(max-width: 585px) 100vw, 585px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;그 결과...우테코 4기의 테코톡 발표 스타트를 제가 끊게 되었습니다..
+3월 10일 첫 발표라니🤯&lt;/p&gt;
+&lt;p&gt;유튜브에 박제되는 만큼..열심히 준비해야겠어요🤯&lt;/p&gt;
+&lt;h1 id=&quot;마치며&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A7%88%EC%B9%98%EB%A9%B0&quot; aria-label=&quot;마치며 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;마치며..&lt;/h1&gt;
+&lt;p&gt;이렇게 두번째 미션기간도 끝이 났네요😁&lt;/p&gt;
+&lt;p&gt;다음 미션도 열심히해서 많은 것을 배우는 2주가 되었으면 좋겠네요~
+다들 화이팅입니다🔥&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[Git Branch 전략]]></title><description><![CDATA[Git Branch 전략이란? 혼자 개발을 할 경우, git…]]></description><link>https://seongwon97.github.io/Git/20220305-Git-Branch전략/</link><guid isPermaLink="false">https://seongwon97.github.io/Git/20220305-Git-Branch전략/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;git-branch-전략이란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#git-branch-%EC%A0%84%EB%9E%B5%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;git branch 전략이란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Git Branch 전략이란?&lt;/h1&gt;
 &lt;p&gt;혼자 개발을 할 경우, git의 브랜를 아래와 같이 특정 작업을 할 때 새로운 브랜치를 새로 만들어 사용하거나 하나의 브랜치만을 사용하며 개발을 할 것입니다.
 &lt;span
