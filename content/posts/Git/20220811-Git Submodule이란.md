@@ -41,7 +41,7 @@ draft: false
 
 ```bash
 2022-momo          // 팀의 Organization
-				⌙ security // 서브모듈에 사용할 레포지토리
+      ⌙ security // 서브모듈에 사용할 레포지토리
 ```
 
 이제 해당 레포지토리 안에 우리가 서브모듈로 관리를 하고 싶은 정보들을 추가한다. 필자는 yml파일을 분리하여 관리를 하다보니 `application-datasource.yml`, `application-jwt.yml`, `application-oauth2.yml`, `application.yml` 파일들을 위치시켰다.
