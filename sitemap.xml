@@ -13,8 +13,8 @@
 <url> <loc>https://seongwon97.github.io/DevOps/20220717-CICD구축기2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/DevOps/20220715-CICD구축기1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/DevOps/20220713-CICD란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Spring/20220705-JPA란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/20220706-엔티티-생명주기와-영속성-컨텍스트/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Spring/20220705-JPA란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/20220629-ArgumentResolver란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/20220628-Spring-vs-SpringBoot/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/ETC/20220627-Framework-vs-Library/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -38,8 +38,8 @@
 <url> <loc>https://seongwon97.github.io/Spring/20220422-Spring-Post-Mapping/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Spring/20220421-Spring-Get-Mapping/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Git/20220323-미션코드로-잔디심기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-피드백정리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220317-이펙티브자바-16/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220317-이펙티브자바-17/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220316-이펙티브자바-14/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -51,15 +51,15 @@
 <url> <loc>https://seongwon97.github.io/Java/20220312-이펙티브자바-9/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220312-자바의-인터페이스/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220311-자바-상속/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-피드백정리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Woowacourse/20220307-우테코-레벨1-로또-피드백정리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Git/20220305-Git-Branch전략/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220304-이펙티브자바-6/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220304-이펙티브자바-7/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Git/20220303-파일의_마지막_개행/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220303-이펙티브자바-5/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Java/20220302-제너릭-인터페이스를-활용한-예외처리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220302-동등성과-동일성/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Java/20220302-제너릭-인터페이스를-활용한-예외처리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-이펙티브자바-3-싱글턴임을-보증하라/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-이펙티브자바-4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-제너릭이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -76,8 +76,8 @@
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211217-우테코-최종-코딩테스트-대비2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211216-우테코-최종-코딩테스트-대비1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/ETC/20211214_싱글턴 패턴이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-참여후기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-참여후기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20211213-Enum이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20211210-일급_컬렉션이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211210-우테코-프리코스-2주차-피드백-정리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
