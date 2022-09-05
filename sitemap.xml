@@ -59,8 +59,8 @@
 <url> <loc>https://seongwon97.github.io/Java/20220304-이펙티브자바-7/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Git/20220303-파일의_마지막_개행/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220303-이펙티브자바-5/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Java/20220302-제너릭-인터페이스를-활용한-예외처리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220302-동등성과-동일성/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Java/20220302-제너릭-인터페이스를-활용한-예외처리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-이펙티브자바-3-싱글턴임을-보증하라/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-이펙티브자바-4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20220228-제너릭이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -77,8 +77,8 @@
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211217-우테코-최종-코딩테스트-대비2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211216-우테코-최종-코딩테스트-대비1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/ETC/20211214_싱글턴 패턴이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-참여후기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon97.github.io/Woowacourse/20211214-우테코-프리코스-참여후기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20211213-Enum이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Java/20211210-일급_컬렉션이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon97.github.io/Woowacourse/20211210-우테코-프리코스-2주차-피드백-정리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

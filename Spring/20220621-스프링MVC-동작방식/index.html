@@ -63,10 +63,10 @@
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RestController</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RequestMapping</span><span class="mtk4">(</span><span class="mtk6">&quot;/api/members/me/carts&quot;</span><span class="mtk4">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">class</span><span class="mtk4"> </span><span class="mtk11">CartController</span><span class="mtk4"> </span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">		</span><span class="mtk1">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">...</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">PostMapping</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">public</span><span class="mtk3"> </span><span class="mtk11">ResponseEntity</span><span class="mtk1">&lt;</span><span class="mtk11">Void</span><span class="mtk1">&gt;</span><span class="mtk3"> addCartItem</span><span class="mtk1">(</span><span class="mtk11">Long</span><span class="mtk1"> </span><span class="mtk4 mtki">memberId</span><span class="mtk1">, @</span><span class="mtk11">RequestBody</span><span class="mtk1"> </span><span class="mtk11">AddCartRequest</span><span class="mtk1"> </span><span class="mtk4 mtki">request</span><span class="mtk1">)</span><span class="mtk3"> </span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">				...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        ...</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">GetMapping</span></span></span>
@@ -83,10 +83,10 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RestController</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RequestMapping</span><span class="mtk4">(</span><span class="mtk6">&quot;/api/products&quot;</span><span class="mtk4">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">class</span><span class="mtk4"> </span><span class="mtk11">ProductController</span><span class="mtk4"> </span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">		</span><span class="mtk1">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">...</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">PostMapping</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">public</span><span class="mtk3"> </span><span class="mtk11">ResponseEntity</span><span class="mtk1">&lt;</span><span class="mtk11">Void</span><span class="mtk1">&gt;</span><span class="mtk3"> add</span><span class="mtk1">(@</span><span class="mtk11">Valid</span><span class="mtk1"> @</span><span class="mtk11">RequestBody</span><span class="mtk1"> </span><span class="mtk11">ProductRequest</span><span class="mtk1"> </span><span class="mtk4 mtki">request</span><span class="mtk1">)</span><span class="mtk3"> </span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">				...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        ...</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">GetMapping</span><span class="mtk4">(</span><span class="mtk6">&quot;/{productId}&quot;</span><span class="mtk4">)</span></span></span>
@@ -105,11 +105,11 @@
 <blockquote>
 <p>Servlet에 대해 잘 모른다면 해당 게시글을 참고하길 바란다.</p>
 <ul>
-<li><a href="https://seongwon97.github.io/posts/Servlet%EC%9D%B4%EB%9E%80/">Servlet이란?</a></li>
+<li><a href="https://seongwon.dev/Spring/20220620-Servlet%EC%9D%B4%EB%9E%80/">Servlet이란?</a></li>
 </ul>
 </blockquote>
 <h2 id="12-servlet의-단점" style="position:relative;"><a href="#12-servlet%EC%9D%98-%EB%8B%A8%EC%A0%90" aria-label="12 servlet의 단점 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.2. Servlet의 단점</h2>
-<p>이전 <a href="https://seongwon97.github.io/posts/Servlet%EC%9D%B4%EB%9E%80/">Servlet을 다룬 게시글</a>을 보면 Servlet은 아래의 문제점들이 있었다.</p>
+<p>이전 <a href="https://seongwon.dev/Spring/20220620-Servlet%EC%9D%B4%EB%9E%80/">Servlet을 다룬 게시글</a>을 보면 Servlet은 아래의 문제점들이 있었다.</p>
 <ol>
 <li>1대1 매핑 구조를 갖고 있어 공통 로직에 대해 중복 로직이 발생한다.</li>
 <li>모든 요청들이 서블릿에 의존적이어서 Servlet에 종속적인 프로그램을 작성하게 된다.</li>
@@ -138,7 +138,7 @@
       />
     </span></p>
 <p>위와 같이 Front Controller를 만들게 되며 기존에 web.xml을 참조해 요청을 처리해줄 Servlet을 찾는 작업을 Front Controller가 해주게 되었다. 또한 요청에 따라 Servlet을 1대1로 생성하는 구조에서 Front Controller가 올바른 핵심 비즈니스 로직을 수행하게 변하여 생성해야하는 Servlet의 개수가 1개로 줄어들었다.</p>
-<p>이로인해 요청의 진입점이 모두 Front Controller가 되어 관리가 수월해졌다. 그리고 공통 로직들을 Front Controller가 갖도록 하다보니 기존 Servlet의 문제접이었던 중복 로직들이 제거되었다.</p>
+<p>이로인해 요청의 진입점이 모두 Front Controller가 되어 관리가 수월해졌다. 그리고 공통 로직들을 Front Controller가 갖도록 하다보니 기존 Servlet의 문제점이었던 중복 로직들이 제거되었다.</p>
 <p>마지막으로 Servlet 객체가 요청을 처리하는 <code>service()</code>의 매개변수로 사용되어 프로그램이 컨트롤러가 자바 객체를 받도록 변경되며 Servlet의 종속적이었던 문제가 해결되었다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
