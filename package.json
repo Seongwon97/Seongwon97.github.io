@@ -57,7 +57,7 @@
     "tailwindcss": "^1.9.6",
     "twin.macro": "^1.12.1"
   },
-  "homepage": "https://seongwon97.github.io/",
+  "homepage": "https://seongwon.dev/",
   "husky": {
     "hooks": {
       "pre-commit": "npm run format && git add ."

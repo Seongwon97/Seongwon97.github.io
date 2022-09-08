@@ -3,7 +3,7 @@ module.exports = {
   description: `Develop, Security, It, Etc...`,
   author: `Seongwon`,
   introduction: `열심히 성장중인 우테코 4기 BE 렉스입니다 🦖`,
-  siteUrl: `https://seongwon97.github.io/`, // Your blog site url
+  siteUrl: `https://seongwon.dev/`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
     github: `Seongwon97`, // Your GitHub account
