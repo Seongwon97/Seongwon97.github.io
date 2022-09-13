@@ -1,4 +1,410 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon.dev</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 12 Sep 2022 09:25:36 GMT</lastBuildDate><item><title><![CDATA[[JPA] Spring Data JPA란?]]></title><description><![CDATA[1. Spring Data JPA란? Spring Data는 관계형/비관계형 데이터베이스, Map-reduced…]]></description><link>https://seongwon.dev/Spring/20220911-Spring-Data-JPA란/</link><guid isPermaLink="false">https://seongwon.dev/Spring/20220911-Spring-Data-JPA란/</guid><pubDate>Sun, 11 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-spring-data-jpa란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-spring-data-jpa%EB%9E%80&quot; aria-label=&quot;1 spring data jpa란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Spring Data JPA란?&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seongwon.dev]]></title><description><![CDATA[Develop, Security, It, Etc...]]></description><link>https://seongwon.dev</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 13 Sep 2022 15:07:10 GMT</lastBuildDate><item><title><![CDATA[[JPA] Spring Data JPA의 Query Method]]></title><description><![CDATA[1. Spring Data JPA에서 쿼리를 만드는 방법 이전 게시글에서 Spring Data JPA에 대해 알아보며 해당 모듈은 Data Access Layer의 구현을 최대한 개선하는 것을 목표로 만들어졌다고 하였다. 또한 Data JPA…]]></description><link>https://seongwon.dev/Spring/20220913-Query-Method란/</link><guid isPermaLink="false">https://seongwon.dev/Spring/20220913-Query-Method란/</guid><pubDate>Tue, 13 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-spring-data-jpa에서-쿼리를-만드는-방법&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-spring-data-jpa%EC%97%90%EC%84%9C-%EC%BF%BC%EB%A6%AC%EB%A5%BC-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;1 spring data jpa에서 쿼리를 만드는 방법 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Spring Data JPA에서 쿼리를 만드는 방법&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://seongwon.dev/Spring/20220911-Spring-Data-JPA%EB%9E%80/&quot;&gt;이전 게시글&lt;/a&gt;에서 Spring Data JPA에 대해 알아보며 해당 모듈은 Data Access Layer의 구현을 최대한 개선하는 것을 목표로 만들어졌다고 하였다. 또한 Data JPA에서 제공하는 &lt;code&gt;JpaRepository&lt;/code&gt; 에서는 CURD기능들과 페이징, 정렬 기능등의 DB와의 소통을 쉽게 할 수 있는 메서드를 제공한다고 하였다. 하지만 앞서 살펴봤던 메서드들은 모두 &lt;code&gt;findAll&lt;/code&gt;, &lt;code&gt;findById&lt;/code&gt;와 같은 기본적인 기능이었다. 실제 애플리케이션을 개발하면 DB내용의 전체 조회, ID를 통한 조회 외에도 상황에 맞는 조건에 따라 많은 조회 메서드가 필요할 것이다.&lt;/p&gt;
+&lt;p&gt;기본 제공 메서드 외에 추가로 필요한 쿼리문 메서드들은 개발자가 직접 만들어서 사용할 수 있다. Repository에서 &lt;code&gt;JpaRepository&lt;/code&gt;에서 제공하는 기본적인 메서드 외에도 레포지토리에 존재하는 메서드로부터 쿼리를 파생시키는 두 가지 방법이 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;메서드 이름을 통해 쿼리를 만든다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@Query&lt;/code&gt; 어노테이션을 통해 수동으로 쿼리를 정의한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2번 방법은 앞서 학습한 &lt;a href=&quot;https://seongwon.dev/Spring/20220829-JPA-JPQL/&quot;&gt;JPQL&lt;/a&gt;을 통한 쿼리 생성 방법이다. 이번 포스트와는 거리가 좀 있는 내용이라 간단하게만 살펴보겠다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; query &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;select u.name from User u where u.name = :name&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; result &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;createQuery&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(query, &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                        &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;setParameter&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;Rex&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                        &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getResultList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;순수 JPA를 사용한다면 JPQL을 작성할 때는 위와 같이 코드를 작성해야 했을 것이다. 하지만 Spring Data JPA를 사용한다면 위의 코드가 아래와 같이 간단하게 변경될 수 있다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;select u.name from User u where u.name = :name&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; result &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByUsername&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; username)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;JPQL을 통한 쿼리 생성이 아닌 또 다른 방법은 메서드 이름을 통해 쿼리를 만드는 방법이 있다. 해당 방법이 바로 이번 포스트에서 살펴볼 &lt;strong&gt;Query Method&lt;/strong&gt;이다.&lt;/p&gt;
+&lt;p&gt;Query Method는 Spring Data JPA에서 메서드 이름을 통해 쿼리를 쉽게 생성할 수 있는 기능이다. 이번 포스트에서는 해당 기능의 기본적인 몇가지 문법에 대해 알아보고자 한다.&lt;/p&gt;
+&lt;h1 id=&quot;2-query-method사용하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-query-method%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0&quot; aria-label=&quot;2 query method사용하기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Query Method사용하기&lt;/h1&gt;
+&lt;h2 id=&quot;21-준비하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#21-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0&quot; aria-label=&quot;21 준비하기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.1. 준비하기&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://seongwon.dev/Spring/20220911-Spring-Data-JPA%EB%9E%80/&quot;&gt;이전 게시글&lt;/a&gt;에서 언급하였듯이 Spring Data JPA는 &lt;code&gt;JpaRepository&lt;/code&gt;를 상속하는 것만으로도 Spring이 알아서 관리를 해주고 &lt;code&gt;CrudRepository&lt;/code&gt;에서 제공하는 기본 메서드들을 사용할 수 있다. Query method 또한&lt;code&gt;JpaRepository&lt;/code&gt;를 상속하는 것만으로도 Jpa의 method들을 사용할 수 있다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;UserRepository&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;JpaRepository&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;22-query-method-기초-알아가기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#22-query-method-%EA%B8%B0%EC%B4%88-%EC%95%8C%EC%95%84%EA%B0%80%EA%B8%B0&quot; aria-label=&quot;22 query method 기초 알아가기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.2. Query Method 기초 알아가기&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Getter&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;NoArgsConstructor&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;access&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;AccessLevel&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;PROTECTED)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Entity&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Id&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;GeneratedValue&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;strategy&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;GenerationType&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;IDENTITY)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; id&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; userId&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; age&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Embedded&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Address&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; address&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위와 같은 엔티티가 있을 때, DB에서 이름이 &lt;code&gt;렉스&lt;/code&gt;인 유저를 찾는 메서드를 만든다 생각해보자. 순수 JPA를 사용한다면 앞서 살펴보았던 코드와 같이 쿼리를 작성 후 &lt;code&gt;createQuery()&lt;/code&gt;를 통해 결과를 얻어와야 했다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; query &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;select u.name from User u where u.name = :name&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; result &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;createQuery&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(query, &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Member&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                        &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;setParameter&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk6&quot;&gt;&amp;quot;Rex&amp;quot;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;                        &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getResultList&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;하지만 이러한 쿼리를 Spring Data JPA에서는 아래와 같이 메서드만 작성해주면 스스로 메서드 이름을 분석 후 JPQL을 생성하고 실행해주어 코드를 간결하고 편하게 작성할 수 있다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;UserRepository&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Repository&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt; findByName&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;메서드 이름 작성은 2.3에서 다루는 쿼리 메서드의 문법들을 보고 작성하면 된다. 제공하는 문법들의 경우 이름이 매우 직관적이어서 사용하기도 편리하다.&lt;/p&gt;
+&lt;h3 id=&quot;221-query-method-parsing방법과-필드-설정에서-주의할-점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#221-query-method-parsing%EB%B0%A9%EB%B2%95%EA%B3%BC-%ED%95%84%EB%93%9C-%EC%84%A4%EC%A0%95%EC%97%90%EC%84%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90&quot; aria-label=&quot;221 query method parsing방법과 필드 설정에서 주의할 점 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.2.1 Query Method Parsing방법과 필드 설정에서 주의할 점&lt;/h3&gt;
+&lt;p&gt;Spring Data는 query method를 &lt;strong&gt;subject&lt;/strong&gt;와 &lt;strong&gt;predicate&lt;/strong&gt;으로 나누어 파싱을 한다. 먼저 메서드 이름의 시작 부분인 &lt;code&gt;find~By&lt;/code&gt;, &lt;code&gt;exist~By&lt;/code&gt; 부분을 &lt;strong&gt;subject&lt;/strong&gt;이라고 한다. 그리고 그 뒤의 부분을 &lt;strong&gt;predicate&lt;/strong&gt;이라고 칭한다.&lt;/p&gt;
+&lt;p&gt;predicate에 해당하는 Property 표현은 기본적으로 entity가 직접 관리하는 속성이어야 한다. 하지만 Entity에는 Embedded 타입과 같이 depth를 더 들어가야지 확인 가능한 필드도 존재할 것이다. 이러한 필드의 경우 Camel Case를 통해 경로를 나타내며 메서드명을 작성하면 된다. 예를 들어 Person객체는 Address 객체를 갖고 Address객체가 ZipCode 필드를 갖는다고 하였을 때, ZipCode를 조회 조건으로 사용하고 싶다면 &lt;code&gt;findByAddressZipCode(ZipCode zipCode);&lt;/code&gt; 와 같이 Camem case로 메서드의 경로와 조건의 기준이 되는 필드명을 표현하면 된다.&lt;/p&gt;
+&lt;p&gt;이와 같이 작성을 한다면 Data JPA는 쿼리문을 작성할 때 먼저 Person객체로부터 AddressZipCode라는 필드를 찾는다. 해당 필드가 없다는 것을 확인한 후에는 오른쪽을 기준으로 한 단계씩 Camel Case의 단어를 쪼개서 필드를 찾는다. &lt;code&gt;findByAddressZipCode(ZipCode zipCode);&lt;/code&gt; 를 기준으로 생각하면 먼저 AddressZip 과 Code로 쪼개어 AddressZip객체를 Person객체로부터 찾게 된다. 이후에도 없는 것을 확인하면 단어를 쪼개는 위치를 왼쪽으로 이동하여 Address, ZipCode로 쪼개고 Address객체를 Person객체로부터 찾아내고 Address객체 내부에 ZipCode가 있는지 확인을 하며 쿼리문을 작성하게 된다.
+&lt;code&gt;findByAddressZipCode(ZipCode zipCode);&lt;/code&gt; 와 같이 개발자도 헷갈릴 수 있는 애매한 이름은 &lt;code&gt;_&lt;/code&gt; 를 통해 수동으로 순회 지점을 표현해줄 수도 있다. 앞의 메서드의 표현을 변경해보면 &lt;code&gt;findByAddress_ZipCode(ZipCode zipCode);&lt;/code&gt; 와 같이 변하여 Person의 Address필드의 ZipCode필드라는 것을 더 직관적으로 알 수 있다.&lt;/p&gt;
+&lt;h2 id=&quot;23-query-method의-여러-문법들&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#23-query-method%EC%9D%98-%EC%97%AC%EB%9F%AC-%EB%AC%B8%EB%B2%95%EB%93%A4&quot; aria-label=&quot;23 query method의 여러 문법들 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3. Query Method의 여러 문법들&lt;/h2&gt;
+&lt;h3 id=&quot;231-select-query&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#231-select-query&quot; aria-label=&quot;231 select query permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.1. Select Query&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;아래의 접두사를 가진 메서드들은 모두 select query의 일을 하는 메서드가 된다.&lt;/li&gt;
+&lt;li&gt;이름은 &lt;code&gt;find(get,ready,,,,) By&lt;/code&gt;가 핵심이며 두 문자 뒤에 구분할 수 있는 변수명을 넣어 구분하며 만들어주면 된다. 그러면 자동으로 Select Qeury Method가 만들어진다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;findBy&lt;/code&gt;, &lt;code&gt;getBy&lt;/code&gt;, &lt;code&gt;readBy&lt;/code&gt;, &lt;code&gt;queryBy&lt;/code&gt;, &lt;code&gt;searchBy&lt;/code&gt;, &lt;code&gt;streamBy&lt;/code&gt;, &lt;code&gt;find (Entity 명) By&lt;/code&gt; 는 모두 Select의 일을 하는 키워드이며 이 중에서 자신이 가독성이 높다고 생각되는 것을 이용하면 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;getByEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;readByEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;queryByEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;searchByEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;streamByEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findUserByEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Return type은 &lt;code&gt;List&lt;/code&gt;, &lt;code&gt;Set&lt;/code&gt;, &lt;code&gt;Object&lt;/code&gt;등의 여러 타입으로 할 수 있다. 반환 타입을 지정하면 JPA가 데이터를 읽어오고 return type에 맞춰서 데이터를 반환해준다. 단, 데이터가 여러개인데 User와 같이 단일 객체로 return하면 오류가 발생한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;232-first-top&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#232-first-top&quot; aria-label=&quot;232 first top permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.2. First, Top&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;First&lt;/code&gt;, &lt;code&gt;Top&lt;/code&gt;은 둘 다 데이터에서 출력할 데이터의 수를 정해서 리턴하게 하는 키워드이다.&lt;/li&gt;
+&lt;li&gt;기본적으로 키워드 뒤에 숫자를 붙이지 않으면 가장 상위 데이터 하나가 리턴되며(Default = 1) 키워드 뒤에 출력할 데이터의 수를 붙이면 해당 수만큼 리턴한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findFirst1ByName&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 상위 1개의 데이터 return&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findTop2ByName&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 상위 2개의 데이터 return&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findLast1ByName&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// Last filter는 없다&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;233-and-or&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#233-and-or&quot; aria-label=&quot;233 and or permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.3. And, Or&lt;/h3&gt;
+&lt;p&gt;Query문에서 and, or을 사용하고 싶은 경우 메서드안에 키워드를 넣어준다&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByNameAndEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByNameOrEmail&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; email)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;234-after-before-greaterthan-lessthan-between&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#234-after-before-greaterthan-lessthan-between&quot; aria-label=&quot;234 after before greaterthan lessthan between permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.4. After, Before, GreaterThan, LessThan, Between&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;After, Before, GreaterThan, LessThan&lt;/strong&gt;은 날짜와 값 비교를 해주는 키워드이다.&lt;/li&gt;
+&lt;li&gt;After, GreaterThan과 Before, LessThan은 서로 같은 기능을 하는 필터지만 가독성을 위해 After, Before은 날짜에만 사용하는 것을 추천한다.&lt;/li&gt;
+&lt;li&gt;또한 조건을 걸다보면 초과, 미만 뿐만 아니라 이상, 이하의 조건도 필요할 것이다. 그럴 경우에는 &lt;strong&gt;GreaterThanEqual&lt;/strong&gt;과 같이 &lt;strong&gt;Equal&lt;/strong&gt;을 붙여주면 된다.&lt;/li&gt;
+&lt;li&gt;~이상 ~이하의 의미를 갖는 &lt;strong&gt;Between&lt;/strong&gt; 키워드도 존재한다. Between은 parameter를 2개를 받으며 Between은 위의 After, Before, GreaterThan, LessThan과 다르게 해당 값들도 포함한다.(이상, 이하를 의미한다.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;9&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByCreatedAtAfter&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;LocalDateTime&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; lastDay)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// CreatedAt이 lastDay이후인 데이터들 return (yesterDay미포함)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByIdAfter&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; id)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// input id보다 큰 id를 가진 데이터들을 return (id 미포함)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByCreatedAtGreaterThan&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;LocalDateTime&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; yesterday)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// CreatedAt이 lastDay이후인 데이터들 return (yesterDay미포함)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByCreatedAtGreaterThanEqual&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;LocalDateTime&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; yesterday)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// CreatedAt이 lastDay이후인 데이터들 return (yesterDay포함)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByCreatedAtBetween&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;LocalDateTime&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; yesterday&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;LocalDateTime&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; tomorrow)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// CreatedAt이 lastDay와 tomorrow사이 값인 데이터들 return (yesterDay, tomorrow포함)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByIdBetween&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; id1&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; id2)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// id가 id1이상, id2이하인 데이터들 return&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;After, Before, GreaterThan, LessThan은 초과 미만을 의미하며 Between은 이상, 이하를 의미하는 것을 헷갈리면 안된다!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;235-isnotempty-isnotnull&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#235-isnotempty-isnotnull&quot; aria-label=&quot;235 isnotempty isnotnull permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.5. is(Not)Empty, is(Not)Null&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;isNull은 해당 값에 Null값이 있는지 체크하는 키워드도이다.&lt;/li&gt;
+&lt;li&gt;NotEmpty는 String과 같은 문자열이 비어있는지 체크가 아닌 Collection type의 변수가 not empty(비어있는지)를 체크한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;10&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByIdIsNotNull&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// Id값에 Null값이 없는지?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByAddressIsNotEmpty&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;236-in&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#236-in&quot; aria-label=&quot;236 in permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.6. In&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In절은 query문에서 in절이기 때문에 parameter로 iterater type인 list가 들어가게 된다. generic type이 들어가야하는 &amp;#x3C;&gt;에는 검색하는 column의 data type을 넣는다.&lt;/li&gt;
+&lt;li&gt;일반적으로 in절은 다른 query의 결과값을 다시 query에 넣어야 할 때 사용한다!&lt;/li&gt;
+&lt;li&gt;in절을 사용할 때는 과부하 걸리는 것을 예방하기 위해서 다른 query문의 결과로 얼마나 많은 데이터들이 나올지 사전에 검토를 하고 사용하는게 좋다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;11&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByNameIn&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;237-startingwithendingwithcontains&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#237-startingwithendingwithcontains&quot; aria-label=&quot;237 startingwithendingwithcontains permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.7. StartingWith/EndingWith/Contains&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;해당 keyword들은 문자열에 사용하며 해당 문자열로 시작하는지, 끝나는지, 포함하는지를 필터링할 때 사용한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;contains(&quot;rti&quot;)&lt;/code&gt;와 &lt;code&gt;like(&quot;%rti%&quot;)&lt;/code&gt;는 같은 것이다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;12&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByNameStartingWith&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByNameEndingWith&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByNameContains&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findByNameLike&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;238-is-equals&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#238-is-equals&quot; aria-label=&quot;238 is equals permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.8. Is, Equals&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Is는 해당 값을 가진 data를 찾는 키워드로 Is, Equals, 또는 아무런 키워드를 넣지 않으면 Is로 보게된다.&lt;/li&gt;
+&lt;li&gt;아래 3개의 method는 모두 parameter의 name과 동등한 이름의 데이터들을 출력하는 method이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;13&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findUserByNameIs&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findUserByName&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findUserByNameEquals&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;239-sorting&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#239-sorting&quot; aria-label=&quot;239 sorting permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3.9. Sorting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Sorting은 조건에 따라 데이터의 정렬을 해주는 키워드이다.&lt;/li&gt;
+&lt;li&gt;Desc/ Asc로 정렬한다.&lt;/li&gt;
+&lt;li&gt;여러개의 조건으로 find하는 경우는 And를 사용하였으나 정렬 조건으로 여러개의 값을 사용하는 경우는 And를 사용하지 않고 조건을 이어서 붙인다.&lt;/li&gt;
+&lt;li&gt;Sort 객체를 필드로 줘서 정렬시킬 수도 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;14&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findTop1ByNameOrderByIdDesc&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// Id로 내림차순으로 정렬 후 입력 name과 같은 것의 맨 위의 있는 값을 뽑아온다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findFirst2ByNameOrderByIdDescEmailAsc&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk5 mtki&quot;&gt;// 여러개의 조건으로 find하는 경우는 And를 사용하였으나 정렬 조건으로 여러개의 값을 사용하는 경우는 And를 사용하지 않고 조건을 이어서 붙인다.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;findFirstByName&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; name&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Sort&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; sort)&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;3-그-외의-쿼리-메서드-필터-조건들&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EA%B7%B8-%EC%99%B8%EC%9D%98-%EC%BF%BC%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%95%84%ED%84%B0-%EC%A1%B0%EA%B1%B4%EB%93%A4&quot; aria-label=&quot;3 그 외의 쿼리 메서드 필터 조건들 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 그 외의 쿼리 메서드 필터 조건들&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Keyword&lt;/th&gt;
+&lt;th&gt;Sample&lt;/th&gt;
+&lt;th&gt;JPQL snippet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Distinct&lt;/td&gt;
+&lt;td&gt;findDistinctByLastnameAndFirstname&lt;/td&gt;
+&lt;td&gt;select distinct …​ where x.lastname = ?1 and x.firstname = ?2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;And&lt;/td&gt;
+&lt;td&gt;findByLastnameAndFirstname&lt;/td&gt;
+&lt;td&gt;… where x.lastname = ?1 and x.firstname = ?2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Or&lt;/td&gt;
+&lt;td&gt;findByLastnameOrFirstname&lt;/td&gt;
+&lt;td&gt;… where x.lastname = ?1 or x.firstname = ?2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Is, Equals, (or no keyword)&lt;/td&gt;
+&lt;td&gt;findByFirstname,findByFirstnameIs,findByFirstnameEquals&lt;/td&gt;
+&lt;td&gt;… where x.firstname = ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Between, IsBetween&lt;/td&gt;
+&lt;td&gt;findByStartDateBetween&lt;/td&gt;
+&lt;td&gt;… where x.startDate between ?1 and ?2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LessThan, IsLessThan&lt;/td&gt;
+&lt;td&gt;findByAgeLessThan&lt;/td&gt;
+&lt;td&gt;… where x.age &amp;#x3C; ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LessThanEqual, IsLessThanEqual&lt;/td&gt;
+&lt;td&gt;findByAgeLessThanEqual&lt;/td&gt;
+&lt;td&gt;… where x.age &amp;#x3C;= ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GreaterThan, IsGreaterThan&lt;/td&gt;
+&lt;td&gt;findByAgeGreaterThan&lt;/td&gt;
+&lt;td&gt;… where x.age &gt; ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GreaterThanEqual, IsGreaterThanEqual&lt;/td&gt;
+&lt;td&gt;findByAgeGreaterThanEqual&lt;/td&gt;
+&lt;td&gt;… where x.age &gt;= ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;After, IsAfter&lt;/td&gt;
+&lt;td&gt;findByStartDateAfter&lt;/td&gt;
+&lt;td&gt;… where x.startDate &gt; ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Before, IsBefore&lt;/td&gt;
+&lt;td&gt;findByStartDateBefore&lt;/td&gt;
+&lt;td&gt;… where x.startDate &amp;#x3C; ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IsNull, Null&lt;/td&gt;
+&lt;td&gt;findByAge(Is)Null&lt;/td&gt;
+&lt;td&gt;… where x.age is null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IsNotNull, NotNull&lt;/td&gt;
+&lt;td&gt;findByAge(Is)NotNull&lt;/td&gt;
+&lt;td&gt;… where x.age not null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Like, IsLike&lt;/td&gt;
+&lt;td&gt;findByFirstnameLike&lt;/td&gt;
+&lt;td&gt;… where x.firstname like ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NotLike, IsNotLike&lt;/td&gt;
+&lt;td&gt;findByFirstnameNotLike&lt;/td&gt;
+&lt;td&gt;… where x.firstname not like ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;StartingWith, IsStartingWith,StartsWith&lt;/td&gt;
+&lt;td&gt;findByFirstnameStartingWith&lt;/td&gt;
+&lt;td&gt;… where x.firstname like ?1 (parameter bound with appended %)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;EndingWith, IsEndingWith, EndsWith&lt;/td&gt;
+&lt;td&gt;findByFirstnameEndingWith&lt;/td&gt;
+&lt;td&gt;… where x.firstname like ?1 (parameter bound with prepended %)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Containing, IsContaining, Contains&lt;/td&gt;
+&lt;td&gt;findByFirstnameContaining&lt;/td&gt;
+&lt;td&gt;… where x.firstname like ?1 (parameter bound wrapped in %)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OrderBy&lt;/td&gt;
+&lt;td&gt;findByAgeOrderByLastnameDesc&lt;/td&gt;
+&lt;td&gt;… where x.age = ?1 order by x.lastname desc&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Not, IsNot&lt;/td&gt;
+&lt;td&gt;findByLastnameNot&lt;/td&gt;
+&lt;td&gt;… where x.lastname &amp;#x3C;&gt; ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;In, IsIn&lt;/td&gt;
+&lt;td&gt;findByAgeIn(Collection&lt;Age&gt; ages)&lt;/td&gt;
+&lt;td&gt;… where x.age in ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NotIn, IsNotIn&lt;/td&gt;
+&lt;td&gt;findByAgeNotIn(Collection&lt;Age&gt; ages)&lt;/td&gt;
+&lt;td&gt;… where x.age not in ?1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;True, IsTrue&lt;/td&gt;
+&lt;td&gt;findByActiveTrue()&lt;/td&gt;
+&lt;td&gt;… where x.active = true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;False, IsFalse&lt;/td&gt;
+&lt;td&gt;findByActiveFalse()&lt;/td&gt;
+&lt;td&gt;… where x.active = false&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IgnoreCase, IgnoringCase&lt;/td&gt;
+&lt;td&gt;findByFirstnameIgnoreCase&lt;/td&gt;
+&lt;td&gt;… where UPPER(x.firstname) = UPPER(?1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;더 많은 쿼리 조건들은 Reference에 위치한 공식 문서를 참고하길 바란다.&lt;/p&gt;
+&lt;h1 id=&quot;-reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-reference&quot; aria-label=&quot; reference permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;📚 Reference&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.details&quot;&gt;Spring Data JPA - Reference Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords&quot;&gt;Spring Data JPA - Reference Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods&quot;&gt;Spring Data JPA - Reference Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.baeldung.com/spring-data-derived-queries&quot;&gt;Derived Query Methods in Spring Data JPA Repositories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-JPA-%EC%8B%A4%EC%A0%84/dashboard&quot;&gt;실전! 스프링 데이터 JPA - 인프런 | 강의&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://fastcampus.co.kr/dev_online_javaend&quot;&gt;한 번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online. | 패스트캠퍼스&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ppomelo.tistory.com/155&quot;&gt;[Spring Data JPA] Query Methods - 메소드 이름으로 쿼리 생성&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk6 { color: #98C379; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[JPA] Spring Data JPA란?]]></title><description><![CDATA[1. Spring Data JPA란? Spring Data는 관계형/비관계형 데이터베이스, Map-reduced…]]></description><link>https://seongwon.dev/Spring/20220911-Spring-Data-JPA란/</link><guid isPermaLink="false">https://seongwon.dev/Spring/20220911-Spring-Data-JPA란/</guid><pubDate>Sun, 11 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-spring-data-jpa란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-spring-data-jpa%EB%9E%80&quot; aria-label=&quot;1 spring data jpa란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Spring Data JPA란?&lt;/h1&gt;
 &lt;p&gt;Spring Data는 관계형/비관계형 데이터베이스, Map-reduced 프레임워크 등의 여러 데이터 접근 관련 기술들을 쉽게 사용할 수 있는 모듈들을 제공하고 있다. 대표적으로 몇가지 모듈을 설명하자면 Spring Data JDBC, Spring Data JPA, Spring Data Redis 등의 여러 모듈들이 존재한다. 이번 포스트에서는 Spring Data의 Spring Data JPA 모듈에 대해 자세히 살펴볼 것이다.&lt;/p&gt;
 &lt;p&gt;Spring Data JPA는 JPA기반의 Repository를 편리하게 구현할 수 있도록 개발자의 편의성을 제공하는 모듈이다. 데이터 접근 기술을 JDBC에서 JPA로 넘어가면서 개발자가 SQL문을 일일이 작성하지 않아도 되며 개발의 생산성이 크게 향상되었다. 하지만 JPA도 개발을 하다보면 &lt;code&gt;EntityManager&lt;/code&gt;의 호출과 CRUD로직 작성 등에서 많은 중복 로직은 여전히 존재하였다. Spring Data JPA 모듈은 Data Access Layer의 구현을 최대한 개선하는 것을 목표로 만들어져 앞서 말한 중복로직등을 작성하지 않고서도 적은 양의 코드로 데이터 접근 로직들을 구현할 수 있도록 지원하고 있다.&lt;/p&gt;
 &lt;h1 id=&quot;2-spring-data-jpa-인터페이스-설정-enablejparepositories&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-spring-data-jpa-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%84%A4%EC%A0%95-enablejparepositories&quot; aria-label=&quot;2 spring data jpa 인터페이스 설정 enablejparepositories permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Spring Data JPA 인터페이스 설정 (@EnableJpaRepositories)&lt;/h1&gt;
@@ -2967,7 +3373,7 @@ column 설정 변경을 할 때 테이블의 기본 세팅값에 변경이 있�
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[DevOps] - Jenkins를 통한 CI/CD 구축기 4편 (Backend DB 구축)]]></title><description><![CDATA[이전까지의 과정으로는 DB를 Spring의 인메모리 H2 DB를 사용하여 CI/CD과정이 진행될 때마다 DB데이터들이 초기화되었다. 이번 포스팅에서는 DB를 영구적으로 보관하기 위해 MySQL DB를 구축 및 연결하는 과정을 다뤄보려 한다. 1. DB…]]></description><link>https://seongwon.dev/DevOps/20220814-CICD구축기4/</link><guid isPermaLink="false">https://seongwon.dev/DevOps/20220814-CICD구축기4/</guid><pubDate>Sun, 14 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;이전까지의 과정으로는 DB를 Spring의 인메모리 H2 DB를 사용하여 CI/CD과정이 진행될 때마다 DB데이터들이 초기화되었다. 이번 포스팅에서는 DB를 영구적으로 보관하기 위해 MySQL DB를 구축 및 연결하는 과정을 다뤄보려 한다.&lt;/p&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[DevOps] Jenkins를 통한 CI/CD 구축기 4편 (Backend DB 구축)]]></title><description><![CDATA[이전까지의 과정으로는 DB를 Spring의 인메모리 H2 DB를 사용하여 CI/CD과정이 진행될 때마다 DB데이터들이 초기화되었다. 이번 포스팅에서는 DB를 영구적으로 보관하기 위해 MySQL DB를 구축 및 연결하는 과정을 다뤄보려 한다. 1. DB…]]></description><link>https://seongwon.dev/DevOps/20220814-CICD구축기4/</link><guid isPermaLink="false">https://seongwon.dev/DevOps/20220814-CICD구축기4/</guid><pubDate>Sun, 14 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;이전까지의 과정으로는 DB를 Spring의 인메모리 H2 DB를 사용하여 CI/CD과정이 진행될 때마다 DB데이터들이 초기화되었다. 이번 포스팅에서는 DB를 영구적으로 보관하기 위해 MySQL DB를 구축 및 연결하는 과정을 다뤄보려 한다.&lt;/p&gt;
 &lt;h1 id=&quot;1-db서버-생성-및-mysql-설치&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-db%EC%84%9C%EB%B2%84-%EC%83%9D%EC%84%B1-%EB%B0%8F-mysql-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;1 db서버 생성 및 mysql 설치 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. DB서버 생성 및 MySQL 설치&lt;/h1&gt;
 &lt;p&gt;DB서버는 앞선 과정에서 만들었던 EC2와는 다르게 외부와의 접근을 열어둘 필요가 없기에 Public IP할당 없이 EC2를 생성하면 보안적으로 이점을 얻을 수 있다. Private IP만을 갖고있는 EC2를 생성한 후, 아래의 게시글을 따라 MySQL을 설치해보겠다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -12615,6 +13021,201 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon.dev/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon.dev/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk&quot;
+        title=&quot;tecotalk&quot;
+        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
+        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
+/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
+/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
+        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
+&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
+혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
+&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tecotalk2&quot;
+        title=&quot;tecotalk2&quot;
+        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
+        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
+/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
+/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
+        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
+&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
+&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
+&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
+&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
+&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
+난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
+&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
+그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
+네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
+&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
+올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;state pattern&quot;
+        title=&quot;state pattern&quot;
+        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
+        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
+/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
+/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
+        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
+그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
+&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
+두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
+저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
+코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
+&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 피드백 정리]]></title><description><![CDATA[피드백을 주고받은 PR & 작성 코드 [1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257 작성한 1단계 미션 코드 [2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311 작성한 2단계 미션 코드 피드백 정리…]]></description><link>https://seongwon.dev/Woowacourse/20220321-우테코-레벨1-블랙잭-피드백정리/</link><guid isPermaLink="false">https://seongwon.dev/Woowacourse/20220321-우테코-레벨1-블랙잭-피드백정리/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;h1 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h1&gt;
 &lt;ul&gt;
@@ -12890,201 +13491,6 @@ Request DTO(객체)를 미리 만들어 사용하는 방법은 이전 방식과 
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[우아한테크코스] 레벨1 블랙잭 미션 회고 (3월 8일 ~ 21일)]]></title><description><![CDATA[테코톡 발표 (3월 10일)  과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다. 제가 발표한 주제는 bit branch 전략이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch…]]></description><link>https://seongwon.dev/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</link><guid isPermaLink="false">https://seongwon.dev/Woowacourse/20220321-우테코-레벨1-블랙잭-회고/</guid><pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;테코톡-발표-3월-10일&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%8C%EC%BD%94%ED%86%A1-%EB%B0%9C%ED%91%9C-3%EC%9B%94-10%EC%9D%BC&quot; aria-label=&quot;테코톡 발표 3월 10일 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;테코톡 발표 (3월 10일)&lt;/h1&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1033px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVQoz52SzWqDQBSFfak+WJ8ifYCCC7fu/KMKwa4qWG2xSEKhLioEq+imC2nSiKjjaTQdnbTWQA9c7jDMfHfuucPhoLZtQfPPOIrdI5Nn6JqbAhJChsxGS2gBzANZ6Dnl+zfUTXWyx97tgV31To7jQBAEBEEASZJgGAZ83+/DuX/E7Z2Ky+sLPD3b0NQbLK4WEEXx9wsp0PM88DyPMAxhmiZkWYaqqtA0Dbquw31wEYRrbD+3sG0by+USlmWBMv7VMlXTNEzPI+NkKIP5EwMZoxna66B9JvXA4M59G3by1JooiqAoClbr1cF3Fy+va3zs30fglOYsqKoKRVGgrmuUZfn9UvI3kMK6i1mWIU1TxHGM3W436+vJUOaASZJgs9kgz/NZazp9AdPLTi47PqmOAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk&quot;
-        title=&quot;tecotalk&quot;
-        src=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png&quot;
-        srcset=&quot;/static/7b97634e3af2ef81933d78caeff67ba7/5a46d/tecotalk.png 300w,
-/static/7b97634e3af2ef81933d78caeff67ba7/0a47e/tecotalk.png 600w,
-/static/7b97634e3af2ef81933d78caeff67ba7/42de8/tecotalk.png 1033w&quot;
-        sizes=&quot;(max-width: 1033px) 100vw, 1033px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;과거 유튜브를 통해서만 접하였던 테코톡을..드디어 찍었습니다.&lt;/p&gt;
-&lt;p&gt;제가 발표한 주제는 &lt;code&gt;bit branch 전략&lt;/code&gt;이었습니다. 우테코에 들어와 이전까지 몰랐던 git에 대해 배우다보니
-혼자 추가적으로 공부하며 git branch전략까지 배우게 되었고, 해당 내용이 매우 흥미롭게 느껴져서 발표까지 하게 되었습니다. 각자의&lt;/p&gt;
-&lt;p&gt;발표는 준비 기간이 짧고 페어 프로그래밍 주와 겹쳐서 많이 힘들었으나 잠을 줄여..무사히 마칠 수 있었습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1031px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz52SyaqEQAxF+///xoW6cOnGERcKzoII4oC4cEAFvd0VUPrxGrrsQGpIhUNyKw+8bJ5nTNPEjjiO45+fcR57sEVVVQiCgH3fPybxwgh4VrGu6xVcloV827b7FZ6JSZLAMAyYpkkVy7JMdwb9Cdi2LUHLskRRFEjTlGLvut4CMohlWYjjGL7vU3VVVdEb05a39QuY5zmiKEIQBNB1nTT85XP+tMzaDMOQoH3fo65r8qZpMAwDV/sXkME0TYPjOFAUBbZt0yhJkgRRFJFlGR/w7pxxa8h2Jv7pzMZxJAk8z4Pruui67iv0CWpWVT84pJYWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;tecotalk2&quot;
-        title=&quot;tecotalk2&quot;
-        src=&quot;/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png&quot;
-        srcset=&quot;/static/992759a65af11d548319bf49bce93a49/5a46d/tecotalk2.png 300w,
-/static/992759a65af11d548319bf49bce93a49/0a47e/tecotalk2.png 600w,
-/static/992759a65af11d548319bf49bce93a49/23592/tecotalk2.png 1031w&quot;
-        sizes=&quot;(max-width: 1031px) 100vw, 1031px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;발표 내용은 다음과 같이 branch전략의 소개로부터 github flow, git flow에 대한 자세한 설명들을 하였습니다.&lt;/p&gt;
-&lt;p&gt;우테코 근로 장학생들이 뽑히게 된다면 테코톡 영상들도 곧 올라갈테니 많이들 시청 부탁드립니다.😁&lt;/p&gt;
-&lt;h1 id=&quot;블랙잭-미션&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B8%94%EB%9E%99%EC%9E%AD-%EB%AF%B8%EC%85%98&quot; aria-label=&quot;블랙잭 미션 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;블랙잭 미션&lt;/h1&gt;
-&lt;p&gt;블랙잭 미션은 다음과 같은 요구사항이 추가되었습니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;모든 엔티티를 작게 유지한다.&lt;/li&gt;
-&lt;li&gt;3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.&lt;/li&gt;
-&lt;li&gt;딜러와 플레이어에서 발생하는 중복 코드를 제거해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;다음 구조가 추가되었어도 페어인 &lt;code&gt;라쿤&lt;/code&gt;과 만나서 하루만에 구현을 완료하여 이전 미션들과 비슷한
-난의도라 생각했습니다..하지만 구현을 완료 후 다른 사람들의 코드를 보고, 네오의 블랙잭 피드백 강의를 듣고 많은 충격을 받았습니다.&lt;/p&gt;
-&lt;p&gt;먼저 제가 구현한 블랙잭은 기능들이 많이 빠진 이빨 빠진 블랙잭이었습니다.
-그리고 이번 미션의 목표가 상속과 인터페이스를 학습하는 것이었는데 저의 코드는 상속과 인터페이스를 활용하긴 했지만 활용도가 매우 적었습니다.
-네오의 강의에서 네오는 상속과 인터페이스를 활용한 &lt;code&gt;상태패턴&lt;/code&gt;을 사용한 강의를 하였습니다.&lt;/p&gt;
-&lt;p&gt;강의를 처음 들을 때는 기존에 내가 작성하였던 코드와 접근법 자체가 완전히 달라서 코드 자체를 이해하지 못하였으나 그날 밤에
-올라온 다시보기 영상으로 다시 보니 코드를 이해할 수 있었습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;상태 패턴(state-pattern)은 스테이트 패턴은 객체가 특정 상태에 따라 행위를 달리하는 상황에서, 자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고, 상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴을 말합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;네오의 상태패턴을 적용한 결과 상태들의 상속관계는 다음과 같았습니다.&lt;/p&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 601px; &quot;
-    &gt;
-      &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 49%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcElEQVQoz31SW3KDMAzMhQo25m0DKcZAgGZomk770d7/GFvZAZrHtB87EuxqLcneBUEAC8451pwxBlmm2OsKjemQ57n7d6+18Tq3cbf+/CU5mE+GVYZ20ji+zpBSbYb3+nvsHk8l2C59MuYMPvPcAXzR/dfhH4YUCfUwYDiOOL29o+06cNvhwl3XPBiuCfN9NxYPQocky6HqHpWZkFIeiGjjfNI57V8j2yROUirMkKuKorwxsBBRglQWyFSJjA5IksStwa7o5lLW9uu+xzjPOH9+Y5wmhCEZ8eUimI8oitBMA6b5hPPHFzrSs3UN236XkZlHi+cCIlEI05JyGmtZAfMvHKOObVEkNXgst85ZENEKODzv6TKyEAJV18McRpTlHkobmGHCYRjpuUgUpkVLuX2PGfE16XpCUVbEdY7rhxfXcRwndmSBojGodQ2lCuT7Z9SNpqLBvT9Za2jTQFNM6btqGnfrSimntVzXHxziOMYP9llJq6ecYXAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;state pattern&quot;
-        title=&quot;state pattern&quot;
-        src=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png&quot;
-        srcset=&quot;/static/4dacb0c200c4c57961a54dcc8584da78/5a46d/state-pattern.png 300w,
-/static/4dacb0c200c4c57961a54dcc8584da78/0a47e/state-pattern.png 600w,
-/static/4dacb0c200c4c57961a54dcc8584da78/d8f62/state-pattern.png 601w&quot;
-        sizes=&quot;(max-width: 601px) 100vw, 601px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;상태패턴을 적용함으로써 blackjack, hit, stand, ready 등의 유저 별 상태를 확실히 표현할 수 있었고,
-그 상태에 맞는 메서드 반환 값을 반환하기 편하다는 장점이 있었습니다.&lt;/p&gt;
-&lt;p&gt;이번 미션에서는 네오의 강의 이외로도 &lt;code&gt;이프&lt;/code&gt;, &lt;code&gt;마루&lt;/code&gt;와 함께 코드 리뷰를 하는 시간을 갖으며 많은 도움이 되었습니다.
-두 분이 제 코드를 하나씩 상세하게 봐주며 저의 코드의 문제점들, 개선하면 좋겠는 점들을 지적해주며
-저의 코드의 문제점들을 알 수 있었고 앞으로는 다른 방법으로 프로그래밍을 해야겠다~는 다짐을 하게 되었습니다.
-코로나 이슈로 인해 몸 상태가 좋지 않은 관계로 모든 피드백을 다 고치진 못하였지만..확실히 많은 도움이 되었습니다&lt;/p&gt;
-&lt;p&gt;자세한 코드와 리뷰들은 아래의 링크를 통해 확인할 수 있습니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;h2 id=&quot;피드백을-주고받은-pr--작성-코드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%94%BC%EB%93%9C%EB%B0%B1%EC%9D%84-%EC%A3%BC%EA%B3%A0%EB%B0%9B%EC%9D%80-pr--%EC%9E%91%EC%84%B1-%EC%BD%94%EB%93%9C&quot; aria-label=&quot;피드백을 주고받은 pr  작성 코드 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;피드백을 주고받은 PR &amp;#x26; 작성 코드&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/257&quot;&gt;[1단계 - 블랙잭] 렉스(오성원) 미션 제출합니다. #257&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step1&quot;&gt;작성한 1단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/woowacourse/java-blackjack/pull/311&quot;&gt;[2단계 - 블랙잭(베팅)] 렉스(오성원) 미션 제출합니다. #311&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Seongwon97/java-blackjack/tree/step2&quot;&gt;작성한 2단계 미션 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://localhost:4000/posts/%EC%9A%B0%ED%85%8C%EC%BD%94-%EB%A0%88%EB%B2%A81-%EB%B8%94%EB%9E%99%EC%9E%AD-%ED%94%BC%EB%93%9C%EB%B0%B1%EC%A0%95%EB%A6%AC/&quot;&gt;블랙잭 미션 피드백 정리&lt;/a&gt;_&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item16. public 클래스에서는 public 필드가 아닌 접근자 메서드를 사용하라]]></title><description><![CDATA[이 글은 Effective Java 3/E…]]></description><link>https://seongwon.dev/Java/20220317-이펙티브자바-16/</link><guid isPermaLink="false">https://seongwon.dev/Java/20220317-이펙티브자바-16/</guid><pubDate>Thu, 17 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14063,6 +14469,204 @@ Cloneable…]]></description><link>https://seongwon.dev/Java/20220315-이펙티�
     opacity: 0.7;
   }
   
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item10. equals는 일반 규약을 지켜 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. java의 Object들에 재정의를 하는 equals의 경우 잘못 사용하면 끔찍한 결과를 초래할 수 있습니다.
+그래서 equals…]]></description><link>https://seongwon.dev/Java/20220314-이펙티브자바-10/</link><guid isPermaLink="false">https://seongwon.dev/Java/20220314-이펙티브자바-10/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;java의 Object들에 재정의를 하는 equals의 경우 잘못 사용하면 끔찍한 결과를 초래할 수 있습니다.
+그래서 equals는 객체의 논리적 동치성을 확인해야할 때 빼고 불필요한 경우에는 재정의를 하지 않는 것이 더 좋습니다.&lt;/p&gt;
+&lt;h1 id=&quot;equals를-재정의하지-않아도-되는-상황&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#equals%EB%A5%BC-%EC%9E%AC%EC%A0%95%EC%9D%98%ED%95%98%EC%A7%80-%EC%95%8A%EC%95%84%EB%8F%84-%EB%90%98%EB%8A%94-%EC%83%81%ED%99%A9&quot; aria-label=&quot;equals를 재정의하지 않아도 되는 상황 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;equals를 재정의하지 않아도 되는 상황&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;각 인스턴스가 본질적으로 고유한 경우&lt;/li&gt;
+&lt;li&gt;인스턴스의 논리적 동치성(logical equality)를 검사할 일이 없는 경우&lt;/li&gt;
+&lt;li&gt;상위 클래스에서 재정의한 equals가 하위 클래스에도 맞는 경우&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;클래스가 private, package-private이고 equals메서드를 호출할 일이 없는 경우&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;equals를 호출될 일이 전혀 없는 경우 다음과 같이 막을 수도 있다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Override&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; o) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;throw&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;AssertionError&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;동치관계를-만족시키기-위한-다섯가지-요건&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8F%99%EC%B9%98%EA%B4%80%EA%B3%84%EB%A5%BC-%EB%A7%8C%EC%A1%B1%EC%8B%9C%ED%82%A4%EA%B8%B0-%EC%9C%84%ED%95%9C-%EB%8B%A4%EC%84%AF%EA%B0%80%EC%A7%80-%EC%9A%94%EA%B1%B4&quot; aria-label=&quot;동치관계를 만족시키기 위한 다섯가지 요건 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;동치관계를 만족시키기 위한 다섯가지 요건&lt;/h1&gt;
+&lt;h2 id=&quot;반사성reflexivity&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B0%98%EC%82%AC%EC%84%B1reflexivity&quot; aria-label=&quot;반사성reflexivity permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;반사성(reflexivity)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;객체는 자기 자신과 같아야 한다는 뜻&lt;/li&gt;
+&lt;li&gt;null이 아닌 모든 참조 값 x에 대해, x.equals(x)는 true이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;대칭성symmetry&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8C%80%EC%B9%AD%EC%84%B1symmetry&quot; aria-label=&quot;대칭성symmetry permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;대칭성(symmetry)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;객체는 서로의 동치 여부에 대해 똑같이 답해야 한다는 뜻&lt;/li&gt;
+&lt;li&gt;null이 아닌 모든 참 조 값 x, y에 대해, x.equals(y)가 true이면 y.equals(x)도 true이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;추이성transitivity&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%94%EC%9D%B4%EC%84%B1transitivity&quot; aria-label=&quot;추이성transitivity permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;추이성(transitivity)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A==B, B==C이면, A==C이다.&lt;/li&gt;
+&lt;li&gt;null이 아닌 모든 참조 값 x, y, z에 대해, x.equals(y)가 true이고 y.equals(z)도 true이면 x.equals(z)도 true이다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;구체 클래스를 확장해 새로운 값을 추가하면서 equals 규약을 만족시킬 방법은 존재하지 않는다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;단, 추상 클래스의 하위 클래스에서는 equals규약을 지키면서도 값을 추가할 수 있다.&lt;/li&gt;
+&lt;li&gt;그 외에는 하위 클래스에서 값을 추가할 방법은 없지만, 상속대신 컴포지션을 사용하는 방법을 사용할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;일관성consistency&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9D%BC%EA%B4%80%EC%84%B1consistency&quot; aria-label=&quot;일관성consistency permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;일관성(consistency)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;두 객체가 같다면 수정되지 않는 한 영원히 같아야 한다.&lt;/li&gt;
+&lt;li&gt;null이 아닌 모든 참조 값 x, y에 대해, x.equals(y)를 반복해서 호출하면 항상 true를 반환하거나 항상 false를 반환한다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;클래스가 불변이든 가변이든 equals의 판단에 신뢰할 수 없는 자원이 끼어들게 해서는 안 된다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;equals는 항시 메모리에 존재하는 객체만을 사용한 결정적 계산만 수행해야한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;null아님&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#null%EC%95%84%EB%8B%98&quot; aria-label=&quot;null아님 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null아님&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 객체가 null과 같지 않아야 한다.&lt;/li&gt;
+&lt;li&gt;null이 아닌 모든 참조 값 x에 대해, x.equals(null)은 false이다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;해당 검사를 하기 위해 &lt;code&gt;if(object == null) retuen false;&lt;/code&gt;와 같은 코드는 사용하지 말고 &lt;code&gt;instanceof&lt;/code&gt;를 사용해 검사하자.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Override&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; o) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (o &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;instanceof&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; MyType) &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;MyType&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; mt &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (MyType) o&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;좋은-equals메서드를-구현하는-순서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A2%8B%EC%9D%80-equals%EB%A9%94%EC%84%9C%EB%93%9C%EB%A5%BC-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;좋은 equals메서드를 구현하는 순서 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;좋은 equals메서드를 구현하는 순서&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;==&lt;/code&gt;연산자를 사용해 입력이 자기 자신의 참조인지 확인한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;instanceof&lt;/code&gt;로 입력이 올바른 타입인지 확인한다.&lt;/li&gt;
+&lt;li&gt;입력을 올바른 타입으로 형변환 한다.&lt;/li&gt;
+&lt;li&gt;입력 객체와 자기 자신의 대응되는 &quot;핵심&quot;필드들이 모두 일치하는지 하나씩 검사한다.&lt;/li&gt;
+&lt;li&gt;모든 필드가 일치하면 true, 하나라도 다르면 false반환&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;equals를-재정의-할-때-주의사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#equals%EB%A5%BC-%EC%9E%AC%EC%A0%95%EC%9D%98-%ED%95%A0-%EB%95%8C-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD&quot; aria-label=&quot;equals를 재정의 할 때 주의사항 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;equals를 재정의 할 때 주의사항&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;float&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;을 제외한 기본 타입 필드는 &lt;code&gt;==&lt;/code&gt;를 통해 비교하고, 참조 타입은 &lt;code&gt;equals&lt;/code&gt;메서드로 비교한다. &lt;code&gt;float&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;는 &lt;code&gt;Float.compare(float, float);&lt;/code&gt; 와 &lt;code&gt;Double.compare(double, double);&lt;/code&gt;로 비교한다. (부동 소수값을 다뤄야하기 때문)&lt;/li&gt;
+&lt;li&gt;때로는 null도 정상 값으로 취급하는 참조 타입 필드가 존재하여, 이러한 필드는 정적 메서드인 &lt;code&gt;Object.equals(Object, Object);&lt;/code&gt;로 비교해 &lt;code&gt;NullPointException&lt;/code&gt;을 발생시켜 예방방하는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;비교하기 아주 복잡한 필드를 가진 클래스들으니 필드의 표준형을 저장해둔 후 표준형끼리 비교하면 경제적이다.&lt;/li&gt;
+&lt;li&gt;최상의 성능을 바란다면 다를 가능성이 크거나 비교하는 비용이 싼 필드를 먼저 비교하는 것이 좋다. (동기화용 lock 필드같이 객체의 논리적 상태와 관련 없는 필드는 비교하면 안된다.)&lt;/li&gt;
+&lt;li&gt;equals를 다 구현하였으면 대칭적인지, 추이성은 있는지, 일관적인지 체크를 해봐야 한다.&lt;/li&gt;
+&lt;li&gt;equals를 재정의 할 때 hashCode도 반드시 재정의해야 한다.&lt;/li&gt;
+&lt;li&gt;필드들의 동치성만 확인해도 equals 규약을 어렵지 않게 지킬 수 있음으로 너무 복잡하게 해결하려 들지 않는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;Object 이외의 타입을 매개변수로 받는 equals메서드는 재정의가 아니라 다중정의가 되는 것임으로 선언하지 말자!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;핵심-정리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B5%EC%8B%AC-%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;핵심 정리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;핵심 정리&lt;/h1&gt;
+&lt;p&gt;많은 경우에 Object의 equals가 우리가 원하는 비교를 정확히 수행해주지만 &lt;strong&gt;꼭 필요한 경우가 아니면 equals를 재정의하지 말자.&lt;/strong&gt;
+재정의해야 할 때는 해당 클래스의 핵심 필드를 빠짐없이, 다섯 가지 규약을 확실히 지켜가며 비교해야 한다.&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
 &lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item11. equals를 재정의하려거든 hashCode도 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. 서론 Ojbect 명세서에는 다음과 같은 규약이 있다. eauals…]]></description><link>https://seongwon.dev/Java/20220314-이펙티브자바-11/</link><guid isPermaLink="false">https://seongwon.dev/Java/20220314-이펙티브자바-11/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14258,204 +14862,6 @@ Cloneable…]]></description><link>https://seongwon.dev/Java/20220315-이펙티�
   .one-dark-pro .mtk3 { color: #61AFEF; }
   .one-dark-pro .mtk7 { color: #D19A66; }
   .one-dark-pro .mtk5 { color: #7F848E; }
-  .one-dark-pro .mtk8 { color: #56B6C2; }
-  .one-dark-pro .grvsc-line-highlighted::before {
-    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
-    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
-  }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[[Effective Java] Item10. equals는 일반 규약을 지켜 재정의하라]]></title><description><![CDATA[이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다. java의 Object들에 재정의를 하는 equals의 경우 잘못 사용하면 끔찍한 결과를 초래할 수 있습니다.
-그래서 equals…]]></description><link>https://seongwon.dev/Java/20220314-이펙티브자바-10/</link><guid isPermaLink="false">https://seongwon.dev/Java/20220314-이펙티브자바-10/</guid><pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
-&lt;p&gt;이 글은 Effective Java 3/E의 내용을 요약한 글입니다. 자세한 내용은 책을 참고하시기 바랍니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;java의 Object들에 재정의를 하는 equals의 경우 잘못 사용하면 끔찍한 결과를 초래할 수 있습니다.
-그래서 equals는 객체의 논리적 동치성을 확인해야할 때 빼고 불필요한 경우에는 재정의를 하지 않는 것이 더 좋습니다.&lt;/p&gt;
-&lt;h1 id=&quot;equals를-재정의하지-않아도-되는-상황&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#equals%EB%A5%BC-%EC%9E%AC%EC%A0%95%EC%9D%98%ED%95%98%EC%A7%80-%EC%95%8A%EC%95%84%EB%8F%84-%EB%90%98%EB%8A%94-%EC%83%81%ED%99%A9&quot; aria-label=&quot;equals를 재정의하지 않아도 되는 상황 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;equals를 재정의하지 않아도 되는 상황&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;각 인스턴스가 본질적으로 고유한 경우&lt;/li&gt;
-&lt;li&gt;인스턴스의 논리적 동치성(logical equality)를 검사할 일이 없는 경우&lt;/li&gt;
-&lt;li&gt;상위 클래스에서 재정의한 equals가 하위 클래스에도 맞는 경우&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;클래스가 private, package-private이고 equals메서드를 호출할 일이 없는 경우&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;equals를 호출될 일이 전혀 없는 경우 다음과 같이 막을 수도 있다.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Override&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; o) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;throw&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;AssertionError&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;동치관계를-만족시키기-위한-다섯가지-요건&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8F%99%EC%B9%98%EA%B4%80%EA%B3%84%EB%A5%BC-%EB%A7%8C%EC%A1%B1%EC%8B%9C%ED%82%A4%EA%B8%B0-%EC%9C%84%ED%95%9C-%EB%8B%A4%EC%84%AF%EA%B0%80%EC%A7%80-%EC%9A%94%EA%B1%B4&quot; aria-label=&quot;동치관계를 만족시키기 위한 다섯가지 요건 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;동치관계를 만족시키기 위한 다섯가지 요건&lt;/h1&gt;
-&lt;h2 id=&quot;반사성reflexivity&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B0%98%EC%82%AC%EC%84%B1reflexivity&quot; aria-label=&quot;반사성reflexivity permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;반사성(reflexivity)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;객체는 자기 자신과 같아야 한다는 뜻&lt;/li&gt;
-&lt;li&gt;null이 아닌 모든 참조 값 x에 대해, x.equals(x)는 true이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;대칭성symmetry&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8C%80%EC%B9%AD%EC%84%B1symmetry&quot; aria-label=&quot;대칭성symmetry permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;대칭성(symmetry)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;객체는 서로의 동치 여부에 대해 똑같이 답해야 한다는 뜻&lt;/li&gt;
-&lt;li&gt;null이 아닌 모든 참 조 값 x, y에 대해, x.equals(y)가 true이면 y.equals(x)도 true이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;추이성transitivity&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%94%EC%9D%B4%EC%84%B1transitivity&quot; aria-label=&quot;추이성transitivity permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;추이성(transitivity)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;A==B, B==C이면, A==C이다.&lt;/li&gt;
-&lt;li&gt;null이 아닌 모든 참조 값 x, y, z에 대해, x.equals(y)가 true이고 y.equals(z)도 true이면 x.equals(z)도 true이다.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;구체 클래스를 확장해 새로운 값을 추가하면서 equals 규약을 만족시킬 방법은 존재하지 않는다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;단, 추상 클래스의 하위 클래스에서는 equals규약을 지키면서도 값을 추가할 수 있다.&lt;/li&gt;
-&lt;li&gt;그 외에는 하위 클래스에서 값을 추가할 방법은 없지만, 상속대신 컴포지션을 사용하는 방법을 사용할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;일관성consistency&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9D%BC%EA%B4%80%EC%84%B1consistency&quot; aria-label=&quot;일관성consistency permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;일관성(consistency)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;두 객체가 같다면 수정되지 않는 한 영원히 같아야 한다.&lt;/li&gt;
-&lt;li&gt;null이 아닌 모든 참조 값 x, y에 대해, x.equals(y)를 반복해서 호출하면 항상 true를 반환하거나 항상 false를 반환한다.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;클래스가 불변이든 가변이든 equals의 판단에 신뢰할 수 없는 자원이 끼어들게 해서는 안 된다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;equals는 항시 메모리에 존재하는 객체만을 사용한 결정적 계산만 수행해야한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;null아님&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#null%EC%95%84%EB%8B%98&quot; aria-label=&quot;null아님 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;null아님&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;모든 객체가 null과 같지 않아야 한다.&lt;/li&gt;
-&lt;li&gt;null이 아닌 모든 참조 값 x에 대해, x.equals(null)은 false이다.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;해당 검사를 하기 위해 &lt;code&gt;if(object == null) retuen false;&lt;/code&gt;와 같은 코드는 사용하지 말고 &lt;code&gt;instanceof&lt;/code&gt;를 사용해 검사하자.&lt;/p&gt;
-&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;java&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Override&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk11&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; o) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (o &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;instanceof&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; MyType) &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk11&quot;&gt;MyType&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; mt &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt; (MyType) o&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk4&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;좋은-equals메서드를-구현하는-순서&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A2%8B%EC%9D%80-equals%EB%A9%94%EC%84%9C%EB%93%9C%EB%A5%BC-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%88%9C%EC%84%9C&quot; aria-label=&quot;좋은 equals메서드를 구현하는 순서 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;좋은 equals메서드를 구현하는 순서&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;==&lt;/code&gt;연산자를 사용해 입력이 자기 자신의 참조인지 확인한다.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;instanceof&lt;/code&gt;로 입력이 올바른 타입인지 확인한다.&lt;/li&gt;
-&lt;li&gt;입력을 올바른 타입으로 형변환 한다.&lt;/li&gt;
-&lt;li&gt;입력 객체와 자기 자신의 대응되는 &quot;핵심&quot;필드들이 모두 일치하는지 하나씩 검사한다.&lt;/li&gt;
-&lt;li&gt;모든 필드가 일치하면 true, 하나라도 다르면 false반환&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;equals를-재정의-할-때-주의사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#equals%EB%A5%BC-%EC%9E%AC%EC%A0%95%EC%9D%98-%ED%95%A0-%EB%95%8C-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD&quot; aria-label=&quot;equals를 재정의 할 때 주의사항 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;equals를 재정의 할 때 주의사항&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;float&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;을 제외한 기본 타입 필드는 &lt;code&gt;==&lt;/code&gt;를 통해 비교하고, 참조 타입은 &lt;code&gt;equals&lt;/code&gt;메서드로 비교한다. &lt;code&gt;float&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;는 &lt;code&gt;Float.compare(float, float);&lt;/code&gt; 와 &lt;code&gt;Double.compare(double, double);&lt;/code&gt;로 비교한다. (부동 소수값을 다뤄야하기 때문)&lt;/li&gt;
-&lt;li&gt;때로는 null도 정상 값으로 취급하는 참조 타입 필드가 존재하여, 이러한 필드는 정적 메서드인 &lt;code&gt;Object.equals(Object, Object);&lt;/code&gt;로 비교해 &lt;code&gt;NullPointException&lt;/code&gt;을 발생시켜 예방방하는 것이 좋다.&lt;/li&gt;
-&lt;li&gt;비교하기 아주 복잡한 필드를 가진 클래스들으니 필드의 표준형을 저장해둔 후 표준형끼리 비교하면 경제적이다.&lt;/li&gt;
-&lt;li&gt;최상의 성능을 바란다면 다를 가능성이 크거나 비교하는 비용이 싼 필드를 먼저 비교하는 것이 좋다. (동기화용 lock 필드같이 객체의 논리적 상태와 관련 없는 필드는 비교하면 안된다.)&lt;/li&gt;
-&lt;li&gt;equals를 다 구현하였으면 대칭적인지, 추이성은 있는지, 일관적인지 체크를 해봐야 한다.&lt;/li&gt;
-&lt;li&gt;equals를 재정의 할 때 hashCode도 반드시 재정의해야 한다.&lt;/li&gt;
-&lt;li&gt;필드들의 동치성만 확인해도 equals 규약을 어렵지 않게 지킬 수 있음으로 너무 복잡하게 해결하려 들지 않는 것이 좋다.&lt;/li&gt;
-&lt;li&gt;Object 이외의 타입을 매개변수로 받는 equals메서드는 재정의가 아니라 다중정의가 되는 것임으로 선언하지 말자!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;핵심-정리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B5%EC%8B%AC-%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;핵심 정리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;핵심 정리&lt;/h1&gt;
-&lt;p&gt;많은 경우에 Object의 equals가 우리가 원하는 비교를 정확히 수행해주지만 &lt;strong&gt;꼭 필요한 경우가 아니면 equals를 재정의하지 말자.&lt;/strong&gt;
-재정의해야 할 때는 해당 클래스의 핵심 필드를 빠짐없이, 다섯 가지 규약을 확실히 지켜가며 비교해야 한다.&lt;/p&gt;
-&lt;style class=&quot;grvsc-styles&quot;&gt;
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line &gt; * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: &apos; &apos;;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
-    content: &apos; &apos;;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
-  .one-dark-pro {
-    background-color: #282c34;
-    color: #abb2bf;
-  }
-  .one-dark-pro .mtk1 { color: #ABB2BF; }
-  .one-dark-pro .mtk11 { color: #E5C07B; }
-  .one-dark-pro .mtk9 { color: #C678DD; }
-  .one-dark-pro .mtk4 { color: #E06C75; }
-  .one-dark-pro .mtk3 { color: #61AFEF; }
-  .one-dark-pro .mtk7 { color: #D19A66; }
   .one-dark-pro .mtk8 { color: #56B6C2; }
   .one-dark-pro .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
