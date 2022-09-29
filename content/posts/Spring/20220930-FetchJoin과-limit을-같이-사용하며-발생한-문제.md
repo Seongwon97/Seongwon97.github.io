@@ -17,8 +17,6 @@ draft: false
 
 아래의 코드는 모모팀 프로젝트 코드중 QueryDsl을 통해 찜한 모임 목록을 조회하는 쿼리이다. 해당 쿼리를 살펴보면 `fetchJoin()`과 `limit()`을 함께 사용한 것을 확인할 수 있다.
 
-아래의 코드는 모모팀 프로젝트 코드중 QueryDsl을 통해 찜한 모임 목록을 조회하는 쿼리이다. 해당 쿼리를 살펴보면 `fetchJoin()`과 `limit()`을 함께 사용한 것을 확인할 수 있다.
-
 > 코드상의 Group, Participant, Favorite 간의 연관 관계는 아래와 같다.
 > ![Untitled](image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_6.png)
 
@@ -26,26 +24,26 @@ draft: false
 
 
 ```java
-    @Override
-    public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pageable pageable) {
-        List<Group> groups = queryFactory
-                .selectFrom(group)
-                .leftJoin(group.participants.participants, participant)
-                .innerJoin(group.favorites.favorites, favorite)
-                .fetchJoin()
-								.where(
-                        favorite.member.eq(member),
-                        conditionFilter.filterByCondition(condition)
-                )
-                .orderBy(orderByDeadlineAsc(condition.orderByDeadline()).toArray(OrderSpecifier[]::new))
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .fetch();
+@Override
+public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pageable pageable) {
+    List<Group> groups = queryFactory
+            .selectFrom(group)
+            .leftJoin(group.participants.participants, participant)
+            .innerJoin(group.favorites.favorites, favorite)
+            .fetchJoin()
+                            .where(
+                    favorite.member.eq(member),
+                    conditionFilter.filterByCondition(condition)
+            )
+            .orderBy(orderByDeadlineAsc(condition.orderByDeadline()).toArray(OrderSpecifier[]::new))
+            .offset(pageable.getOffset())
+            .limit(pageable.getPageSize())
+            .fetch();
 
-        ...
+    ...
 
-        return PageableExecutionUtils.getPage(groups, pageable, countQuery::fetchOne);
-    }
+    return PageableExecutionUtils.getPage(groups, pageable, countQuery::fetchOne);
+}
 ```
 
 해당 코드를 실행하여 콘솔을 살펴보면 쿼리가 실행될 때, 앞서 살펴봤던 경고 로그가 남은 것을 확인할 수 있다. 또한 SQL문을 살펴보면 코드상으로 지정하였던 `limit`절이 존재하지 않는다.
@@ -71,21 +69,21 @@ draft: false
 앞서 살펴봤던 오류는 OneToMany관계의 조회에서만 발생한다. 테스트를 위해 Group테이블을 시작으로 Favorite테이블을 Join하던 쿼리를 Favorite 테이블을 시작으로 Group을 Join하도록 ManyToOne방향으로 쿼리를 실행해봤다.
 
 ```java
-    @Override
-    public Page<Favorite> findGroups2(SearchCondition condition, Member member, Pageable pageable) {
-        List<Favorite> groups = queryFactory
-                .selectFrom(favorite)
-                .innerJoin(favorite.group, group)
-                .fetchJoin()
-                .where(favorite.member.eq(member))
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .fetch();
+@Override
+public Page<Favorite> findGroups2(SearchCondition condition, Member member, Pageable pageable) {
+    List<Favorite> groups = queryFactory
+            .selectFrom(favorite)
+            .innerJoin(favorite.group, group)
+            .fetchJoin()
+            .where(favorite.member.eq(member))
+            .offset(pageable.getOffset())
+            .limit(pageable.getPageSize())
+            .fetch();
 
-        ...
+    ...
 
-        return PageableExecutionUtils.getPage(groups, pageable, countQuery::fetchOne);
-    }
+    return PageableExecutionUtils.getPage(groups, pageable, countQuery::fetchOne);
+}
 ```
 
 그 결과 앞서 살펴봤던 경고 메시지가 발생하지 않는 것을 확인할 수 있었다.
@@ -97,29 +95,28 @@ draft: false
 해당 해결 방법을 프로젝트의 코드에도 적용을 해보았다. 하지만 해당 메서드의 쿼리 특성상 필터링 기능을 사용하며 Group, Participant, Favorite 테이블을 Join하며 필터링 및 결과 조회를 진행하고 있다. Favorite과 Group의 연관관계를 역으로 진행하여 Favorite테이블을 통해 조회하며 ManyToOne의 관계로 Join을 한다고 하여도, Participant 테이블을 Join하는 과정에서 OneToMany가 발생하여 문제 해결을 할 수가 없었다.
 
 ```java
-    @Override
-    public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pageable pageable) {
-        List<Group> groups = queryFactory
-                .select(favorite.group)
-                .from(favorite)
-                .innerJoin(favorite.group, group)
-                .leftJoin(group.participants.participants, participant) // 해당 과정에서 OneToMany가 발생
-                .fetchJoin()
-                .where(
-                        favorite.member.eq(member),
-                        conditionFilter.filterByCondition(condition)
-                )
-                .groupBy(favorite.group.id)
-                .orderBy(orderByDeadlineAsc(condition.orderByDeadline()).toArray(OrderSpecifier[]::new))
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .fetch();
+@Override
+public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pageable pageable) {
+    List<Group> groups = queryFactory
+            .select(favorite.group)
+            .from(favorite)
+            .innerJoin(favorite.group, group)
+            .leftJoin(group.participants.participants, participant) // 해당 과정에서 OneToMany가 발생
+            .fetchJoin()
+            .where(
+                    favorite.member.eq(member),
+                    conditionFilter.filterByCondition(condition)
+            )
+            .groupBy(favorite.group.id)
+            .orderBy(orderByDeadlineAsc(condition.orderByDeadline()).toArray(OrderSpecifier[]::new))
+            .offset(pageable.getOffset())
+            .limit(pageable.getPageSize())
+            .fetch();
 
-        ...
+    ...
 
-        return PageableExecutionUtils.getPage(groups, pageable, countQuery::fetchOne);
-    }
-
+    return PageableExecutionUtils.getPage(groups, pageable, countQuery::fetchOne);
+}
 ```
 
 ### 해결방법 2. fetchJoin없이 엔티티의 모든 데이터가 아닌 id값만 가져오는 쿼리를 날린 후, 해당 ID를 IN절에 넣어 필요한 데이터를 가져오도록 하는 방법
@@ -131,38 +128,37 @@ draft: false
 해당 방법은 1번 날라가던 쿼리가 2번으로 변경된다는 단점이 있긴 하나 JVM의 부담을 줄여줄 수 있다. 실제로 문제였던 경고 메시지 또한 발생하지 않아 해당 쿼리로 적용하였다.
 
 ```java
-    @Override
-    public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pageable pageable) {
-        List<Group> groups = queryFactory
-                .selectFrom(group)
-                .leftJoin(group.participants.participants, participant)
-                .innerJoin(group.favorites.favorites, favorite)
-                .fetchJoin()
-                .where(group.id.in(findLikedGroupIds(condition, member, pageable)))
-                .orderBy(orderByDeadlineAsc(condition.orderByDeadline()).toArray(OrderSpecifier[]::new))
-                .fetch();
+@Override
+public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pageable pageable) {
+    List<Group> groups = queryFactory
+            .selectFrom(group)
+            .leftJoin(group.participants.participants, participant)
+            .innerJoin(group.favorites.favorites, favorite)
+            .fetchJoin()
+            .where(group.id.in(findLikedGroupIds(condition, member, pageable)))
+            .orderBy(orderByDeadlineAsc(condition.orderByDeadline()).toArray(OrderSpecifier[]::new))
+            .fetch();
 
-        ...
+    ...
 
-        return PageableExecutionUtils.getPage(groups, pageable, countQuery::fetchOne);
-    }
+    return PageableExecutionUtils.getPage(groups, pageable, countQuery::fetchOne);
+}
 
-    private List<Long> findLikedGroupIds(SearchCondition condition, Member member, Pageable pageable) {
-        return queryFactory
-                .select(group.id).distinct()
-                .from(group)
-                .leftJoin(group.participants.participants, participant)
-                .innerJoin(group.favorites.favorites, favorite)
-                .where(
-                        favorite.member.eq(member),
-                        conditionFilter.filterByCondition(condition)
-                )
-                .orderBy(orderByDeadlineAsc(condition.orderByDeadline()).toArray(OrderSpecifier[]::new))
-                .offset(pageable.getOffset())
-                .limit(pageable.getPageSize())
-                .fetch();
-    }
-
+private List<Long> findLikedGroupIds(SearchCondition condition, Member member, Pageable pageable) {
+    return queryFactory
+            .select(group.id).distinct()
+            .from(group)
+            .leftJoin(group.participants.participants, participant)
+            .innerJoin(group.favorites.favorites, favorite)
+            .where(
+                    favorite.member.eq(member),
+                    conditionFilter.filterByCondition(condition)
+            )
+            .orderBy(orderByDeadlineAsc(condition.orderByDeadline()).toArray(OrderSpecifier[]::new))
+            .offset(pageable.getOffset())
+            .limit(pageable.getPageSize())
+            .fetch();
+}
 ```
 
 그 결과 아래와 같이 1번 날리던 쿼리를 2번 날리게 되며 DB에 대한 접근 횟수는 증가하게 되었지만 DB에서 애플리케이션의 메모리로 불필요하게 모든 데이터를 가져온 후 필터링을 하는 문제는 해결할 수 있었다.
