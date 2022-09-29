@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="257f812e-5a81-4e46-b0f6-4013ae8c9c69" name="Changes" comment="post: [JPA] 영속성 전이와 고아객체">
+    <list default="true" id="257f812e-5a81-4e46-b0f6-4013ae8c9c69" name="Changes" comment="post: 성능테스트, 부하테스트, 스트레스 테스트..무엇이 다를까?">
+      <change afterPath="$PROJECT_DIR$/content/posts/Spring/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/Spring/2022-06-22-Valid란.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Spring/2022-06-22-Valid란.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/Spring/2022-08-25-JPA-프록시와-지연로딩.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Spring/2022-08-25-JPA-프록시와-지연로딩.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +61,12 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/content/posts" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/content/posts" />
@@ -71,11 +75,11 @@
       <recent name="$PROJECT_DIR$/content/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/content/posts/ETC/image/20220919-성능테스트-부하테스트-스트레스테스트란" />
+      <recent name="$PROJECT_DIR$/content/posts/Spring/image/20220911-Spring-Data-JPA란" />
+      <recent name="$PROJECT_DIR$/content/posts/Spring/image/20220821_스프링-Profile이란" />
+      <recent name="$PROJECT_DIR$/content/posts/Java/image/20211203-Private메서드의-Unit-Test" />
       <recent name="$PROJECT_DIR$/content/posts/Java/image" />
-      <recent name="$PROJECT_DIR$/content/posts/Java/Effective Java/20220220 이펙티브자바 12" />
-      <recent name="$PROJECT_DIR$/content/posts/Java" />
-      <recent name="$PROJECT_DIR$/content/posts/Java/20220311 자바의 상속" />
-      <recent name="$PROJECT_DIR$/content/posts/Java/20220302 제너릭 인터페이스를 이용한 예외처리" />
     </key>
   </component>
   <component name="RunManager">
@@ -114,6 +118,26 @@
       <workItem from="1661403596095" duration="2480000" />
       <workItem from="1661663635230" duration="610000" />
       <workItem from="1661682549591" duration="1000" />
+      <workItem from="1661763623491" duration="3581000" />
+      <workItem from="1661784356364" duration="101000" />
+      <workItem from="1661785511242" duration="3387000" />
+      <workItem from="1661790184401" duration="84000" />
+      <workItem from="1661847488802" duration="6305000" />
+      <workItem from="1661877299064" duration="616000" />
+      <workItem from="1661950704843" duration="7000" />
+      <workItem from="1662345206799" duration="3175000" />
+      <workItem from="1662621429602" duration="895000" />
+      <workItem from="1662622624976" duration="2433000" />
+      <workItem from="1662714612371" duration="7000" />
+      <workItem from="1662889814100" duration="455000" />
+      <workItem from="1662970469534" duration="13000" />
+      <workItem from="1662973968423" duration="780000" />
+      <workItem from="1662986519833" duration="597000" />
+      <workItem from="1663043662772" duration="11000" />
+      <workItem from="1663080632020" duration="1594000" />
+      <workItem from="1663318834929" duration="701000" />
+      <workItem from="1664080930229" duration="1198000" />
+      <workItem from="1664468755287" duration="1249000" />
     </task>
     <task id="LOCAL-00001" summary="chore: github action 수정">
       <created>1661109612653</created>
@@ -276,7 +300,182 @@
       <option name="project" value="LOCAL" />
       <updated>1661515993104</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="post: update [Spring] Validation Annotation이란? + DTO에서는 어디까지 검증해야할까?">
+      <created>1661763649282</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1661763649282</updated>
+    </task>
+    <task id="LOCAL-00025" summary="post: update [JPA] 프록시와 지연로딩">
+      <created>1661763659842</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1661763659842</updated>
+    </task>
+    <task id="LOCAL-00026" summary="chore: deploy cname 재지정">
+      <created>1661763781683</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1661763781683</updated>
+    </task>
+    <task id="LOCAL-00027" summary="post: [JPA] JPQL이란?">
+      <created>1661764826154</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1661764826154</updated>
+    </task>
+    <task id="LOCAL-00028" summary="post: [Spring] 우리는 왜 스프링을 사용하는가?">
+      <created>1661785524168</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1661785524168</updated>
+    </task>
+    <task id="LOCAL-00029" summary="post: URL 형식 변경을 위한 파일명 수정">
+      <created>1661786085811</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1661786085811</updated>
+    </task>
+    <task id="LOCAL-00030" summary="post: URL 형식 변경을 위한 파일명 수정">
+      <created>1661786952194</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1661786952194</updated>
+    </task>
+    <task id="LOCAL-00031" summary="post: 중복된 포스트 제거">
+      <created>1661787668354</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1661787668354</updated>
+    </task>
+    <task id="LOCAL-00032" summary="post: Private메서드의 Unit Test">
+      <created>1661788410569</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1661788410569</updated>
+    </task>
+    <task id="LOCAL-00033" summary="post: update JUnit5로 단위 테스트하기">
+      <created>1661788426409</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1661788426409</updated>
+    </task>
+    <task id="LOCAL-00034" summary="post: update [JPA] 엔티티 생명주기와 영속성 컨텍스트">
+      <created>1661851278477</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1661851278477</updated>
+    </task>
+    <task id="LOCAL-00035" summary="post: 잘못된 indent와 문장들 수정">
+      <created>1661872948666</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1661872948666</updated>
+    </task>
+    <task id="LOCAL-00036" summary="post: [Spring] Spring Profile을 통한 실행 환경 분리">
+      <created>1661873282286</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1661873282286</updated>
+    </task>
+    <task id="LOCAL-00037" summary="post: update [Spring] MVC 동작 방식 이해하기">
+      <created>1662345490095</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1662345490095</updated>
+    </task>
+    <task id="LOCAL-00038" summary="post: update [Spring] Spring Profile을 통한 실행 환경 분리">
+      <created>1662345546205</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1662345546205</updated>
+    </task>
+    <task id="LOCAL-00039" summary="chore: Google Analystics ID 변경">
+      <created>1662389221366</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1662389221366</updated>
+    </task>
+    <task id="LOCAL-00040" summary="chore: Google Search 등록">
+      <created>1662621794800</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1662621794800</updated>
+    </task>
+    <task id="LOCAL-00041" summary="chore: Google Search 등록 오류 수정">
+      <created>1662622996391</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1662622996391</updated>
+    </task>
+    <task id="LOCAL-00042" summary="chore: Google Search 등록 오류 수정">
+      <created>1662623033248</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1662623033248</updated>
+    </task>
+    <task id="LOCAL-00043" summary="post: [JPA] Spring Data JPA란?">
+      <created>1662890259661</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1662890259662</updated>
+    </task>
+    <task id="LOCAL-00044" summary="post: update [Spring] Lombok 이란?&#10;&#10;잘못된 파일 이름으로 인해 배포가 안됐던 오류 수정">
+      <created>1662974111269</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1662974111269</updated>
+    </task>
+    <task id="LOCAL-00045" summary="post: update [DevOps] Jenkins를 통한 CI/CD 구축기 4편 (Backend DB 구축)&#10;&#10;다른 게시글의 이름 형식과 통일">
+      <created>1663080661682</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1663080661682</updated>
+    </task>
+    <task id="LOCAL-00046" summary="post: [JPA] Spring Data JPA의 Query Method">
+      <created>1663081027796</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1663081027796</updated>
+    </task>
+    <task id="LOCAL-00047" summary="post: update [Spring] DI,IoC란 무엇일까?">
+      <created>1663333465143</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1663333465143</updated>
+    </task>
+    <task id="LOCAL-00048" summary="post: 성능테스트, 부하테스트, 스트레스 테스트..무엇이 다를까?">
+      <created>1664082117107</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1664082117107</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,29 +493,31 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: github action 수정" />
-    <MESSAGE value="post: 우테코 관련 포스트 이전" />
-    <MESSAGE value="chore: 배포 설정 업데이트" />
-    <MESSAGE value="feat: social image 업데이트" />
-    <MESSAGE value="feat: social image, icon 업데이트" />
-    <MESSAGE value="post: [DevOps] Jenkins를 통한 CI/CD 구축기 3편 (Frontend CI/CD 구축)" />
-    <MESSAGE value="post: [AWS, MySQL] - Private Ec2에 MySQL설치 및 원격 접속 설정하기" />
-    <MESSAGE value="post: [DevOps] - Jenkins를 통한 CI/CD 구축기 4편 (Backend DB 구축)" />
-    <MESSAGE value="feat: 라이트모드 테마 컬러 변경" />
-    <MESSAGE value="post: [Spring JPA] JPA Specification을 통한 조회 필터링 기능 구현" />
-    <MESSAGE value="post: [Spring JPA] Entity Mapping" />
-    <MESSAGE value="post: Java관련 포스팅 이전" />
-    <MESSAGE value="post: update [Spring JPA] - JPA란?" />
-    <MESSAGE value="post: update [Spring JPA] Entity Mapping" />
-    <MESSAGE value="post: [JPA] 엔티티간 연관관계" />
-    <MESSAGE value="post: JPA 관련 포스트 제목 prefix 수정" />
-    <MESSAGE value="post: update [JPA] 엔티티간 연관관계" />
-    <MESSAGE value="post: update [JPA] 엔티티(Entity) 매핑" />
-    <MESSAGE value="post: update [JPA] JPA Specification(Criteria)을 통한 조회 필터링 기능 구현" />
-    <MESSAGE value="post: update [JPA] 엔티티 생명주기와 영속성 컨텍스트" />
-    <MESSAGE value="post: update [JPA] JPA란?" />
-    <MESSAGE value="post: [JPA] 프록시와 지연로딩" />
     <MESSAGE value="post: [JPA] 영속성 전이와 고아객체" />
-    <option name="LAST_COMMIT_MESSAGE" value="post: [JPA] 영속성 전이와 고아객체" />
+    <MESSAGE value="post: update [Spring] Validation Annotation이란? + DTO에서는 어디까지 검증해야할까?" />
+    <MESSAGE value="post: update [JPA] 프록시와 지연로딩" />
+    <MESSAGE value="chore: deploy cname 재지정" />
+    <MESSAGE value="post: [JPA] JPQL이란?" />
+    <MESSAGE value="post: [Spring] 우리는 왜 스프링을 사용하는가?" />
+    <MESSAGE value="post: URL 형식 변경을 위한 파일명 수정" />
+    <MESSAGE value="post: 중복된 포스트 제거" />
+    <MESSAGE value="post: Private메서드의 Unit Test" />
+    <MESSAGE value="post: update JUnit5로 단위 테스트하기" />
+    <MESSAGE value="post: update [JPA] 엔티티 생명주기와 영속성 컨텍스트" />
+    <MESSAGE value="post: 잘못된 indent와 문장들 수정" />
+    <MESSAGE value="post: [Spring] Spring Profile을 통한 실행 환경 분리" />
+    <MESSAGE value="post: update [Spring] MVC 동작 방식 이해하기" />
+    <MESSAGE value="post: update [Spring] Spring Profile을 통한 실행 환경 분리" />
+    <MESSAGE value="chore: Google Analystics ID 변경" />
+    <MESSAGE value="chore: Google Search 등록" />
+    <MESSAGE value="chore: Google Search 등록 오류 수정" />
+    <MESSAGE value="docs: [JPA] Spring Data JPA란?" />
+    <MESSAGE value="post: [JPA] Spring Data JPA란?" />
+    <MESSAGE value="post: update [Spring] Lombok 이란?&#10;&#10;잘못된 파일 이름으로 인해 배포가 안됐던 오류 수정" />
+    <MESSAGE value="post: update [DevOps] Jenkins를 통한 CI/CD 구축기 4편 (Backend DB 구축)&#10;&#10;다른 게시글의 이름 형식과 통일" />
+    <MESSAGE value="post: [JPA] Spring Data JPA의 Query Method" />
+    <MESSAGE value="post: update [Spring] DI,IoC란 무엇일까?" />
+    <MESSAGE value="post: 성능테스트, 부하테스트, 스트레스 테스트..무엇이 다를까?" />
+    <option name="LAST_COMMIT_MESSAGE" value="post: 성능테스트, 부하테스트, 스트레스 테스트..무엇이 다를까?" />
   </component>
 </project>
