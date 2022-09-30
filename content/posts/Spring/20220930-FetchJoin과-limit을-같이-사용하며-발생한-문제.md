@@ -64,7 +64,8 @@ public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pag
 
 # 해결 방법은 무엇이 있을까?
 
-### 해결방법 1. OneToMany의 Join 방향을 ManyToOne의 방향으로 스캔을 하며 DB 스캔시 필터링된 데이터만 가져오도록 하는 방법
+## 해결방법 1
+> **OneToMany의 Join 방향을 ManyToOne의 방향으로 스캔을 하며 DB 스캔시 필터링된 데이터만 가져오도록 하는 방법**
 
 앞서 살펴봤던 오류는 OneToMany관계의 조회에서만 발생한다. 테스트를 위해 Group테이블을 시작으로 Favorite테이블을 Join하던 쿼리를 Favorite 테이블을 시작으로 Group을 Join하도록 ManyToOne방향으로 쿼리를 실행해봤다.
 
@@ -119,7 +120,8 @@ public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pag
 }
 ```
 
-### 해결방법 2. fetchJoin없이 엔티티의 모든 데이터가 아닌 id값만 가져오는 쿼리를 날린 후, 해당 ID를 IN절에 넣어 필요한 데이터를 가져오도록 하는 방법
+## 해결방법 2
+> **fetchJoin없이 엔티티의 모든 데이터가 아닌 id값만 가져오는 쿼리를 날린 후, 해당 ID를 IN절에 넣어 필요한 데이터를 가져오도록 하는 방법**
 
 두번째 방법은 fetchJoin을 하지 않은 채로 필요한 데이터의 ID값만 가져온 후에 가져온 ID값들을 In절에 넣으며 필요한 데이터를 가져오는 방법이 있다. 즉, 쿼리를 ID를 조회하는 쿼리와 데이터를 조회하는 쿼리로 두 번 나눠서 보내는 방법이다.
 
