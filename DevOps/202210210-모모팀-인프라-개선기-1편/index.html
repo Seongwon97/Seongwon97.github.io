@@ -658,6 +658,8 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"># jenkins재시작</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&amp; sudo service jenkins restart</span></span></span></code></pre>
 <h1 id="마무리" style="position:relative;"><a href="#%EB%A7%88%EB%AC%B4%EB%A6%AC" aria-label="마무리 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마무리</h1>
+<p>모든 과정을 거치며 변경된 CI/CD 인프라 구조는 아래와 같다.</p>
+<p><img src="image/202210210-%EB%AA%A8%EB%AA%A8%ED%8C%80-%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B0%9C%EC%84%A0%EA%B8%B0-1%ED%8E%B8/img_13.png" alt="Untitled"></p>
 <p>이번 포스트에서는 프로젝트에 Docker를 사용하게 된 계기와 Docker를 적용한 과정에 대해 정리해봤다. 환경을 구축하는 과정에서 Docker에 대한 많은 학습과 시간이 필요하였으나 결과를 봤을 때는 만족스러운 결과를 얻었다. 부하테스트를 진행할 때 인스턴스가 터지는 문제도 EC2 자원 사용량에 제한을 걸어둔 후 일부러 EC2에 버틸 수 없는 부하를 주며 테스트를 해봤으나 요청의 처리 에러는 발생하더라도 EC2자체가 중단되는 일은 발생하지 않는 것을 확인하였다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
