@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://seongwon.dev/Database/20221022-트랜잭션-격리수준이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon.dev/DevOps/20221020-Docker란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Spring/20221017-모모팀-서비스성능-개선기3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Spring/20221014-모모팀-서비스성능-개선기2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Spring/20221009-모모팀-서비스성능-개선기1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
