@@ -659,7 +659,29 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&amp; sudo service jenkins restart</span></span></span></code></pre>
 <h1 id="마무리" style="position:relative;"><a href="#%EB%A7%88%EB%AC%B4%EB%A6%AC" aria-label="마무리 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마무리</h1>
 <p>모든 과정을 거치며 변경된 CI/CD 인프라 구조는 아래와 같다.</p>
-<p><img src="image/202210210-%EB%AA%A8%EB%AA%A8%ED%8C%80-%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B0%9C%EC%84%A0%EA%B8%B0-1%ED%8E%B8/img_13.png" alt="Untitled"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABuUlEQVQoz3WSW2/aQBCF/f9/S9QXXqv2qe0DqK0ISeQbmNgGX9d3wDbwdXcbKFTJkcbe1cycmTmzxvl85g7HnnHoOR6P+qr8F1PIfBfr8SfuckVRFHcxCobmkMlRkiOqlsp7xnlZ4MiEYRhuEmA47Jlar3x+CfGzkiBKGMd/MVfCw67jaZ1ivUaEQcByuWQdhHS73bXxruuI04xtkvIwtXiYOfp8X/T8Rng44DgOeZ7T9z2e57FaebTd7lq5bhpaaaorP0rZJBlxluvpbmUx1EeRpGlKXde6E/Vv6ooi3uhiCo0ky2RMI4uIqqEUOafzif9h3F4UcZIkZLmg72pi+zeOt6ZtG014Op1QFId+IClKwuc5ge1iOi5RnOjiRlmWKLssx/d94igi2Eo9TZPg8Re59Deya7WZUSog2h1zr+CTOWMWTylEh6hbqWmGYds2i8WC+XyudZxMJgRyMeEmZPr9B9++fCUMQ2zT0nHKlwnBNhJY9ZpFZSJEQ5QXbNMcQ40xjqPuUrW83+//ji/PK7kc23WldhkbSWSaKllof1VVUseGumgRMjeXb1Lpb/AOLpsN3kg+8r+HP6Mh+hY/tnrqAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/81ca66bfa38150849cf8feb5844d9ced/c1b63/img_13.png"
+        srcset="/static/81ca66bfa38150849cf8feb5844d9ced/5a46d/img_13.png 300w,
+/static/81ca66bfa38150849cf8feb5844d9ced/0a47e/img_13.png 600w,
+/static/81ca66bfa38150849cf8feb5844d9ced/c1b63/img_13.png 1200w,
+/static/81ca66bfa38150849cf8feb5844d9ced/d61c2/img_13.png 1800w,
+/static/81ca66bfa38150849cf8feb5844d9ced/e8950/img_13.png 2000w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
 <p>이번 포스트에서는 프로젝트에 Docker를 사용하게 된 계기와 Docker를 적용한 과정에 대해 정리해봤다. 환경을 구축하는 과정에서 Docker에 대한 많은 학습과 시간이 필요하였으나 결과를 봤을 때는 만족스러운 결과를 얻었다. 부하테스트를 진행할 때 인스턴스가 터지는 문제도 EC2 자원 사용량에 제한을 걸어둔 후 일부러 EC2에 버틸 수 없는 부하를 주며 테스트를 해봤으나 요청의 처리 에러는 발생하더라도 EC2자체가 중단되는 일은 발생하지 않는 것을 확인하였다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
