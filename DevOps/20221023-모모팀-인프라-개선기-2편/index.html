@@ -144,8 +144,60 @@
 <li>패킷의 내용을 복호화하기에 L4보다 더 많은 비용을 지불해야하며 클라이언트가 로드 밸런서와 인증서를 공유하기 때문에 공격자가 로드 밸런서를 통해 클라이언트의 데이터에 접근할 위험성이 있다는 단점이 있다.</li>
 </ul>
 <h1 id="3-모모팀이-로드밸런싱을-도입한-이유" style="position:relative;"><a href="#3-%EB%AA%A8%EB%AA%A8%ED%8C%80%EC%9D%B4-%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%8B%B1%EC%9D%84-%EB%8F%84%EC%9E%85%ED%95%9C-%EC%9D%B4%EC%9C%A0" aria-label="3 모모팀이 로드밸런싱을 도입한 이유 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 모모팀이 로드밸런싱을 도입한 이유</h1>
-<p>모모팀 인프라 개선을 하며 로드밸런싱을 도입하게 되었다. 로드 밸런싱을 처음 도입하게 된 이유는 크게 성능 개선과 무중단 배포가 있다. 그 외에도 로드 밸런싱을 도입하면 WAS레벨의 SPOF제거의 이점을 얻을 수도 있다.</p>
-<p>각각의 이유와 로드 밸런싱을 도입했을 때 자연스럽게 오는 이점의 자세한 내용은 아래와 같다.</p>
+<p>모모팀은 하나의 WAS서버를 운영하였을 때, 많은 부하가 걸린다는 것을 확인하여 로드밸런싱을 도입하게 되었다. 기존의 WAS서버에 150명이 동시 접속하여 모임 조회 요청을 보내는 부하를 주며 모니터링을 해보았다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 17%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVQI1x2M226CUBBF+ZnWYLw0QbkdhQMoalp98MF/aBtfGlsVLAlV0DT959XBh5XZs/fMNvRkRRTO2eiU9TgRYlZeQBguUA3jOY4/RSdLRrJ7oxlh/HLXtpswFFptm0dzeMdwVYqnpvRMi1hNiFSC1XPp9BW+PHefFGbHRQULBk5EV/xAP2PZWv5SufN5kKKmtMEoXt+4HHPKrwNV/k2x21PLrMW75ifqLKc6ZPxIXkpWfOy4ZifO+6PoT7L3LbfyzOX2R1X/8g+lZXR+mLlGWwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/2acac07be245ac87c7b00fc29595fac3/c1b63/img_4.png"
+        srcset="/static/2acac07be245ac87c7b00fc29595fac3/5a46d/img_4.png 300w,
+/static/2acac07be245ac87c7b00fc29595fac3/0a47e/img_4.png 600w,
+/static/2acac07be245ac87c7b00fc29595fac3/c1b63/img_4.png 1200w,
+/static/2acac07be245ac87c7b00fc29595fac3/e4ee8/img_4.png 1496w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 24%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA8UlEQVQY0z2PWW7DMAxEfYh4kbXLkrzFLtIESJf7n2s6Utp+PFCEhjNk048GHWmFhnYJcTlqf+k1LsOLThj00uKl1RDKIa8njM91rvx3rO2g0AjtMVBQKEPFbDSeA7Fip4BRExv5R1Pp0JG2mLAv79FN0DHV2cZ4Ni5UTJigbKhGH18bPr93XM/EMAYsM+ZlIvGXVOt6zXh7bDjvKwap0WgfoZjwh6Sh8omJG0zaoUjLZM1gHzNsiChL1MolbFrh5h1uOdHzkua8PbEdd0gTIcppeqpM84F5f0cmhqHrcaPu8a8T1AgVIB1D4g6fDy4T8QNnqopYG5aA8wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/159834a59d306144460909a7a625c98f/c1b63/img_5.png"
+        srcset="/static/159834a59d306144460909a7a625c98f/5a46d/img_5.png 300w,
+/static/159834a59d306144460909a7a625c98f/0a47e/img_5.png 600w,
+/static/159834a59d306144460909a7a625c98f/c1b63/img_5.png 1200w,
+/static/159834a59d306144460909a7a625c98f/aa440/img_5.png 1500w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
+<p>부하를 주며 WAS서버의 CPU사용량을 모니터링 해본 결과 User Thread의 수가 많아 CPU의 사용은 거의 항상 100%를 사용하고 있었으며, LoadAverage도 계속 증가하는 것을 확인할 수 있었다.</p>
+<blockquote>
+<p>Load Average란?</p>
+<ul>
+<li>Waiting Queue에서 CPU의 자원을 기다리는 지연되는 테스크의 수이다.</li>
+</ul>
+</blockquote>
+<p>CPU자원을 필요로 하는 테스크의 수를 CPU가 감당하지 못하여 항상 100%의 자원을 사용하기에 로드 밸런싱을 통해 부하를 줄여주기로 결정하였다.</p>
+<p>그리고 추가적인 이유로 무중단 배포와 WAS레벨에서의 SPOF제거도 존재하였다. 각각의 이유와 로드 밸런싱을 도입했을 때 자연스럽게 오는 이점의 자세한 내용은 아래와 같다.</p>
 <h3 id="성능-개선" style="position:relative;"><a href="#%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0" aria-label="성능 개선 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>성능 개선</h3>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -170,7 +222,7 @@
         loading="lazy"
       />
     </span></p>
-<p>모모팀의 인프라는 웹 서버인 Nginx는 하나의 WAS 서버를 가르키고 있다. 이러한 구조는 많은 요청이 몰릴 경우, 하나의 WAS서버에서 모든 요청을 처리해야 하여 부담이 커진다. 쿼리 성능 개선을 하여 서비스의 최소 타겟 인원인 150명을 하나의 WAS에서 요청을 감당할 수 있지만 더 많은 유저가 서비스를 이용할 경우 WAS서버가 버티지 못할 수 있다. WAS에서 더 많은 요청을 처리하도록 하는 가장 간단한 방법은 Scale-up방식이다. 하지만 Scale-up의 경우 현재 우아한형제들에서 제공받는 EC2는 t4g.micro로 한정되어있기에 진행할 수 없었다. 그래서 서버를 증설하는 Scale-out방식인 로드 밸런싱을 고려하게 되었다.</p>
+<p>모모팀의 인프라는 웹 서버인 Nginx는 하나의 WAS 서버를 가르키고 있다. 이러한 구조는 많은 요청이 몰릴 경우, 하나의 WAS서버에서 모든 요청을 처리해야 하여 부담이 커진다. 쿼리 성능 개선을 하여 서비스의 최소 타겟 인원인 150명을 하나의 WAS에서 요청을 감당할 수 있지만 Load Average를 확인하면 여전히 많은 테스크가 CPU를 기다리고 있다. 그리고 만약 더 많은 유저가 서비스를 이용할 경우 WAS서버가 버티지 못할 수 있다. WAS에서 더 많은 요청을 처리하도록 하는 가장 간단한 방법은 Scale-up방식이다. 하지만 Scale-up의 경우 현재 우아한형제들에서 제공받는 EC2는 t4g.micro로 한정되어있기에 진행할 수 없었다. 그래서 서버를 증설하는 Scale-out방식인 로드 밸런싱을 고려하게 되었다.</p>
 <h3 id="무중단-배포" style="position:relative;"><a href="#%EB%AC%B4%EC%A4%91%EB%8B%A8-%EB%B0%B0%ED%8F%AC" aria-label="무중단 배포 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>무중단 배포</h3>
 <p>현재 모모팀의 CI/CD과정에서 배포 과정은 애플리케이션 중단을 한 후에 새로운 애플리케이션을 실행한다. 이러한 순서로 진행이된다면 새로운 애플리케이션이 정상적으로 실행되기까지 실행중인 서버가 없는 상황이 발생한다. 즉, 서버의 공백기가 발생하는 것이다. 이때 서버에 요청이 오면 서버는 응답을 하지 못하게 되는 상황이 발생한다. 이를 개선하기 위해서는 롤링 배포, 블루그린 배포와 같은 무중단 배포를 진행하여야 한다. 이러한 방법들은 최소 2개 이상의 WAS서버가 필요하기에 로드 밸런싱을 구축하면 자연스럽게 무중단배포의 환경 세팅이 된다. 무중단 배포에 대한 과정은 다음 포스트에서 다룰 것이기에 더 자세한 이야기는 적지 않겠다.</p>
 <h3 id="was-레벨의-spof-제거" style="position:relative;"><a href="#was-%EB%A0%88%EB%B2%A8%EC%9D%98-spof-%EC%A0%9C%EA%B1%B0" aria-label="was 레벨의 spof 제거 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WAS 레벨의 SPOF 제거</h3>
