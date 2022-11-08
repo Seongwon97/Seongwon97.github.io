@@ -31,7 +31,7 @@ public Page<Group> findLikedGroups(SearchCondition condition, Member member, Pag
             .leftJoin(group.participants.participants, participant)
             .innerJoin(group.favorites.favorites, favorite)
             .fetchJoin()
-                            .where(
+            .where(
                     favorite.member.eq(member),
                     conditionFilter.filterByCondition(condition)
             )
