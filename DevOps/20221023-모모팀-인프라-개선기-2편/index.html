@@ -276,9 +276,6 @@
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">	location / {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">		proxy_pass {요청을 보낼 WAS 서버 주소};</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">		proxy_buffer_size 128k;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">		proxy_buffers 4 256k;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">		proxy_busy_buffers_size 256k;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">	}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <p>위의 설정 파일의 동작을 간단히 설명하면 <code>api.moyeora.site</code> 도메인 주소의 요청이 443포트로 요청이 들어왔을 때 https ssl인증을 진행 후, location인 <code>/</code> 경로의 proxy_pass 주소로 요청을 전달하는 설정이 되어있다.</p>
@@ -331,9 +328,6 @@
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">	location / {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">		proxy_pass momo_server;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">		proxy_buffer_size 128k;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">		proxy_buffers 4 256k;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">		proxy_busy_buffers_size 256k;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">	}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <h1 id="5-마치며" style="position:relative;"><a href="#5-%EB%A7%88%EC%B9%98%EB%A9%B0" aria-label="5 마치며 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. 마치며</h1>
@@ -368,6 +362,7 @@
 <li><a href="http://nginx.org/en/docs/http/load_balancing.html">Using nginx as HTTP load balancer</a></li>
 <li><a href="http://nginx.org/en/docs/stream/ngx_stream_upstream_module.html">Module ngx<em>stream</em>upstream_module</a></li>
 <li><a href="https://tecoble.techcourse.co.kr/post/2021-11-07-load-balancing/">로드 밸런싱에 대해 알아보자!</a></li>
+<li><a href="https://injae-kim.github.io/dev/2020/07/09/how-to-check-single-server-load-average.html">서버에 걸리는 부하, 추측하지 말고 계측하자</a></li>
 </ul>
 <style class="grvsc-styles">
   .grvsc-container {
