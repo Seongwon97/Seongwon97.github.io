@@ -101,9 +101,9 @@ public class ProductController {
 
 # 3. 어떤 어노테이션을 사용하는 것이 좋을까?
 
-REST API만을 제공하는 프로젝트가 아니라면 View를 직접 반환하여야 하는 상황도 존재할 것이다. 이러한 경우 @Controller, @RestController중 어떤 어노테이션을 사용할지 고민될 것이다.
+REST API만을 제공하는 프로젝트가 아니라면 View를 직접 반환하여야 하는 상황도 존재할 것이다. 이러한 경우 `@Controller`, `@RestController`중 어떤 어노테이션을 사용할지 고민될 것이다.
 
-개발에 정답이라는 것은 없지만 나는 @Controller, @RestController가 달린 컨트롤러 클래스를 두개 생성한 후, view와 관련된 메서드는 @Controller가 달린 클래스에 위치시키고 다른 REST API의 메서드들은 @RestController에 위치시키는 방법을 추천한다.
+개발에 정답이라는 것은 없지만 나는 `@Controller`, `@RestController`가 달린 컨트롤러 클래스를 두개 생성한 후, view와 관련된 메서드는 `@Controller`가 달린 클래스에 위치시키고 다른 REST API의 메서드들은 `@RestController`에 위치시키는 방법을 추천한다.
 
 이와 같이 View를 관리하는 컨트롤러, 데이터를 반환하는 REST API를 제공하는 컨트롤러로 분리를 하여 관리할 경우 추후 유지 보수도 쉬울뿐더러 코드의 가독성도 올라갈 것이다.
 
