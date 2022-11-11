@@ -173,7 +173,7 @@ Query parameter는 위의 주소에서 search? 부터의 주소를 의미한다.
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    }</span></span></span></code></pre>
 <p>위의 코드는 Map을 활용하여 Key, value값을 받아온 코드이다.
 하지만 위의 코드의 경우는 Key값들이 무엇이 있는지 코드상으로 명확하게 알 수가 없다.
-아래와 같이 <code>@RequestPara</code>m을 여러번 사용하여 Key값을 지정하고 값을 받아오면 Query parameter에서 사용하는 key값들을 미리 알고 지정할 수 있다.</p>
+아래와 같이 <code>@RequestParam</code>을 여러번 사용하여 Key값을 지정하고 값을 받아오면 Query parameter에서 사용하는 key값들을 미리 알고 지정할 수 있다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">GetMapping</span><span class="mtk4">(</span><span class="mtk7">path</span><span class="mtk4"> </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk6">&quot;query-param02&quot;</span><span class="mtk4">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4"> </span><span class="mtk3">queryParam02</span><span class="mtk4">(</span><span class="mtk1">@</span><span class="mtk11">RequestParam</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4"> name</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">                               </span><span class="mtk1">@</span><span class="mtk11">RequestParam</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4"> email</span><span class="mtk1">,</span></span></span>
