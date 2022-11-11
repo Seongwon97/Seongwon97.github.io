@@ -133,7 +133,7 @@ Query parameter는 즉 Key, value값으로 이루어진 연속된 query문으로
 
 위의 코드는 Map을 활용하여 Key, value값을 받아온 코드이다.
 하지만 위의 코드의 경우는 Key값들이 무엇이 있는지 코드상으로 명확하게 알 수가 없다.
-아래와 같이 `@RequestPara`m을 여러번 사용하여 Key값을 지정하고 값을 받아오면 Query parameter에서 사용하는 key값들을 미리 알고 지정할 수 있다.
+아래와 같이 `@RequestParam`을 여러번 사용하여 Key값을 지정하고 값을 받아오면 Query parameter에서 사용하는 key값들을 미리 알고 지정할 수 있다.
 
 ```java
     @GetMapping(path = "query-param02")

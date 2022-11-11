@@ -130,7 +130,7 @@ RequestBody에 사용되는 DTO에는 기본 생성자와 getter메서드만 존
 
 ModelAttribute도 공식 문서를 먼저 살펴보면 다음과 같은 설명이 있다.
 
-> For access to an existing attribute in the model (instantiated if not present) with data binding and validation applied. See `[@ModelAttribute](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-modelattrib-method-args)` as well as [Model](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-modelattrib-methods) and `[DataBinder](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-initbinder)`.
+> For access to an existing attribute in the model (instantiated if not present) with data binding and validation applied. See [@ModelAttribute](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-modelattrib-method-args) as well as [Model](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-modelattrib-methods) and [DataBinder](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-initbinder).
 
 > You can use the `@ModelAttribute` annotation on a method argument to access an attribute from the model or have it be instantiated if not present. The model attribute is also overlain with values from HTTP Servlet request parameters whose names match to field names. This is referred to as data binding, and it saves you from having to deal with parsing and converting individual query parameters and form fields.
 
