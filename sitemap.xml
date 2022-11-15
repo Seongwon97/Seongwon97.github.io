@@ -79,8 +79,8 @@
 <url> <loc>https://seongwon.dev/Java/20220302-제너릭-인터페이스를-활용한-예외처리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20220228-이펙티브자바-3-싱글턴임을-보증하라/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20220228-이펙티브자바-4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon.dev/Java/20220228-큰-숫자의-언더스코어/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20220228-제너릭이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon.dev/Java/20220228-큰-숫자의-언더스코어/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20220227-자바의-Final/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20220225-String-내부-파헤치기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20220223-이펙티브자바-2-생성자에-매개변수가-많다면-빌더를-고려하라/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

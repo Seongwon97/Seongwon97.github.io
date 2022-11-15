@@ -53,7 +53,16 @@
 <li><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%80%EC%A0%95%ED%95%A9-%EB%AC%B8%EC%A0%9C">데이터 부정합 문제</a></li>
 <li><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#level0-read-uncommitted">Level0. READ UNCOMMITTED</a></li>
 <li><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#level-1-read-committed">Level 1. READ COMMITTED</a></li>
-<li><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#level2-repeatable-read">Level2. REPEATABLE READ</a></li>
+<li>
+<p><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#level2-repeatable-read">Level2. REPEATABLE READ</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#innodb%EC%9D%98-repeatable-read%EC%97%90%EC%84%9C-phantom-read%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%9D%B4%EC%9C%A0">InnoDB의 REPEATABLE READ에서 Phantom Read가 발생하지 않는 이유</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#level-3-serializable">Level 3. SERIALIZABLE</a></li>
 <li><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#%EB%A7%88%EC%B9%98%EB%A9%B0">마치며</a></li>
 <li><a href="/Database/20221022-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EC%9D%B4%EB%9E%80/#-reference">📚 Reference</a></li>
@@ -246,8 +255,25 @@
 <p>📌 REPEATABLE READ은 MySQL의 InnoDB 스토리지 엔진에서 기본적으로 사용하는 격리 수준이다.</p>
 </blockquote>
 <blockquote>
-<p>InnoDB는 갭 락과 넥스트 키 락 덕분에 REPEATABLE READ에서도 Phantom Read가 발생하지 않는다.</p>
+<p>InnoDB는 넥스트 키 락 덕분에 REPEATABLE READ에서도 Phantom Read가 발생하지 않는다.</p>
 </blockquote>
+<h3 id="innodb의-repeatable-read에서-phantom-read가-발생하지-않는-이유" style="position:relative;"><a href="#innodb%EC%9D%98-repeatable-read%EC%97%90%EC%84%9C-phantom-read%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EC%9D%B4%EC%9C%A0" aria-label="innodb의 repeatable read에서 phantom read가 발생하지 않는 이유 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>InnoDB의 REPEATABLE READ에서 Phantom Read가 발생하지 않는 이유</h3>
+<p>InnoDB 스토리지 엔진에서는 <strong>레코드 락</strong> 뿐만 아니라 레코드와 레코드 사이의 간격을 잡그는 <strong>갭(GAP)락</strong>이 존재한다.</p>
+<blockquote>
+<p><strong>레코드(Record) 락</strong>이란?</p>
+<ul>
+<li>레코드 락이란 레코드 자체만을 잠그는 것을 의미한다. InnoDB 스토리지 엔진은 레코드 자체가 아니라 인덱스의 레코드를 잠그는 방식으로 동작한다.</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>갭(GAP) 락</strong>이란?</p>
+<ul>
+<li>갭 락은 레코드 자체가 아니라 레코드와 바로 인접한 레코드 사이의 간격을 잠그는 것을 의미한다. 갭 락의 역할은 레코드와 레코드 사이의 간격에 새로운 레코드가 생성되는 것을 제어한다.</li>
+</ul>
+</blockquote>
+<p>이러한 레코드 락과 갭 락을 합쳐 놓은 형태를 넥스트 키 락이라고 한다. 그럼 <strong>넥스트 키 락(Next key lock)</strong>이 어떻게 동작하길래 Phantom Read가 발생하지 않을까?</p>
+<p>예시를 들어보면 groups테이블에 PK가 12, 15인 데이터가 있다고 가정해보겠다. 이때 <code>SELECT * FROM groups WHERE id BETWEEN 10 AND 20 FOR UPDATE</code> 쿼리가 실행된다면 id가 12, 15인 데이터는 레코드 락이 걸리게 된다. 그리고 10 ≤ id ≤ 11, 13 ≤ id ≤ 14, 16 ≤ id ≤ 20인 id에 대해서는 갭락이 걸리게 된다. 즉, 두 가지 락이 걸려 지정된 범위는 모두 락이 걸리게 된다.</p>
+<p>이러한 방식을 통해 InnoDB 스토리지 엔진은 넥스트 키 락을 통해 REPEATABLE READ에서도 Phantom Read가 발생하지 않는다.</p>
 <h1 id="level-3-serializable" style="position:relative;"><a href="#level-3-serializable" aria-label="level 3 serializable permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Level 3. SERIALIZABLE</h1>
 <p>SERIALIZABLE은 한 트랜잭션에서 읽기, 쓰기 등의 모든 데이터들은 다른 트랜잭션이 접근할 수 없게 한다. 모든 동작이 직렬화하게 작동하여 완벽한 읽기 일관성 모드를 제공한다. 데이터에 접근하는 것 만으로도 다른 트랜잭션은 해당 데이터에 접근할 수 없기에 REPEATABLE READ에서 발생하는 Phantom Read는 발생하지 않는다.</p>
 <p>해당 격리 수준은 가장 단순하면서 엄격한 격리 수준으로, 한 트랜잭션에서 접근한 데이터는 항상 lock을 걸게 되어 동시 처리 성능이 다른 격리수준보다 떨어지는 편이다. 그래서 데이터의 안정성이 매우 중요한 특수한 상황이 아니면 거의 사용하지 않는 편이다.</p>
@@ -258,7 +284,10 @@
 <p>최근 구구와 오리가 데이터베이스 Lock에 대해 이야기하는 것을 들었는데, 구구가 말하길 실무에서는 데이터베이스 Lock은 성능상의 저하를 발생시켜 걸지 않는편이라고 하셨다.</p>
 </blockquote>
 <h1 id="-reference" style="position:relative;"><a href="#-reference" aria-label=" reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📚 Reference</h1>
-<p><a href="https://search.shopping.naver.com/book/catalog/32443973624?cat_id=50010586&#x26;frm=PBOKPRO&#x26;query=Real+MySQL&#x26;NaPm=ct%3Dl9jmw3ww%7Cci%3D919378d99905f247dd892d6e762d6de24fc0090e%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D947baef41da176108f3c36f2fb35dfd629b8f698">Real MySQL 8.0 (1권)</a></p>
+<ul>
+<li><a href="https://search.shopping.naver.com/book/catalog/32443973624?cat_id=50010586&#x26;frm=PBOKPRO&#x26;query=Real+MySQL&#x26;NaPm=ct%3Dl9jmw3ww%7Cci%3D919378d99905f247dd892d6e762d6de24fc0090e%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D947baef41da176108f3c36f2fb35dfd629b8f698">Real MySQL 8.0 (1권)</a></li>
+<li><a href="https://steady-coding.tistory.com/562">[데이터베이스] MySQL 트랜잭션 격리 수준</a></li>
+</ul>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
