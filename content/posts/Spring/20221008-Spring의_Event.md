@@ -1,7 +1,7 @@
 ---
 title: "[Spring] Spring의 Event란 무엇일까?"
 date: 2022-10-08
-tags: ["SpringFramework", "Event"]
+tags: ["SpringFramework", "Event", "EventListener"]
 draft: false
 ---
 
