@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="257f812e-5a81-4e46-b0f6-4013ae8c9c69" name="Changes" comment="post: 성능테스트, 부하테스트, 스트레스 테스트..무엇이 다를까?">
-      <change afterPath="$PROJECT_DIR$/content/posts/Spring/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/posts/Spring/image/20220930-FetchJoin과-limit을-같이-사용하며-발생한-문제/img_6.png" afterDir="false" />
+    <list default="true" id="257f812e-5a81-4e46-b0f6-4013ae8c9c69" name="Changes" comment="post: [Kotlin] 코틀린의 변수와 null">
+      <change afterPath="$PROJECT_DIR$/content/posts/Kotlin/image/kotlin-logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/20230118-Kotlin-변수타입-null.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Kotlin/20230118-Kotlin-변수타입-null.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/img_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/img_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img_2.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,25 +58,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/seongwon/Github/newBlog/Seongwon97.github.io/content/posts/Kotlin",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/content/posts/Kotlin" />
       <recent name="$PROJECT_DIR$/content/posts" />
       <recent name="$PROJECT_DIR$/content/posts/DevOps/image" />
       <recent name="$PROJECT_DIR$/content/posts/DevOps" />
       <recent name="$PROJECT_DIR$/content/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null" />
       <recent name="$PROJECT_DIR$/content/posts/ETC/image/20220919-성능테스트-부하테스트-스트레스테스트란" />
       <recent name="$PROJECT_DIR$/content/posts/Spring/image/20220911-Spring-Data-JPA란" />
       <recent name="$PROJECT_DIR$/content/posts/Spring/image/20220821_스프링-Profile이란" />
       <recent name="$PROJECT_DIR$/content/posts/Java/image/20211203-Private메서드의-Unit-Test" />
-      <recent name="$PROJECT_DIR$/content/posts/Java/image" />
     </key>
   </component>
   <component name="RunManager">
@@ -138,48 +137,13 @@
       <workItem from="1663318834929" duration="701000" />
       <workItem from="1664080930229" duration="1198000" />
       <workItem from="1664468755287" duration="1249000" />
-    </task>
-    <task id="LOCAL-00001" summary="chore: github action 수정">
-      <created>1661109612653</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1661109612653</updated>
-    </task>
-    <task id="LOCAL-00002" summary="post: 우테코 관련 포스트 이전">
-      <created>1661147166928</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1661147166928</updated>
-    </task>
-    <task id="LOCAL-00003" summary="chore: 배포 설정 업데이트">
-      <created>1661153981241</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1661153981241</updated>
-    </task>
-    <task id="LOCAL-00004" summary="feat: social image 업데이트">
-      <created>1661160899212</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1661160899212</updated>
-    </task>
-    <task id="LOCAL-00005" summary="feat: social image, icon 업데이트">
-      <created>1661162745973</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1661162745973</updated>
-    </task>
-    <task id="LOCAL-00006" summary="post: [DevOps] Jenkins를 통한 CI/CD 구축기 3편 (Frontend CI/CD 구축)">
-      <created>1661167648740</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1661167648740</updated>
+      <workItem from="1668499605906" duration="825000" />
+      <workItem from="1669657187509" duration="610000" />
+      <workItem from="1671387899532" duration="1521000" />
+      <workItem from="1671430579602" duration="759000" />
+      <workItem from="1671506550059" duration="553000" />
+      <workItem from="1674045924020" duration="598000" />
+      <workItem from="1674053149864" duration="2502000" />
     </task>
     <task id="LOCAL-00007" summary="post: [AWS, MySQL] - Private Ec2에 MySQL설치 및 원격 접속 설정하기">
       <created>1661167808865</created>
@@ -475,7 +439,56 @@
       <option name="project" value="LOCAL" />
       <updated>1664082117107</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="post: update 트랜잭션의 격리수준(Isolation level)이란?">
+      <created>1668499826398</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1668499826398</updated>
+    </task>
+    <task id="LOCAL-00050" summary="post: 모모팀 서비스 성능 개선기4 (비동기 처리를 통한 장애 전파 제거)">
+      <created>1671388495062</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1671388495062</updated>
+    </task>
+    <task id="LOCAL-00051" summary="post: update 모모팀 서비스 성능 개선기4 (비동기 처리를 통한 장애 전파 제거)">
+      <created>1671430733897</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1671430733897</updated>
+    </task>
+    <task id="LOCAL-00052" summary="post: update 모모팀 인프라 개선기 3편 (무중단 배포)">
+      <created>1671506624780</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1671506624780</updated>
+    </task>
+    <task id="LOCAL-00053" summary="post: update 모모팀 인프라 개선기 3편 (무중단 배포)">
+      <created>1671506688445</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1671506688445</updated>
+    </task>
+    <task id="LOCAL-00054" summary="post: [Kotlin] 코틀린의 변수와 null">
+      <created>1674053329335</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1674053329335</updated>
+    </task>
+    <task id="LOCAL-00055" summary="post: [Kotlin] 코틀린의 변수와 null">
+      <created>1674053403560</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1674053403560</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,11 +506,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="post: [JPA] 영속성 전이와 고아객체" />
-    <MESSAGE value="post: update [Spring] Validation Annotation이란? + DTO에서는 어디까지 검증해야할까?" />
-    <MESSAGE value="post: update [JPA] 프록시와 지연로딩" />
-    <MESSAGE value="chore: deploy cname 재지정" />
-    <MESSAGE value="post: [JPA] JPQL이란?" />
     <MESSAGE value="post: [Spring] 우리는 왜 스프링을 사용하는가?" />
     <MESSAGE value="post: URL 형식 변경을 위한 파일명 수정" />
     <MESSAGE value="post: 중복된 포스트 제거" />
@@ -518,6 +526,11 @@
     <MESSAGE value="post: [JPA] Spring Data JPA의 Query Method" />
     <MESSAGE value="post: update [Spring] DI,IoC란 무엇일까?" />
     <MESSAGE value="post: 성능테스트, 부하테스트, 스트레스 테스트..무엇이 다를까?" />
-    <option name="LAST_COMMIT_MESSAGE" value="post: 성능테스트, 부하테스트, 스트레스 테스트..무엇이 다를까?" />
+    <MESSAGE value="post: update 트랜잭션의 격리수준(Isolation level)이란?" />
+    <MESSAGE value="post: 모모팀 서비스 성능 개선기4 (비동기 처리를 통한 장애 전파 제거)" />
+    <MESSAGE value="post: update 모모팀 서비스 성능 개선기4 (비동기 처리를 통한 장애 전파 제거)" />
+    <MESSAGE value="post: update 모모팀 인프라 개선기 3편 (무중단 배포)" />
+    <MESSAGE value="post: [Kotlin] 코틀린의 변수와 null" />
+    <option name="LAST_COMMIT_MESSAGE" value="post: [Kotlin] 코틀린의 변수와 null" />
   </component>
 </project>

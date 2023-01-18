@@ -4,6 +4,9 @@ date: 2023-01-18
 tags: ["Kotlin"]
 draft: false
 ---
+
+![Untitled](image/kotlin-logo.png)
+
 # 변수 타입
 
 ## `var`과 `val`
@@ -67,7 +70,7 @@ fun main() {
 
 코틀린 공식문서를 보면 코틀린은 JVM 플랫폼 위에서 숫자를 기본적으로 primitive type으로 저장하고 `Int?` 와 같은 nullable한 변수를 생성하거나 제너릭을 사용할 때는 Boxing된 Reference Type를 만들어 사용하도록 동작한다고 한다.
 
-![Untitled](image/img.png)
+![Untitled](image/20230118-Kotlin-변수타입-null/img.png)
 
 ## 변수의 초기화
 
@@ -84,13 +87,13 @@ public class Main {
 
 가변 변수를 사용하는 코틀린은 초기화가 없을 경우, 타입을 추론할 수 없기에 변수를 생성할 때 초기화를 하지 않을 경우 아래와 같이 경고창이 뜬다.
 
-![Untitled](image/img_1.png)
+![Untitled](image/20230118-Kotlin-변수타입-null/img_1.png)
 
 ## 코틀린의 Null
 
 코틀린은 기본적으로 변수들에 null이 들어가지 못하게 만들었다. 그렇기에 변수에 앞서 봤듯이 변수를 지정하며 null을 할당하려하면 아래와 같은 에러가 나온다.
 
-![Untitled](image/img_2.png)
+![Untitled](image/20230118-Kotlin-변수타입-null/img_2.png)
 
 기본적인 변수들은 Null이 들어가지 못하기 때문에 변수의 타입을 지정해주었을 때, null을 넣게 된다면 타입 뒤에 `?` 를 붙여줘야 한다.
 
@@ -139,7 +142,10 @@ fun main() {
         ?: throw IllegalArgumentException("null값 입니다.")
 }
 ```
+### 플랫폼 타입
+
+코틀린은 자바와 동일하게 JVM상에서 돌아가서 한 개의 프로젝트에서 자바와 코틀린 코드를 동시에 사용할 수 있다. 하지만 앞서 살펴봤듯이 코틀린은 Null에 대한 처리를 확실하게 해주기 때문에 변수 지정 등을 다르게 한다. 그래서 자바로 만들어진 클래스들을 코들린에서 사용할 때는 Nullable 유무를 알 수 있도록 `java.annotation 패키지`, `org.jetbrains.annotation 패키지` 등에서 제공하는 `@Nullable`, `@NotNull` 어노테이션을 통해 표시를 해줘야 안정적인 코드가 만들어진다. 아무런 어노테이션이 없을 경우 코틀린은 Null 관련 정보를 알 수 없기에 Runtime 중에 Exception이 발생할 수 있다. 이와 같이 Null관련 정보를 알 수 없는 변수들의 타입을 **플랫폼 타입**이라고 한다.
 
 # 📚Reference
-- [자바 개발자를 위한 코틀린 입문(Java to Kotlin Starter Guide) - 인프런 | 강의](https://www.inflearn.com/course/java-to-kotlin/dashboard)
 - [Kotlin 공식 문서](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
+- [자바 개발자를 위한 코틀린 입문(Java to Kotlin Starter Guide) - 인프런 | 강의](https://www.inflearn.com/course/java-to-kotlin/dashboard)
