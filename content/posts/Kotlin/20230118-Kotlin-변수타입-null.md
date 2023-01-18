@@ -67,7 +67,7 @@ fun main() {
 
 코틀린 공식문서를 보면 코틀린은 JVM 플랫폼 위에서 숫자를 기본적으로 primitive type으로 저장하고 `Int?` 와 같은 nullable한 변수를 생성하거나 제너릭을 사용할 때는 Boxing된 Reference Type를 만들어 사용하도록 동작한다고 한다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f92e63b0-e942-4e38-9658-9cc36473ae61/Untitled.png)
+![Untitled](image/img.png)
 
 ## 변수의 초기화
 
@@ -84,13 +84,13 @@ public class Main {
 
 가변 변수를 사용하는 코틀린은 초기화가 없을 경우, 타입을 추론할 수 없기에 변수를 생성할 때 초기화를 하지 않을 경우 아래와 같이 경고창이 뜬다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5df594fc-83de-4da1-91bd-87147bfc9e20/Untitled.png)
+![Untitled](image/img_1.png)
 
 ## 코틀린의 Null
 
 코틀린은 기본적으로 변수들에 null이 들어가지 못하게 만들었다. 그렇기에 변수에 앞서 봤듯이 변수를 지정하며 null을 할당하려하면 아래와 같은 에러가 나온다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9dbe67f7-4605-4e88-9e0b-25cd7ec22072/Untitled.png)
+![Untitled](image/img_2.png)
 
 기본적인 변수들은 Null이 들어가지 못하기 때문에 변수의 타입을 지정해주었을 때, null을 넣게 된다면 타입 뒤에 `?` 를 붙여줘야 한다.
 
