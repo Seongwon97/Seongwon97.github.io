@@ -1,9 +1,10 @@
 ---
-title: "리액티브 프로그래밍이란?"
+title: "리액티브 프로그래밍과 리액터"
 date: 2023-01-20
 tags: ["SpringFramework", "Reactive Programming", "Publisher", "Subscriber", "Subscription", "Processor"]
 draft: false
 ---
+
 # 리액티브 프로그래밍이란?
 
 애플리케이션은 명령형(imperative)와 리액티브(reactive, 반응형)의 형로 작성될 수 있다.
