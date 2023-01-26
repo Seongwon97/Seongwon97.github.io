@@ -1,5 +1,5 @@
 ---
-title: "리액티브 프로그래밍과 리액터"
+title: "리액티브 프로그래밍과 리액티브 스트림"
 date: 2023-01-20
 tags: ["SpringFramework", "Reactive Programming", "Publisher", "Subscriber", "Subscription", "Processor"]
 draft: false
@@ -96,3 +96,180 @@ public interface Processor<T, R> extends Subscriber<T>, Publisher<R> {
 >
 > 자바와 리액티브 스트림은 데이터로 작업하기 위한 api를 제공한다는 유사성이 있다. 하지만 자바의 스트림은 대개 동기화되어 있고 한정된 데이터로 작업을 수행하는 반면에 리액티브 스트림은 어떤 크기의 데이터셋이건 비동기 처리를 지원한다. 그리고 백프레셔를 통해 데이터 폭주를 막으며 실시간으로 데이터를 처리한하는 특징도 있다.
 >
+
+# 코드로 동작 살펴보기
+
+### Publisher
+
+```java
+import java.util.Arrays;
+
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+
+public class MyPublisher implements Publisher<Integer> {
+
+    Iterable<Integer> data = Arrays.asList(1, 2, 3, 4, 5, 6);
+
+    @Override
+    public void subscribe(Subscriber<? super Integer> s) {
+        System.out.println("Publisher.subscribe() 실행");
+        System.out.println("Publisher.subscribe() -> Subscription 객체 생성 완료");
+        MySubscription subscription = new MySubscription(s, data);
+        System.out.println("Publisher.subscribe() -> 생성한 Subscription를 인자로 사용하며 Subscriber의 onSubscribe()호출");
+        s.onSubscribe(subscription);
+        System.out.println("Publisher.subscribe() 종료");
+
+    }
+}
+```
+
+### Subscriber
+
+```java
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+public class MySubscriber implements Subscriber<Integer> {
+
+    private Subscription subscription;
+    private int bufferSize = 2;
+
+    @Override
+    public void onSubscribe(Subscription s) {
+        System.out.println("Subscriber.onSubscribe() 실행");
+        this.subscription = s;
+        System.out.println("Subscriber.onSubscribe() -> 요청할 데이터 수를 인자로 전달하며 Subscription의 request()메서드 호출");
+        subscription.request(bufferSize); // 백 프레셔 -> 소비자가 한번에 처리할 수 있는 개수를 요청
+        System.out.println("Subscriber.onSubscribe() 종료");
+    }
+
+    @Override
+    public void onNext(Integer integer) {
+        System.out.println("Subscriber.onNext() 실행");
+        System.out.println("onNext(): " + integer);
+
+        bufferSize--;
+        if (bufferSize == 0) {
+            bufferSize = 2;
+            subscription.request(bufferSize); // 데이터가 모두 소모되는 것을 확인하기 위해 추가한 코드.
+        }
+    }
+
+    @Override
+    public void onError(Throwable t) {
+        System.out.println("구독 중 에러");
+    }
+
+    @Override
+    public void onComplete() {
+        System.out.println("==== 구독 완료 ====");
+    }
+}
+```
+
+### Subscription
+
+```java
+import java.util.Iterator;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+// 구독 정보(구독자, 어떤 데이터를 구독할지에 대한 정보를 갖고 있어야 한다.)
+public class MySubscription implements Subscription {
+
+    private final Subscriber subscriber;
+    private final Iterator<Integer> data;
+
+    public MySubscription(Subscriber subscriber, Iterable<Integer> data) {
+        this.subscriber = subscriber;
+        this.data = data.iterator();
+    }
+
+    @Override
+    public void request(long n) {
+        System.out.println("\nSubscription.request() 실행");
+        while (n > 0) {
+            if (data.hasNext()) {
+                System.out.println("Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하면 subscriber.onNext()호출");
+                subscriber.onNext(data.next());
+            } else {
+                System.out.println("Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하지 않으면 subscriber.onComplete()호출");
+                subscriber.onComplete();
+                break;
+            }
+            n--;
+        }
+    }
+
+    @Override
+    public void cancel() {
+
+    }
+}
+```
+
+### Application.main()
+
+```java
+public class Application {
+
+    public static void main(String[] args) {
+        MyPublisher publisher = new MyPublisher();
+        MySubscriber subscriber = new MySubscriber();
+
+        publisher.subscribe(subscriber);
+    }
+}
+```
+
+Publisher, Subscriber, Subscription인터페이스가 어떻게 동작하는지 더 편한 이해를 위해 구현한 코드를 작성해보았다. 위의 코드들을 작성하고 실행을 해본 결과 아래와 같은 결과가 나온다. 위에서 인터페이스를 살펴보았듯이 Publisher의 `subscribe()`메서드는 Subscriber 구현체를 인자로 받아 실행되면 인자로 받은 Subscriber만을 위한 구독자료(Subscription)을 만들어 제공하게 된다.
+
+Subscriber는 본인이 처리할 수 있는 양만큼의 데이터 수를 Subscription의 `request()`메서드의 인자로 전달하여 데이터 처리양을 조절할 수 있으며 `request()`메서드는 Subscriber의 `onNext()`메서드를 통해 데이터를 전달하게 된다. 또한 데이터를 모두 전달하였으면 `onComplete()`메서드를 호출하도록 동작하게 된다.
+
+코드에서 다루지 않았지만 구독 중에 구독을 취소하고 싶다면 Subscription의 `cancel()`메서드가 호출될 것이고 에러가 발생한다면 Subscriber의 `onError()`메서드가 동작할 것이다.
+
+### 실행 결과
+```
+Publisher.subscribe() 실행
+Publisher.subscribe() -> Subscription 객체 생성 완료
+Publisher.subscribe() -> 생성한 Subscription를 인자로 사용하며 Subscriber의 onSubscribe()호출
+Subscriber.onSubscribe() 실행
+Subscriber.onSubscribe() -> 요청할 데이터 수를 인자로 전달하며 Subscription의 request()메서드 호출
+
+Subscription.request() 실행
+Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하면 subscriber.onNext()호출
+Subscriber.onNext() 실행
+onNext(): 1
+Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하면 subscriber.onNext()호출
+Subscriber.onNext() 실행
+onNext(): 2
+
+Subscription.request() 실행
+Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하면 subscriber.onNext()호출
+Subscriber.onNext() 실행
+onNext(): 3
+Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하면 subscriber.onNext()호출
+Subscriber.onNext() 실행
+onNext(): 4
+
+Subscription.request() 실행
+Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하면 subscriber.onNext()호출
+Subscriber.onNext() 실행
+onNext(): 5
+Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하면 subscriber.onNext()호출
+Subscriber.onNext() 실행
+onNext(): 6
+
+Subscription.request() 실행
+Subscription.request() -> 요청받은 데이터 수만큼 반환하지 않고, 현재 데이터가 존재하지 않으면 subscriber.onComplete()호출
+==== 구독 완료 ====
+Subscriber.onSubscribe() 종료
+Publisher.subscribe() 종료
+```
+
+# 📚 Reference
+- [스프링 인 액션](https://search.shopping.naver.com/book/catalog/32441616013?cat_id=50010920&frm=PBOKPRO&query=%EC%8A%A4%ED%94%84%EB%A7%81+%EC%9D%B8+%EC%95%A1%EC%85%98&NaPm=ct%3Dldd6rd20%7Cci%3Df076961ffc3dab854d41bc1cdeea73bfa8c0a8f1%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3Df155b60e8553a8baef3d19bce28770da9fec5bfa)
+- [Reactive Streams](https://www.reactive-streams.org/)
+- [메타코딩 - Springboot-WebFlux 5강 - reactive streams](https://www.youtube.com/watch?v=6TiUCm3K_IE&list=PL93mKxaRDidFH5gRwkDX5pQxtp0iv3guf&index=6)
