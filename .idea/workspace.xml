@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="257f812e-5a81-4e46-b0f6-4013ae8c9c69" name="Changes" comment="post: [Kotlin] 코틀린의 변수와 null">
-      <change afterPath="$PROJECT_DIR$/content/posts/Kotlin/image/kotlin-logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/20230118-Kotlin-변수타입-null.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Kotlin/20230118-Kotlin-변수타입-null.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/img_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/img_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/20230118-Kotlin-변수타입-null/img_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Kotlin/image/kotlin-logo.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +56,13 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/seongwon/Github/newBlog/Seongwon97.github.io/content/posts/Kotlin",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/seongwon/Github/newBlog/Seongwon97.github.io/content/posts/Kotlin&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/content/posts/Kotlin" />
@@ -81,7 +79,7 @@
       <recent name="$PROJECT_DIR$/content/posts/Java/image/20211203-Private메서드의-Unit-Test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -92,8 +90,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
