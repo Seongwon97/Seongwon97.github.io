@@ -107,7 +107,7 @@
 </li>
 </ul>
 </li>
-<li><a href="/Spring-WebFlux/20230217-Reactor%EB%9E%80/#reference">📚Reference</a></li>
+<li><a href="/Spring-WebFlux/20230217-Reactor%EB%9E%80/#-reference">📚 Reference</a></li>
 </ul></div></div></div><div class="css-1bdwg0l etadk2t0"><div><style data-emotion-css="18ks7l0">.css-18ks7l0{font-size:1rem;word-break:break-word;}.css-18ks7l0 h1 > a > svg,.css-18ks7l0 h2 > a > svg,.css-18ks7l0 h3 > a > svg,.css-18ks7l0 h4 > a > svg,.css-18ks7l0 h5 > a > svg,.css-18ks7l0 h6 > a > svg{fill:#000;}.css-18ks7l0 h1,.css-18ks7l0 h2{font-size:1.25rem;font-weight:600;margin-top:1.5rem;margin-bottom:1.5rem;}.css-18ks7l0 h3,.css-18ks7l0 h4,.css-18ks7l0 h5,.css-18ks7l0 h6{font-size:1.125rem;margin-top:1.5rem;margin-bottom:1.5rem;font-weight:600;}@media (min-width:640px){.css-18ks7l0 h1,.css-18ks7l0 h2{font-size:1.5rem;}.css-18ks7l0 h3,.css-18ks7l0 h4,.css-18ks7l0 h5,.css-18ks7l0 h6{font-size:1.25rem;}}.css-18ks7l0 a{color:#3737B9;}.css-18ks7l0 a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-18ks7l0 p{margin:0.3rem;margin-top:0.75rem;margin-bottom:0.75rem;}.css-18ks7l0 ul,.css-18ks7l0 ol{margin:0.3rem;margin-left:2rem;}.css-18ks7l0 li > p,.css-18ks7l0 li > ul,.css-18ks7l0 li > ol{margin-bottom:0;}.css-18ks7l0 ol{list-style-type:decimal;}.css-18ks7l0 ul{list-style-type:disc;}.css-18ks7l0 blockquote{padding:0.5rem;background-color:#eee;margin:0.3rem;margin-top:0.5rem;margin-bottom:0.5rem;border-left-width:4px;border-color:#c6cefc;}.css-18ks7l0 blockquote > p{margin:0.5rem;}.css-18ks7l0 blockquote > h1,.css-18ks7l0 blockquote > h2,.css-18ks7l0 blockquote > h3,.css-18ks7l0 blockquote > h4,.css-18ks7l0 blockquote > h5{margin-top:0.5rem;margin-bottom:0.5rem;}.css-18ks7l0 td,.css-18ks7l0 th{padding-left:0.5rem;padding-right:0.5rem;padding-top:0.25rem;padding-bottom:0.25rem;border-width:1px;border-color:#c6cefc;}.css-18ks7l0 tr:nth-of-type(even){background-color:#eee;}.css-18ks7l0 th{background-color:#eee;}.css-18ks7l0 table{margin-bottom:1.5rem;display:block;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:0 auto;overflow-x:auto;white-space:nowrap;}.css-18ks7l0 p > code,.css-18ks7l0 li > code{padding-top:0.1rem;padding-bottom:0.1rem;padding-right:0.25rem;padding-left:0.25rem;border-radius:0.25rem;color:#3737B9;background-color:#eee;white-space:pre-line;}.css-18ks7l0 pre.grvsc-container{margin-top:24px;margin-bottom:24px;}.css-18ks7l0 hr{margin-top:24px;margin-bottom:24px;height:2px;border:none;background:linear-gradient( 270deg,#434cf5,#c6cefc,#91eac9 );}</style><div class="markdown css-18ks7l0"><h1 id="1-리액터란" style="position:relative;"><a href="#1-%EB%A6%AC%EC%95%A1%ED%84%B0%EB%9E%80" aria-label="1 리액터란 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 리액터란?</h1>
 <p>리액터는 JVM위에서 동작하는 Non-Blocking 리액티브 프로그래밍을 위한 라이브러리로 Reactive Stream의 구현체입니다. 잘 알려진 Reactive Stream의 구현체로는 RxJava도 존재합니다. 하지만 이 두가지 구현체 중 리액터를 학습하는 이유는 간단합니다. 바로 Spring Framework5부터 스프링은 리액티브 프로그래밍을 위해 버전 5부터 리액터를 공식적으로 지원한다는 이유만으로도 리액터는 충분히 배울만한 가치가 있다 생각합니다.</p>
 <h2 id="11-사용-준비하기" style="position:relative;"><a href="#11-%EC%82%AC%EC%9A%A9-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0" aria-label="11 사용 준비하기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.1. 사용 준비하기</h2>
@@ -276,7 +276,11 @@
 <p>코틀린의 경우 <code>StepVerifier.create()</code>를 호출하지 않고 Mono/Flux 타입에 확장 함수인 <code>.test()</code> 를 붙이면 StepVerifier객체를 생성할 수 있습니다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">fun </span><span class="mtk8">&lt;</span><span class="mtk4">T</span><span class="mtk8">&gt;</span><span class="mtk4"> </span><span class="mtk11">Mono</span><span class="mtk8">&lt;</span><span class="mtk4">T</span><span class="mtk8">&gt;</span><span class="mtk1">.</span><span class="mtk3">test</span><span class="mtk1">()</span><span class="mtk9">:</span><span class="mtk4"> </span><span class="mtk11">StepVerifier</span><span class="mtk1">.</span><span class="mtk4">FirstStep</span><span class="mtk8">&lt;</span><span class="mtk4">T</span><span class="mtk8">&gt;</span><span class="mtk4"> </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk11">StepVerifier</span><span class="mtk1">.</span><span class="mtk3">create</span><span class="mtk1">(</span><span class="mtk11">this</span><span class="mtk1">)</span></span></span></code></pre>
 </blockquote>
-<p>StepVerifier객체가 생성되었다면 아래와 같이 StepVerifier가 제공하는 API를 통해 체이닝을 하며 결과 값을 검증한다거나 최종적으로 어떤 Subscriber의 메서드가 실행되었는지 테스트를 진행할 수 있습니다. 참고로 메서드 체이닝 마지막 부분에는 <code>.verify()</code>, <code>.verifyComplete()</code>과 같이 verify라는 prefix가 붙은 이름의 메서드를 호출하여야지 해당 스트림을 구독 및 테스트하게 됩니다.</p>
+<p>StepVerifier객체가 생성되었다면 <code>assertNext()</code>, <code>exceptNext()</code>, <code>exceptError()</code>, <code>exceptNextCount()</code> 와 같이 StepVerifier가 제공하는 API를 통해 체이닝을 하며 결과 값을 검증한다거나 최종적으로 어떤 Subscriber의 메서드가 실행되었는지 테스트를 진행할 수 있습니다. 참고로 메서드 체이닝 마지막 부분에는 <code>.verify()</code>, <code>.verifyComplete()</code>과 같이 <code>verify</code>라는 prefix가 붙은 이름의 메서드를 호출하여야지 해당 스트림을 구독 및 테스트하게 됩니다.</p>
+<blockquote>
+<p><code>verify()</code>는 <code>Duration</code>을 반환합니다. 해당 반환 값은 테스트를 수행하는데 걸린 시간 정보가 들어가있어 따로 확인하실 수도 있습니다.</p>
+</blockquote>
+<p>repository를 통해 데이터를 저장하는 간단한 테스트 예시를 하나 살펴보겠습니다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="11"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">Test</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">fun </span><span class="mtk3">saveProduct</span><span class="mtk4">() {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    val product </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk3">Product</span><span class="mtk4">(</span><span class="mtk6">&quot;딸기 우유&quot;</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">1_300</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk7">200</span><span class="mtk4">)</span></span></span>
@@ -287,14 +291,36 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">            </span><span class="mtk3">assertThat</span><span class="mtk4">(</span><span class="mtk11">it</span><span class="mtk1">.</span><span class="mtk4">id)</span><span class="mtk1">.</span><span class="mtk3">isNotNull</span><span class="mtk1">()</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">        }</span><span class="mtk1">.</span><span class="mtk3">verifyComplete</span><span class="mtk1">()</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
-<p>위의 테스트 예시는 Product 객체를 repository에 저장을 하였을 때, 정상적으로 저장되어 id를 할당받았는지를 체크 후, 이후에 <code>onComplete()</code> 메서드가 호출되었는지 검증하는 테스트 코드입니다.</p>
-<h1 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📚Reference</h1>
+<p>위의 예시는 Product 객체를 repository에 저장을 하였을 때, 정상적으로 저장되어 id를 할당받았는지를 체크 후, 이후에 <code>onComplete()</code> 메서드가 호출되었는지 검증하는 테스트 코드입니다. 테스트 수행 결과는 역시나 정상적으로 구동 되는 것을 확인할 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 337px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 19.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVQY01XL3U7CQBRF4b6BF2LipYlWIoIQCwFKO9Nh+jNtZ0orVN7/SZYUE4MXX1Z2co4nVUqUxdjmwKE7XtpeayrLertju4uvNmF0qWAXy3/CSCKURmcFSmd4Wmtyk1HYlFN/5HTs6ftfdW2prcU5R9d1VGVFkiQopVCJunbYWqcUxpDnOZ4fSMYrhb8RzGRKaFpE1aPcGdWcSew3YfHFcu+Yi5KXQOAv5Z9hz8KMder4lCXew1QwGkwEj0HEa2RY7DumsuFDtSx0x/PacDfeMnqPGe5v3U9inlY588vPW+z4AYbtikV878CUAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/c8288ae6c6674f8586e02275b9664ba2/f6b51/img_2.png"
+        srcset="/static/c8288ae6c6674f8586e02275b9664ba2/5a46d/img_2.png 300w,
+/static/c8288ae6c6674f8586e02275b9664ba2/f6b51/img_2.png 337w"
+        sizes="(max-width: 337px) 100vw, 337px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
+<h1 id="-reference" style="position:relative;"><a href="#-reference" aria-label=" reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📚 Reference</h1>
 <ul>
 <li><a href="https://projectreactor.io/docs/core/release/reference/">Reactor 3 Reference Guide</a></li>
 <li><a href="https://www.baeldung.com/java-reactor-map-flatmap">Project Reactor: map() vs flatMap() | Baeldung</a></li>
 <li><a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html#map-java.util.function.Function-">Flux (reactor-core 3.5.2)</a></li>
 <li><a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html">Mono (reactor-core 3.5.3)</a></li>
 <li><a href="https://luvstudy.tistory.com/95">Reactor map, flatMap method는 언제 써야할까?</a></li>
+<li><a href="https://tech.kakao.com/2018/05/29/reactor-programming/#hot-cold-%EA%B0%9C%EB%85%90">사용하면서 알게 된 Reactor, 예제 코드로 살펴보기</a></li>
+<li><a href="https://tv.kakao.com/channel/3150758/cliplink/391418995">스프링5 웹플럭스와 테스트 전략</a></li>
 </ul>
 <style class="grvsc-styles">
   .grvsc-container {
