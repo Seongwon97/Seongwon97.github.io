@@ -61,8 +61,8 @@
 <p><a href="/Spring-WebFlux/20230219-WebFlux%EB%9E%80/#3-webflux-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0">3. WebFlux 사용해보기</a></p>
 <ul>
 <li><a href="/Spring-WebFlux/20230219-WebFlux%EB%9E%80/#31-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0">3.1. 의존성 추가하기</a></li>
-<li><a href="/Spring-WebFlux/20230219-WebFlux%EB%9E%80/#32-annotated-controllers">3.2. *<strong>*Annotated Controllers**</strong></a></li>
-<li><a href="/Spring-WebFlux/20230219-WebFlux%EB%9E%80/#33-functional-endpoints">3.3. *<strong>*Functional Endpoints**</strong></a></li>
+<li><a href="/Spring-WebFlux/20230219-WebFlux%EB%9E%80/#32-annotated-controllers">3.2. Annotated Controllers</a></li>
+<li><a href="/Spring-WebFlux/20230219-WebFlux%EB%9E%80/#33-functional-endpoints">3.3. Functional Endpoints</a></li>
 </ul>
 </li>
 <li><a href="/Spring-WebFlux/20230219-WebFlux%EB%9E%80/#4-webflux%EC%96%B8%EC%A0%9C-%EB%8F%84%EC%9E%85%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C">4. WebFlux..언제 도입해야할까?</a></li>
@@ -167,7 +167,7 @@
 <pre class="grvsc-container one-dark-pro" data-language="yaml" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk6">dependencies {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk6">implementation &#39;org.springframework.boot:spring-boot-starter-webflux&#39;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-<h2 id="32-annotated-controllers" style="position:relative;"><a href="#32-annotated-controllers" aria-label="32 annotated controllers permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.2. *<strong>*Annotated Controllers**</strong></h2>
+<h2 id="32-annotated-controllers" style="position:relative;"><a href="#32-annotated-controllers" aria-label="32 annotated controllers permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.2. Annotated Controllers</h2>
 <p>어노테이션 기반의 컨트롤러 작성은 Spring MVC와 핵심 컴포넌트들을 공유하고 있기에 큰 차이가 별로 없습니다. 코드를 간단하게 살펴보겠습니다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RestController</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RequestMapping</span><span class="mtk4">(</span><span class="mtk7">path</span><span class="mtk4"> </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk6">&quot;/products&quot;</span><span class="mtk4">)</span></span></span>
@@ -211,7 +211,7 @@
 <blockquote>
 <p>💡 리액티브 컨트롤러의 테스트는 <code>WebTestClient</code>를 통해 테스트할 수 있습니다.  자세한 내용은 공식 문서를 참고해주시기 바랍니다.</p>
 </blockquote>
-<h2 id="33-functional-endpoints" style="position:relative;"><a href="#33-functional-endpoints" aria-label="33 functional endpoints permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.3. *<strong>*Functional Endpoints**</strong></h2>
+<h2 id="33-functional-endpoints" style="position:relative;"><a href="#33-functional-endpoints" aria-label="33 functional endpoints permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.3. Functional Endpoints</h2>
 <p>WebFlux와 다르게 스프링 5는 함수형 프로그래밍 방식을 사용해 리액티브 API를 생성하는 방법도 제공하고 있습니다. Spring MVC의 어노테이션 방식에는 몇가지 불편한 점이 존재합니다.</p>
 <ol>
 <li>어노테이션 기반 프로그래밍은 “무엇을”하는지는 알지만 “어떻게” 하는지는 외부에 노출되지 않아 모델을 커스터마이징하거나 확장할 때 복잡해진다.</li>
