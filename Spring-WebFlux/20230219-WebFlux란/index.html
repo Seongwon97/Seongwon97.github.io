@@ -71,7 +71,7 @@
 <p>Spring MVC와 같이 서블릿 기반의 웹 프레임워크는 매 연결마다 하나의 스레드를 사용하여 요청이 처리될 때, 작업 스레드가 종료될 때까지 요청 스레드를 잡고 있습니다. 내부적으로만 요청을 처리한다면 스레드의 낭비가 발생하지 않겠지만, 대부분의 API들은 요청을 처리하기 위해 데이터베이스를 접근하거나 외부 API를 호출하여 응답을 만들어 반환하게 됩니다. 이와 같은 작업들을 수행할 때는 스레드의 블로킹(blocking)가 발생하게 되며 CPU도 스레드가 대기 상태에 있는 동안 다른 스레드의 작업을 처리하기 위해 컨텍스트 스위칭을 빈번하게 할 것입니다. 또한 작업 스레드가 스레드 풀로 반환되어 다른 요청의 처리를 준비하는데 많은 시간이 걸린다는 낭비도 발생하게 됩니다. 이러한 이유 때문에 MVC는 요청량의 증가에 따른 확장이 어렵다는 문제가 발생하게 됩니다. Spring MVC와 다르게 비동기 웹 프레임워크는 적은 수의 스레드로 더 높은 확장성을 달성할 수 있습니다.</p>
 <p>비동기 웹 프레임워크는 일반적으로 <strong>CPU 코어당 하나의 스레드</strong>를 만들어 사용하여도 <strong>이벤트 루핑(Event Looping)기법</strong> 덕분에 한 스레드당 많은 요청을 처리할 수 있어 Connection별 소모 비용이 적습니다. 이벤트 루프에서는 데이터베이스와 네트워크 작업 등 모든 작업을 이벤트로 처리합니다. 비용이 드는 작업이 필요할 때는 해당 작업의 콜백(call back)을 등록하여 병행으로 수행하고 다른 이벤트로 넘어가며 작업이 완료되었을 때도 이벤트로 처리하는 등 모든 동작을 이벤트로 처리합니다. 비동기 웹 프레임워크는 이러한 이벤트루프 덕분에 적은 양의 스레드로 많은 요청을 처리할 수 있어 스레드의 관리 부담이 줄고 확장성이 높다는 장점이 있습니다.</p>
 <h1 id="2-spring-webflux란" style="position:relative;"><a href="#2-spring-webflux%EB%9E%80" aria-label="2 spring webflux란 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Spring WebFlux란?</h1>
-<p>Spring WebFlux는  <a href="https://github.com/reactor/reactor">리액터(Reactor)</a>를 기반으로한 스프링의 리액티브 웹 프레임워크로 Spring 5.0부터 해당 기능을 제공하고 있습니다. spring.io에서 언급하는 WebFlux 방식을 개발한 이유는 2가지 이유가 있습니다.</p>
+<p>Spring WebFlux는 <a href="https://github.com/reactor/reactor">리액터(Reactor)</a>를 기반으로한 스프링의 리액티브 웹 프레임워크로 Spring 5.0부터 해당 기능을 제공하고 있습니다. spring.io에서 언급하는 WebFlux 방식을 개발한 이유는 2가지 이유가 있습니다.</p>
 <ol>
 <li>스프링도 적은 스레드로 동시성을 제어하고 적은 하드웨어 리소스로 확장성을 얻기 위해 논블로킹 웹 스택이 필요했다. 물론 기존에 서블릿 3.1이 논블로킹 I/O를 위한 API를 제공였으나 MVC의 동기 처리나 블로킹 방식을 쓰는 API를 함께 사용하기 어렵기에 논블로킹에 잘 동작하는 환경인 서버를 위한 API가 필요했다.</li>
 <li>자바 8에서 람다가 추가되며 함수형 프로그래밍이 가능해지며 논블로킹 애플리케이션을 만들거나 비동기 로직을 선언적으로 작성할 수 있게 되었다.</li>
@@ -80,7 +80,9 @@
 <blockquote>
 <p>💡 Reactor는 Java 기반의 논블로킹 리액티브 프로그래밍을 위한 라이브러리입니다. Mono, Flux의 데이터 타입을 제공하여 데이터 시퀀스에서 다양한 연산을 할 수 있는 기능을 제공하고 있습니다.</p>
 <p>Reactor에 대해 더 자세히 알고 싶다면 아래의 링크를 참고해주시기 바랍니다.</p>
-<p><a href="https://seongwon.dev/Spring-WebFlux/20230217-Reactor%EB%9E%80/">Reactor란?</a></p>
+<ul>
+<li><a href="https://seongwon.dev/Spring-WebFlux/20230217-Reactor%EB%9E%80/">Reactor란?</a></li>
+</ul>
 </blockquote>
 <h2 id="21-webflux의-특징" style="position:relative;"><a href="#21-webflux%EC%9D%98-%ED%8A%B9%EC%A7%95" aria-label="21 webflux의 특징 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1. WebFlux의 특징</h2>
 <p>WebFlux에 대해 더 자세한 설명을 하기 앞서 MVC와 WebFlux의 기술 스텍에 대해 설명하는 이미지 2장을 살펴보겠습니다. 이미지에서 눈여겨 볼 것은 <code>MVC, WebFlux가 공유하는 컴포넌트</code>, <code>동작하는 서버</code>, <code>적합한 Repository</code>가 있습니다.</p>
@@ -227,12 +229,12 @@
 <li><code>ServerResponse</code>: HTTP 응답을 나타내며, 헤더와 몸체 정보를 포함한다.</li>
 </ul>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">Configuration</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">class</span><span class="mtk4"> </span><span class="mtk11">MemberRouterFunctionConfig</span><span class="mtk4"> </span><span class="mtk1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">class</span><span class="mtk4"> </span><span class="mtk11">GreetingRouterFunctionConfig</span><span class="mtk4"> </span><span class="mtk1">{</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">   </span><span class="mtk1">...</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">Bean</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">public</span><span class="mtk3"> </span><span class="mtk11">RouterFunction</span><span class="mtk1">&lt;</span><span class="mtk9">?</span><span class="mtk1">&gt;</span><span class="mtk3"> memberRouterFunction</span><span class="mtk1">()</span><span class="mtk3"> </span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">return</span><span class="mtk1"> </span><span class="mtk3">route</span><span class="mtk1">(</span><span class="mtk3">GET</span><span class="mtk1">(</span><span class="mtk6">&quot;/api/members&quot;</span><span class="mtk1">), </span><span class="mtk11">this</span><span class="mtk9">::</span><span class="mtk1">findMember)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">                .</span><span class="mtk3">andRoute</span><span class="mtk1">(</span><span class="mtk3">POST</span><span class="mtk1">(</span><span class="mtk6">&quot;/api/members&quot;</span><span class="mtk1">), </span><span class="mtk11">this</span><span class="mtk9">::</span><span class="mtk1">signUp);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">public</span><span class="mtk3"> </span><span class="mtk11">RouterFunction</span><span class="mtk1">&lt;</span><span class="mtk9">?</span><span class="mtk1">&gt;</span><span class="mtk3"> greetingRouterFunction</span><span class="mtk1">()</span><span class="mtk3"> </span><span class="mtk1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">return</span><span class="mtk1"> </span><span class="mtk3">route</span><span class="mtk1">(</span><span class="mtk3">GET</span><span class="mtk1">(</span><span class="mtk6">&quot;/hello&quot;</span><span class="mtk1">), request </span><span class="mtk9">-&gt;</span><span class="mtk1"> </span><span class="mtk3">ok</span><span class="mtk1">().</span><span class="mtk3">body</span><span class="mtk1">(</span><span class="mtk3">just</span><span class="mtk1">(</span><span class="mtk6">&quot;Hello&quot;</span><span class="mtk1">), </span><span class="mtk11">String</span><span class="mtk1">.</span><span class="mtk4">class</span><span class="mtk1">))</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">                .</span><span class="mtk3">andRoute</span><span class="mtk1">(</span><span class="mtk3">GET</span><span class="mtk1">(</span><span class="mtk6">&quot;/bye&quot;</span><span class="mtk1">), </span><span class="mtk11">this</span><span class="mtk9">::</span><span class="mtk1">bye);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">   </span><span class="mtk1">...</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
@@ -247,17 +249,14 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <p><code>RouterFunctions</code>의 <code>route()</code> 메서드의 파라미터는 <code>RequestPredicate</code>과 <code>HandlerFunction</code>를 받고 있습니다. <code>RequestPredicate</code> 에는 코드에서 볼 수 있듯이 처리될 요청의 종류를 대입하면 되며, <code>HandlerFunction</code>에는 해당 API가 호출되었을 때 동작하고 반환될 로직을 람다식 또는 메서드 참조를 통해 정의해주면 됩니다.</p>
 <h1 id="4-webflux언제-도입해야할까" style="position:relative;"><a href="#4-webflux%EC%96%B8%EC%A0%9C-%EB%8F%84%EC%9E%85%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C" aria-label="4 webflux언제 도입해야할까 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. WebFlux..언제 도입해야할까?</h1>
-<blockquote>
-<p>해당 부분은 저는 아직 WebFlux에 대한 개발 경험이 적은 주니어 개발자이기에 “토비의 스프링”의 저자 이일민님이 <a href="https://tv.kakao.com/channel/3150758/cliplink/391418995">If카카오</a>에서 언급한 내용과 함께 제 개인적인 생각을 첨부했습니다.</p>
-</blockquote>
-<p>WebFlux는 그럼 언제 도입하는게 좋을까요? 이일민님은 아래의 상황에 경우 WebFlux의 도입을 고려해봐도 된다 하셨습니다.</p>
+<p>WebFlux는 그럼 언제 도입하는게 좋을까요? “토비의 스프링”의 저자 이일민님은 아래의 상황에 경우 WebFlux의 도입을 고려해봐도 된다 하셨습니다.</p>
 <ul>
 <li>100% 논블로킹 개발을 할 경우</li>
 <li>업, 타운 스트리밍이 동시에 존재하고 백프레셔가 필요한 경우</li>
 <li>MSA와 같은 아키텍쳐 구조를 가져 서버 단에서 이벤트 방식으로 많은 동작이 있는 경우</li>
 <li>본격적인 함수형 프로그래밍 모델을 구현하고 싶은 경우</li>
 </ul>
-<p>사실 위의 내용 중에서 저에게 가장 와닿는 것은 MSA 아키텍쳐 구조인 것 같습니다. 최근 몇년간 MSA가 서버단 개발의 트랜드가 되어 많은 기업들이 모놀리틱 구조에서 MSA구조로 전환을 해왔습니다. MSA 구조에서는 비즈니스 기능들을 중심으로 서비스를 여러 컴포넌트로 분리하여 관리하기 때문에 사용자가 특정 API를 요청하였을 때, 요청을 처리하기 위해서는 컴포넌트 간에 유기적으로 수많은 API호출을 통해 데이터를 요청할 것입니다. 이때 사용하면 좋은 것이 바로 비동기 웹 프레임워크인 WebFlux라고 생각합니다. MSA 아키텍처에서 컴포넌트간의 통신을 할 때, 블로킹이 되는 낭비를 막을 수 있다는 이점만으로도 WebFlux를 도입하는 것은 큰 이점이 될 것 같습니다.</p>
+<p>사실 위의 내용 중에서 저에게 가장 와닿는 것은 MSA 아키텍처 구조인 것 같습니다. 최근 몇년간 MSA가 서버단 개발의 트랜드가 되어 많은 기업들이 모놀리틱 구조에서 MSA구조로 전환을 해왔습니다. MSA 구조에서는 비즈니스 기능들을 중심으로 서비스를 여러 컴포넌트로 분리하여 관리하기 때문에 사용자가 특정 API를 요청하였을 때, 요청을 처리하기 위해서는 컴포넌트 간에 유기적으로 수많은 API호출을 통해 데이터를 요청할 것입니다. 이때 사용하면 좋은 것이 바로 비동기 웹 프레임워크인 WebFlux라고 생각합니다. MSA 아키텍처에서 컴포넌트간의 통신을 할 때, 블로킹이 되는 낭비를 막을 수 있다는 이점만으로도 WebFlux를 도입하는 것은 큰 이점이 될 것 같습니다.</p>
 <p>반대로 WebFlux를 사용하지 않는 것이 좋은 상황도 있습니다.</p>
 <ul>
 <li>WebFlux가 왜 필요한지 분명하게 모를 경우</li>

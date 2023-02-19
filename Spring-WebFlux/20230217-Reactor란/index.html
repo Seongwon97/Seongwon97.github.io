@@ -152,12 +152,16 @@
 <p>리액티브 프로그래밍은 기본적으로 여러개의 Operator들로 이루어진 하나의 Pipeline을 만들어 제공해야 합니다. 리액터의 <code>Mono</code>와 <code>Flux</code>에는 500개 이상의 생성(Creation), 조합(Combination), 변환(Transformation), 로직(Logic) 오퍼레이터(Operator)들을 제공하고 있습니다. <strong>우리는 이러한 오퍼레이터들을 잘 조합해 하나의 Stream을 만들면 됩니다.</strong> 리액터가 제공하는 오퍼레이터의 양이 너무 방대하여 해당 게시글에서는 제가 학습하면서 헷갈렸던 몇가지 연산자들만 예시로 살펴보겠습니다. 그 외의 여러 연산자는 아래의 Flux, Mono의 문서를 통해 확인하실 수 있습니다. 문서에는 각각의 오퍼레이터마다 마블 다이어그램(marble diagrams)을 포함한 자세한 설명이 나와있어 쉽게 이해하실 수 있습니다.</p>
 <blockquote>
 <p>Flux, Mono의 연산자들</p>
-<p><a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux (reactor-core 3.5.3)</a></p>
-<p><a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html">Mono (reactor-core 3.5.3)</a></p>
+<ul>
+<li><a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux (reactor-core 3.5.3)</a></li>
+<li><a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html">Mono (reactor-core 3.5.3)</a></li>
+</ul>
 </blockquote>
 <blockquote>
 <p>마블 다이어그램을 읽는 법을 잘 모르겠다면 아래의 링크를 통해 학습하시면 됩니다.</p>
-<p><a href="https://projectreactor.io/docs/core/release/reference/#howtoReadMarbles">Reactor 3 Reference Guide</a></p>
+<ul>
+<li><a href="https://projectreactor.io/docs/core/release/reference/#howtoReadMarbles">Reactor 3 Reference Guide</a></li>
+</ul>
 </blockquote>
 <h2 id="21-cold--hot" style="position:relative;"><a href="#21-cold--hot" aria-label="21 cold  hot permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1. Cold &#x26; Hot</h2>
 <p>오퍼레이터들을 살펴보기 전에 리액터의 Hot &#x26; Cold의 개념에 대해 먼저 살펴보겠습니다. 리액터를 처음 접하였을 때 필요한 지식은 오퍼레이터의 종류가 우선적이긴한데, 알아두면 좋은 개념이라 간단히 추가를 해봤습니다.</p>
@@ -230,7 +234,9 @@
 <p>앞서 Mono와 Flux는 500개 이상의 Operator를 제공한다고 언급한바 있습니다. 리액터가 너무 많은 Operator가 존재하다보니 각각 상황별로 어떤 Operator를 사용해야할지 모를 때가 빈번하게 발생하곤 합니다. 이를 위해 리액터 공식 사이트에서는 <a href="https://projectreactor.io/docs/core/release/reference/#which-operator">Appendix A: Which operator do I need?</a>라는 제목으로 상황별로 어떤 Operator를 사용하면 좋은지에 대한 가이드를 제공하고 있습니다. 개발을 진행하며 Operator 선택에 대한 고민이 든다면 해당 링크에 접속하여 고민을 해보는 것도 좋은 방법입니다.</p>
 <blockquote>
 <p>영어로 만들어진 공식 문서를 보는 것에 부담이 있다면 제가 학습하면서 번역한 글을 봐주셔도 좋습니다.</p>
-<p><a href="https://seongwon.dev/Spring-WebFlux/20230216-%EC%83%81%ED%99%A9%EB%B3%84_%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94_Operator_%EC%A0%95%EB%A6%AC/">[Reactor] 상황별 사용해야하는 Operator 정리</a></p>
+<ul>
+<li><a href="https://seongwon.dev/Spring-WebFlux/20230216-%EC%83%81%ED%99%A9%EB%B3%84_%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94_Operator_%EC%A0%95%EB%A6%AC/">[Reactor] 상황별 사용해야하는 Operator 정리</a></li>
+</ul>
 </blockquote>
 <h1 id="5-테스트하기" style="position:relative;"><a href="#5-%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EA%B8%B0" aria-label="5 테스트하기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. 테스트하기</h1>
 <h2 id="51-기존의-테스트-방식" style="position:relative;"><a href="#51-%EA%B8%B0%EC%A1%B4%EC%9D%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%A9%EC%8B%9D" aria-label="51 기존의 테스트 방식 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.1. 기존의 테스트 방식</h2>
