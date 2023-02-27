@@ -27,10 +27,10 @@ JWT를 통해 인증/인가 기능을 구현한 애플리케이션을 개발한�
 2. 등록된 Filter Chain이 실행되는데, 사용자가 보낸 Request Url에 매칭되는 Filter가 있으면 순차적으로 실행된다.
 3. Dispatcher Servlet이 요청을 받으면 Handler Mapping을 통해 요청을 처리할 수 있는 Handler(컨트롤러)와 요청에 매핑되는 Interceptor들을 찾아 HandlerMethodExecutionChain을 만들어 반환한다.
 4. HandlerMethodExecutionChain에 있는 Interceptor들이 순차적으로 실행된다.
-5. <font color="red">HandlerAdapter가 Argument Resolver를 호출하여 Request에서 필요한 데이터를 추출하여 객체로 반환한다.</font>
-6. <font color="red">이때 ArgumetResolver에서는 HTTPMessageConverters를 호출하여 요청 값과 생성 객체 값들의 타입을 확인하여 알맞은 객체를 생성하고 반환해준다.</font>
-7. Handler(컨트롤러) 메서드를 호출하여 실행한다.
-8. …
+5. <font color="FF3366">HandlerAdapter가 Argument Resolver를 호출하여 Request에서 필요한 데이터를 추출하여 객체로 반환한다.</font>
+   - <font color="FF3366">이때 ArgumetResolver에서는 HTTPMessageConverters를 호출하여 요청 값과 생성 객체 값들의 타입을 확인하여 알맞은 객체를 생성하고 반환해준다.</font>
+6. Handler(컨트롤러) 메서드를 호출하여 실행한다.
+7. …
 
 # 4. ArgumentResolver 사용하기
 
@@ -39,13 +39,13 @@ ArgumentResolver를 만들기 위해서는 `HandlerMethodArgumentResolver` 인�
 ## 4.1. ArguementResolver의 메서드
 
 ```java
-public interface HandlerMethodArgumentResolver {
-
-	boolean supportsParameter(MethodParameter parameter);
-
-	@Nullable
-	Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,
-			NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory) throws Exception;
+public interface HandlerMethodArgumentResolver { 
+    
+    boolean supportsParameter(MethodParameter parameter);
+    
+    @Nullable 
+    Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer, 
+                            NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory) throws Exception;
 
 }
 ```

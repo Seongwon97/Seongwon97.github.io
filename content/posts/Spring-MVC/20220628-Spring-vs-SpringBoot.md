@@ -120,7 +120,7 @@ spring.mvc.view.prefix=/WEB-INF/jsp/
 spring.mvc.view.suffix=.jsp
 ```
 
-또한 Spring Boot는 \***\*AutoConfiguration\*\***기능을 제공한다. 이를 통해 애플리케이션 구동에 필요한 여러 빈들을 자동으로 등록해준다.
+또한 Spring Boot는 **AutoConfiguration**기능을 제공한다. 이를 통해 애플리케이션 구동에 필요한 여러 빈들을 자동으로 등록해준다.
 
 ![](image/20220628_SpringVsSpringBoot/img.png)
 

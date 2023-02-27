@@ -5,7 +5,7 @@ tags: ["SpringFramework", "Interceptor"]
 draft: false
 ---
 
-스프링에서 공통 기능을 제거하는 대표적인 방법으로는 Filter, Interceptor, AOP가 있다. 이전 포스트인 [Filter란 무엇인가?](https://seongwon97.github.io/posts/Filter%EB%9E%80/) 에 이어서 이번 포스트에서는 공통 기능 제거 방법 중 Interceptor에 대해 알아볼 것이다.
+스프링에서 공통 기능을 제거하는 대표적인 방법으로는 Filter, Interceptor, AOP가 있다. 이전 포스트인 [Filter란 무엇인가?](https://seongwon.dev/Spring-MVC/20220625-Filter%EB%9E%80/) 에 이어서 이번 포스트에서는 공통 기능 제거 방법 중 Interceptor에 대해 알아볼 것이다.
 
 # 1. Intetceptor란?
 
@@ -15,13 +15,13 @@ Interceptor는 filter처럼 경로를 지정하여, 해당 경로에 매칭되�
 
 Interceptor도 Filter Chain처럼 여러개의 Interceptor가 등록되어 있으면 순차적으로 동작하게 된다. Dispatcher Servlet에서부터 Interceptor의 실행 과정은 다음과 같다. Dispatcher Servlet은 HandlerMapping을 통해 요청에 맞는 컨트롤러를 찾도록 해주면 결과로 HandlerExecutionChain을 반환해준다. 이때 HandlerExecutionChain 안에 1개 이상의 등록되어있는 Interceptor가 있다면 순차적으로 Interceptor를 거치게되며 그 후에 HandlerAdapter가 handler(controller)를 실행한다. 만약 Interceptor가 없으면 컨트롤러가 바로 실행된다.
 
-> Dispatcher Servlet, HandlerMapping등의 내용들이 생소하다면 [다음 게시글](https://seongwon97.github.io/posts/%EC%8A%A4%ED%94%84%EB%A7%81MVC-%EB%8F%99%EC%9E%91%EB%B0%A9%EC%8B%9D/)을 참조하길 바란다.
+> Dispatcher Servlet, HandlerMapping등의 내용들이 생소하다면 [다음 게시글](https://seongwon.dev/ETC/20211207_MVC%ED%8C%A8%ED%84%B4%EC%9D%B4%EB%9E%80/)을 참조하길 바란다.
 
 # 2. Interceptor의 메서드
 
 스프링은 Interceptor를 구현하는 방법으로 `HandlerInterceptor` **인터페이스를 구현**하는 방법과 `HandlerInterceptorAdapter` **클래스를 상속** 받는 방법을 제공하였다.
 
-하지만 현재 스프링은 `HandlerInterceptorAdapter` \*\*\*\*클래스를 deprecated로 지정하며 이제는 `HandlerInterceptor` 인터페이스를 구현하는 방법만을 사용하여야 한다.
+하지만 현재 스프링은 `HandlerInterceptorAdapter` 클래스를 deprecated로 지정하며 이제는 `HandlerInterceptor` 인터페이스를 구현하는 방법만을 사용하여야 한다.
 
 ![](image/20220626_Interceptor란/deprecatedHandlerInterceptorAdapter.png)
 

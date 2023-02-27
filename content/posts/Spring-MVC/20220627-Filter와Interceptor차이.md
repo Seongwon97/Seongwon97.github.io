@@ -7,8 +7,8 @@ draft: false
 
 이전 포스트들에서 필터와 인터셉터에 대해 각각 비교해봤다.
 
-- **[Filter란 무엇일까?](https://seongwon97.github.io/posts/Filter%EB%9E%80/)**
-- **[Interceptor란 무엇일까?](https://seongwon97.github.io/posts/Interceptor%EB%9E%80/)**
+- **[Filter란 무엇일까?](https://seongwon.dev/Spring-MVC/20220625-Filter%EB%9E%80/)**
+- **[Interceptor란 무엇일까?](https://seongwon.dev/Spring-MVC/20220626-Interceptor%EB%9E%80/)**
 
 두 포스트를 읽어보면 필터와 인터셉터의 관리하는 컨테이너와 실행 시점 등이 다르다는 것을 알 수 있을 것이다. 그래도 두 기능이 하는 일이 비슷하고 헷갈릴 수 있어 이번 포스트를 통해 둘의 차이점을 비교해보려 한다.
 
