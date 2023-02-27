@@ -101,7 +101,7 @@
 </li>
 </ul>
 <h1 id="requestbody" style="position:relative;"><a href="#requestbody" aria-label="requestbody permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@RequestBody</h1>
-<p>먼저 RequestBody도 공식 문서를 살펴보면 다음과 같이 설명한다.</p>
+<p>먼저 RequestBody의 공식 문서를 살펴보면 다음과 같이 설명한다.</p>
 <blockquote>
 <p>For access to the HTTP request body. Body content is converted to the declared method argument type by using <code>HttpMessageConverter</code>
  implementations.</p>
@@ -110,7 +110,7 @@
 <p>You can use the <code>@RequestBody</code>annotation to have the request body read and deserialized into an <code>Object</code> through an HttpMessageConverter.</p>
 </blockquote>
 <p>이를 해석해보면 어노테이션의 이름대로 Http request body의 값을 읽어오기 위해 사용되는데 이를 <code>HttpMessageConverter</code>를 통해 객체로 역직렬화해주는 것을 알 수 있다.</p>
-<p>@RequestBody는 request의 body에 있는 Json(application/json)형태의 데이터를 Java 객체로 변환시켜준다. 아래의 예시 코드와 Http Request를 보도록 하자.</p>
+<p><code>@RequestBody</code>는 request의 body에 있는 Json(application/json)형태의 데이터를 Java 객체로 변환시켜준다. 아래의 예시 코드와 Http Request를 보도록 하자.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">class</span><span class="mtk4"> </span><span class="mtk11">SignUpRequestDto</span><span class="mtk4"> </span><span class="mtk1">{</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">private</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4"> email</span><span class="mtk1">;</span></span></span>
@@ -136,13 +136,14 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RestController</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RequestMapping</span><span class="mtk4">(</span><span class="mtk6">&quot;/api/members&quot;</span><span class="mtk4">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">class</span><span class="mtk4"> </span><span class="mtk11">MemberController</span><span class="mtk4"> </span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">		</span><span class="mtk1">@</span><span class="mtk11">PostMapping</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">PostMapping</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">ResponseStatus</span><span class="mtk4">(</span><span class="mtk11">HttpStatus</span><span class="mtk1">.</span><span class="mtk4">CREATED)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">public</span><span class="mtk3"> </span><span class="mtk9">void</span><span class="mtk3"> signUp</span><span class="mtk1">(@</span><span class="mtk11">RequestBody</span><span class="mtk1"> </span><span class="mtk11">SignUpRequestDto</span><span class="mtk1"> </span><span class="mtk4 mtki">request</span><span class="mtk1">)</span><span class="mtk3"> </span><span class="mtk1">{</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">memberService</span><span class="mtk1">.</span><span class="mtk3">signUp</span><span class="mtk1">(</span><span class="mtk11">request</span><span class="mtk1">.</span><span class="mtk3">toServiceRequest</span><span class="mtk1">());</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-<p>controller의 @RequestBody가 붙은 객체의 필드와 보면 email, name, password가 있는 것을 볼 수 있다. 여기에 아래의 요청이 간다면 해당 객체의 필드에 값들이 정상적으로 매핑된다</p>
+<p>controller의 <code>@RequestBody</code>가 붙은 객체의 필드와 보면 email, name, password가 있는 것을 볼 수 있다. 여기에 아래의 요청이 간다면 해당 객체의 필드에 값들이 정상적으로 매핑된다</p>
 <pre class="grvsc-container one-dark-pro" data-language="" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">Request method:	POST</span></span>
 <span class="grvsc-line"><span class="grvsc-source">...</span></span>
 <span class="grvsc-line"><span class="grvsc-source">Content-Type=application/json</span></span>
@@ -154,7 +155,7 @@
 <span class="grvsc-line"><span class="grvsc-source">    &quot;password&quot;: &quot;Rex1!&quot;</span></span>
 <span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
 <h3 id="dto에는-어떤-메서드-생성자가-필요하며-어떻게-매핑되는걸까" style="position:relative;"><a href="#dto%EC%97%90%EB%8A%94-%EC%96%B4%EB%96%A4-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%83%9D%EC%84%B1%EC%9E%90%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%98%EB%A9%B0-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%A7%A4%ED%95%91%EB%90%98%EB%8A%94%EA%B1%B8%EA%B9%8C" aria-label="dto에는 어떤 메서드 생성자가 필요하며 어떻게 매핑되는걸까 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DTO에는 어떤 메서드, 생성자가 필요하며 어떻게 매핑되는걸까?</h3>
-<p>RequestBody에 사용되는 DTO에는 기본 생성자와 getter메서드만 존재하여도 올바르게 매핑이 된다. 필드를 할당해주는 생성자나 setter가 없어도 이와 같이 매핑을 할 수 있는 이유는 @RequestBody가 JSON 데이터를 객체로 반환할 때 Spring에 등록되어있는 Jackson라이브러리의 <code>MappingJackson2HttpMessageConverter</code>를 사용하여 역직렬화를 하기 때문이다. 해당 메서드는 내부적으로 ObjectMapper를 사용해 생성자를 거치지 않고 Reflection을 이용해 값을 할당하기에 DTO에는 필드를 주입시켜주는 생성자와 setter가 없어도 되는 것이다.</p>
+<p>RequestBody에 사용되는 DTO에는 기본 생성자와 getter메서드만 존재하여도 올바르게 매핑이 된다. 필드를 할당해주는 생성자나 setter가 없어도 이와 같이 매핑을 할 수 있는 이유는 <code>@RequestBody</code>가 JSON 데이터를 객체로 반환할 때 Spring에 등록되어있는 Jackson라이브러리의 <code>MappingJackson2HttpMessageConverter</code>를 사용하여 역직렬화를 하기 때문이다. 해당 메서드는 내부적으로 ObjectMapper를 사용해 생성자를 거치지 않고 Reflection을 이용해 값을 할당하기에 DTO에는 필드를 주입시켜주는 생성자와 setter가 없어도 되는 것이다.</p>
 <p>📌  다만 DTO에는 객체를 생성해줄 기본 생성자를 필수로 만들어줘야 한다. 그렇지 않을 경우 바인딩에 실패한다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -189,7 +190,7 @@
 </li>
 </ul>
 <h1 id="modelattrubute" style="position:relative;"><a href="#modelattrubute" aria-label="modelattrubute permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@ModelAttrubute</h1>
-<p>ModelAttribute도 공식 문서를 먼저 살펴보면 다음과 같은 설명이 있다.</p>
+<p><code>ModelAttribute</code>도 공식 문서를 먼저 살펴보면 다음과 같은 설명이 있다.</p>
 <blockquote>
 <p>For access to an existing attribute in the model (instantiated if not present) with data binding and validation applied. See <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-modelattrib-method-args">@ModelAttribute</a> as well as <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-modelattrib-methods">Model</a> and <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-initbinder">DataBinder</a>.</p>
 </blockquote>
@@ -224,7 +225,8 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RestController</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk11">RequestMapping</span><span class="mtk4">(</span><span class="mtk6">&quot;/api/members&quot;</span><span class="mtk4">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk9">class</span><span class="mtk4"> </span><span class="mtk11">MemberController</span><span class="mtk4"> </span><span class="mtk1">{</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">		</span><span class="mtk1">@</span><span class="mtk11">PostMapping</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">PostMapping</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk1">@</span><span class="mtk11">ResponseStatus</span><span class="mtk4">(</span><span class="mtk11">HttpStatus</span><span class="mtk1">.</span><span class="mtk4">CREATED)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">public</span><span class="mtk3"> </span><span class="mtk9">void</span><span class="mtk3"> signUp</span><span class="mtk1">(@</span><span class="mtk11">ModelAttribute</span><span class="mtk1"> </span><span class="mtk11">SignUpRequestDto</span><span class="mtk1"> </span><span class="mtk4 mtki">request</span><span class="mtk1">)</span><span class="mtk3"> </span><span class="mtk1">{</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">memberService</span><span class="mtk1">.</span><span class="mtk3">signUp</span><span class="mtk1">(</span><span class="mtk11">request</span><span class="mtk1">.</span><span class="mtk3">toServiceRequest</span><span class="mtk1">());</span></span></span>

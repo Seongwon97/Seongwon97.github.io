@@ -75,7 +75,7 @@
 <li><a href="/Spring-MVC/20220620-Servlet%EC%9D%B4%EB%9E%80/#36-%EC%84%9C%EB%B8%94%EB%A6%BF%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90">3.6. 서블릿의 문제점</a></li>
 </ul>
 </li>
-<li><a href="/Spring-MVC/20220620-Servlet%EC%9D%B4%EB%9E%80/#reference">Reference</a></li>
+<li><a href="/Spring-MVC/20220620-Servlet%EC%9D%B4%EB%9E%80/#reference">📚Reference</a></li>
 </ul></div></div></div><div class="css-1bdwg0l etadk2t0"><div><style data-emotion-css="18ks7l0">.css-18ks7l0{font-size:1rem;word-break:break-word;}.css-18ks7l0 h1 > a > svg,.css-18ks7l0 h2 > a > svg,.css-18ks7l0 h3 > a > svg,.css-18ks7l0 h4 > a > svg,.css-18ks7l0 h5 > a > svg,.css-18ks7l0 h6 > a > svg{fill:#000;}.css-18ks7l0 h1,.css-18ks7l0 h2{font-size:1.25rem;font-weight:600;margin-top:1.5rem;margin-bottom:1.5rem;}.css-18ks7l0 h3,.css-18ks7l0 h4,.css-18ks7l0 h5,.css-18ks7l0 h6{font-size:1.125rem;margin-top:1.5rem;margin-bottom:1.5rem;font-weight:600;}@media (min-width:640px){.css-18ks7l0 h1,.css-18ks7l0 h2{font-size:1.5rem;}.css-18ks7l0 h3,.css-18ks7l0 h4,.css-18ks7l0 h5,.css-18ks7l0 h6{font-size:1.25rem;}}.css-18ks7l0 a{color:#3737B9;}.css-18ks7l0 a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-18ks7l0 p{margin:0.3rem;margin-top:0.75rem;margin-bottom:0.75rem;}.css-18ks7l0 ul,.css-18ks7l0 ol{margin:0.3rem;margin-left:2rem;}.css-18ks7l0 li > p,.css-18ks7l0 li > ul,.css-18ks7l0 li > ol{margin-bottom:0;}.css-18ks7l0 ol{list-style-type:decimal;}.css-18ks7l0 ul{list-style-type:disc;}.css-18ks7l0 blockquote{padding:0.5rem;background-color:#eee;margin:0.3rem;margin-top:0.5rem;margin-bottom:0.5rem;border-left-width:4px;border-color:#c6cefc;}.css-18ks7l0 blockquote > p{margin:0.5rem;}.css-18ks7l0 blockquote > h1,.css-18ks7l0 blockquote > h2,.css-18ks7l0 blockquote > h3,.css-18ks7l0 blockquote > h4,.css-18ks7l0 blockquote > h5{margin-top:0.5rem;margin-bottom:0.5rem;}.css-18ks7l0 td,.css-18ks7l0 th{padding-left:0.5rem;padding-right:0.5rem;padding-top:0.25rem;padding-bottom:0.25rem;border-width:1px;border-color:#c6cefc;}.css-18ks7l0 tr:nth-of-type(even){background-color:#eee;}.css-18ks7l0 th{background-color:#eee;}.css-18ks7l0 table{margin-bottom:1.5rem;display:block;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:0 auto;overflow-x:auto;white-space:nowrap;}.css-18ks7l0 p > code,.css-18ks7l0 li > code{padding-top:0.1rem;padding-bottom:0.1rem;padding-right:0.25rem;padding-left:0.25rem;border-radius:0.25rem;color:#3737B9;background-color:#eee;white-space:pre-line;}.css-18ks7l0 pre.grvsc-container{margin-top:24px;margin-bottom:24px;}.css-18ks7l0 hr{margin-top:24px;margin-bottom:24px;height:2px;border:none;background:linear-gradient( 270deg,#434cf5,#c6cefc,#91eac9 );}</style><div class="markdown css-18ks7l0"><h1 id="1-정적동적-웹-페이지" style="position:relative;"><a href="#1-%EC%A0%95%EC%A0%81%EB%8F%99%EC%A0%81-%EC%9B%B9-%ED%8E%98%EC%9D%B4%EC%A7%80" aria-label="1 정적동적 웹 페이지 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 정적/동적 웹 페이지</h1>
 <p>서블릿이 생겨난 이유를 타고 올라가보면 동적 웹 페이지라는 개념이 나오게 된다. 과거에는 동적 웝 페이지의 지원이 되지 않아 정적 웹 페이지만 지원되었다. 서블릿은 동적 웹 페이지를 지원하는 기술이다. 서블릿에 대한 자세한 이야기는 이후에 하도록 하고 먼저 정적, 동적 웹 페이지에 대해 알아보겠다.</p>
 <h2 id="11-정적-페이지" style="position:relative;"><a href="#11-%EC%A0%95%EC%A0%81-%ED%8E%98%EC%9D%B4%EC%A7%80" aria-label="11 정적 페이지 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.1. 정적 페이지</h2>
@@ -224,24 +224,28 @@
 <li>클라이언트가 동적인 자원 요청을 보내면 웹 서버는 해당 요청을 Tomcat과 같은 WAS에 위임을 하게된다.</li>
 <li>HttpServletRequest, HttpServletResponse 객체를 Servlet container에서 생성한다.</li>
 <li>WAS는 web.xml을 참조하여 해당 요청을 처리해줄 Servlet을 찾아 HttpServletRequest, HttpServletResponse 객체를 Servlet에 전달한다.</li>
-<li>service()메서드를 실행한다.</li>
+<li><code>service()</code>메서드를 실행한다.</li>
 <li>해당 Servlet이 처음 요청받아 만들어지지 않았다면 <code>init()</code> 메서드를 통해 초기화를 한 후에 <code>service()</code>메서드를 실행한다.</li>
 <li>해당 Servlet이 만들어져 있다면 Servlet에 대한 Thread를 생성해 <code>service()</code>메서드를 실행한다.</li>
 </ol>
 <blockquote>
 <p><code>service()</code> 메서드는 내부적으로 분기처리를 하여 요청에 맞는 <code>doGet()</code>, <code>doPost()</code> 등의 메서드를 호출한다.</p>
+</blockquote>
 <ol start="6">
 <li>만들어진 동적 페이지를 Response 객체에 담아 WAS에 전달한다.</li>
 <li>WAS는 Response 객체를 HttpResponse 형태로 바꾸어 Web Server에 전달한다.</li>
 <li>Thread를 종료하고, HttpServletRequest와 HttpServletResponse 객체를 제거한다.</li>
 </ol>
-</blockquote>
 <blockquote>
 <p>WebServer와 WAS에 대하여 구체적으로 알고 싶다면 해당 블로그를 참조하길 바란다.</p>
-<ul>
-<li><strong><a href="https://velog.io/@falling_star3/web-Web-Server%EC%99%80-WASWeb-Application-Server">Web Server와 WAS(Web Application Server), Apache Tomcat</a></strong></li>
-</ul>
 </blockquote>
+<ul>
+<li>
+<p><strong><a href="https://velog.io/@falling_star3/web-Web-Server%EC%99%80-WASWeb-Application-Server">Web Server와 WAS(Web Application Server), Apache Tomcat</a></strong></p>
+<blockquote>
+</blockquote>
+</li>
+</ul>
 <h2 id="34-서블릿의-생명주기" style="position:relative;"><a href="#34-%EC%84%9C%EB%B8%94%EB%A6%BF%EC%9D%98-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0" aria-label="34 서블릿의 생명주기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.4. 서블릿의 생명주기</h2>
 <p>서블릿도 자바 클래스이므로 생성부터 소멸까지 생명 주기가 존재한다. 이 과정은 앞서 말했듯이 서블릿 컨테이너에서 관리하게 되며 각 단계마다 호출되어 기능을 수행하는 서블릿 생명주기 메서드가 존재한다.</p>
 <ol>
@@ -251,7 +255,7 @@
 <p><code>init()</code>메서드: 서블릿 생성시 초기화 작업을 수행하며 맨 처음 한 번만 수행한다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">void</span><span class="mtk4"> </span><span class="mtk3">init</span><span class="mtk4">(</span><span class="mtk11">ServletConfig</span><span class="mtk4"> config) throws ServletException</span><span class="mtk1">;</span></span></span></code></pre>
 </li>
-<li>서블릿이 생성되었다면 그 후에는 클라이언트의 요청에 따라서 <code>service()</code> 메소드를 통해 요청에 대한 처리를 한다. <code>service()</code> 메소드는 Http Method에 따라 분기 처리를 하여 요청에 맞게 <code>doGet()</code>, <code>doPost()</code> 같은 메서드가 호출된다.</li>
+<li>서블릿이 생성되었다면 그 후에는 클라이언트의 요청에 따라서 <code>service()</code> 메소드를 통해 요청에 대한 처리를  한다. <code>service()</code> 메소드는 Http Method에 따라 분기 처리를 하여 요청에 맞게 <code>doGet()</code>, <code>doPost()</code> 같은 메서드가 호출된다.</li>
 <li>
 <p><code>service()</code> 메서드: 서블릿이 요청에 응답하도록 컨테이너에서 실행되는 메서드이다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">void</span><span class="mtk4"> </span><span class="mtk3">service</span><span class="mtk4">(</span><span class="mtk11">ServletRequest</span><span class="mtk4"> req</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk11">ServletResponse</span><span class="mtk4"> res) throws ServletException</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk11">java</span><span class="mtk1">.</span><span class="mtk11">io</span><span class="mtk1">.</span><span class="mtk4">IOException</span><span class="mtk1">;</span></span></span></code></pre>
@@ -278,7 +282,7 @@
 <p>서블릿은 각각의 요청마다 1:1로 매핑되는 구조를 갖고 있다. 이럴 경우 서블릿의 <code>service()</code>메서드에 공통적으로 갖고 있는 로직이 존재한다면, 매번 반복되게 생성되고 실행되게 되는 문제점이 발생한다. (컨트롤러에서 중복되게 처리하는 로직이 생기면 중복이 발생한다.)
 또한 요청들을 처리하는 모든 서블릿 클래스들이 서블릿을 사용하여 프로그램이 서블릿에 종속적인 구조를 갖게 된다.</p>
 <p>이를 보완하기 위해 만들어진 것이 Front Controller와 Dispatcher Servlet이 있다. 이는 Spring의 MVC 프레임워크 동작 방식을 분석 글에서 정리해보겠다.</p>
-<h1 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h1>
+<h1 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📚Reference</h1>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=h0rX720VWCg">[10분 테코톡] 루키의 Servlet &#x26; Spring Web MVC</a></li>
 <li><a href="https://velog.io/@jakeseo_me/%EC%9E%90%EB%B0%94-%EC%84%9C%EB%B8%94%EB%A6%BF%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90.-%EA%B7%BC%EB%8D%B0-%ED%86%B0%EC%BA%A3%EA%B3%BC-%EC%8A%A4%ED%94%84%EB%A7%81%EC%9D%84-%EC%82%B4%EC%A7%9D-%EA%B3%81%EB%93%A4%EC%9D%B8">자바 서블릿에 대해 알아보자. 근데 톰캣과 스프링을 살짝 곁들인</a></li>
