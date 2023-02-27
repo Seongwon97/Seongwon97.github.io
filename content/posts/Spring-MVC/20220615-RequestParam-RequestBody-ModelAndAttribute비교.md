@@ -49,7 +49,7 @@ public class EditPetForm {
 
 # @RequestBody
 
-먼저 RequestBody도 공식 문서를 살펴보면 다음과 같이 설명한다.
+먼저 RequestBody의 공식 문서를 살펴보면 다음과 같이 설명한다.
 
 > For access to the HTTP request body. Body content is converted to the declared method argument type by using `HttpMessageConverter`
 >  implementations.
@@ -58,7 +58,7 @@ public class EditPetForm {
 
 이를 해석해보면 어노테이션의 이름대로 Http request body의 값을 읽어오기 위해 사용되는데 이를 `HttpMessageConverter`를 통해 객체로 역직렬화해주는 것을 알 수 있다.
 
-@RequestBody는 request의 body에 있는 Json(application/json)형태의 데이터를 Java 객체로 변환시켜준다. 아래의 예시 코드와 Http Request를 보도록 하자.
+`@RequestBody`는 request의 body에 있는 Json(application/json)형태의 데이터를 Java 객체로 변환시켜준다. 아래의 예시 코드와 Http Request를 보도록 하자.
 
 ```java
 public class SignUpRequestDto {
@@ -86,7 +86,8 @@ public class SignUpRequestDto {
 @RestController
 @RequestMapping("/api/members")
 public class MemberController {
-		@PostMapping
+
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void signUp(@RequestBody SignUpRequestDto request) {
         memberService.signUp(request.toServiceRequest());
@@ -94,7 +95,7 @@ public class MemberController {
 }
 ```
 
-controller의 @RequestBody가 붙은 객체의 필드와 보면 email, name, password가 있는 것을 볼 수 있다. 여기에 아래의 요청이 간다면 해당 객체의 필드에 값들이 정상적으로 매핑된다
+controller의 `@RequestBody`가 붙은 객체의 필드와 보면 email, name, password가 있는 것을 볼 수 있다. 여기에 아래의 요청이 간다면 해당 객체의 필드에 값들이 정상적으로 매핑된다
 
 ```
 Request method:	POST
@@ -111,7 +112,7 @@ Body:
 
 ### DTO에는 어떤 메서드, 생성자가 필요하며 어떻게 매핑되는걸까?
 
-RequestBody에 사용되는 DTO에는 기본 생성자와 getter메서드만 존재하여도 올바르게 매핑이 된다. 필드를 할당해주는 생성자나 setter가 없어도 이와 같이 매핑을 할 수 있는 이유는 @RequestBody가 JSON 데이터를 객체로 반환할 때 Spring에 등록되어있는 Jackson라이브러리의 `MappingJackson2HttpMessageConverter`를 사용하여 역직렬화를 하기 때문이다. 해당 메서드는 내부적으로 ObjectMapper를 사용해 생성자를 거치지 않고 Reflection을 이용해 값을 할당하기에 DTO에는 필드를 주입시켜주는 생성자와 setter가 없어도 되는 것이다.
+RequestBody에 사용되는 DTO에는 기본 생성자와 getter메서드만 존재하여도 올바르게 매핑이 된다. 필드를 할당해주는 생성자나 setter가 없어도 이와 같이 매핑을 할 수 있는 이유는 `@RequestBody`가 JSON 데이터를 객체로 반환할 때 Spring에 등록되어있는 Jackson라이브러리의 `MappingJackson2HttpMessageConverter`를 사용하여 역직렬화를 하기 때문이다. 해당 메서드는 내부적으로 ObjectMapper를 사용해 생성자를 거치지 않고 Reflection을 이용해 값을 할당하기에 DTO에는 필드를 주입시켜주는 생성자와 setter가 없어도 되는 것이다.
 
 📌  다만 DTO에는 객체를 생성해줄 기본 생성자를 필수로 만들어줘야 한다. 그렇지 않을 경우 바인딩에 실패한다.
 
@@ -128,7 +129,7 @@ RequestBody에 사용되는 DTO에는 기본 생성자와 getter메서드만 존
 
 # @ModelAttrubute
 
-ModelAttribute도 공식 문서를 먼저 살펴보면 다음과 같은 설명이 있다.
+`ModelAttribute`도 공식 문서를 먼저 살펴보면 다음과 같은 설명이 있다.
 
 > For access to an existing attribute in the model (instantiated if not present) with data binding and validation applied. See [@ModelAttribute](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-modelattrib-method-args) as well as [Model](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-modelattrib-methods) and [DataBinder](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-initbinder).
 
@@ -166,7 +167,8 @@ public class SignUpRequestDto {
 @RestController
 @RequestMapping("/api/members")
 public class MemberController {
-		@PostMapping
+
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void signUp(@ModelAttribute SignUpRequestDto request) {
         memberService.signUp(request.toServiceRequest());
