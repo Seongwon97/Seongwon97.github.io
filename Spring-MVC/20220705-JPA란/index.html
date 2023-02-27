@@ -334,10 +334,12 @@ ORM은 <strong>Object Relational Mapping</strong>의 약자로 <strong>객체와
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">member1 </span><span class="mtk8">==</span><span class="mtk4"> member2</span><span class="mtk1">;</span><span class="mtk4"> </span><span class="mtk5 mtki">//같다.</span></span></span></code></pre>
 <p>DB Isolation Level이 Read Commit이어도 애플리케이션에서 Repeatable Read 보장한다.</p>
 </li>
-<li><strong>트랜잭션을 지원하는 쓰기 지연 (transactional write-behind)</strong></li>
 <li>
-<p>insert</p>
-<p>JPA는 버퍼링 기능과 비슷하게 트랜잭션을 커밋하기 전까지 Insert SQL들을 모아뒀다가 JDBC BATCH SQL기능을 사용하여 한번에 SQL문을 전송한다.</p>
+<p><strong>트랜잭션을 지원하는 쓰기 지연 (transactional write-behind)</strong></p>
+<ul>
+<li>insert</li>
+</ul>
+<p> JPA는 버퍼링 기능과 비슷하게 트랜잭션을 커밋하기 전까지 Insert SQL들을 모아뒀다가 JDBC BATCH SQL기능을 사용하여 한번에 SQL문을 전송한다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">transaction</span><span class="mtk1">.</span><span class="mtk3">begin</span><span class="mtk1">();</span><span class="mtk4">  </span><span class="mtk5 mtki">// [트랜잭션] 시작</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">em</span><span class="mtk1">.</span><span class="mtk3">persist</span><span class="mtk1">(memberA);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">em</span><span class="mtk1">.</span><span class="mtk3">persist</span><span class="mtk1">(memberB);</span></span></span>
@@ -347,10 +349,10 @@ ORM은 <strong>Object Relational Mapping</strong>의 약자로 <strong>객체와
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">/** 2. JDBC BATCH SQL 기능을 사용해서 한번에 SQL 전송 */</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">transaction</span><span class="mtk1">.</span><span class="mtk3">commit</span><span class="mtk1">();</span><span class="mtk4"> </span><span class="mtk5 mtki">// [트랜잭션] 커밋</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">https</span><span class="mtk9">:</span><span class="mtk5 mtki">//gmlwjd9405.github.io/2019/08/04/what-is-jpa.html</span></span></span></code></pre>
-</li>
-<li>
-<p>update</p>
-<p>Update, Delete로 인한 로우락 시간을 최소화하고 트랜잭션이 커밋되면 Update, Delete SQL을 실행하고 커밋한다.</p>
+<ul>
+<li>update</li>
+</ul>
+<p> Update, Delete로 인한 로우락 시간을 최소화하고 트랜잭션이 커밋되면 Update, Delete SQL을 실행하고 커밋한다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">transaction</span><span class="mtk1">.</span><span class="mtk3">begin</span><span class="mtk1">();</span><span class="mtk4">  </span><span class="mtk5 mtki">// [트랜잭션] 시작</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">changeMember</span><span class="mtk4">(memberA)</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">deleteMember</span><span class="mtk4">(memberB)</span><span class="mtk1">;</span></span></span>
@@ -359,11 +361,11 @@ ORM은 <strong>Object Relational Mapping</strong>의 약자로 <strong>객체와
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">/** 2. 트랜잭션 커밋 시 UPDATE, DELETE SQL 실행하고, 바로 커밋 */</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">transaction</span><span class="mtk1">.</span><span class="mtk3">commit</span><span class="mtk1">();</span><span class="mtk4"> </span><span class="mtk5 mtki">// [트랜잭션] 커밋</span></span></span></code></pre>
 </li>
-<li><strong>지연 로딩 (Lazy Loading)</strong></li>
-<li>지연로딩: 객체가 실제로 사용될 때 SQL문을 보내 데이터를 로딩한다. 이를 통해 불필요한 데이터 로딩을 줄일 수 있다.</li>
 <li>
-<p>즉시로딩: JOIN SQL문을 통해 연관된 객체까지 미리 조회하는 전략이다.</p>
+<p><strong>지연 로딩 (Lazy Loading)</strong></p>
 <ul>
+<li>지연로딩: 객체가 실제로 사용될 때 SQL문을 보내 데이터를 로딩한다. 이를 통해 불필요한 데이터 로딩을 줄일 수 있다.</li>
+<li>즉시로딩: JOIN SQL문을 통해 연관된 객체까지 미리 조회하는 전략이다.</li>
 <li>보통 애플리케이션을 개발할 때 모두 지연로딩으로 설정한 후에, 성능 최적화가 필요할 때에 옵션을 변경하는 것을 추천한다.</li>
 </ul>
 </li>

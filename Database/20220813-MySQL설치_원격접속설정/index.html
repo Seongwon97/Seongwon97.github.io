@@ -57,7 +57,29 @@
 <li><a href="/Database/20220813-MySQL%EC%84%A4%EC%B9%98_%EC%9B%90%EA%B2%A9%EC%A0%91%EC%86%8D%EC%84%A4%EC%A0%95/#reference">Reference</a></li>
 </ul></div></div></div><div class="css-1bdwg0l etadk2t0"><div><style data-emotion-css="18ks7l0">.css-18ks7l0{font-size:1rem;word-break:break-word;}.css-18ks7l0 h1 > a > svg,.css-18ks7l0 h2 > a > svg,.css-18ks7l0 h3 > a > svg,.css-18ks7l0 h4 > a > svg,.css-18ks7l0 h5 > a > svg,.css-18ks7l0 h6 > a > svg{fill:#000;}.css-18ks7l0 h1,.css-18ks7l0 h2{font-size:1.25rem;font-weight:600;margin-top:1.5rem;margin-bottom:1.5rem;}.css-18ks7l0 h3,.css-18ks7l0 h4,.css-18ks7l0 h5,.css-18ks7l0 h6{font-size:1.125rem;margin-top:1.5rem;margin-bottom:1.5rem;font-weight:600;}@media (min-width:640px){.css-18ks7l0 h1,.css-18ks7l0 h2{font-size:1.5rem;}.css-18ks7l0 h3,.css-18ks7l0 h4,.css-18ks7l0 h5,.css-18ks7l0 h6{font-size:1.25rem;}}.css-18ks7l0 a{color:#3737B9;}.css-18ks7l0 a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-18ks7l0 p{margin:0.3rem;margin-top:0.75rem;margin-bottom:0.75rem;}.css-18ks7l0 ul,.css-18ks7l0 ol{margin:0.3rem;margin-left:2rem;}.css-18ks7l0 li > p,.css-18ks7l0 li > ul,.css-18ks7l0 li > ol{margin-bottom:0;}.css-18ks7l0 ol{list-style-type:decimal;}.css-18ks7l0 ul{list-style-type:disc;}.css-18ks7l0 blockquote{padding:0.5rem;background-color:#eee;margin:0.3rem;margin-top:0.5rem;margin-bottom:0.5rem;border-left-width:4px;border-color:#c6cefc;}.css-18ks7l0 blockquote > p{margin:0.5rem;}.css-18ks7l0 blockquote > h1,.css-18ks7l0 blockquote > h2,.css-18ks7l0 blockquote > h3,.css-18ks7l0 blockquote > h4,.css-18ks7l0 blockquote > h5{margin-top:0.5rem;margin-bottom:0.5rem;}.css-18ks7l0 td,.css-18ks7l0 th{padding-left:0.5rem;padding-right:0.5rem;padding-top:0.25rem;padding-bottom:0.25rem;border-width:1px;border-color:#c6cefc;}.css-18ks7l0 tr:nth-of-type(even){background-color:#eee;}.css-18ks7l0 th{background-color:#eee;}.css-18ks7l0 table{margin-bottom:1.5rem;display:block;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:0 auto;overflow-x:auto;white-space:nowrap;}.css-18ks7l0 p > code,.css-18ks7l0 li > code{padding-top:0.1rem;padding-bottom:0.1rem;padding-right:0.25rem;padding-left:0.25rem;border-radius:0.25rem;color:#3737B9;background-color:#eee;white-space:pre-line;}.css-18ks7l0 pre.grvsc-container{margin-top:24px;margin-bottom:24px;}.css-18ks7l0 hr{margin-top:24px;margin-bottom:24px;height:2px;border:none;background:linear-gradient( 270deg,#434cf5,#c6cefc,#91eac9 );}</style><div class="markdown css-18ks7l0"><h1 id="1-db서버-원격-접속하기" style="position:relative;"><a href="#1-db%EC%84%9C%EB%B2%84-%EC%9B%90%EA%B2%A9-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0" aria-label="1 db서버 원격 접속하기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. DB서버 원격 접속하기</h1>
 <p>이전까지 백엔드, 프론트 배포를 위해 생성한 EC2는 페이지 요청에 대한 반환, API 요청에 대한 응답 등 외부에서 접속할 수 있어야 하기에 Public IP를 할당받았다. 하지만 DB의 경우는 백엔드 배포 서버의 Spring 프로젝트에서만 접속할 뿐 외부에서는 직접적인 접속이 있어서는 안된다. 이러한 보안상의 안정성을 위해 DB 서버의 경우 Public IP를 할당받지 않고 Private IP만 존재하도록 생성하였다.</p>
-<p><img src="content/posts/Database/image/20220813-MySQL%EC%84%A4%EC%B9%98_%EC%9B%90%EA%B2%A9%EC%A0%91%EC%86%8D%EC%84%A4%EC%A0%95/img.png" alt="Untitled"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlUlEQVQoz21SyU7DMBDtz3PhR3pHHBCnCrEdSgggkIqggiyNkzR2nMVxsz3GCSkFMdLT2GPNmzcznuHA+r7fn8udhlQKGWHyWVWBJQkiwZHTeR8f3hQKrTH7j7BpW6SqRGti+G1L6w73D/YQn9B9e1GWmBmSieiQMKdqqBWSOEQUb8HCEFLKPXHHneEtZgyF84GWckRRjAon0h/CBqLusDk9hm+f4yPi+PQ9rD0XmgrppgE7OcJm/QSHhdhQ3CXiINmOCv9a23UQZl5BQFIO5lrXUETIixI8lb9yTBFekkIhBBaLxaAujiMsbRur1xVkkcOVDrZViFQLQgKeC6yeH/H+YkETeVW3qFQKl0YiVYWEcmaMpM7ncxR06SVDeXUGzdaQ/gpvzi28yIYT3uE9uAaL1+iyCLoUeAs5Ll595P4NdpE1bHog9DwPlmXBKE15guDmEoFLyvIMitoGtT+tMafN93U1fA8zlo7QdOOuC12NLR8uZberockboog26lMRA4/+nUGQpsjMDCnR4xwbMWJ6CynnCyJmr6aC+c6uAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/90eed8f93c0192ced089259ceb1a1fb8/c1b63/img.png"
+        srcset="/static/90eed8f93c0192ced089259ceb1a1fb8/5a46d/img.png 300w,
+/static/90eed8f93c0192ced089259ceb1a1fb8/0a47e/img.png 600w,
+/static/90eed8f93c0192ced089259ceb1a1fb8/c1b63/img.png 1200w,
+/static/90eed8f93c0192ced089259ceb1a1fb8/d61c2/img.png 1800w,
+/static/90eed8f93c0192ced089259ceb1a1fb8/e8950/img.png 2000w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
 <p>Public IP를 할당받지 않은 EC2의 경우 외부에서 접속할 수 없어서 같은 VPC에 있는 EC2를 통해 접속하여야 한다. DB 서버에 접속하기 위해 먼저 Spring 배포 서버에 <code>scp</code>명령어를 통해 DB서버에 접속하기 위해 필요한 pem키를 보내주겠다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ scp -i {key-chain} {보낼 파일} ubuntu@{배포서버_ip}:{받는위치}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
