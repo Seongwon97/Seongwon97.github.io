@@ -59,7 +59,7 @@ public class IntegrationTest {}
 - **MOCK**
   - Default값으로 WebApplicationContext를 로드하여 **가짜 웹 환경**을 만들어 테스트한다. 해당 설정으로는 **Embedded server(내장된 서블릿 컨테이너)를 실행하지 않고 테스트를 Mock Servlet을 만들어 테스트 하는 것으로 대체**됩니다.
   - 테스트를 Mock기반의 테스트를 하기 때문에 다음 어노테이션을 같이 사용할 수 있다.
-    - `[@AutoConfigureMockMvc` or `@AutoConfigureWebTestClient`](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.spring-boot-applications.with-mock-environment)
+    - [`@AutoConfigureMockMvc` or `@AutoConfigureWebTestClient`](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.spring-boot-applications.with-mock-environment)
     - `@AutoConfigureMockMvc`를 사용하면 별다른 설정 없이 컨트롤러 테스트를 용이하게 해주는 MockMvc를 사용해 테스트 할 수 있다.
     - `@AutoConfigureMockMvc`는 Mock 테스트시 필요한 의존성을 제공해준다. `MockMvc`객체를 통해 실제 컨테이너를 실행하는 것은 아니지만 로직상으로 테스트 가능하다.
 - **RANDOM_PORT**
@@ -71,13 +71,13 @@ public class IntegrationTest {}
 
 > 테스트들은 `@Transactional`이면 각각의 테스트들이 끝난 후 자동으로 roll-back됩니다. 하지만 `WebEnvironment.RANDOM_PORT, DEFINED_PORT`는 실제 테스트는 별도의 스레드에서 테스트를 수행하여 roll-back되지 않는다.🤡
 
-**8.3.2. Detecting Test Configuration**
+### 3.1.1. Detecting Test Configuration**
 
-SpringBoot는 특정 @ContextConfiguration(loader=...)이 정의되지 않은 경우 SpringBootContextLoader를 기본 ContextLoader를 사용합니다. @Configuration이 사용되지 않고 명시적 클래스가 지정되지 않은 경우 @SpringBootConfiguration을 자동으로 검색합니다.
+SpringBoot는 특정 `@ContextConfiguration(loader=...)`이 정의되지 않은 경우 SpringBootContextLoader를 기본 ContextLoader를 사용합니다. `@Configuration`이 사용되지 않고 명시적 클래스가 지정되지 않은 경우 `@SpringBootConfiguration`을 자동으로 검색합니다.
 
 > Spring Test Framework는 테스트의 ApplicationContext를 캐싱합니다. 덕분에 동일한 Configuration을 갖게 된다면 Context를 로드하는 작업은 한번만 하게 됩니다.
 
-## **Testing with a mock environment**
+## Testing with a mock environment
 
 `@SpringBootTest`는 앞서 말했듯이 webEnvironment를 설정하지 않으면 기본적으로 Mock 서블릿 환경을 만들어 테스트를 한다.
 
@@ -118,17 +118,17 @@ class MyMockMvcTests {
 }
 ```
 
-- 모든 빈들을 만들며 ApplicationContext을 생성하지 않고 필요한 빈들만을 등록하며 Web Layer의 테스트에 집중하기 위해서는 @WebMvcTest를 사용할 수 있다.
+- 모든 빈들을 만들며 ApplicationContext을 생성하지 않고 필요한 빈들만을 등록하며 Web Layer의 테스트에 집중하기 위해서는 `@WebMvcTest`를 사용할 수 있다.
 
 Mock환경에서 테스트하는 것은 실제 Servlet Container를 만들어 테스트하는 것보다 빠르다. 하지만 Spring MVC 계층에서 Mocking이 발생하기에 더욱 low level인 Servlet Container에 대한 테스트는 MockMvc로 테스트할 수가 없다.
 
 - ex) 서블릿 컨테이너가 제공하는 error page가 랜더링 되는지 등의 테스트를 할 수 없다. 이를 테스트 하기 위해서는 실제 서버로 테스트해야한다.
 
-## **Testing with a running server**
+## Testing with a running server
 
 실제 Servlet Container에서 테스트를 하기 위해서는 `WebEnvironment.RANDOM_PORT, DEFINED_PORT`에서 테스트를 해야한다.
 
-`@LocalServerPort`주석을 사용 하여 테스트에 사용된 실제 [포트를 삽입 할 수 있습니다.](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.webserver.discover-port) 편의를 위해 시작된 서버에 대한 REST 호출을 수행해야 하는 테스트 는 다음 예제와 같이 실행 중인 서버에 대한 상대 링크를 확인하고 응답 확인을 위한 전용 API와 함께 제공되는 `[WebTestClient](https://docs.spring.io/spring-framework/docs/5.3.20/reference/html/testing.html#webtestclient-tests)` 를 `@Autowire`로 불러올 수 있다.
+`@LocalServerPort`주석을 사용 하여 테스트에 사용된 실제 [포트를 삽입 할 수 있습니다.](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.webserver.discover-port) 편의를 위해 시작된 서버에 대한 REST 호출을 수행해야 하는 테스트 는 다음 예제와 같이 실행 중인 서버에 대한 상대 링크를 확인하고 응답 확인을 위한 전용 API와 함께 제공되는 [`WebTestClient`](https://docs.spring.io/spring-framework/docs/5.3.20/reference/html/testing.html#webtestclient-tests) 를 `@Autowire`로 불러올 수 있다.
 
 ```java
 import org.junit.jupiter.api.Test;
