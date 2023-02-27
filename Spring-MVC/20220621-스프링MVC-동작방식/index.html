@@ -105,11 +105,11 @@
 <blockquote>
 <p>Servlet에 대해 잘 모른다면 해당 게시글을 참고하길 바란다.</p>
 <ul>
-<li><a href="https://seongwon.dev/Spring/20220620-Servlet%EC%9D%B4%EB%9E%80/">Servlet이란?</a></li>
+<li><a href="https://seongwon.dev/Spring-MVC/20220620-Servlet%EC%9D%B4%EB%9E%80/">Servlet이란?</a></li>
 </ul>
 </blockquote>
 <h2 id="12-servlet의-단점" style="position:relative;"><a href="#12-servlet%EC%9D%98-%EB%8B%A8%EC%A0%90" aria-label="12 servlet의 단점 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.2. Servlet의 단점</h2>
-<p>이전 <a href="https://seongwon.dev/Spring/20220620-Servlet%EC%9D%B4%EB%9E%80/">Servlet을 다룬 게시글</a>을 보면 Servlet은 아래의 문제점들이 있었다.</p>
+<p>이전 <a href="https://seongwon.dev/Spring-MVC/20220620-Servlet%EC%9D%B4%EB%9E%80/">Servlet을 다룬 게시글</a>을 보면 Servlet은 아래의 문제점들이 있었다.</p>
 <ol>
 <li>1대1 매핑 구조를 갖고 있어 공통 로직에 대해 중복 로직이 발생한다.</li>
 <li>모든 요청들이 서블릿에 의존적이어서 Servlet에 종속적인 프로그램을 작성하게 된다.</li>
@@ -207,7 +207,7 @@
 <li>이 경우 HandlerAdapter는 컨트롤러에서 받은 응답을 ReturnValueHandler를 통해 body값을 Json으로 직렬화시키고 HttpStatus code를 설정하는 작업을 한다.</li>
 </ul>
 </li>
-<li><strong>DispatcherServlet은 결과를 결과로 받은 ModelAndView를 보여줄 View를 찾기위해 스프링 컨테이너에서 ViewResolver 빈 객체를 찾아 호출한다.</strong></li>
+<li><strong>DispatcherServlet은 결과로 받은 ModelAndView를 보여줄 View를 찾기위해 스프링 컨테이너에서 ViewResolver 빈 객체를 찾아 호출한다.</strong></li>
 <li><strong>ViewResolver는 뷰 이름에 해당하는 View객체를 찾거나 생성해서 반환한다.</strong></li>
 <li>JSP를 사용하는 ViewResolver는 매번 새로운 View객체를 생성하여 DispatcherServlet에 반환한다.</li>
 <li><strong>ViewResolver가 반환한 View객체에 응답 결과 생성을 요청한다.</strong></li>

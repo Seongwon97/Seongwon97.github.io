@@ -59,9 +59,14 @@
 <li>
 <p><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#3-springboottest">3. @SpringBootTest</a></p>
 <ul>
-<li><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#31-webenvironment">3.1. webEnvironment</a></li>
-<li><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#testing-with-a-mock-environment"><strong>Testing with a mock environment</strong></a></li>
-<li><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#testing-with-a-running-server"><strong>Testing with a running server</strong></a></li>
+<li>
+<p><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#31-webenvironment">3.1. webEnvironment</a></p>
+<ul>
+<li><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#311-detecting-test-configuration">3.1.1. Detecting Test Configuration**</a></li>
+</ul>
+</li>
+<li><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#testing-with-a-mock-environment">Testing with a mock environment</a></li>
+<li><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#testing-with-a-running-server">Testing with a running server</a></li>
 </ul>
 </li>
 <li><a href="/Spring-MVC/20220623-SpringBootTest%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0/#reference">Reference</a></li>
@@ -106,7 +111,7 @@
 <ul>
 <li>Default값으로 WebApplicationContext를 로드하여 <strong>가짜 웹 환경</strong>을 만들어 테스트한다. 해당 설정으로는 <strong>Embedded server(내장된 서블릿 컨테이너)를 실행하지 않고 테스트를 Mock Servlet을 만들어 테스트 하는 것으로 대체</strong>됩니다.</li>
 <li>테스트를 Mock기반의 테스트를 하기 때문에 다음 어노테이션을 같이 사용할 수 있다.</li>
-<li><code>[@AutoConfigureMockMvc</code> or <code>@AutoConfigureWebTestClient</code>](<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.spring-boot-applications.with-mock-environment">https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.spring-boot-applications.with-mock-environment</a>)</li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.spring-boot-applications.with-mock-environment"><code>@AutoConfigureMockMvc</code> or <code>@AutoConfigureWebTestClient</code></a></li>
 <li><code>@AutoConfigureMockMvc</code>를 사용하면 별다른 설정 없이 컨트롤러 테스트를 용이하게 해주는 MockMvc를 사용해 테스트 할 수 있다.</li>
 <li><code>@AutoConfigureMockMvc</code>는 Mock 테스트시 필요한 의존성을 제공해준다. <code>MockMvc</code>객체를 통해 실제 컨테이너를 실행하는 것은 아니지만 로직상으로 테스트 가능하다.</li>
 </ul>
@@ -133,12 +138,12 @@
 <blockquote>
 <p>테스트들은 <code>@Transactional</code>이면 각각의 테스트들이 끝난 후 자동으로 roll-back됩니다. 하지만 <code>WebEnvironment.RANDOM_PORT, DEFINED_PORT</code>는 실제 테스트는 별도의 스레드에서 테스트를 수행하여 roll-back되지 않는다.🤡</p>
 </blockquote>
-<p><strong>8.3.2. Detecting Test Configuration</strong></p>
-<p>SpringBoot는 특정 @ContextConfiguration(loader=...)이 정의되지 않은 경우 SpringBootContextLoader를 기본 ContextLoader를 사용합니다. @Configuration이 사용되지 않고 명시적 클래스가 지정되지 않은 경우 @SpringBootConfiguration을 자동으로 검색합니다.</p>
+<h3 id="311-detecting-test-configuration" style="position:relative;"><a href="#311-detecting-test-configuration" aria-label="311 detecting test configuration permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.1.1. Detecting Test Configuration**</h3>
+<p>SpringBoot는 특정 <code>@ContextConfiguration(loader=...)</code>이 정의되지 않은 경우 SpringBootContextLoader를 기본 ContextLoader를 사용합니다. <code>@Configuration</code>이 사용되지 않고 명시적 클래스가 지정되지 않은 경우 <code>@SpringBootConfiguration</code>을 자동으로 검색합니다.</p>
 <blockquote>
 <p>Spring Test Framework는 테스트의 ApplicationContext를 캐싱합니다. 덕분에 동일한 Configuration을 갖게 된다면 Context를 로드하는 작업은 한번만 하게 됩니다.</p>
 </blockquote>
-<h2 id="testing-with-a-mock-environment" style="position:relative;"><a href="#testing-with-a-mock-environment" aria-label="testing with a mock environment permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Testing with a mock environment</strong></h2>
+<h2 id="testing-with-a-mock-environment" style="position:relative;"><a href="#testing-with-a-mock-environment" aria-label="testing with a mock environment permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing with a mock environment</h2>
 <p><code>@SpringBootTest</code>는 앞서 말했듯이 webEnvironment를 설정하지 않으면 기본적으로 Mock 서블릿 환경을 만들어 테스트를 한다.</p>
 <p>이를 테스트 하기 위해서는 MockMvc와 WebTestClient를 사용할 수 있다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk4"> </span><span class="mtk11">org.junit.jupiter.api.Test</span><span class="mtk1">;</span></span></span>
@@ -174,15 +179,15 @@
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <ul>
-<li>모든 빈들을 만들며 ApplicationContext을 생성하지 않고 필요한 빈들만을 등록하며 Web Layer의 테스트에 집중하기 위해서는 @WebMvcTest를 사용할 수 있다.</li>
+<li>모든 빈들을 만들며 ApplicationContext을 생성하지 않고 필요한 빈들만을 등록하며 Web Layer의 테스트에 집중하기 위해서는 <code>@WebMvcTest</code>를 사용할 수 있다.</li>
 </ul>
 <p>Mock환경에서 테스트하는 것은 실제 Servlet Container를 만들어 테스트하는 것보다 빠르다. 하지만 Spring MVC 계층에서 Mocking이 발생하기에 더욱 low level인 Servlet Container에 대한 테스트는 MockMvc로 테스트할 수가 없다.</p>
 <ul>
 <li>ex) 서블릿 컨테이너가 제공하는 error page가 랜더링 되는지 등의 테스트를 할 수 없다. 이를 테스트 하기 위해서는 실제 서버로 테스트해야한다.</li>
 </ul>
-<h2 id="testing-with-a-running-server" style="position:relative;"><a href="#testing-with-a-running-server" aria-label="testing with a running server permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Testing with a running server</strong></h2>
+<h2 id="testing-with-a-running-server" style="position:relative;"><a href="#testing-with-a-running-server" aria-label="testing with a running server permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing with a running server</h2>
 <p>실제 Servlet Container에서 테스트를 하기 위해서는 <code>WebEnvironment.RANDOM_PORT, DEFINED_PORT</code>에서 테스트를 해야한다.</p>
-<p><code>@LocalServerPort</code>주석을 사용 하여 테스트에 사용된 실제 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.webserver.discover-port">포트를 삽입 할 수 있습니다.</a> 편의를 위해 시작된 서버에 대한 REST 호출을 수행해야 하는 테스트 는 다음 예제와 같이 실행 중인 서버에 대한 상대 링크를 확인하고 응답 확인을 위한 전용 API와 함께 제공되는 <code>[WebTestClient](https://docs.spring.io/spring-framework/docs/5.3.20/reference/html/testing.html#webtestclient-tests)</code> 를 <code>@Autowire</code>로 불러올 수 있다.</p>
+<p><code>@LocalServerPort</code>주석을 사용 하여 테스트에 사용된 실제 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.webserver.discover-port">포트를 삽입 할 수 있습니다.</a> 편의를 위해 시작된 서버에 대한 REST 호출을 수행해야 하는 테스트 는 다음 예제와 같이 실행 중인 서버에 대한 상대 링크를 확인하고 응답 확인을 위한 전용 API와 함께 제공되는 <a href="https://docs.spring.io/spring-framework/docs/5.3.20/reference/html/testing.html#webtestclient-tests"><code>WebTestClient</code></a> 를 <code>@Autowire</code>로 불러올 수 있다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="java" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk4"> </span><span class="mtk11">org.junit.jupiter.api.Test</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk4"> </span><span class="mtk11">org.springframework.beans.factory.annotation.Autowired</span><span class="mtk1">;</span></span></span>
