@@ -6,7 +6,7 @@ draft: false
 ---
 # 1. Spring Data JPA에서 쿼리를 만드는 방법
 
-[이전 게시글](https://seongwon.dev/Spring/20220911-Spring-Data-JPA%EB%9E%80/)에서 Spring Data JPA에 대해 알아보며 해당 모듈은 Data Access Layer의 구현을 최대한 개선하는 것을 목표로 만들어졌다고 하였다. 또한 Data JPA에서 제공하는 `JpaRepository` 에서는 CURD기능들과 페이징, 정렬 기능등의 DB와의 소통을 쉽게 할 수 있는 메서드를 제공한다고 하였다. 하지만 앞서 살펴봤던 메서드들은 모두 `findAll`, `findById`와 같은 기본적인 기능이었다. 실제 애플리케이션을 개발하면 DB내용의 전체 조회, ID를 통한 조회 외에도 상황에 맞는 조건에 따라 많은 조회 메서드가 필요할 것이다.
+[이전 게시글](https://seongwon.dev/Spring-MVC/20220911-Spring-Data-JPA%EB%9E%80/)에서 Spring Data JPA에 대해 알아보며 해당 모듈은 Data Access Layer의 구현을 최대한 개선하는 것을 목표로 만들어졌다고 하였다. 또한 Data JPA에서 제공하는 `JpaRepository` 에서는 CURD기능들과 페이징, 정렬 기능등의 DB와의 소통을 쉽게 할 수 있는 메서드를 제공한다고 하였다. 하지만 앞서 살펴봤던 메서드들은 모두 `findAll`, `findById`와 같은 기본적인 기능이었다. 실제 애플리케이션을 개발하면 DB내용의 전체 조회, ID를 통한 조회 외에도 상황에 맞는 조건에 따라 많은 조회 메서드가 필요할 것이다.
 
 기본 제공 메서드 외에 추가로 필요한 쿼리문 메서드들은 개발자가 직접 만들어서 사용할 수 있다. Repository에서 `JpaRepository`에서 제공하는 기본적인 메서드 외에도 레포지토리에 존재하는 메서드로부터 쿼리를 파생시키는 두 가지 방법이 있다.
 
