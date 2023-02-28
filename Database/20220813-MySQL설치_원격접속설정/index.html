@@ -107,7 +107,28 @@
 <p>MySQL은 기본적으로 로컬에서만 접속 가능하도록 설정되어 있다. 기본 설정대로라면 원격 서버에서 DB서버에 있는 MySQL접속이 불가능하기에 설정 변경이 필요하다.</p>
 <p><code>/etc/mysql/mysql.conf.d/</code>경로에 있는 mysql 설정 파일의 <code>bind-address = 127.0.0.1</code> 와 <code>mysqlx-bind-address = 127.0.0.1</code> 부분을 0.0.0.0으로 변경하여 외부에서 접속이 가능하도록 열어주겠다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">{DB_서버} $ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf</span></span></span></code></pre>
-<p><img src="content/posts/Database/image/20220813-MySQL%EC%84%A4%EC%B9%98_%EC%9B%90%EA%B2%A9%EC%A0%91%EC%86%8D%EC%84%A4%EC%A0%95/img_2.png" alt="Untitled"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 108.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsTAAALEwEAmpwYAAACRklEQVQ4y41Ua3qCQAzkMioIC/JeUETru7W9/23STBYQLGh/5INd2NmZZBJLb2/krDbkRTV5cU1uWNEyWJMbbWXP5W8LN6fZIqa5kw5iscy6ZxvWqjhToI/k5wfyswMF+VECa/P+2MNFNoPbnh4FE8BAnyhcXyja3AQYgfdVcZKQb9WN49Psl0yA9ycB/eyD/PTDsOR3j6XaXkGOKshGMBu8I8DQ8csB2B/JYBg0TCBfAiy0YYiLVLLj/O7ksiVy+sRqABhCZsNSJXuTRwYDSJtXFAbFwoGZnXSHRyXHDLjiw44qRSoOjFXzOab2LR9gsAkzUJDEORNQjvb5nK8pMAFMNldS6V4O+uzDpLpJHkPeR0A+CtMHeQkY13dJPIyrOI9hYx9cIiZvivAuBR0gDqEr0A3SIQwAENik/cmYuRgYeiosyEp2d2EEm6CysFBYXjoL9Z+etORW2lTaVSxl2haErIAPKgZBYcwH2OVIrhzYiuxHmLWY3tXCuB9QaWVchPLwQ7EUwLReVn9Rvv82jNtO6vXzK9mWXp8pL46UajZ0VIlV4mxPcbrjg+nDOv14VWXkAUWAXFCWn50G6EU1J42tWR4C0tFuqGjOa0fptxYZnzacF5mJnC8whaSW7cyOu47pS5+NdM9DMldV8QCAXWBseHIp3qy7yuICsG+NLhdOMcyqK6UbxEWkRuw3zb5MeG1mYSkzUKKZkc8zcQCIgaD4RvSxG5RSEA+dggK1k6dX3W49JRkyzdwzcvEz9mD0eW/2/bcovwOqtbkS2JS4AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/1d36a2aa592f72394cac968bddabb2c0/c1b63/img_2.png"
+        srcset="/static/1d36a2aa592f72394cac968bddabb2c0/5a46d/img_2.png 300w,
+/static/1d36a2aa592f72394cac968bddabb2c0/0a47e/img_2.png 600w,
+/static/1d36a2aa592f72394cac968bddabb2c0/c1b63/img_2.png 1200w,
+/static/1d36a2aa592f72394cac968bddabb2c0/6e29b/img_2.png 1610w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
 <h1 id="4-외부에서-접속할-계정-생성하기" style="position:relative;"><a href="#4-%EC%99%B8%EB%B6%80%EC%97%90%EC%84%9C-%EC%A0%91%EC%86%8D%ED%95%A0-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="4 외부에서 접속할 계정 생성하기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 외부에서 접속할 계정 생성하기</h1>
 <p>이제 MySQL에 접속하여 외부에서 접속할 떄 사용할 수 있는 계정을 만들도록 하겠다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">{DB_서버} $ sudo mysql -u root -p</span></span></span>
