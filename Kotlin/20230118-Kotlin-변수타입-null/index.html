@@ -90,13 +90,13 @@
 <h1 id="변수-타입" style="position:relative;"><a href="#%EB%B3%80%EC%88%98-%ED%83%80%EC%9E%85" aria-label="변수 타입 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>변수 타입</h1>
 <h2 id="var과-val" style="position:relative;"><a href="#var%EA%B3%BC-val" aria-label="var과 val permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>var</code>과 <code>val</code></h2>
 <p>코틀린에서는 모든 변수 앞에 var이나 val을 붙여줘야 한다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="kotlin" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">fun main() {</span></span>
-<span class="grvsc-line"><span class="grvsc-source">   var x = 10 // 재할당 가능</span></span>
-<span class="grvsc-line"><span class="grvsc-source">   x = 12 // 재할당 가능</span></span>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">fun </span><span class="mtk3">main</span><span class="mtk4">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">   </span><span class="mtk9">var</span><span class="mtk4"> x </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">10</span><span class="mtk4"> </span><span class="mtk5 mtki">// 재할당 가능</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">   x </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">12</span><span class="mtk4"> </span><span class="mtk5 mtki">// 재할당 가능</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source">   val y = 10 // 재할당 불가능, java의 final이 붙은 변수와 동일</span></span>
-<span class="grvsc-line"><span class="grvsc-source">   y = 12 // 컴파일 에러가 발생</span></span>
-<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">   val y </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">10</span><span class="mtk4"> </span><span class="mtk5 mtki">// 재할당 불가능, java의 final이 붙은 변수와 동일</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">   y </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">12</span><span class="mtk4"> </span><span class="mtk5 mtki">// 컴파일 에러가 발생</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
 <p><code>var</code>은 variable의 약자로 가변 변수를 뜻하며, <code>val</code>은 Value의 약자로 불변 변수를 뜻한다.</p>
 <p>즉, val은 Java에서 <code>final</code> 키워드를 붙인 변수와 같다.</p>
 <blockquote>
@@ -104,13 +104,13 @@
 </blockquote>
 <h2 id="타입-지정" style="position:relative;"><a href="#%ED%83%80%EC%9E%85-%EC%A7%80%EC%A0%95" aria-label="타입 지정 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>타입 지정</h2>
 <p>코틀린은 기본적으로 var과 val을 통해 변수를 타입추론으로 사용한다. 하지만 명시적으로 타입을 제한하고 싶다면 Int, String, Double과 같이 자바의 Warpper Class처럼 첫 문자가 대분자로 타입 이름을 <code>var i: Int = 10</code> 와 같이 붙여주면 된다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="kotlin" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">fun main() {</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var x = 10</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var i: Int = 10</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var l: Long = 1L</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var name: String = &quot;성원&quot;</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var point: Double = 3.3</span></span>
-<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">fun </span><span class="mtk3">main</span><span class="mtk4">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> x </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">10</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> i</span><span class="mtk9">:</span><span class="mtk4"> Int </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">10</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> l</span><span class="mtk9">:</span><span class="mtk4"> Long </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">1L</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> name</span><span class="mtk9">:</span><span class="mtk4"> String </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk6">&quot;성원&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> point</span><span class="mtk9">:</span><span class="mtk4"> Double </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">3.3</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
 <blockquote>
 <p>코틀린은 세미콜론(<code>;</code>)을 사용하지 않는다.</p>
 </blockquote>
@@ -120,13 +120,13 @@
 <p><code>이펙티브자바 아이템6. 불필요한 객체 생성을 피하라.</code> 의 내용만 살펴봐도 자바가 오토박싱(Auto Boxing)을 지원하더라도 불필요한 객체 생성을 피하기 위해 boxing된 Reference Type의 사용보다는 Primitive type를 사용하라고 한다.</p>
 </blockquote>
 <p>하지만 코들린의 타입 지정 값을 보면 Long, Double 등 자바의 Wapper Class의 형태로 타입을 지정하고 있다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="kotlin" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">fun main() {</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var x = 10</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var i: Int = 10</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var l: Long = 1L</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var name: String = &quot;성원&quot;</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var point: Double = 3.3</span></span>
-<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">fun </span><span class="mtk3">main</span><span class="mtk4">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> x </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">10</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> i</span><span class="mtk9">:</span><span class="mtk4"> Int </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">10</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> l</span><span class="mtk9">:</span><span class="mtk4"> Long </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">1L</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> name</span><span class="mtk9">:</span><span class="mtk4"> String </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk6">&quot;성원&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> point</span><span class="mtk9">:</span><span class="mtk4"> Double </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">3.3</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
 <p>코틀린은 둘의 구분없이 개발자에게 한가지 타입만 제공하여 코딩을 할 때는 Primitive type과 Reference Type를 고려하지 않아도 된다.</p>
 <p>코틀린 공식문서를 보면 코틀린은 JVM 플랫폼 위에서 숫자를 기본적으로 primitive type으로 저장하고 <code>Int?</code> 와 같은 nullable한 변수를 생성하거나 제너릭을 사용할 때는 Boxing된 Reference Type를 만들어 사용하도록 동작한다고 한다.</p>
 <p><span
@@ -210,36 +210,36 @@
       />
     </span></p>
 <p>기본적인 변수들은 Null이 들어가지 못하기 때문에 변수의 타입을 지정해주었을 때, null을 넣게 된다면 타입 뒤에 <code>?</code> 를 붙여줘야 한다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="kotlin" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">fun main() {</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    val name1: String = null // null을 넣을 수 없다.</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    val name2: String? = null // null을 넣을 수 있다.</span></span>
-<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">fun </span><span class="mtk3">main</span><span class="mtk4">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    val name1</span><span class="mtk9">:</span><span class="mtk4"> String </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">null</span><span class="mtk4"> </span><span class="mtk5 mtki">// null을 넣을 수 없다.</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    val name2</span><span class="mtk9">:</span><span class="mtk4"> String</span><span class="mtk9">?</span><span class="mtk4"> </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">null</span><span class="mtk4"> </span><span class="mtk5 mtki">// null을 넣을 수 있다.</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
 <p>코틀린은 <code>?</code> 가 붙은 타입과 붙지 않은 타입을 완전히 다른 타입으로 보고 관리한다. 둘을 다른 타입으로 보며 nullable한 타입의 null 체크를 간편하게 하기 위해 아래와 같이 변수명 뒤에 Safe Call(<code>?.</code>)를 붙여주면 null체크를 간단하게 해주는 기능을 제공하고 있다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="kotlin" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">fun main() {</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    var name: String? = &quot;Seongwon&quot;</span></span>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">fun </span><span class="mtk3">main</span><span class="mtk4">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">var</span><span class="mtk4"> name</span><span class="mtk9">:</span><span class="mtk4"> String</span><span class="mtk9">?</span><span class="mtk4"> </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk6">&quot;Seongwon&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source">    val length1 = name.length // null이 가능하기에 if (name != null) 블록으로 묶어야만 실행 가능하다.</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    val length2 = name?.length // null이 아니면 length를 호출하게 된다.</span></span>
-<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    val length1 </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk11">name</span><span class="mtk1">.</span><span class="mtk4">length </span><span class="mtk5 mtki">// null이 가능하기에 if (name != null) 블록으로 묶어야만 실행 가능하다.</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    val length2 </span><span class="mtk8">=</span><span class="mtk4"> name</span><span class="mtk9">?</span><span class="mtk1">.</span><span class="mtk4">length </span><span class="mtk5 mtki">// null이 아니면 length를 호출하게 된다.</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
 <h3 id="elvis-연산자" style="position:relative;"><a href="#elvis-%EC%97%B0%EC%82%B0%EC%9E%90" aria-label="elvis 연산자 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Elvis 연산자</h3>
 <p>자바의 경우 nullable 타입의 null에 대한 처리를 할 경우, 아래와 같이 코드를 작성해야 한다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="kotlin" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">public String nameSubSeq(String str, int start, int end) {</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    if (str == null) {</span></span>
-<span class="grvsc-line"><span class="grvsc-source">        // Null일 경우 동작 내용</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    }</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    return str.substring(start, end);</span></span>
-<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">public</span><span class="mtk4"> </span><span class="mtk11">String</span><span class="mtk4"> </span><span class="mtk3">nameSubSeq</span><span class="mtk4">(</span><span class="mtk11">String</span><span class="mtk4"> str</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk9">int</span><span class="mtk4"> start</span><span class="mtk1">,</span><span class="mtk4"> </span><span class="mtk9">int</span><span class="mtk4"> end) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">if</span><span class="mtk4"> (str </span><span class="mtk8">==</span><span class="mtk4"> </span><span class="mtk7">null</span><span class="mtk4">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">        </span><span class="mtk5 mtki">// Null일 경우 동작 내용</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk9">return</span><span class="mtk4"> </span><span class="mtk11">str</span><span class="mtk1">.</span><span class="mtk3">substring</span><span class="mtk1">(start, end);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
 <p>Elvis 연산자(<code>?:</code>)는 null일 경우 추후 실행될 동작 등을 간편하게 정의할 수 있다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="kotlin" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">fun main() {</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    val name: String? = null</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    </span></span>
-<span class="grvsc-line"><span class="grvsc-source">    // name이 null일 경우 name에 Seongwon대입</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    val name2 = name?.subSequence(0, 8) ?: &quot;Seongwon&quot;</span></span>
+<pre class="grvsc-container one-dark-pro" data-language="java" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">fun </span><span class="mtk3">main</span><span class="mtk4">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    val name</span><span class="mtk9">:</span><span class="mtk4"> String</span><span class="mtk9">?</span><span class="mtk4"> </span><span class="mtk8">=</span><span class="mtk4"> </span><span class="mtk7">null</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk5 mtki">// name이 null일 경우 name에 Seongwon대입</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    val name2 </span><span class="mtk8">=</span><span class="mtk4"> name</span><span class="mtk9">?</span><span class="mtk1">.</span><span class="mtk3">subSequence</span><span class="mtk1">(</span><span class="mtk7">0</span><span class="mtk1">, </span><span class="mtk7">8</span><span class="mtk1">)</span><span class="mtk4"> </span><span class="mtk9">?:</span><span class="mtk4"> </span><span class="mtk6">&quot;Seongwon&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source">    // name이 null일 경우 예외 발생</span></span>
-<span class="grvsc-line"><span class="grvsc-source">    val name3 = name?.subSequence(0, 8)</span></span>
-<span class="grvsc-line"><span class="grvsc-source">        ?: throw IllegalArgumentException(&quot;null값 입니다.&quot;)</span></span>
-<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    </span><span class="mtk5 mtki">// name이 null일 경우 예외 발생</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">    val name3 </span><span class="mtk8">=</span><span class="mtk4"> name</span><span class="mtk9">?</span><span class="mtk1">.</span><span class="mtk3">subSequence</span><span class="mtk1">(</span><span class="mtk7">0</span><span class="mtk1">, </span><span class="mtk7">8</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">        </span><span class="mtk9">?:</span><span class="mtk4"> </span><span class="mtk9">throw</span><span class="mtk4"> </span><span class="mtk3">IllegalArgumentException</span><span class="mtk4">(</span><span class="mtk6">&quot;null값 입니다.&quot;</span><span class="mtk4">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">}</span></span></span></code></pre>
 <h3 id="플랫폼-타입" style="position:relative;"><a href="#%ED%94%8C%EB%9E%AB%ED%8F%BC-%ED%83%80%EC%9E%85" aria-label="플랫폼 타입 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>플랫폼 타입</h3>
 <p>코틀린은 자바와 동일하게 JVM상에서 돌아가서 한 개의 프로젝트에서 자바와 코틀린 코드를 동시에 사용할 수 있다. 하지만 앞서 살펴봤듯이 코틀린은 Null에 대한 처리를 확실하게 해주기 때문에 변수 지정 등을 다르게 한다. 그래서 자바로 만들어진 클래스들을 코들린에서 사용할 때는 Nullable 유무를 알 수 있도록 <code>java.annotation 패키지</code>, <code>org.jetbrains.annotation 패키지</code> 등에서 제공하는 <code>@Nullable</code>, <code>@NotNull</code> 어노테이션을 통해 표시를 해줘야 안정적인 코드가 만들어진다. 아무런 어노테이션이 없을 경우 코틀린은 Null 관련 정보를 알 수 없기에 Runtime 중에 Exception이 발생할 수 있다. 이와 같이 Null관련 정보를 알 수 없는 변수들의 타입을 <strong>플랫폼 타입</strong>이라고 한다.</p>
 <h1 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>📚Reference</h1>
@@ -341,11 +341,15 @@
     color: #abb2bf;
   }
   .one-dark-pro .mtki { font-style: italic; }
-  .one-dark-pro .mtk9 { color: #C678DD; }
   .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
+  .one-dark-pro .mtk6 { color: #98C379; }
   .one-dark-pro .mtk11 { color: #E5C07B; }
   .one-dark-pro .mtk1 { color: #ABB2BF; }
-  .one-dark-pro .mtk3 { color: #61AFEF; }
   .one-dark-pro .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
