@@ -101,7 +101,7 @@ DBCP는 Thread가 Connection을 요청하면 Connection Pool에서 각자의 Con
 
 DBCP를 사용할 경우 서비스 이용자 수를 고려하여 Connection Pool의 크기를 정해야 한다. 동시 접속자 수가 많은 애플리케이션의 경우 Connection Pool의 크기가 작으면 사용 가능한 Connection을 기다리는 요청들이 많아질 수 있다. 반대로 Conneciton Pool의 크기가 너무 클 경우 많은 Connection 객체들이 생성되어 많은 메모리를 차지하며 애플리케이션의 성능을 떨어뜨릴 수 있다. 즉, 메모리 사용량과 동시 접속을 처리하는 대기시간은 Trade-off한 관계가 된다. 개발자들은 애플리케이션의 적절한 메모리의 사용과 대기시간을 맞추기 위해 서비스 이용 고객에 맞게 Connection Pool의 크기를 정해야한다.
 
-HikariCP의 공식문서에 의하면 적절한 DBCP의 크기는 ****connections = ((core_count * 2) + effective_spindle_count)****의 개수로 제안하고 있다. 이때 core_count는 CPU 코어 수를 effective_spindle_count는 DB서버가 관리할 수 있는 동시 I/O 요청 수이다.
+HikariCP의 공식문서에 의하면 적절한 DBCP의 크기는 **connections = ((core_count * 2) + effective_spindle_count)**의 개수로 제안하고 있다. 이때 core_count는 CPU 코어 수를 effective_spindle_count는 DB서버가 관리할 수 있는 동시 I/O 요청 수이다.
 
 > core_count에 2를 곱하는 이유는  CPU에서 Context Switching으로 인한 오버헤드를 고려하더라도 데이터베이스에서 Disk I/O(혹은 DRAM이 처리하는 속도)보다 CPU 속도가 월등히 빠르기 때문이다. 그러므로, Thread가 Disk와 같은 작업에서 블로킹되는 시간에 다른 Thread의 작업을 처리할 수 있는 여유가 생기고, 여유 정도에 따라 멀티 스레드 작업을 수행할 수 있게 된다. Hikari CP가 제시한 공식에서는 계수를 2로 선정하여 Thread 개수를 지정하였다.
 >

@@ -13,7 +13,7 @@ draft: false
 
 코틀린에서는 모든 변수 앞에 var이나 val을 붙여줘야 한다.
 
-```kotlin
+```java
 fun main() {
    var x = 10 // 재할당 가능
    x = 12 // 재할당 가능
@@ -34,7 +34,7 @@ fun main() {
 
 코틀린은 기본적으로 var과 val을 통해 변수를 타입추론으로 사용한다. 하지만 명시적으로 타입을 제한하고 싶다면 Int, String, Double과 같이 자바의 Warpper Class처럼 첫 문자가 대분자로 타입 이름을 `var i: Int = 10` 와 같이 붙여주면 된다.
 
-```kotlin
+```java
 fun main() {
     var x = 10
     var i: Int = 10
@@ -56,7 +56,7 @@ fun main() {
 
 하지만 코들린의 타입 지정 값을 보면 Long, Double 등 자바의 Wapper Class의 형태로 타입을 지정하고 있다.
 
-```kotlin
+```java
 fun main() {
     var x = 10
     var i: Int = 10
@@ -97,7 +97,7 @@ public class Main {
 
 기본적인 변수들은 Null이 들어가지 못하기 때문에 변수의 타입을 지정해주었을 때, null을 넣게 된다면 타입 뒤에 `?` 를 붙여줘야 한다.
 
-```kotlin
+```java
 fun main() {
     val name1: String = null // null을 넣을 수 없다.
     val name2: String? = null // null을 넣을 수 있다.
@@ -106,7 +106,7 @@ fun main() {
 
 코틀린은 `?` 가 붙은 타입과 붙지 않은 타입을 완전히 다른 타입으로 보고 관리한다. 둘을 다른 타입으로 보며 nullable한 타입의 null 체크를 간편하게 하기 위해 아래와 같이 변수명 뒤에 Safe Call(`?.`)를 붙여주면 null체크를 간단하게 해주는 기능을 제공하고 있다.
 
-```kotlin
+```java
 fun main() {
     var name: String? = "Seongwon"
 
@@ -119,7 +119,7 @@ fun main() {
 
 자바의 경우 nullable 타입의 null에 대한 처리를 할 경우, 아래와 같이 코드를 작성해야 한다.
 
-```kotlin
+```java
 public String nameSubSeq(String str, int start, int end) {
     if (str == null) {
         // Null일 경우 동작 내용
@@ -130,7 +130,7 @@ public String nameSubSeq(String str, int start, int end) {
 
 Elvis 연산자(`?:`)는 null일 경우 추후 실행될 동작 등을 간편하게 정의할 수 있다.
 
-```kotlin
+```java
 fun main() {
     val name: String? = null
     

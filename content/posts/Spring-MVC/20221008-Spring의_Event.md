@@ -9,7 +9,7 @@ draft: false
 프로젝트를 진행하며 도메인간의 연관관계를 분리하는 작업을 진행하다보니 Spring의 Event방식에 대해 알게 되었다. 이번 포스트에서는 프로젝트에 Event를 사용하기 위해 학습한 내용에 대해 포스팅해보려 한다.
 
 > 진행하였던 프로젝트의 연관관계 분리 작업에 대해 자세히 알고 싶다면 아래의 포스트를 보길 바란다.
-> - [모모팀 서비스 성능 개선기1 (의존관계 개선)](https://seongwon.dev/Spring/20221009-%EB%AA%A8%EB%AA%A8%ED%8C%80-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0%EA%B8%B01/)
+> - [모모팀 서비스 성능 개선기1 (의존관계 개선)](https://seongwon.dev/Spring-MVC/20221009-%EB%AA%A8%EB%AA%A8%ED%8C%80-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0%EA%B8%B01/)
 
 # Event란?
 
