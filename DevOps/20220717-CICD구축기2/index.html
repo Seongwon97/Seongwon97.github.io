@@ -112,28 +112,34 @@
 <h1 id="jenkins의-item" style="position:relative;"><a href="#jenkins%EC%9D%98-item" aria-label="jenkins의 item permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jenkins의 Item</h1>
 <p>젠킨스에서 하나의 CI/CD 프로젝트를 구축하기 위해서는 아이템(Item)을 생성하여야 한다. 하나의 젠킨스 서버에 여러개의 아이템을 만들 수 있고 각각의 아이템들은 개발자가 설정하는 것에 따라 다르게 동작한다. 젠킨스에서 아이템을 만드는 방법은 대표적으로 FreeStyle과 Pipeline이 존재한다. 과거에는 Freestyle 방법을 많이 사용하였다고 한다. 하지만 요즘은 Freestyle보다는 Pipeline을 많이들 사용하고 있다. 두 방법의 장단점을 비교해보자.</p>
 <h3 id="freestyle-vs-pipeline" style="position:relative;"><a href="#freestyle-vs-pipeline" aria-label="freestyle vs pipeline permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Freestyle vs Pipeline</h3>
-<ul>
-<li>
 <p><strong>Freestyle</strong></p>
 <ul>
-<li>장점</li>
+<li>
+<p>장점</p>
+<ul>
 <li>웹 기반의 GUI를 통해 여러 플러그인을 쉽게 사용할 수 있다.</li>
-<li>단점:</li>
+</ul>
+</li>
+<li>
+<p>단점:</p>
+<ul>
 <li>CI 파이프라인에 변경 사항을 만들기 위해서는 젠킨스에 로그인해 각각의 프리스타일 잡의 설정을 변경해야만 한다.</li>
 <li>CI/CD의 과정을 콘솔을 통해서만 확인할 수 있다.</li>
 <li>각각의 과정들을 한번에 보기 어렵다.</li>
 </ul>
 </li>
-<li>
+</ul>
 <p><strong>Pipeline</strong></p>
 <ul>
-<li>장점:</li>
+<li>
+<p>장점:</p>
+<ul>
 <li>파이프라인은 코드로 프로젝트 설정을 할 수 있어 프리스타일과 다르게 젠킨스 웹에 직접 접근하지 않아도 설정 변경이 가능하다. (웹을 통한 설정도 가능하다.)</li>
 <li>CI/CD 파이프라인 설정을 하나의 스크립트 파일(Jenkinsfile)로 프로그래밍을 통해 할 수 있다.</li>
 <li>Freestyle과 다르게 하나의 스크립트 파일(Jenkinsfile)을 통해 흐름 제어를 할 수 있다.</li>
 <li>일반 코드처럼 버전 관리가 가능하게 된다.</li>
-<li>
-<p>아래와 같이 GUI를 통해 현재 어떤 과정을 진행중이고 평균적으로 얼마만큼의 시간이 걸렸는지 통계와 피드백을 준다.</p>
+<li>아래와 같이 GUI를 통해 현재 어떤 과정을 진행중이고 평균적으로 얼마만큼의 시간이 걸렸는지 통계와 피드백을 준다.</li>
+</ul>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
@@ -157,7 +163,9 @@
       />
     </span></p>
 </li>
-<li>단점:</li>
+<li>
+<p>단점:</p>
+<ul>
 <li>프리스타일과 다르게 스크립트를 짜야하는 번거로움이 있다. 즉, 파이프라인 구축을 위해서는 스크립트 문법을 학습하여야 한다.</li>
 </ul>
 </li>

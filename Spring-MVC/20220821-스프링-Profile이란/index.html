@@ -107,7 +107,7 @@
 </li>
 </ul>
 <blockquote>
-<p>과거에는 하나의 yml 파일 내에서 3개의 하이픈(<code>---</code>)을 기준으로 profile을 분리할 수 있었다. 하지만 Spring Boot 2.4버전부터 해당 기능은 deprecated되어 이제는 개별로 프로파일 <code>yml</code>파일을 생성해줘야 한다.</p>
+<p>과거에는 하나의 yml 파일 내에서 3개의 하이픈(<code>---</code>)을 기준으로 profile을 분리할 때, <code>spring.profiles</code>를 통해 프로파일 이름을 구분하였다. 하지만 Spring Boot 2.4버전부터 해당 기능은 deprecated되었고 이제는 <code>spring.config.active.on-profile</code>을 사용해야 한다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
