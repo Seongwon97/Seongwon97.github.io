@@ -23,50 +23,13 @@ draft: false
 >
 > - [WebFlux란?](https://seongwon.dev/Spring-WebFlux/20230219-WebFlux란/)
 
-
-# 목차
-
-1. 들어가며
-2. 리액티브 프로그래밍과 스트림
-   - 2.1. 리액티브 프로그래밍이란?
-     - 명령형 프로그래밍 VS 리액티브 프로그래밍
-   - 2.2. 리액티브 스트림이란?
-     - Publisher, Subscriber, Subscription, Processor 인터페이스 살펴보기
-   - 2.3. 코드로 리액티브 스트림 인터페이스 동작 살펴보기
-3. 리액터 
-   - 3.1. 리액터란? 
-     - 3.1.1. 사용 준비하기
-   - 3.2. Mono와 Flux 
-     - 3.2.1. Cold & Hot
-   - 3.3. 학습하며 헷갈렸던 Mono, Flux의 Operator
-     - 3.3.1. map vs flatMap
-     - 3.3.2. doOnError vs onError~
-     - 3.3.3. defaultIfEmpty vs switchIfEmpty
-     - 3.3.4. concat vs merge
-   - 3.4. 각각의 상황에서 어떤 Operator를 사용해야 할까?
-   - 3.5. 테스트하기
-     - 3.5.1. 기존의 테스트 방식
-     - 3.5.2. StepVerifier
-
-4. WebFlux란?
-   - 4.1. 비동기 웹 프레임워크의 장점(Feat. Spring MVC의 한계)
-   - 4.2. Spring WebFlux란?
-     - 4.2.1. WebFlux의 특징
-     - 4.2.2. WebFlux의 성능
-   - 4.3. WebFlux 사용해보기
-     - 4.3.1. 의존성 추가하기
-     - 4.3.2. Annotated Controllers
-     - 4.3.3. Functional EndPoints
-   - 4.4. WebFlux..언제 도입해야할까?
-
-
 # 1. 들어가며
 
 목차를 보면 알 수 있듯이 진행 순서는 Reactive Stream으로 부터 시작하여 Reactor, WebFlux순으로 진행됩니다. 해당 개념에 대해 완전히 처음 접하시는 분들이 계실 수 있어서 간단한 플로우를 설명드리며 글을 시작하겠습니다.
 
 Spring은 프레임워크가 크게 MVC와 WebFlux로 나뉘게 됩니다. 이 중에서 이번 글에서 다루는 **WebFlux는 비동기 웹 프레임워크**인데, 이는 **Reactor라는 리액티브 프로그래밍 전용 라이브러리를 기반으로 만들어졌습니다.** 즉, WebFlux를 사용하려면 Reactor라는 라이브러리를 사용하실 수 있어야 합니다. 하지만..여기서 또 Reactor 라이브러리에 대해 학습을 하다보면 **Reactor는 Reactive Stream의 구현체**라는 정보를 얻게되며 리액티브 스트림과 리액티브 스트림에서 제공하는 Publisher, Subscriber라는 개념들이 나오게 됩니다.
 
-WebFlux를 사용함에 있어 Reactive Stream, Reactor의 개념은 필수적으로 알아야 하는 개념이기에 low level의 개념부터 순차적으로 글을 작성하였습니다.
+WebFlux를 사용함에 있어 Reactive Stream, Reactor의 개념은 필수적으로 알아야 하는 개념이기에 low level의 개념부터 순차적으로 알아보도록 하겠습니다.
 
 # 2. 리액티브 프로그래밍과 스트림
 
@@ -417,7 +380,7 @@ map과 flatMap은 이름도 비슷하고 둘 다 스트림 중간에 값을 변�
 
 `map()`은 방출된 아이템들을 각각 **동기적인 함수**를 적용해 Object로 반환을 합니다. 변환 동작은 하나의 Stream 내에서 이루어지게 됩니다.
 
-```kotlin
+```java
 val numbers = Flux.just(1, 2, 3)
 
 numbers.map { i -> i + 10 }
@@ -430,7 +393,7 @@ numbers.map { i -> i + 10 }
 
 변환 과정에서는 내부적으로 N개의 스트림을 새로 생성하고 작업이 완료된 N개의 스트림을 하나의 스트림으로 병합하여 반환하게 됩니다.
 
-```kotlin
+```java
 val numbers = Flux.just(1, 2, 3)
 
 numbers.flatMap { i ->
@@ -449,7 +412,7 @@ numbers.flatMap { i ->
 
 doOnError를 비롯한 `doOnNext`,  `doOnComplete`, `doOnSubscribe`, `doOnRequest`, `doOnCancel`는 sequence를 처리하며 데이터 자체에 영향을 주지 않고 부수 효과(side-effect)만을 위한 연산자입니다. 목적에 따라 다르지만 주로 로그를 남기거나 디버깅 용도로 사용되는 오퍼레이터입니다.
 
-```kotlin
+```java
 flux.doOnError { e -> logger.error(e) }
 ```
 
@@ -465,7 +428,7 @@ flux.doOnError { e -> logger.error(e) }
 
 `defaultIfEmpty`는 스트림이 비어있을 경우 아래와 같이 특정 값을 반환합니다.
 
-```kotlin
+```java
 Flux.empty<Int>()
     .defaultIfEmpty(3)
     .subscribe { println(it) }
@@ -475,7 +438,7 @@ Flux.empty<Int>()
 
 `switchIfEmpty`는 `defaultIfEmpty`처럼 스트림이 비어있을 경우 특정 값을 반환하는데, 기본 값을 넣어서 반환하는 것이 아닌 새로운 Mono, Flux 스트림을 생성하여 바꿔줍니다.
 
-```kotlin
+```java
 Flux.empty<Int>()
     .switchIfEmpty(Flux.just(3))
     .subscribe { println(it) }
@@ -491,7 +454,7 @@ concat과 merge도 여러개의 스트림을 합치는 의미에서 동일한 �
 
 concat은 여러 스트림을 합칠 때, 순서대로 구독하여 방출되는 순서를 유지합니다.
 
-```kotlin
+```java
 Flux.concat(
     Flux.just(1, 2, 3),
     Flux.just(4, 5, 6)
@@ -502,7 +465,7 @@ Flux.concat(
 
 merge는 concat과 다르게 방출되는 순서를 유지하지 않습니다. 모든 스트림을 동시에 구독하고 들어오는 순서대로 요소들을 방출하여 순서가 보장되지 않은 상태의 결과값이 생성됩니다.
 
-```kotlin
+```java
 Flux.merge(
     Flux.just(1, 2, 3),
     Flux.just(4, 5, 6)
@@ -525,7 +488,7 @@ Flux.merge(
 
 대부분의 사람들은 리액티브 프로그래밍을 하기 이전까지는 항상 동기 방식의 프로그래밍만을 진행하였고 테스트 코드 또한 동기 방식으로 진행하였을 것입니다. 하지만 과거에 작성해왔던 코드를 동기식으로 아무런 생각 없이 테스트 코드를 작성한다면 문제가 발생하게 됩니다. 코드로 한번 살펴보겠습니다.
 
-```kotlin
+```java
 @Test
 fun test() {
     val mono = Mono.just(5)
@@ -776,7 +739,7 @@ public abstract class RouterFunctions {
 WebFlux는 그럼 언제 도입하는게 좋을까요? “토비의 스프링”의 저자 이일민님은 아래의 상황에 경우 WebFlux의 도입을 고려해봐도 된다 하셨습니다.
 
 - 100% 논블로킹 개발을 할 경우
-- 업, 타운 스트리밍이 동시에 존재하고 백프레셔가 필요한 경우
+- 업, 다운 스트리밍이 동시에 존재하고 백프레셔가 필요한 경우
 - MSA와 같은 아키텍쳐 구조를 가져 서버 단에서 이벤트 방식으로 많은 동작이 있는 경우
 - 본격적인 함수형 프로그래밍 모델을 구현하고 싶은 경우
 
