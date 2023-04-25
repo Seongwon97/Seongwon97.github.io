@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://seongwon.dev/Book/20230408-가상면접_Chapter10/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Spring-WebFlux/20230406-[통합] Reactive Stream 부터 WebFlux까지 개념 파헤쳐보기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon.dev/Book/20230404-가상면접_Chapter9/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon.dev/Book/20230403-가상면접_Chapter8/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Book/20230401-가상면접_Chapter7/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Book/20230328-가상면접_Chapter6/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Book/20230324-가상면접_Chapter5/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -107,8 +110,8 @@
 <url> <loc>https://seongwon.dev/Woowacourse/20211217-우테코-최종-코딩테스트-대비2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Woowacourse/20211216-우테코-최종-코딩테스트-대비1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/ETC/20211214_싱글턴 패턴이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon.dev/Woowacourse/20211214-우테코-프리코스-참여후기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon.dev/Woowacourse/20211214-우테코-프리코스-참여후기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20211213-Enum이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20211210-일급_컬렉션이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Woowacourse/20211210-우테코-프리코스-2주차-피드백-정리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
