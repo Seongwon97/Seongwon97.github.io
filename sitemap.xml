@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://seongwon.dev/MSA/20230428-Resilience4J로_SpringBoot에서_CircuitBreaker_사용해보기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/MSA/20230426-서킷브레이커란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Book/20230408-가상면접_Chapter10/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Spring-WebFlux/20230406-[통합] Reactive Stream 부터 WebFlux까지 개념 파헤쳐보기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -130,8 +131,8 @@
 <url> <loc>https://seongwon.dev/Git/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Kotlin/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon.dev/Spring-MVC/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/MSA/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon.dev/Spring-MVC/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Spring-WebFlux/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Woowacourse/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
