@@ -98,7 +98,7 @@
 </ul>
 <p>많은 모듈을 제공하지만 이번 게시글에서는 CircuitBreaker에 대해 살펴볼 예정이다.</p>
 <h1 id="circuitbreaker-모듈-살펴보기" style="position:relative;"><a href="#circuitbreaker-%EB%AA%A8%EB%93%88-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0" aria-label="circuitbreaker 모듈 살펴보기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CircuitBreaker 모듈 살펴보기</h1>
-<p>Reslience4J의 서킷 브레이커는 CLOSED, OPEN, HALF<em>OPEN 상태 외에도 <strong>DISABLED</strong>와 **FORCE</em>OPEN** 상태가 추가로 존재한다.</p>
+<p>Reslience4J의 서킷 브레이커는 CLOSED, OPEN, HALF OPEN 상태 외에도 <strong>DISABLED</strong>와 <strong>FORCE OPEN</strong> 상태가 추가로 존재한다.</p>
 <p>동작은 슬라이딩 윈도우를 통해 호출 결과를 저장하고 집계하여 서킷브레이커를 열고 닫는다. 사용할 수 있는 슬라이딩 윈도우에는 가장 최근에 N개의 요청을 집계하는 <strong>횟수 기반 슬라이딩 윈도우(Count-based sliding window)</strong>와 최근 N초 동안 보낸 요청을 집계하는 <strong>시간 기반 슬라이딩 윈도우(Time-based sliding window</strong>)가 존재한다.</p>
 <p>서킷 브레이커는 요청의 실패율과 응답이 느린 호출율(Slow call)이 설정한 임계값(threshold)보다 낮으면 CLOSED 상태에서 OPEN상태로 변경된다. 기본적으로 모든 Exception들은 실패로 간주되어 실패로 간주해야하는 예외들이나 무시하고 싶은 예외들이 있다면 따로 목록을 정의하며 설정해두면 된다. 그러면 다른 모든 예외들은 성공한 것으로 간주된다.</p>
 <p>서킷 브레이커는 OPEN 상태일 때 요청이 들어오면 <code>CallNotPermittedException</code>를 발생시키며 요청을 거절한다. 대기 시간이 경과하여 상태가 OPEN에서 HALF_OPEN으로 변경되었을 경우 설정해둔 일정 수의 호출을 허용하여 요청을 보낼 서버가 정상 동작하는지 확인을 한다. 이때, 보냈던 요청들이 실패율, 느린 호출율의 임계값보다 낮을 경우 상태를 CLOSED 상태로 변경한다.</p>
@@ -144,90 +144,28 @@
 <pre class="grvsc-container one-dark-pro" data-language="xml" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">implementation &#39;org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j&#39;</span></span></span></code></pre>
 <h2 id="circuitbreaker-모듈의-설정들" style="position:relative;"><a href="#circuitbreaker-%EB%AA%A8%EB%93%88%EC%9D%98-%EC%84%A4%EC%A0%95%EB%93%A4" aria-label="circuitbreaker 모듈의 설정들 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CircuitBreaker 모듈의 설정들</h2>
 <p>서킷브레이커를 사용하기 앞서 먼저 설정 프로퍼티에 대해 살펴보겠다.</p>
-<blockquote>
-<p>괄호<code>()</code> 안에 있는 것은 각각의 Default값이다.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Config property</th>
-<th>Default Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>failureRateThreshold</td>
-<td>50</td>
-<td><strong>실패율 임계값</strong>, 실패율이 임계값 이상이 되면 서킷 브레이커가 OPEN 상태로 전환된다.</td>
-</tr>
-<tr>
-<td>slowCallRateThreshold</td>
-<td>100</td>
-<td><strong>느린 호출율의 임계값</strong>, 느린 호출율이 임계값 이상이 되면 서킷브레이커가 OPEN 상태로 전환된다.</td>
-</tr>
-<tr>
-<td>slowCallDurationThreshold</td>
-<td>60000 [ms]</td>
-<td><strong>요청이 Slow call임을 판단하기 위한 시간</strong>, 요청 시간이 해당 설정 이상이 걸리면 Slow call로 판단한다.</td>
-</tr>
-<tr>
-<td>permittedNumberOfCallsInHalfOpenState</td>
-<td>10</td>
-<td>HALF OPEN상태에서 허용할 요청 수</td>
-</tr>
-<tr>
-<td>maxWaitDurationInHalfOpenState</td>
-<td>0 [ms]</td>
-<td><strong>HALF OPEN 상태에서 OPEN로 변경되기 전 최대 유지 시간</strong>, 0은 모든 호출이 완료될 때까지 HALF OPEN 상태에서 무한정 대기한다.</td>
-</tr>
-<tr>
-<td>slidingWindowType</td>
-<td>COUNT_BASED</td>
-<td><strong>호출 결과를 기록할 슬라이딩 윈도우의 타입 설정</strong>, 1) COUNT<em>BASED 2) TIME</em>BASED</td>
-</tr>
-<tr>
-<td>slidingWindowSize</td>
-<td>100</td>
-<td>슬라이딩 윈도우의 크기</td>
-</tr>
-<tr>
-<td>minimumNumberOfCalls</td>
-<td>100</td>
-<td>실패율 또는 느린 호출율을 계산하기에 필요한 최소 호출 수</td>
-</tr>
-<tr>
-<td>waitDurationInOpenState</td>
-<td>60000 [ms]</td>
-<td>OPEN에서 HALF OPEN으로 변하기 까지 걸리는 시간</td>
-</tr>
-<tr>
-<td>automaticTransitionFromOpenToHalfOpenEnabled</td>
-<td>false</td>
-<td><strong>OPEN에서 HALF OPEN으로 자동 변환 여부 설정</strong>,  1) true: waitDurationInOpenState가 지난 후에 자동으로 전환 (서킷 브레이커는 인스턴스들이 HALF OPEN 상태에서 waitDurationInOpenStatE이후에 OPEN상태로 전환하기 위해 모든 인스턴스를 모니터링하기 위한 스레드를 만든다.) 2) false: waitDurationInOpenState이 지난 후에 호출이 있어야 전환 (호출이 온 이후에 전환이라 서킷 브레이커가 인스턴스를 모니터링하지 않는다.)</td>
-</tr>
-<tr>
-<td>recordExceptions</td>
-<td>empty</td>
-<td>실패로 기록할 Exception 목록</td>
-</tr>
-<tr>
-<td>ignoreExceptions</td>
-<td>empty</td>
-<td>실패로 집계하지 않고 무시할 Exception 목록</td>
-</tr>
-<tr>
-<td>recordFailurePredicate</td>
-<td>throwable -> trueBy default all exceptions are recored as failures.</td>
-<td>Exception을 실패로 집계할지 판단할 Predicate</td>
-</tr>
-<tr>
-<td>ignoreExceptionPredicate</td>
-<td>throwable -> falseBy default no exception is ignored.</td>
-<td>Exception을 무시하지 않을지 판단할 Predicate</td>
-</tr>
-</tbody>
-</table>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABoklEQVQoz12SR45DMQxDff/jZJ9NkAqkNyC9997bgoOngT4ysyAs2zJFUQ7T6VS9Xk/j8VjH41GHw0GLxUKDwUDr9VrL5VLD4VDb7TYCd51Ox/LP57NOp5OBOLTbbXv4er30eDy0Wq10uVws5qzb7Soej6tWqxkRxZ1ws9nofr/rer3qdrsZQr/fNwVcQgThbDazJEhHo5FSqZQhm80KAZyhFEVOFBFCRkVWWvBEKgNabjQaKpfLqlQqkUJs8bw/hChEEQo5IBHy/X5vya1WS7FYTMlk0ghLpZK1O5lMrDhdQQyITSGBV4J4t9tZAi3P53MjQun7/TZf3W/yeYs9joDpTBhCEnmIj96yT5w81NIyHnLnBVjB8/n8VUgCREwbRRBSjUcQ+EBYE4mE8vm8FcEu7inGinWBxwAiwL+kbTxkSAwEknQ6rVwuZ/tCoWAoFotRDPgBAXNRglzkYzSf9PP5GGi52WxaMgrcmv/t+j4gHRInRSXysQJA4l/LzynIUNznbwRawGzaZrrEmUzGPOMOf1ir1arq9bqp9W+G5w7/HT9N/ndiXVcwXQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/9a768eb4dd2a0e400f7a230a28a18079/c1b63/img_11.png"
+        srcset="/static/9a768eb4dd2a0e400f7a230a28a18079/5a46d/img_11.png 300w,
+/static/9a768eb4dd2a0e400f7a230a28a18079/0a47e/img_11.png 600w,
+/static/9a768eb4dd2a0e400f7a230a28a18079/c1b63/img_11.png 1200w,
+/static/9a768eb4dd2a0e400f7a230a28a18079/9ba38/img_11.png 1329w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+    </span></p>
 <h2 id="테스트-시나리오-및-구성" style="position:relative;"><a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4-%EB%B0%8F-%EA%B5%AC%EC%84%B1" aria-label="테스트 시나리오 및 구성 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>테스트 시나리오 및 구성</h2>
 <p>테스트는 스타벅스 애플리케이션의 메인 페이지에서 개인 맞춤형 메뉴 추천서비스와 같은 시나리오를 구현해보겠다.</p>
 <p>상품 정보를 받기 위해 애플리케이션에서는 상품 서비스(ProductService)에 요청을 보낼 것이고 서버에서 내부적으로 상품 서비스는 추천 알고리즘이 올라가있는 추천 서비스(RecommendationService)에 요청을 보내어 사용자별 추천 상품 정보를 받아올 것이다.</p>
