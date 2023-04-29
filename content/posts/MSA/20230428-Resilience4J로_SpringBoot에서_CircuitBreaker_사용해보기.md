@@ -35,7 +35,7 @@ Reslience4J는 아래의 6가지 모듈을 제공하고 있다.
 
 # CircuitBreaker 모듈 살펴보기
 
-Reslience4J의 서킷 브레이커는 CLOSED, OPEN, HALF_OPEN 상태 외에도 **DISABLED**와 **FORCE_OPEN** 상태가 추가로 존재한다.
+Reslience4J의 서킷 브레이커는 CLOSED, OPEN, HALF OPEN 상태 외에도 **DISABLED**와 **FORCE OPEN** 상태가 추가로 존재한다.
 
 동작은 슬라이딩 윈도우를 통해 호출 결과를 저장하고 집계하여 서킷브레이커를 열고 닫는다. 사용할 수 있는 슬라이딩 윈도우에는 가장 최근에 N개의 요청을 집계하는 **횟수 기반 슬라이딩 윈도우(Count-based sliding window)**와 최근 N초 동안 보낸 요청을 집계하는 **시간 기반 슬라이딩 윈도우(Time-based sliding window**)가 존재한다.
 
@@ -81,25 +81,8 @@ implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-re
 
 서킷브레이커를 사용하기 앞서 먼저 설정 프로퍼티에 대해 살펴보겠다.
 
-> 괄호`()` 안에 있는 것은 각각의 Default값이다.
->
 
-| Config property | Default Value | Description                                                                                                                                                                                                                                                                                   |
-| --- | --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| failureRateThreshold | 50 | **실패율 임계값**, 실패율이 임계값 이상이 되면 서킷 브레이커가 OPEN 상태로 전환된다.                                                                                                                                                                                                                                          |
-| slowCallRateThreshold | 100 | **느린 호출율의 임계값**, 느린 호출율이 임계값 이상이 되면 서킷브레이커가 OPEN 상태로 전환된다.                                                                                                                                                                                                                                    |
-| slowCallDurationThreshold | 60000 [ms] | **요청이 Slow call임을 판단하기 위한 시간**, 요청 시간이 해당 설정 이상이 걸리면 Slow call로 판단한다.                                                                                                                                                                                                                         |
-| permittedNumberOfCallsInHalfOpenState | 10 | HALF OPEN상태에서 허용할 요청 수                                                                                                                                                                                                                                                                        |
-| maxWaitDurationInHalfOpenState | 0 [ms] | **HALF OPEN 상태에서 OPEN로 변경되기 전 최대 유지 시간**, 0은 모든 호출이 완료될 때까지 HALF OPEN 상태에서 무한정 대기한다.                                                                                                                                                                                                          |
-| slidingWindowType | COUNT_BASED | **호출 결과를 기록할 슬라이딩 윈도우의 타입 설정**, 1) COUNT_BASED 2) TIME_BASED                                                                                                                                                                                                                                  |
-  | slidingWindowSize | 100 | 슬라이딩 윈도우의 크기                                                                                                                                                                                                                                                                                  |
-  | minimumNumberOfCalls | 100 | 실패율 또는 느린 호출율을 계산하기에 필요한 최소 호출 수                                                                                                                                                                                                                                                              |
-  | waitDurationInOpenState | 60000 [ms] | OPEN에서 HALF OPEN으로 변하기 까지 걸리는 시간                                                                                                                                                                                                                                                              |
-  | automaticTransitionFromOpenToHalfOpenEnabled | false | **OPEN에서 HALF OPEN으로 자동 변환 여부 설정**,  1) true: waitDurationInOpenState가 지난 후에 자동으로 전환 (서킷 브레이커는 인스턴스들이 HALF OPEN 상태에서 waitDurationInOpenStatE이후에 OPEN상태로 전환하기 위해 모든 인스턴스를 모니터링하기 위한 스레드를 만든다.) 2) false: waitDurationInOpenState이 지난 후에 호출이 있어야 전환 (호출이 온 이후에 전환이라 서킷 브레이커가 인스턴스를 모니터링하지 않는다.) |
-  | recordExceptions | empty | 실패로 기록할 Exception 목록                                                                                                                                                                                                                                                                          |
-  | ignoreExceptions | empty | 실패로 집계하지 않고 무시할 Exception 목록                                                                                                                                                                                                                                                                  |
-  | recordFailurePredicate | throwable -> trueBy default all exceptions are recored as failures. | Exception을 실패로 집계할지 판단할 Predicate                                                                                                                                                                                                                                                             |
-  | ignoreExceptionPredicate | throwable -> falseBy default no exception is ignored. | Exception을 무시하지 않을지 판단할 Predicate                                                                                                                                                                                                                                                             |
+![Untitled](image/20230428-Resilience4J로_SpringBoot에서_CircuitBreaker_사용해보기/img_11.png)
 
 ## 테스트 시나리오 및 구성
 
