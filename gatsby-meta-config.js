@@ -2,7 +2,7 @@ module.exports = {
   title: `Seongwon.dev`,
   description: `Develop, Security, It, Etc...`,
   author: `Seongwon`,
-  introduction: `열심히 성장중인 우테코 4기 BE 렉스입니다 🦖`,
+  introduction: `기술공유를 통해 새로운 가치 창조을 추구하는 백엔드 개발자 오성원입니다.`,
   siteUrl: `https://seongwon.dev/`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
