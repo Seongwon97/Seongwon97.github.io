@@ -118,8 +118,8 @@
 <url> <loc>https://seongwon.dev/Woowacourse/20211217-우테코-최종-코딩테스트-대비2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Woowacourse/20211216-우테코-최종-코딩테스트-대비1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/ETC/20211214_싱글턴 패턴이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon.dev/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Woowacourse/20211214-우테코-프리코스-참여후기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon.dev/Woowacourse/20211214-우테코-프리코스-3주차-과제-회고/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20211213-Enum이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20211210-일급_컬렉션이란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Woowacourse/20211210-우테코-프리코스-2주차-피드백-정리/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -130,9 +130,9 @@
 <url> <loc>https://seongwon.dev/Java/20211127-Unit-Test란/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Git/20211125-Git커밋 메시지 규약/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/20211125-Google_Java_Style_Guide/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://seongwon.dev/Book/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Database/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/DevOps/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://seongwon.dev/Book/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/ETC/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Git/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://seongwon.dev/Java/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
